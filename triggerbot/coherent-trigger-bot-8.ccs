@@ -1,0 +1,15 @@
+// author: Jat (@jat9119)
+try this ```def module coherent-trigger-bot
+def desc "Coherent Client's Trigger Bot"
+
+on pre_tick if playing if target_entity :player,:armor_stand !if blocking if input_active sprint {
+   if attack_progress >=0.9 {
+      as target_entity if blocking as client {
+         switch #axe then input left then input left
+        if blocking as client {
+         wait 0.05 switch back
+        }
+      }
+      input attack
+   }
+}

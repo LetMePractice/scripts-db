@@ -1,0 +1,32 @@
+// author: Kaira (@_timel3ss.)
+module stun-web
+def desc "stuns then webs"
+
+on tick {
+   if playing {
+      if input_active key x {
+         if entity_in_range :player 3.5 {
+            if target_entity :player {
+               if hotbar_has #_axe {
+                  as target_entity if blocking {
+                     switch #_axe
+                     input left
+                     wait_random 0.02 0.03 {
+                        input left
+                        wait_random 0.02 0.03 {
+                           switch #sword
+                        }
+                     }
+                  }
+               }
+               snap_to nearest_entity :player
+               switch :cobweb
+               wait 0.05 {
+                  input right
+                  switch #sword
+               }
+            }
+         }
+      }
+   }
+}

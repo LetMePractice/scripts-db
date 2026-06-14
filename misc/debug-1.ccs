@@ -1,0 +1,26 @@
+// author: ImproperIssues (@improperissues)
+def module debug
+
+on right click {
+    send "hi"
+}
+
+on tick 20 {
+    as nearest entity :player if item cooldown :shield > 0 {
+        send "SHIELD DISABLED"
+    }
+}
+
+on middle click if playing {
+    turn to nearest block :lava then {
+        send "lava"
+
+        turn to nearest entity :creeper speed 20 aim head then {
+            send "creeper"
+        }
+    }
+
+    if input active key k {
+        send "k key pressed"
+    }
+}

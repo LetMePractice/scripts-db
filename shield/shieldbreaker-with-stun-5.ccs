@@ -1,0 +1,17 @@
+// author: Lymmt (@lymt_01)
+yo <@1250828225161068674>  can u make tthis automatic def module ShieldBreaker-with-Stun
+def desc "Shield Breaker with Auto stun"
+
+on left_click if playing {
+   if holding #sword {
+      if on_ground {
+         as target_entity if blocking {
+            switch #_axe
+            input attack
+            wait 0.06
+            input attack
+            switch #sword
+         }
+      }
+   }
+}

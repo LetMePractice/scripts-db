@@ -1,0 +1,15 @@
+// author: Deleted User (@Deleted User)
+def module auto-mace-
+def desc "Auto Mace IF player in range."
+
+on tick {
+   !if on_ground {
+      if holding #sword {
+         if falling {
+            if entity_in_range :player 20.2 {
+               damage nearest_entity :player
+            }
+         }
+      }
+   }
+}

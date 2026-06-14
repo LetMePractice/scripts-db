@@ -1,0 +1,46 @@
+// author: ? (@_sp33d_94)
+Auto totem safe legit
+def module auto_totem_legit
+def desc "Auto Totem Legit 100% Safe"
+
+on tick {
+
+    if_not offhand totem_of_undying {
+
+        if has totem_of_undying {
+
+            open_inventory e
+            wait 3
+
+            move_item totem_of_undying offhand
+            wait 2
+
+            close_inventory
+            wait 6
+
+        }
+
+    }
+
+}
+Auto crystal
+def module auto_crystal
+def desc "Safe Crystal PvP"
+
+on tick {
+
+    if holding #end_crystal {
+
+        if target_block #obsidian {
+
+            input use
+            wait 1
+
+            input attack
+            wait 1
+
+        }
+
+    }
+
+}

@@ -1,0 +1,11 @@
+// author: Cat (@cat123go)
+module autokill
+def desc "Kill anyone in sight"
+
+
+on tick{
+    input forward
+    snap_to nearest_entity :player then{
+        if attack_progress >=0.9 input attack
+    }
+}

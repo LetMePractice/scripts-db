@@ -1,0 +1,18 @@
+// author: Floop (@__flipfloop)
+Does any1 know why this only work in some servers and fail in others?
+
+def module Ghost Placement
+def desc "ghost blocks for better movment"
+
+on place_block {
+            if targeting_block {
+                if_not target_block :air,:water {
+                    wait_random 0.009237345 0.0154654
+                       swap
+                          wait_random 0.25582 0.347438
+                             swap back
+                }
+            }
+        }
+    }
+}

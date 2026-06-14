@@ -1,0 +1,8 @@
+// author: CrystalPvP (@fabricutilites)
+def module spear-range
+def desc "Get legit reach with the spear"
+on left_click if playing{
+  switch #spear
+  wait 0.45
+  switch back
+}

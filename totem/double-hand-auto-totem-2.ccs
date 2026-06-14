@@ -1,0 +1,11 @@
+// author: 𝙰𝚛𝚓𝚞𝚗𝙵r𝚊𝚐𝚜 (@flybeast0574)
+This script automatically moves totems into the player's offhand and 9th slot of their hotbar when in inventory. ```def module double-hand-auto-totem
+def desc "Custom Scripted Module"
+
+on tick if input_active inventory {
+    switch #totem
+    gui_quickmove #totem 9
+    if off_holding #air {
+        gui_swap #totem
+    }
+}

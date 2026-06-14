@@ -1,0 +1,37 @@
+// author: ccsoured_ (@ccsoured_)
+def module t
+def desc a
+
+on pre_tick if playing if target_entity :player,:armor_stand,#zombie !if blocking if input_active sprint {
+   if attack_progress >=0.9 {
+      !if blocking {
+      if holding #sword {
+      as target_entity if blocking as client {
+         if chance_of 600000 {
+         switch #axe then input left then input left
+         wait 0.05 switch back
+         }
+      }
+      execute_random {
+            func miss
+            func miss
+            func hit
+            func hit
+            func hit
+            func hit
+            }
+        }
+      }
+   }
+}
+def func miss {
+   wait_random 0.05 0.1 {
+      input left
+   }
+}
+
+def func hit {
+    if target_entity :player {
+      input left
+   }
+}

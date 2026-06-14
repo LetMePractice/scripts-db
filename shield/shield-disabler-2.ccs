@@ -1,0 +1,10 @@
+// author: ImproperIssues (@improperissues)
+def module shield-disabler
+def desc "real"
+
+on left_click if playing if targeting_entity {
+  as target_entity if blocking as client if hotbar_has #_axe {
+    switch #_axe
+    wait 0.05 switch back
+  }
+}

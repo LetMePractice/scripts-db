@@ -1,0 +1,5 @@
+// author: ImproperIssues (@improperissues)
+def module fast-use
+def desc "You can script smth like this"
+
+on tick if playing if input_active use input use

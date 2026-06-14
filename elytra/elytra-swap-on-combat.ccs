@@ -1,0 +1,13 @@
+// author: Beev (@.beevv)
+def module elytra-swap-on-combat
+def desc "Swap elytra -> chestplate when near players"
+
+on pre_tick if playing if entity_in_range :player 5.0 {
+   if gliding {
+      if hotbar_has #chestplate
+      switch #chestplate
+      wait 0.06
+      input use
+      switch #mace
+   }
+}

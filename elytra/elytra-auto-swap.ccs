@@ -1,0 +1,87 @@
+// author: octo11th • mizo (@octo11th)
+// Elytra Auto Swap - Switches to elytra when flying and back to chestplate on landing
+def module elytra-auto-swap
+def desc "Automatically switches between elytra and chestplate based on flight status"
+
+// Switch to elytra when jumping in air
+on key_press space {
+    if playing {
+        if_not on_ground {
+            if hotbar_has #elytra {
+                if hotbar_has #firework {
+                    if_not hotbar_has #elytra {
+                        execute {
+                            function equip_elytra
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Auto-switch back to chestplate when landing
+on tick 2 {
+    if playing {
+        if on_ground {
+            if hotbar_has #firework {
+                if hotbar_has #chestplate {
+                    execute {
+                        function equip_chestplate
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Also switch to chestplate when enemies are nearby
+on tick 5 {
+    if playing {
+        if hotbar_has #firework {
+            if hotbar_has #chestplate {
+                if entity_in_range :player 4.5 {
+                    execute {
+                        function equip_chestplate
+                    }
+                }
+            }
+        }
+    }
+}
+
+def func equip_elytra {
+    // Switch to elytra
+    switch #elytra
+    
+    // Small delay
+    wait 0.05
+    
+    // Equip it
+    if holding #elytra {
+        input right
+    }
+    
+    // Switch to firework
+    wait 0.05
+    switch #firework
+    
+    // Use firework
+    wait 0.05
+    if holding #firework {
+        input right
+    }
+}
+
+def func equip_chestplate {
+    // Switch to chestplate
+    switch #chestplate
+    
+    // Small delay for item switch
+    wait 0.05
+    
+    // Equip it
+    if holding #chestplate {
+        input right
+    }
+}

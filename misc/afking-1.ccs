@@ -1,0 +1,11 @@
+// author: @heyem (@prodordie)
+im trying to do a afk script, because the server does restarts quite often, so something like this
+
+def module afking
+def desc "afk"
+
+on tick if hotbar_has #nether_star if playing {
+   switch #nether_star
+   wait 0.3 input use
+}
+but after it using the star, i need it to click a moss block in a small chest gui (the star is the server selector/game selecto)

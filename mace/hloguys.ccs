@@ -1,0 +1,15 @@
+// author: Practice (@letmepractice)
+//@AyuGamer25
+def module hloguys
+def desc "Hit once with axe, then automatically switch to mace and perform stun slam"
+
+on left_click if playing {
+    if holding #axe {
+       switch #mace 
+       wait 0.05 {
+         input left
+       }
+    }
+}
+
+If you actually wanted to use the sword instead of mace just switch it to #sword

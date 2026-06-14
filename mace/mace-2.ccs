@@ -1,0 +1,48 @@
+// author: T For Tighnari (@silicon06520)
+def module mace
+def desc "simple auto mace"
+
+def func stunslam {
+ switch #axe
+ input left
+ wait 0.05 {
+  switch #mace[density]
+  input left
+  wait 0.50 {
+   switch #axe
+   }
+  }
+}
+
+def func swordslam {
+  switch #sword
+  input left
+  switch #mace[density]
+  input left
+  wait 0.05 {
+    switch #sword
+  }
+}
+
+on tick if playing {
+    if falling {
+      if holding #_axe,#sword,#wind_charge,#mace {
+        if target_entity :player {
+          as target entity {
+            if blocking {
+             function stunslam 
+             }
+             
+          as target_entity {
+            if_not blocking {
+              function swordslam 
+              }
+              }
+            }
+              }
+            }
+          }
+        }
+
+
+Can somebody test this out for me???

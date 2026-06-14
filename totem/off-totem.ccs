@@ -1,0 +1,10 @@
+// author: Deleted User (@Deleted User)
+// @itzispdyer
+def module Off-totem
+def desc "Automatically put totem in off hand"
+
+on totem_pop  {
+   if hotbar has #totem
+   switch #totem
+   input F
+}

@@ -1,0 +1,25 @@
+// author: wxund (@wounddup)
+def module Ultra-Fast-Crystal
+def desc "Manual Crystal — Ultra Fast"
+
+on tick if playing {
+    if holding #crystal {
+        if target_entity #crystal {
+            if off_holding #totem {
+                input attack
+                wait 0.001
+                input use
+            }
+        }
+        if input_active left {
+            input attack
+            wait 0.001
+            input use
+        }
+        if input_active use {
+            input use
+            wait 0.001
+            input use
+        }
+    }
+}

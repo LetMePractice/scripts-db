@@ -1,0 +1,10 @@
+// author: Deleted User (@Deleted User)
+// @thegoatjello123333stealingimpropercode
+def module auto-offhand-totem
+def desc "Automatically puts a totem in offhand if hotbar has one"
+
+on tick {
+   if hotbar_has #totem !if off_holding #totem {
+      gui_swap #totem
+   }
+}

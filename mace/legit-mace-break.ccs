@@ -1,0 +1,13 @@
+// author: Cat (@cat123go)
+module legit-mace-break
+def desc "Its mace break but you have to hold an axe while falling"
+
+on tick !if in_screen{
+    if holding #axe {
+        as target_entity if blocking {
+            input left
+            switch #mace
+            input left
+        }
+    }
+}

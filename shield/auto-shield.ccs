@@ -1,0 +1,49 @@
+// author: wxund (@wounddup)
+module Auto Shield
+def desc "Automatically uses shield near explosives and players."
+
+// [Variable to prevent shield flickering]
+define shield_cooldown 0
+
+on tick {
+    // [Reset trigger variable]
+    define should_shield 0
+
+    // [Condition 1: Check for End Crystal within 2 blocks]
+    if nearest entity :end_crystal range 2 {
+        // [Condition 2: Check for Player within 4 blocks]
+        if nearest entity :player range 4 {
+            define should_shield 1
+        }
+    }
+
+    // [Condition 1 (Alternate): Check for Respawn Anchor within 3 blocks]
+    if block :respawn_anchor range 3 {
+        // [Condition 2: Check for Player within 4 blocks]
+        if nearest entity :player range 4 {
+            define should_shield 1
+        }
+    }
+
+    // [Action: Equip and Use Shield]
+    if should_shield == 1 {
+        switch :shield
+        hold_input 1
+        // [Set cooldown to 10 ticks (0.5 seconds) to stabilize input]
+        define shield_cooldown 10
+    }
+
+    // [Else Action: Manage Cooldown and Release]
+    if_not should_shield == 1 {
+        // [If cooldown is active, keep holding shield]
+        if shield_cooldown > 0 {
+            hold_input 1
+            define shield_cooldown shield_cooldown - 1
+        }
+        
+        // [If cooldown is finished, release shield]
+        if shield_cooldown == 0 {
+            release_input 1
+        }
+    }
+}

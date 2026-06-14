@@ -1,0 +1,5 @@
+// author: Cat (@cat123go)
+module breaker
+def desc "Custom Scripted Module"
+
+on right_click if playing if holding #crystal wait 0.05 then input left

@@ -1,0 +1,12 @@
+// author: Practice (@letmepractice)
+module afking
+def desc "AFK auto reconnect script"
+
+on tick if playing if hotbar_has #nether_star {
+    switch #nether_star
+    wait 0.3 input use
+    wait 1.0 if input_active inventory {
+        gui_switch #moss_block
+        input left
+    }
+}

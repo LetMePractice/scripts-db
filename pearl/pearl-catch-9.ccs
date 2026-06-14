@@ -1,0 +1,16 @@
+// author: Practice (@letmepractice)
+module pearl-catch
+def desc "middleclick to pearl-catch with proper timing"
+
+on middle_click if playing {
+    switch :ender_pearl
+    wait 0.1 {
+        input use
+    }
+    wait 0.5 {
+        switch :wind_charge
+    }
+    wait 0.1 {
+        input use
+    }
+}

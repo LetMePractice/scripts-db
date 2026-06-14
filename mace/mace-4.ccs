@@ -1,0 +1,11 @@
+// author: diar' (@diarbaci)
+def module mace
+def desc "everything to do with mace"
+
+on tick if holding #mace if target_entity #player {
+    as target_entity if blocking {
+        switch #axe then input left then switch #mace then input left
+    as target_entity if not blocking {
+        input left }
+    }
+}

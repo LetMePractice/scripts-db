@@ -1,0 +1,28 @@
+// author: Practice (@letmepractice)
+module anchor-place
+def desc "Places a fully charged anchor when you right click with anchor"
+
+on place_block if playing {
+    if holding :respawn_anchor {
+        if hotbar_has :glowstone {
+            wait 0.04
+            switch :glowstone
+        }
+    }
+}
+
+on right_click if playing {
+    if holding :glowstone {
+        if target_block :charged_respawn_anchor {
+            wait 0.07   
+            switch :totem_of_undying
+        }
+    }
+    
+    if holding :totem_of_undying {
+        if target_block :charged_respawn_anchor {
+            wait 0.04 
+            input use
+        }
+    }
+}

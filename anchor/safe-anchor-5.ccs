@@ -1,0 +1,4 @@
+// author: .0n6 (@.0n6)
+module Safe-Anchor
+def desc Safe Anchor using "Y"
+on key_press Y switch #anchor then input right then wait 0.05 then switch #glowstone then input right then wait 0.05 then input sneak then wait 0.05 then input right then wait 0.05 switch #totem

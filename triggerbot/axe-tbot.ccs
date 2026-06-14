@@ -1,0 +1,52 @@
+// author: .0n6 (@.0n6)
+def module Axe-tbot
+def desc "Smart triggerbot: breaks blocking shields, ignores if no axe, auto sword + crits"
+
+on pre_tick if playing {
+if targeting_entity if target_entity :player {
+as client {
+
+        as target_entity if blocking {  
+            if hotbar_has #axe {  
+                switch #axe  
+                wait_random 0.15 
+                    input attack  
+                wait 0.1  
+                if hotbar_has #axe {  
+                    switch #axe
+                }  
+            }  
+        }  
+
+        as target_entity if_not blocking {  
+            if hotbar_has #axe {  
+                switch #axe 
+                wait 0.1  
+                if on_ground if attack_progress >= 0.9 {  
+                input attack
+              
+                }  
+                if falling if_not on_ground if attack_progress >= 0.9 {  
+               input attack  
+                }  
+            }  
+        }  
+    }  
+}
+}
+
+on tick if swimming { 
+   if_not holding #axe {
+      if hotbar_has #axe {  
+         switch #axe
+         wait 0.05
+      }
+   }
+   if holding #axe {
+      as target_entity if_not blocking {
+         if attack_progress >= 0.9 {
+        input attack
+         }
+      }
+   }
+}

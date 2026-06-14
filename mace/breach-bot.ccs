@@ -1,0 +1,26 @@
+// author: Jello (@jello2210)
+def module Breach-bot
+def desc triggerbot + breach swap
+
+on pre_tick if playing if target_entity :player,:armor_stand {
+   if_not blocking {
+      if_not input_active use {
+         if attack_progress >=0.9 {
+            if_not falling if on_ground if holding #sword {
+               input attack
+            }
+            if falling {
+               if hotbar_has :mace[breach] {
+                  switch :mace[breach]
+                  wait 0.02
+                  if holding :mace[breach] {
+                     input attack
+                     wait 0.05
+                  }
+                  switch back
+               }
+            }
+         }
+      }
+   }
+}

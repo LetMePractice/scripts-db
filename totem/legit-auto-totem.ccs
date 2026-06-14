@@ -1,0 +1,22 @@
+// author: NoIwill (@nomore_bs)
+def module legit-auto-totem
+def desc "Automatically replenishes your totems in your inventory"
+
+on totem_pop {
+   if inventory_has #totem {
+      on totem_pop {
+   if inventory_has #totem {
+      if_not input_active inventory {
+         input inventory
+      }
+      wait 0.05 if input_active inventory {
+         gui_swap #totem
+if hotbar_has #air {
+         gui_quickmove #totem 5
+         wait 0.05 if input_active inventory {
+            input inventory
+         }
+      }
+   }
+}
+}

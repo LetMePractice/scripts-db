@@ -1,0 +1,18 @@
+// author: ImproperIssues (@improperissues)
+def module totem-anchor
+def desc "Detonates anchors with totem upon charging it"
+
+on right_click if playing {
+  if target_block :respawn_anchor if holding :glowstone {
+    input lock_cursor
+
+    wait 0.1 {
+      if hotbar_has #totem if target_block :charged_respawn_anchor {
+        switch #totem
+        input use
+      }
+
+      input unlock_cursor
+    }
+  }
+}

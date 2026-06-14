@@ -1,0 +1,5 @@
+// author: Inkompetent (@henri_zockt)
+def module Spear-switch
+def desc "switching spear"
+
+on key_press V if_not blocking switch #spear then input left then wait 0.07 then switch back

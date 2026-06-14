@@ -1,0 +1,5 @@
+// author: Cat (@cat123go)
+module crystal-boom
+def desc right click it will break crystal 
+
+on right_click if playing if holding #crystal if target_block #obsidian,#bedrock input left

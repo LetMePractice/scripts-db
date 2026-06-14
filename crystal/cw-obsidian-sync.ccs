@@ -1,0 +1,19 @@
+// author: Jello (@jello2210)
+def module cw-obsidian-sync
+def desc "Crystal cw on obsidian/bedrock, synced to hurt_time"
+
+on tick if playing {
+    if targeting_block if target_block :obsidian,:bedrock {
+        if targeting_entity {
+            as target_entity if hurt_time <= 1 {
+                switch :end_crystal
+                input use
+            }
+            as target_entity if hurt_time == 0 {
+                wait 0.03
+                damage nearest_entity :end_crystal
+                while 0.05 hurt_time >= 1 { }
+            }
+        }
+    }
+}

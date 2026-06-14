@@ -1,0 +1,13 @@
+// author: NoIwill (@nomore_bs)
+def module cartrestocks
+def desc "restocks carts automatically"
+
+    if hotbar_has #air {
+    if input_active inventory {
+        if hovering_over :tnt_minecart {
+            wait_random 0.1 0.3 
+            gui_quickmove tnt_minecart 7 
+    }
+        }
+    
+}

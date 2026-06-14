@@ -1,0 +1,12 @@
+// author: . (@vsw1ft)
+def module ez rush totem
+def desc "press E to tot"
+
+on key_press e if playing if_not off_holding #totem {
+    if inventory_has #totem {
+        wait 0.05 if input_active inventory {
+            gui_swap #totem 
+       
+        }
+    }
+}

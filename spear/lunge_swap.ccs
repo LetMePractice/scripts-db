@@ -1,0 +1,20 @@
+// author: a Nub (@_anub)
+// @SillyKoyuki
+def module lunge_swap
+def desc "Go Fast"
+
+on left_click {
+  if playing {
+    if hotbar_has #spear[lunge] {
+      if_not targeting_entity {
+        if_not holding #sword,#_axe,#mace {
+          switch #spear 
+          wait 0.1
+          switch back
+        }
+      }
+    }
+  }
+}
+
+i guess

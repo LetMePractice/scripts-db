@@ -1,0 +1,18 @@
+// author: TutlaMC (@tutlamc)
+nvm
+
+Script name  : breach swap
+Description  : breach swap
+
+Generating...
+
+============================================================
+def module breach_swap
+def desc breach swap
+
+on left_click {
+  switch #mace[breach]
+  wait 0.05
+  switch #sword
+}
+============================================================

@@ -1,0 +1,14 @@
+// author: suckyswags (@suckyswags)
+def module auto-strafe-tbot
+def desc "Automatically strafes around the target while attacking with cooldown"
+
+on tick if playing if target_entity :player if holding :diamond_sword execute_period 0.1 {
+    input strafe_left
+    wait 0.02
+    input strafe_right
+    wait 0.02
+    input left
+    input right
+    input left
+    input right
+}

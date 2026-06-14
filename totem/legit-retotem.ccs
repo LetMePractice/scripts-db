@@ -1,0 +1,6 @@
+// author: Cat (@cat123go)
+module legit-retotem
+def desc open inventory and switch totem 
+
+on tick if input_active inventory {
+switch #totem }

@@ -1,0 +1,11 @@
+// author: suckyswags (@suckyswags)
+def module insta-tnt-cart
+def desc "Place rail, TNT minecart, and shoot with bow"
+
+on key_press H if playing {
+    switch :rail
+    input use
+    wait 0.02
+    switch :tnt_minecart
+    input use
+}

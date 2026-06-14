@@ -1,0 +1,9 @@
+// author: anitech (@anitech7742)
+// @anitech7742
+
+def module webassist
+def desc ""
+
+on pre_tick if playing if holding #web if_not block_in_range #web 5.0 if entity_in_range :player 4.8 {
+ as target_entity if hurt_time > 0 as client if targeting_block then input right
+}

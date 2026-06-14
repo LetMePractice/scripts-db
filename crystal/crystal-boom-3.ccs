@@ -1,0 +1,5 @@
+// author: Monke (@monke401)
+module crystal-boom
+def desc "crystals says "BOOM"
+
+on tick if input_active right if target_entity :end_crystal input left }

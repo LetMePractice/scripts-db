@@ -1,0 +1,4 @@
+// author: v0rtexdev. (@v0rtexdev2.)
+def module fast-crystal
+
+on tick if holding #crystal if target_block #obsidian if input_active use input use

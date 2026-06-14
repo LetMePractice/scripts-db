@@ -1,0 +1,48 @@
+// author: NoIwill (@nomore_bs)
+def module miecart-rightclick
+def desc "minecart stuff"
+
+def func flint {
+    switch :flint_and_steel
+      snap_to position ^ ^ ^9
+}
+ def func cross {
+    if holding :flint_and_steel {
+        wait 0.15
+        switch #charged_crossbow
+        snap_to nearest_entity :tnt_minecart 
+        wait_random 0.1 0.3
+        if holding :uncharged_crossbow {
+            hold_input right 1.1
+          }
+          if_not holding :crossbow 
+          switch #crossbow
+          hold_input right 1.1
+        }
+    }
+on right_click {
+    wait 0.01
+    if targeting_block{
+    if target_block :rail {
+
+        if holding :air {
+            wait 0.06
+           func flint  
+           
+        }
+    }
+    }
+}
+
+on right_click {
+    wait 0.1
+    if holding :air {
+        if target_entity :tnt_minecart {
+        if hotbar_has :flint_and_steel {
+        func flint
+        wait 0.1
+        func cross
+        }
+        }
+    }
+}

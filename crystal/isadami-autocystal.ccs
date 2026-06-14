@@ -1,0 +1,21 @@
+// author: I-No-oNe (@i_no_am)
+**Message sent by <@1194530814705287181> Deleted in <#1201661851382071407>**
+def module isadami-autocystal
+def desc "Automaticly place and break crystals"
+
+def func place_crystal {
+  if target_block :obsidian,:bedrock if holding #crystal {
+    input use
+  }
+}
+
+def func break_crystal {
+  if target_entity #crystal {
+    input attack
+  }
+}
+
+on tick {
+  func place_crystal
+  func break_crystal
+}

@@ -1,0 +1,4 @@
+// author: Inkompetent (@henri_zockt)
+module s-tap
+def desc S tap 
+on left_click if holding #sword,#axe if target_entity :player input backward``` (Someone please add brackets to make it work fine and not go 857436 blocks backwards 💀)

@@ -1,0 +1,25 @@
+// author: ? (@_sp33d_94)
+def module auto_totem_legit
+def desc "Stable Legit Auto Totem 0.3"
+
+on tick {
+
+    if_not off_holding #totem_of_undying {
+
+        if inventory_has #totem_of_undying {
+
+            input inventory
+            wait 0.3
+
+            gui_swap #totem_of_undying offhand
+            wait 0.3
+
+            input inventory
+            wait 0.3
+
+        }
+
+    }
+
+}
+That's working?

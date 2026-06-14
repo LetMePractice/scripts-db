@@ -1,0 +1,6 @@
+// author: 𝑀𝐼𝒜 :3! (@mia2cuteee)
+can any1 help me make it so this script wont trigger while im in chat 
+ module anchor
+def desc anchor
+
+on key_press R switch #anchor then wait 0.001 then input right then wait 0.05 then switch #glowstone then wait 0.05 then input right then wait 0.05 then switch #anchor then input right

@@ -1,0 +1,21 @@
+// author: wxund (@wounddup)
+module Speed-Bridge-Crouch
+def desc "Crouch at edge when moving backward with blocks only; randomize 15-35 CPS using chance"
+
+on tick {
+   if playing if_not in_screen {
+      if input_active backward {
+         if_not holding #sword if_not holding #axe if_not holding #pickaxe if_not holding #bow if_not holding :end_crystal if_not holding :water_bucket if_not holding :totem_of_undying if_not holding #splash_potion if_not holding #pearl if_not holding #firework {
+            if_not block ~ ~-1 ~ #air if block ^0 ^0 ^-1 #air if block ^0 ^-1 ^-1 #air {
+               hold_input sneak 0.2
+               if chance_of 75 { input use }
+               if chance_of 70 { wait 0.015 input use }
+               if chance_of 30 { wait 0.030 input use }
+            }
+         }
+      }
+   }
+   if_not input_active backward {
+      hold_input cancel
+   }
+}

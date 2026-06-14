@@ -1,0 +1,34 @@
+// author: Jat (@jat9119)
+this is my main one its kinda bummy tho ```def module trigger-bot
+def desc trigger bot simple and easy attacks players
+
+on tick {
+   if playing {
+      if holding #sword {
+        if attack_progress >=0.9 {
+      if target_entity :player {
+         execute_random {
+            func miss
+            func miss
+            func hit
+            func hit
+            func hit
+            func hit
+         }
+      }
+         }
+      }
+   }
+}
+
+def func miss {
+   wait_random 0.1 0.15 {
+      input left
+   }
+}
+
+def func hit {
+    if target_entity :player {
+      input left
+   }
+}

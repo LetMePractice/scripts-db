@@ -1,0 +1,65 @@
+// author: T For Tighnari (@silicon06520)
+def module autosword
+def desc "simple autosword"
+
+//@silicon DO NOT USE THIS IN SERVERS, YOU WILL GET BANNED AS THIS IS INCREDIBLY BLATANT, I GAVE MY WARNING USE AT YOUR OWN RISK
+
+on pre_tick if playing {
+    turn_to nearest_entity :player aim body speed 40
+}
+
+on tick if playing {
+    if_not entity_in_range :player 3 {
+        input key w
+    }
+}
+
+on tick if playing {
+    if entity_in_range :player 3 {
+        if target_entity :player {
+            function hit
+              execute_random {
+                input key s
+                input key space
+                input key a 
+                input key d
+                input key w
+              }
+        }
+    }
+}
+
+on damage if playing {
+    if entity_in_range :player 3 {
+        if chance_of 80 {
+            if falling {
+                if target_entity :player {
+                    as target_entity if_not blocking {
+                        function hit
+                    }
+                }
+            }
+        }
+    }
+}
+
+on damage {
+    if on_ground {
+        if chance_of 70 {
+            input jump
+        }
+    }
+}
+
+def func hit {
+    if attack_progress >= 0.8500 then input left
+    if attack_progress >= 0.8611 then input left
+    if attack_progress >= 0.8667 then input left
+    if attack_progress >= 0.8722 then input left
+    if attack_progress >= 0.8778 then input left
+    if attack_progress >= 0.8833 then input left
+    if attack_progress >= 0.8889 then input left
+    if attack_progress >= 0.8944 then input left
+    if attack_progress >= 0.9000 then input left
+    if attack_progress >= 0.9111 then input left
+}

@@ -1,0 +1,15 @@
+// author: GameChanger999 (@gamechanger999)
+I'm trying to make a spear lunge module but I don't understand why it isn't working
+
+def module spear_lunge
+def desc "Spear lunge"
+
+on key_press x if playing {
+    if hotbar_has #Spear if hotbar_has #windcharge{
+        switch #windcharge
+        
+        wait 0.30 switch #Spear
+            wait 0.01
+        switch #windcharge
+    }
+}

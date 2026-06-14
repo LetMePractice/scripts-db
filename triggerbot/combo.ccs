@@ -1,0 +1,19 @@
+// author: .0n6 (@.0n6)
+module combo
+def desc "combo goat"
+
+on tick {
+ if playing {
+  if holding #sword {
+   if sprinting {
+    if entity_in_range :player 3.3 {
+     if attack_progress >= 0.9 {
+      input left
+     }
+    }
+   }
+  }
+ }
+}
+
+Added player as entity in range range is 3.3. Added attack progress so it dosent spam and lastly closed the brackets you left them open. After every "if" line there should be a bracket "{" and then the close bracket after the code for it "}"

@@ -1,0 +1,11 @@
+// author: ᴋᴢʟʏᴛʜ (@kzlyth)
+this: 
+//@anonymous
+def module totem_offhand
+def desc "Press i to put a Totem in offhand"
+
+on key_press f if playing {
+   if inventory_has #totem {
+      gui_swap #totem offhand
+   }
+}

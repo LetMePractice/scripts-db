@@ -1,0 +1,6 @@
+// author: Cat (@cat123go)
+Anyone can make this better ?/ Not make your fov look weird 
+ module aim-assist
+def desc Aim Assist 
+
+on tick if holding #sword turn_to nearest_entity :player

@@ -1,0 +1,33 @@
+// author: ImproperIssues (@improperissues)
+def module mob-farm
+def desc "For your survival mob farms"
+
+on key_press c if input_active key x {      // keybind input X+C
+
+    if in_screen {
+        func deleteBows
+    }
+    
+}
+
+def func deleteBows {
+    gui_switch :bow
+    wait 0.05
+    func deleteNextBow
+}
+
+def func deleteNextBow {
+    if inventory_has :bow {
+        send "You have a bow in your own inventory. Job cancelled!"
+    }
+    !if inventory_has :bow {
+        wait 0.05 if hovering_over :bow {
+            send "-> found bow, dropping it..."
+            input key 1             // my drop item key
+            wait 0.05
+            gui_switch :bow         // target new bow
+            wait 0.05
+            func deleteNextBow      // recursive call
+        }
+    }
+}

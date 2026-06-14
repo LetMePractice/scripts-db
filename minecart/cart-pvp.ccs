@@ -1,0 +1,5 @@
+// author: Cat (@cat123go)
+module cart-pvp
+def desc place rail and the script will place tnt minecart for you and blow it up 👍
+
+on place_block if holding #rail switch #tnt then wait 0.001 then input right then wait 0.05 then switch :bow then hold_input use 0.3

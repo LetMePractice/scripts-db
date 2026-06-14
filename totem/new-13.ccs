@@ -1,0 +1,60 @@
+// author: Jello (@jello2210)
+def module new-13
+def desc 
+
+on totem_pop {
+   if inventory_has #totem {
+      if_not input_active inventory {
+         input inventory
+      }
+      wait_random 0.05 0.1 if input_active inventory {
+         gui_swap #totem
+         wait_random 0.05 0.1 if input_active inventory {
+            input inventory
+  gui_swap #totem 
+wait_random 0.05 0.1 {
+        gui_quickmove #totem 7
+        switch #totem
+ wait_random 0.05 0.1 {
+        gui_swap #totem 
+ wait_random 0.05 0.1 {
+        gui_quickmove #totem 7
+        switch #totem
+            }
+        }
+        }
+         }
+      }
+   }
+}
+      on key_press e if playing {
+    switch #totem
+}
+ 
+    }
+
+
+    gui_swap #totem 
+wait_random 0.05 0.1 {
+        gui_quickmove #totem 7
+        switch #totem
+        }
+    }
+ 
+on totem_pop if input_active inventory {
+  wait_random 0.05 0.1 {
+        gui_swap #totem 
+ wait_random 0.05 0.1 {
+        gui_quickmove #totem 7
+        switch #totem
+            }
+        }
+    }
+
+on key_press e {
+    gui_swap #totem 
+wait_random 0.05 0.1 {
+        gui_quickmove #totem 7
+        switch #totem
+        }
+    }

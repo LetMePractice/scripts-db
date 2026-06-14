@@ -1,0 +1,5 @@
+// author: Cat (@cat123go)
+module Prevent_2
+def desc Prevent from Francium (removes ability to place glowstone on blocks other than anchors)
+
+on right_click if playing if holding :glowstone if targeting_block !if target_block #air,:charged_respawn_anchor,:uncharged_respawn_anchor then cancel_packet c2s playerInteractBlock

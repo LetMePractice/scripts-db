@@ -1,0 +1,5 @@
+// author: LoopholeMC (@loopholemc)
+def module v3-auto-mace
+def desc "this s**t not available"
+
+on pre_tick while 0.5 input_active key z {

@@ -1,0 +1,24 @@
+// author: Deleted User (@Deleted User)
+def module hover-refill
+//Jat9119
+def desc "Simple Hobar potion hover refill"
+
+on pre_tick {
+   if input_active inventory {
+      if hovering_over :splash_potion {
+         if inventory_has :splash_potion {
+               if_not hotbar_has :totem_of_undying {
+                  input key q
+                  wait 0.15
+               }
+            }
+         }
+      }
+   }
+}
+
+on key_press E {
+   if_not in_screen {
+      switch 7 
+   }
+}

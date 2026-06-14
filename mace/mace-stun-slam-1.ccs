@@ -1,0 +1,14 @@
+// author: ⁷⁵³ 𝖒𝖚𝖋𝟒𝖑𝖉 † (@aevill)
+Def module Mace-Stun-Slam
+def desc stun slam w axe mace thing 
+
+on left_click (
+      if holding   #axe ( 
+          if hotbar_has #mace (
+                input attack
+                wait random 0.01 0.015 switch #mace
+                 wait random 0.02 0.025 input attack 
+                 wait random 0.3 0.4 switch #axe 
+           )
+      )
+)

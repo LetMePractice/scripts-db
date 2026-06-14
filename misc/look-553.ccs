@@ -1,0 +1,14 @@
+// author: Jello (@jello2210)
+def module look-553
+def desc "Looks down, right clicks twice, then switches to sword on key press C"
+
+on key_press c if playing {
+   snap_to any_block
+   input right
+   wait 0.3 {
+      input right
+      wait 0.2 {
+         switch #sword
+      }
+   }
+}

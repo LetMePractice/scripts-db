@@ -1,0 +1,11 @@
+// author: Jat (@jat9119)
+Im trying to make a auto totem script that moves totems into slot 9 and offhand to look like your legit double handing totems but I cant figure out how to make it bypass ``` def module double-hand-auto-totem
+def desc "Custom Scripted Module"
+
+on tick if input_active inventory {
+    switch #totem
+    wait 0.1 gui_quickmove #totem 9
+    if off_holding #air {
+        wait 0.3 gui_swap #totem
+    }
+}

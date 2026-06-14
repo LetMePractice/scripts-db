@@ -1,0 +1,19 @@
+// author: Practice (@letmepractice)
+module mace
+def desc "Everything to do with mace"
+
+on tick if playing if holding #mace {
+    if target_entity :player {
+        as target_entity if blocking {
+            switch #axe
+            wait 0.05 input left
+            switch #mace
+            input left
+        }
+        as target_entity if_not blocking {
+            input left
+        }
+    }
+}
+
+Idk bro , I'm outdated 🙃

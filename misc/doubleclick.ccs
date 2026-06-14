@@ -1,0 +1,12 @@
+// author: Spis (@spis.s)
+// @anonymous
+def module DoubleClick
+def desc "Double clicks for you"
+
+on module_enable {
+
+}
+
+on module_disable {
+
+}on key_press q input q wait 0.2 input q will this work? my hit button is Q so

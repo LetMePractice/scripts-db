@@ -1,0 +1,28 @@
+// author: Jat (@jat9119)
+module safe-anchor
+def desc "Custom Scripted Module"
+
+on tick {
+   if playing {
+      if holding #anchor {
+         if target_block :uncharged_respawn_anchor {
+         switch :glowstone
+         }
+      }
+      if holding :glowstone {
+         if target_block :uncharged_respawn_anchor {
+            input use
+         }
+         if target_block :charged_respawn_anchor {
+            snap_to position ^ ^ ^5 then wait 0.05 input right
+         }
+         if holding :glowstone {
+            if target_block :glowstone {
+               switch :totem_of_undying 
+               interact nearest_block :charged_respawn_anchor
+            }
+         }
+      }
+
+   }
+}

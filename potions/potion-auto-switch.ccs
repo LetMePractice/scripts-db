@@ -1,0 +1,10 @@
+// author: Practice (@letmepractice)
+module potion-auto-switch
+def desc "Switches to slot 8 when you get regeneration"
+
+on tick 5 if playing {
+    if effect_duration :regeneration >= 1 {
+        switch 7
+    }
+}
+Something like this, idk the exact effect name

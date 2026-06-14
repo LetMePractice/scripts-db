@@ -1,0 +1,12 @@
+// author: T For Tighnari (@silicon06520)
+def module spear lunge
+def desc "spear lunge attribute swap"
+
+on right_click if playing {
+  if holding #spear[lunge] {
+    switch slot 9 //this can be any slot just make sure its not the same slot as your spear
+    wait 0.05 {
+      switch back
+    }
+  }
+}

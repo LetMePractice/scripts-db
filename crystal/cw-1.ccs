@@ -1,0 +1,36 @@
+// author: Jat (@jat9119)
+Auto places crystals vary fast using kbp. Must use a mod that lets you bind multiple keys to an action, in this script I use `k` as my second `use` bind
+
+This is the mod I use: https://modrinth.com/mod/multi-key-bindings
+
+
+ module cw
+def desc "Custom Scripted Module"
+on pre_tick {
+   if playing {
+      if holding #crystal {
+         if target_block #obs,:bedrock {
+            if input_active right {
+               input key k
+            }
+            if_not input_active use {
+               input key k
+            }
+         }
+      }
+   }
+}
+
+on left_click {
+   if playing {
+      if target_entity #crystal {
+         if_not input_active use {
+         wait 0.05 {
+            if target_block #obs,:bedrock {
+            input key k
+               }
+            }
+         }
+      }
+   }
+}

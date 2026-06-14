@@ -1,0 +1,6 @@
+// author: Cat (@cat123go)
+module breaker
+def desc break wool with shears and get back
+
+on left_click if playing if holding :shears if target_block #wool
+on block_broken if target_block #wool switch back

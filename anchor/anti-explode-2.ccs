@@ -1,0 +1,13 @@
+// author: <3MyChoppa (@lovemychoppa)
+def module anti-explode
+def desc "Custom Scripted Module"
+
+on tick {
+    if holding #crystal,#anchor {
+            as nearest_entity :player if dead {
+            wait 0.1
+            input inventory
+            wait 5
+        }
+    }
+}

@@ -1,0 +1,12 @@
+// author: Deleted User (@Deleted User)
+def module AnchorExploder
+def desc "Explode Anchor if seeing"
+
+on tick {
+   if playing {
+      !if target_block #charged_respawn_anchor {
+         switch #totem
+             input_left
+            }
+         }
+}

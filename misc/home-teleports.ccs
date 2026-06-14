@@ -1,0 +1,11 @@
+// author: Practice (@letmepractice)
+module home-teleports
+def desc "H for /home | T for /team home"
+
+on key_press h if playing {
+    say "/home"
+}
+
+on key_press t if playing {
+    say "/team home"
+}

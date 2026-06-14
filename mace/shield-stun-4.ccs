@@ -1,0 +1,22 @@
+// author: tieronepvprr (@tieronepvprr)
+def module shield-stun
+def desc t1
+
+on left_click if playing {
+    if holding #sword,#_axe {
+        if target_entity :player {
+            as target_entity if blocking {
+                if hotbar_has #_axe {
+                    if attack_progress >= 0.9 {
+                        switch #_axe
+                        wait_random 0.06 0.09
+                        input attack
+                        wait 0.03
+                        input attack
+                        switch #sword
+                    }
+                }
+            }
+        }
+    }
+}

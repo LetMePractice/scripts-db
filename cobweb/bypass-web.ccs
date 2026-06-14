@@ -1,0 +1,14 @@
+// author: Jello (@jello2210)
+// Cobweb on most ground blocks (blacklist bedrock/obsidian)
+def module bypass-web
+def desc "Places a cobweb unless target is bedrock/obsidian"
+
+on right_click if playing if holding #sword if targeting_block if target_block !:bedrock,:obsidian {
+    if hotbar_has :cobweb {
+        switch :cobweb
+        wait 0.05
+        input use
+        wait 0.05
+        switch #sword
+    }
+}

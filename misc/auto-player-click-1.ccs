@@ -1,0 +1,9 @@
+// author: Jello (@jello2210)
+def module auto-player-click
+def desc "yeah"
+
+on mouse_click 1 {
+  if playing if target_entity :player {
+      input left
+  }
+}

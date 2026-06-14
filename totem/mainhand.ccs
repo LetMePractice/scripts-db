@@ -1,0 +1,19 @@
+// author: suckyswags (@suckyswags)
+def module mainhand
+def desc "auto totem5"
+
+on key_press e if playing {
+   if inventory_has #totem {
+      if_not holding #totem {
+         if_not input_active inventory {
+            input inventory
+            wait 0.08
+         }
+         gui_quickmove #totem 4
+         wait 0.5
+         if input_active inventory {
+            input inventory
+         }
+      }
+   }
+}

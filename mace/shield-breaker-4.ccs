@@ -1,0 +1,23 @@
+// author: Deleted User (@Deleted User)
+def module shield-breaker
+def desc "Breaks shields on blocking players"
+
+on tick 2 {
+  if playing {
+    !if blocking {
+      if hotbar_has #_axe {
+        if target_entity :player,:armor_stand {
+          as target_entity if blocking {
+            !if holding #_axe {
+              switch #_axe
+            }
+  
+         input attack
+                switch back
+              }
+     
+        }
+      }
+    }
+  }
+}

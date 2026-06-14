@@ -1,0 +1,7 @@
+// author: Jello (@jello2210)
+module hitthrough
+def desc "Lets you hit while gapping, shielding, and loading bows"
+
+on left_click {
+    input attack
+}

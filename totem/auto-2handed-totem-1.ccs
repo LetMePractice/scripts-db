@@ -1,0 +1,23 @@
+// author: Jat (@jat9119)
+<@639481628342747177> ```def module Auto-2Handed-totem
+def desc "Custom Scripted Module"
+
+on totem_pop if input_active inventory {
+   wait 0.1 {
+      func replenish
+   }
+}
+
+on key_press e if playing {
+   func replenish
+}
+
+def func replenish {
+   switch 9
+   if off_holding #air {
+      gui_swap #totem
+   }
+   wait 0.1 {
+      gui_quickmove #totem 9
+   }
+}

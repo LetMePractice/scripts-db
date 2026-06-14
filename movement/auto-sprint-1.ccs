@@ -1,0 +1,11 @@
+// author: zenyro (@zenyro)
+def module auto-sprint
+def desc "Keeps sprint always active"
+
+on tick {
+    every 0.5 {
+        if in_game {
+            input sprint
+        }
+    }
+}

@@ -1,0 +1,23 @@
+// author: GameChanger999 (@gamechanger999)
+I was wondering if someone could help me figure out why this isn't working.
+
+def module strength-windcharge
+def desc "switches to strength pot then throws a windcharge to catch it mid air"
+
+on key_press y if playing
+   if hotbar_has #strength_potion if hotbar_has #wind_charge {
+    if gliding{
+
+      switch #strength_potion
+      input use
+
+      wait 0.10 {
+         switch #wind_charge
+         input use
+
+         wait 0.03 {
+            switch back
+         }
+      }
+   }
+}

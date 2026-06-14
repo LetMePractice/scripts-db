@@ -1,0 +1,15 @@
+// author: suckyswags (@suckyswags)
+is it possible to make crossbow cart script?
+
+with this
+
+def module tnt-minecart-insta
+
+on key_press g {
+    switch :rail
+    input use
+    wait 0.02 switch :tnt_minecart
+    wait 0.03 input use
+}
+
+but how do I make it place fire automatically in a different block

@@ -1,0 +1,19 @@
+// author: Deleted User (@Deleted User)
+def module og-crystal
+def desc "fast crystal with custom key"
+
+on tick if playing {
+   if target_block #obsidian {
+      switch #crystal
+      input left
+   }
+}
+
+on pre_tick if playing {
+  if holding #crystal {
+    if target_block #obsidian {
+    input left
+    wait 0.001 {
+    input left
+   }
+}

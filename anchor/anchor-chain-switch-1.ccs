@@ -1,0 +1,19 @@
+// author: Mawqz (@mawkrrr)
+def module Anchor-Chain-Switch
+def desc After placing anchor switch to glowstone, after glowstone click switch to totem
+
+; Step 1: Place anchor → switch to glowstone
+on right_click {
+    if holding #anchor {
+        wait 0.03
+        switch #glowstone
+    }
+}
+
+; Step 2: Use glowstone → switch to totem
+on right_click {
+    if holding #glowstone {
+        wait 0.03
+        switch #totem
+    }
+}

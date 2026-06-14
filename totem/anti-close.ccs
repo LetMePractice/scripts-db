@@ -1,0 +1,13 @@
+// author: Jat (@jat9119)
+anyone know why this doesnt work? ```def module anti-close
+def desc "Custom Scripted Module"
+
+on packet_send closeHandledScreen {
+    if input_active inventory {
+        if inventory_has #totem {
+            if_not off_holding #totem {
+                cancel_packet c2s closeHandledScreen
+            }
+        }
+    }
+}

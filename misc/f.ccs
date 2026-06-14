@@ -1,0 +1,7 @@
+// author: Rusky (@ruskyyy_)
+def module F
+def desc "swap to double"
+on key_press E {
+wait_random 0.08 0.1
+input key F 
+}

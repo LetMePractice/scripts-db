@@ -1,0 +1,27 @@
+// author: Spis (@spis.s)
+Anyone can help me fix this ? def module DoubleAutoAnchor
+def desc Places and explodes two anchors super fast
+
+on tick {
+  if playing {
+    if hotbar_has #respawn_anchor if hotbar_has #glowstone {
+      if target_block #air {
+        switch #respawn_anchor
+        input use
+        wait 0.01
+        input use
+        wait 0.01
+      }
+      if target_block #respawn_anchor {
+        switch #glowstone
+        input use
+        wait 0.01
+        input use
+        wait 0.01
+        switch #sword
+        input attack
+      }
+    }
+  }
+}
+im a bit dumb and brainless when it comes to making this type of stuff

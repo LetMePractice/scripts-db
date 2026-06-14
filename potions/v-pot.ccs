@@ -1,0 +1,10 @@
+// author: wxund (@wounddup)
+module V-Pot
+def desc "if your at 8 or less hearts, press v to throw a heal pot"
+
+on key_press V !if in_screen if playing if health <= 16 if hotbar_has #splash_potion {
+   switch #splash_potion
+   wait 0.005 input use
+   wait_random 0.08 0.1 switch back
+}
+for potting in nethpot/diapot

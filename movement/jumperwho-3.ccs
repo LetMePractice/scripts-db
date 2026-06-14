@@ -1,0 +1,14 @@
+// author: drew (@just.drew.)
+def module jumperwho
+def desc "1.21 sword jump reset"
+
+on tick {
+    if sprinting {
+        if on_ground {
+            if damaged_recently {
+                wait_random 0.01 0.05
+                input jump
+            }
+        }
+    }
+}

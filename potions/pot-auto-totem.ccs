@@ -1,0 +1,17 @@
+// author: Jello (@jello2210)
+def module pot-Auto-totem
+def desc "When your health is at 4.5 or lower it will automatically switch to the totem in your hotbar and press the offhand key"
+
+on damage {
+   if playing {
+      if entity_in_range :player 3.5 {
+         if health <=4 {
+            if hotbar_has #totem {
+               switch #totem
+               input key q // change to your offhand key
+               wait 0.05 switch back
+            }
+         }
+      }
+   }
+}

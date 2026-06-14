@@ -1,0 +1,24 @@
+// author: suckyswags (@suckyswags)
+<@1250828225161068674> can u fix this
+
+``def module auto-buff-look
+def desc "Auto buff + look ground"
+
+on key_press B {
+    turn_to polar 90 0
+
+    if hotbar_has :strength_potion {
+        switch :strength_potion
+        input use
+    }
+
+    if hotbar_has :speed_potion {
+        switch :speed_potion
+        input use
+    }
+
+    if hotbar_has :fire_resistance_potion {
+        switch :fire_resistance_potion
+        input use
+    }
+}``

@@ -1,0 +1,58 @@
+// author: RafaIshere (@rafaishere77)
+def module clutch
+def desc "Auto clutch with water bucket, web, boat and berries when falling"
+
+def func water_clutch {
+    if hotbar_has :water_bucket {
+        switch :water_bucket
+        snap_to any_block then input use
+    }
+}
+
+def func web_clutch {
+    if hotbar_has :cobweb {
+        switch :cobweb
+        snap_to any_block then input use
+    }
+}
+
+def func boat_clutch {
+    if hotbar_has #boat {
+        switch #boat
+        snap_to any_block then input use
+    }
+}
+
+def func berry_clutch {
+    if hotbar_has :sweet_berries {
+        switch :sweet_berries
+        snap_to any_block then input use
+    }
+}
+
+on tick {
+    if playing {
+        if_not on_ground {
+            if falling {
+                if vel_y <=-0.9 {
+                    if hotbar_has :water_bucket {
+                        func water_clutch
+                    }
+                    if_not hotbar_has :water_bucket {
+                        if hotbar_has :cobweb {
+                            func web_clutch
+                        }
+                        if_not hotbar_has :cobweb {
+                            if hotbar_has #boat {
+                                func boat_clutch
+                            }
+                            if_not hotbar_has #boat {
+                                func berry_clutch
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

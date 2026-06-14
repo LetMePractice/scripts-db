@@ -1,0 +1,6 @@
+// author: Velidas (@dasukofreak)
+def module anchor
+def desc anchor
+
+on key_press R if playing switch #anchor then wait 0.01 then input right then wait 0.06 then switch #glowstone then wait 0.06 then input right then wait 0.06 then switch #anchor then input right
+Anyone know why this is detected? flags ACs

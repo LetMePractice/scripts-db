@@ -1,0 +1,22 @@
+// author: Jello (@jello2210)
+def module advanced-shield-breaker
+def desc "A shield breaker"
+
+on left_click {
+    if playing {
+        if holding #sword,#_axe {
+            if_not blocking {
+                if hotbar_has #_axe {
+                    if target_entity :player {
+                        as target_entity
+                        if blocking {
+                            switch #_axe
+                            wait_random 0.01 0.02 input attack
+                            wait 0.03 switch back
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

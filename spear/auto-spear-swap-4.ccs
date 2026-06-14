@@ -1,0 +1,20 @@
+// author: b8mboclat (@_ra5e)
+def module auto-spear-swap
+def desc "Spear Ability Swap by KleckserHD"
+
+on tick if playing {
+   if holding #wind_charge {
+     if holding #golden_apple {
+       if input_active left {
+          if hotbar_has #spear {
+            switch #spear
+            wait 0.05
+            input left
+            wait 0.05
+            switch #golden_apple
+            }
+         }
+      }
+   }
+}
+ anyone know why this doesnt work? doesnt swap to spear

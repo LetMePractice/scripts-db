@@ -1,0 +1,10 @@
+// author: Cat (@cat123go)
+def module silent-totem
+def desc hit with a totem a player and they will take the same amount as with sword
+
+on left_click if playing {
+  if holding #totem if target_entity :player {
+    switch #sword
+    wait 0.05 switch #totem 
+  }
+}

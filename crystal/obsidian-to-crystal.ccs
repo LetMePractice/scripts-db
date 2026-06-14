@@ -1,0 +1,9 @@
+// author: ImproperIssues (@improperissues)
+def module obsidian-to-crystal
+def desc "for Aureus"
+
+on right_click if_not in_screen {
+  if holding #anchor if hotbar_has #crystal {
+    wait 0.05 switch #crystal
+  }
+}

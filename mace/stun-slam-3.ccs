@@ -1,0 +1,10 @@
+// author: suckyswags (@suckyswags)
+// @custom
+def module stun-slam
+def desc "Diamond Axe disables shield, Netherite Axe hits immediately after"
+
+on left_click if holding :diamond_axe {
+    wait 0.02 input left
+    wait 0.05 switch :netherite_axe
+    wait 0.02 input left
+}

@@ -1,0 +1,12 @@
+// author: Deleted User (@Deleted User)
+def module axe-mace-switcher
+def description Break shield with axe then swap to mace and smack
+
+on tick:
+    if target_in_range 5:
+        if target_is_shielding:
+            switch_to axe
+            attack
+            wait 1 tick
+            switch_to mace
+            attack

@@ -1,0 +1,11 @@
+// author: ImproperIssues (@improperissues)
+def module friend-trigger-bot
+def desc "Hits every entity except for players"
+
+on tick if playing {
+  if targeting_entity !if target_entity :player {
+    if attack_progress >=0.9 if chance_of 75 {
+      input attack
+    }
+  }
+}

@@ -1,0 +1,11 @@
+// author: Jello (@jello2210)
+def module anti-explode
+def desc "Custom Scripted Module"
+
+on tick {
+    if holding #crystal,#anchor {
+        as nearest_entity :player if dead {
+            input chat
+        }
+    }
+}

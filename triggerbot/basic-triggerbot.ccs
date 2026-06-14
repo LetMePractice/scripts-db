@@ -1,0 +1,56 @@
+// author: T For Tighnari (@silicon06520)
+def module basic triggerbot
+def module "triggerbot that uses shield stunning as shield breaker comes with a hitselect i havent tested would appreciate if somebody could test for me"
+
+
+on tick if playing {
+  if holding #sword,#axe {
+    if attack_progress >= 0.90 {
+      if target_entity :player {
+        as target_entity if_not blocking {
+          input left
+        }
+        as target_entity if blocking {
+          switch #axe
+          wait_random 0.02 0.04 {
+            input left
+            wait_random 0.02 0.07 {
+              input left
+              wait_random 0.02 0.04 {
+                switch back
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+on damage {
+  if falling {
+     if attack_progress >= 0.85 {
+       if holding #sword,axe {
+         if target_entity :player {
+           as target_entity if_not blocking {
+              wait 0.15 {
+                input left
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+on damage {
+  if moving {
+    if_not falling {
+      if chance_of 70 {
+        wait_random 0.01 0.03 {
+         input jump
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,16 @@
+// author: cyde (@cyde)
+def module glowstone-anchor
+def desc "Left click block with glowstone to place anchor"
+
+
+on right_click {
+    if holding :glowstone {
+        if hotbar_has #anchor
+        switch #anchor
+        wait_random 0.01 0.3
+        input use
+        if hotbar_has #glowstone
+        switch #glowstone
+        input use
+    }
+}

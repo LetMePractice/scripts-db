@@ -1,0 +1,18 @@
+// author: Jat (@jat9119)
+Crouches at the edges of blocks
+
+ module auto-sneak
+def desc "Custom Scripted Module"
+on pre_tick {
+    if playing {
+        if on_ground {
+            if block ~ ~-1 ~ :air {
+                if moving {
+                    if_not input_active jump {
+                        input sneak
+                    }
+                }   
+            }
+        }
+    }
+}

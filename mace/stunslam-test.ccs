@@ -1,0 +1,43 @@
+// author: lyka (@yvl_lucas)
+def module stunslam-test
+def desc "Custom Scripted Module"
+
+on module_enable {
+
+}
+
+on module_disable {
+
+}
+def desc "fall combo with stun"
+
+on tick {
+   if playing {
+      if falling {
+         if holding #sword,#_axe {
+            if target_entity :player {
+               as target_entity if blocking {
+                    if hotbar_has #_axe 
+                     input key 2
+                     wait_random 0.005 0.015
+                     input left
+                     wait_random 0.01 0.015
+                     switch #mace
+                     wait_random 0.02 0.025
+                     input left
+                     wait_random 0.3 0.4
+                     input key 1
+                     wait 2
+                }
+                  as target_entity if_not blocking {
+                     switch #mace
+                     input left
+                     wait_random 0.3 0.4
+                     switch #sword
+                     wait 2
+                  }
+               }
+            }
+         }
+      }
+   }

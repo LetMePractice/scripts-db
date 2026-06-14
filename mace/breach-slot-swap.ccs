@@ -1,0 +1,17 @@
+// author: Practice (@letmepractice)
+module breach-slot-swap
+def desc "Breach mace in slot 4 | Hardcoded slot number"
+
+on left_click if playing {
+    if holding #sword {
+        if targeting_entity {
+            if target_entity :player {
+                if attack_progress >=0.98 {
+                    switch 4
+                    wait 0.05 switch back
+                }
+            }
+        }
+    }
+}
+<@1341440230963548293> the slot specific one, if you need

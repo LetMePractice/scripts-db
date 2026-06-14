@@ -1,0 +1,43 @@
+// author: Nighty (@standlesss11)
+def module Marlow-Pro-Ultimate-Safe-Anchor
+def desc "Marlow Safe Anchor: Anchor, Sneak, Glowstone, Release, Charge, Blast, Totem; hold Y"
+
+on_key_hold Y {
+    if playing {
+        if target_block && block != air {
+
+            if hotbar_has("respawn_anchor") {
+                switch_hotbar("respawn_anchor")
+                input right
+                wait random(14, 16)
+            }
+
+            hold_key("sneak")
+            wait random(6, 10)
+
+            if hotbar_has("glowstone") {
+                switch_hotbar("glowstone")
+                input right
+                wait random(14, 16)
+            }
+
+            release_key("sneak")
+            wait random(6, 10)
+
+            if hotbar_has("glowstone") {
+                switch_hotbar("glowstone")
+                input right
+                wait random(14, 16)
+            }
+
+            input right
+            wait random(14, 16)
+
+            if hotbar_has("totem_of_undying") {
+                switch_hotbar("totem_of_undying")
+            }
+        }
+    }
+}
+
+I used AI but I don't think it works please help me

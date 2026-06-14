@@ -1,0 +1,8 @@
+// author: pomojz (@pomojz)
+<@1175455408538800205> I just cant figure out how to make the obi placing just a little bit slower can u help me?
+
+def module easy hit crystal i guess
+def desc "easier to hitr crystal ig"
+
+
+on tick if playing if holding #obsidian if input_active right input use

@@ -1,0 +1,15 @@
+// author: ccsoured_ (@ccsoured_)
+def module jumperwho
+def desc "legit ahh ajr"
+
+on damage {
+    if chance_of 10000 {
+        if on_ground {
+            if_not swimming {
+                if_not gliding {
+                    input jump
+                }
+            }
+        }
+    }
+}

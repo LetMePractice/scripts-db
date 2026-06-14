@@ -1,0 +1,10 @@
+// author: wxund (@wounddup)
+def module axe-momentum
+
+on key_press r if playing if attack_progress >=0.9 {
+   switch #axe
+   input attack
+   input jump
+   switch #sword
+   input attack
+}

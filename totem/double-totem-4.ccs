@@ -1,0 +1,12 @@
+// author: Warlock Electric Guitar (@ru3k)
+yea... I use this script // @itzispdyer
+def module double-totem
+def desc "swap to d"
+
+on totem_pop execute_period 0.35 {
+   gui_swap #totem
+   gui_quickmove #totem 7
+   switch #totem
+}
+
+and I don't know why the owner still don't benned me

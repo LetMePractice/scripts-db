@@ -1,0 +1,30 @@
+// author: Jello (@jello2210)
+def module trigger-bot
+def desc "Trigger bot that works even on hypixel"
+3
+4
+5
+6
+7
+
+on tick if playing {
+
+if target_entity :player,
+
+: zombie, : creeper, : enderman,
+
+: skeleton, #bat, #piglin f
+
+if holding #sword, #_ _axe,
+
+#mace, #stick f
+
+if attack_progress >=0.7
+
+if chance_of 99 {
+
+input left if chance_of
+
+40 input left
+
+}}}}

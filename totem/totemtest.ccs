@@ -1,0 +1,14 @@
+// author: Jat (@jat9119)
+my fix is ```def module totemTest
+def desc "Custom Scripted Module"
+
+on tick on key_press e {
+    switch #totem
+}
+if input_active inventory {
+    gui_quickmove #totem 9
+    if off_holding #air,#shield {
+        gui_swap #totem
+    }
+}
+ and if there are 2 totems in the players hot bar it switches to the one closest to 1 so iif the player gets popped the player will only have a totem in their offhand

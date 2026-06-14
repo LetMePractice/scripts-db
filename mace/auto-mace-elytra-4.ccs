@@ -1,0 +1,24 @@
+// author: Jello (@jello2210)
+def module auto-mace-elytra
+def desc "Auto-attack with mace while falling; if gliding and near players, swap elytra -> chestplate and ready the mace."
+
+on pre_tick if playing if entity_in_range :player 5.0 {
+    if gliding {
+        if hotbar_has #chestplate {
+            switch #chestplate
+            wait 0.06
+            input use
+            switch #mace
+        }
+    }
+}
+
+on tick {
+    !if on_ground {
+        if holding #mace {
+            if entity_in_range :player 3.2 {
+                damage nearest_entity :player
+            }
+        }
+    }
+}

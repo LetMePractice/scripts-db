@@ -1,0 +1,12 @@
+// author: Studio (@studio75)
+def module anchor-script2
+def desc "Custom Scripted Module"
+
+on module_enable {
+
+}
+
+on module_disable {
+
+}
+on key_press x switch #anchor then input right then wait 0.05 then switch #glowstone then wait 0.05 if target_block #anchor then input right then wait 0.05 then switch #anchor then input right

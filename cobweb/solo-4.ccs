@@ -1,0 +1,16 @@
+// author: ImproperIssues (@improperissues)
+here:
+
+def module solo
+def desc "notthing here"
+
+on tick if playing if holding #sword,#axe {
+    if input active right {
+        if hotbar_has #web {
+            switch #web
+            input use
+            wait 0.04
+            switch #sword
+        }
+    }
+}

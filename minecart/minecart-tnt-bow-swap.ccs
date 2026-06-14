@@ -1,0 +1,5 @@
+// author: Cat (@cat123go)
+module minecart-tnt-bow-swap
+def desc minecart then go tnt cart then bow
+
+on place_block if holding #rail then wait 0.05 then  switch #tnt then input right then wait 0.05 then switch #bow

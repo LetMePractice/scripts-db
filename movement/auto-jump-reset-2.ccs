@@ -1,0 +1,9 @@
+// author: theangrydog123 (@theangrydog123)
+this script i have gets an error code and idk why, maybe cuz in cc theres no defined key for left alt?
+
+def module Auto-Jump-Reset
+def desc "Auto Jump Reset when taking damage while holding ALT"
+
+on damage if input_active left_alt {
+    input jump
+}

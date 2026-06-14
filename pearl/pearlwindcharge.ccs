@@ -1,0 +1,12 @@
+// author: matheus cunha (@dominkroptru123)
+def module PearlWindCharge
+def desc "yeah"
+
+on key_press Z if hotbar_has #pearl if hotbar_has #wind if playing {
+   switch #pearl
+   input right
+   wait 0.05 {
+      switch #wind
+      input right
+   }
+}

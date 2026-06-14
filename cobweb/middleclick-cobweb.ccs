@@ -1,0 +1,11 @@
+// author: Lymmt (@lymt_01)
+def module middleclick-cobweb
+def desc "use a cobweb when middle clicking"
+
+on middle_click {
+  if hotbar_has #cobweb {
+    switch #cobweb
+    input use
+    switch #sword
+  }
+}

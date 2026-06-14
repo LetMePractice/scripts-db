@@ -1,0 +1,19 @@
+// author: Deleted User (@Deleted User)
+def module cobweb-water-bucket
+def desc "Automatically places water bucket when in cobweb and picks it back up"
+//Jello
+on tick if playing {
+   if block_in_range #cobweb 0.9 {
+      if hotbar_has #water_bucket {
+         switch #water_bucket
+         wait 0.05
+         snap_to any_block then {
+            input use
+            wait 0.5
+            input use
+            wait 0.3
+            switch back
+         }
+      }
+   }
+}

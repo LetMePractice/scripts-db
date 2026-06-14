@@ -1,0 +1,5 @@
+// author: Cat (@cat123go)
+module prestige-anchor-exploder
+def desc remake of prestige's anchor exploder 
+
+on tick if playing if input_active use if holding :glowstone if target_block :uncharged_respawn_anchor wait 0.05 then switch #totem then input right

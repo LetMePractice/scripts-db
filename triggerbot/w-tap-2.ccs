@@ -1,0 +1,11 @@
+// author: Practice (@letmepractice)
+module w-tap  
+def desc "When attacking a player, tap W once (Works with sword and axe)"  
+
+on left_click if playing if holding #sword,#axe {  
+    if attack_progress >= 0.9 {  
+        if target_entity :player {  
+            input forward  
+        }  
+    }  
+}

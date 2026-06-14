@@ -1,0 +1,11 @@
+// author: ImproperIssues (@improperissues)
+def module auto-sell-all
+def desc "Executes sell all command every 10 minutes"
+
+on module_enable {
+  say "/sellall"
+
+  while 600 module_enabled auto-sell-all {
+    say "/sellall"
+  }
+}

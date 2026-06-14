@@ -1,0 +1,22 @@
+// author: Deleted User (@Deleted User)
+// @matrix on top
+def module legit-inv-totem
+def desc "in theory, a good legit auto totem"
+
+on tick if playing {
+   if_not off_holding #totem if inventory_has #totem {
+      if_not input_active inventory {
+         wait_random 0.01 0.045 
+         input inventory
+      }
+   }
+}
+
+on tick if playing {
+  if input_active inventory {
+       if off_holding #totem {
+         wait_random 0.01 0.045 
+         input inventory
+      }
+   }
+}

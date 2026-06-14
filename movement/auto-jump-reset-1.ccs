@@ -1,0 +1,4 @@
+// author: Snooky (@snok69)
+also would this work? def module Auto-Jump-Reset
+def desc Auto Jump Reset
+on damage nearest_entity :player input jump

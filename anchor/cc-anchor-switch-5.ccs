@@ -1,0 +1,10 @@
+// author: rei (@1.rei)
+def module cc-anchor-switch
+def desc ClickCrystals Anchor Switch but bypass for Astro Anti Cheat
+
+on place_block if holding #anchor wait 0.03 switch #glowstone
+on interact_block if holding #glowstone wait 0.03 then switch #anchor
+on tick if input_active use if target_block :uncharged_respawn_anchor if holding #sword,#totem,#anchor,#pickaxe wait 0.03 then switch #glowstone
+
+"this script is not mine"
+yo can someone make it do the exact same thing but instead of me needing to right click 3 times, i have to right click once and every thing just does it thing

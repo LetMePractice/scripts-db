@@ -1,0 +1,31 @@
+// author: ForXGod (@forxgod)
+module inventory-hover-totem
+//Jat9119
+def desc "Hover over totem to swap to offhand and hotbar slot 7"
+
+on pre_tick {
+   if input_active inventory {
+      if hovering_over :totem_of_undying {
+         if inventory_has :totem_of_undying {
+            if inventory_count #totem > 2 {
+               if_not off_holding :totem_of_undying {
+                  input key f
+                  wait 0.15
+               }
+               if_not hotbar_has :totem_of_undying {
+                  input key 7
+                  wait 0.15
+               }
+            }
+         }
+      }
+   }
+}
+
+on key_press x {
+   if_not input_active inventory {
+      if hotbar_has :totem_of_undying {
+         switch 7
+      }
+   }
+}

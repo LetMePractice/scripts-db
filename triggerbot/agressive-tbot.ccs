@@ -1,0 +1,27 @@
+// author: Practice (@letmepractice)
+module Agressive-tbot
+def desc "Dont blame me, if you get banned"
+
+on pre_tick if playing {
+    if targeting_entity {
+        if target_entity :player,:armor_stand {
+            !if blocking {
+                if attack_progress >=0.75 {
+                    as target_entity if blocking {
+                        if hotbar_has #axe {
+                            switch #axe
+                            input attack
+                            switch back
+                        }
+                        !if hotbar_has #axe {
+                            input attack
+                        }
+                    }
+                    as target_entity !if blocking {
+                        input attack
+                    }
+                }
+            }
+        }
+    }
+}

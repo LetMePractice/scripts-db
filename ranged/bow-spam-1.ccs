@@ -1,0 +1,11 @@
+// author: K𝔬𝔞𝔩𝔞 (@koala2b2t)
+i used
+ module bow-spam
+def desc "Spams bow while held"
+
+on module_enable {
+   while holding #bow {
+      hold_input use 0.18
+   }
+}
+ instead but now it sometimes shoots fast and sometime it charges up for a longer amount of time and its no wait or anything look https://streamable.com/krcuwv

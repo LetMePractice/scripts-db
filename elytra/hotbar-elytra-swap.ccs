@@ -1,0 +1,20 @@
+// author: Yassouvox (@yassouvox)
+def module hotbar-elytra-swap
+def desc "Swaps between elytra and chestplate (hotbar only)"
+
+on key button5 if playing {
+  if wearing #elytra && hotbar_has #chestplate {
+    switch #chestplate
+    wait 0.05
+    input use
+    wait 0.1
+    switch back
+  }
+  else if wearing #chestplate && hotbar_has #elytra {
+    switch #elytra
+    wait 0.05
+    input use
+    wait 0.1
+    switch back
+  }
+}

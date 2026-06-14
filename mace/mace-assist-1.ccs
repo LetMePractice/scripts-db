@@ -1,0 +1,22 @@
+// author: blue (@pureblue)
+<@1250828225161068674> <@1190405726544347258> 
+If holding a Mace or Sword and in the Hit Range automatically aims to the nearest enemy and mace them
+I just want to know if u guys can make the AIM stops at the hitbox edges, that would be insane.
+
+def module mace-assist
+def desc "Auto aim and hit with mace when left clicking at activation height"
+
+on left_click if playing {
+    if holding #mace,#sword {
+        if falling {
+            if vel_y < -0.6 {
+                if entity_in_range :player 3 {
+                    turn_to nearest_entity :player aim body speed 80 then {
+                        input attack
+                    }
+                }
+            }
+        }
+    }
+} 
+Can you make it stop on the edge of the hitboxs

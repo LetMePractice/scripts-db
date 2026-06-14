@@ -1,0 +1,21 @@
+// author: 𝙰𝚛𝚓𝚞𝚗𝙵r𝚊𝚐𝚜 (@flybeast0574)
+def module breach-swapping
+def desc "Switches to breach mace on left click, then back to sword"
+
+on left_click {
+   if playing {
+      if  jumping {
+         if holding #sword {
+            if hotbar_has <#1482591494161436823>[breach] {
+               if targeting_entity {
+                  if target_entity :player {
+                     switch <#1482591494161436823>[breach]
+                     wait 0.05
+                     switch #sword
+                  }
+               }
+            }
+         }
+      }
+   }
+}

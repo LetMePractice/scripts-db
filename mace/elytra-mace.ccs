@@ -1,0 +1,36 @@
+// author: RafaIshere (@rafaishere77)
+def module Elytra Mace
+def desc "Switches to axe to break shield, then elytra-mace combo"
+
+on tick {
+    if playing {
+        if gliding {
+            if falling {
+                if entity_in_range :player 6 {
+                    as nearest_entity :player {
+                        if blocking {
+                            switch #chestplate
+                            input use
+                            switch #axe
+                            loop 4 damage nearest_entity :player
+                            wait 0.05 {
+                                switch #mace
+                                damage nearest_entity :player
+                                wait 0.05 switch #elytra
+                            }
+                        }
+                        if_not blocking {
+                            switch #chestplate
+                            input use
+                            wait 0.01 {
+                                switch #mace
+                                damage nearest_entity :player
+                                wait 0.05 switch #elytra
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,15 @@
+// author: ! SNOW・ (@aliayman3191)
+<@1149666730898100265> 
+def module auto-stun
+def desc "Hits opponent again after breaking their shield"
+
+on left_click if_not in_screen {
+  if targeting_entity as target_entity if blocking {
+    as client if holding #_axe wait_random 0.05 0.15 {
+      if hotbar_has #sword {
+        switch #sword
+        input attack
+      }
+    }
+  }
+}

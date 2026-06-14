@@ -1,0 +1,24 @@
+// author: Jat (@jat9119)
+like this def module middle-click-pearl
+def desc "Middle click your mouse to throw a pearl"
+on left_click if hotbar_has #mace if playing {
+   switch #mace
+   wait 0.08 switch #sword
+}
+on tick {
+    if input_active attack {
+     if falling {
+       if holding #_axe {
+         if target_entity :player {
+            as target_entity if blocking {
+               
+                  switch #axe
+                  input attack
+                  switch #mace
+                  input left
+               }
+            }
+         }
+      }
+   }
+}

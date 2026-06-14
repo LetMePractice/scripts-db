@@ -1,0 +1,5 @@
+// author: Practice (@letmepractice)
+module double-crystal
+def desc Double crystal (might be working auto d tap)
+
+on tick if input_active use if holding #crystal if target_entity :end_crystal then wait_random 0.1 0.3 then input left then input right then wait 0.05 then input left

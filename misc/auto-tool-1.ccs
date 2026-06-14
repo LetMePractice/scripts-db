@@ -1,0 +1,9 @@
+// author: Bannaking10 (@chopstick42095)
+<@1153023901203447940> 
+`def module auto-tool
+def desc "Auto tool switcher"
+
+on punch_block if target_block :oak_log { switch :iron_axe }
+on punch_block if target_block :oak_planks { switch :iron_axe }
+on punch_block if target_block :stone { switch :iron_pickaxe }
+on punch_block if target_block :white_bed { switch :shears }`

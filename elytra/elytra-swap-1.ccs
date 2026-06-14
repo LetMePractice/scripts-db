@@ -1,0 +1,16 @@
+// author: .0n6 (@.0n6)
+def module Elytra-swap
+def desc ":D"
+
+on key_press C if playing {
+if hotbar_has #elytra {
+switch #elytra 
+wait_random 0.05 0.015
+input right 
+}
+if hotbar_has #chestplate {
+switch #chestplate
+wait_random 0.05 0.015
+input right 
+}
+}

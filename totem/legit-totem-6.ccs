@@ -1,0 +1,7 @@
+// author: Deleted User (@Deleted User)
+<@880865091795423263> why does this script not work (im on 1.2.9) ```def module legit-totem
+def desc "Custom Scripted Module"
+
+on tick if player if input_active inventory if hovering_over #totem {
+    send "test";
+}

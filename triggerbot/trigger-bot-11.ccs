@@ -1,0 +1,5 @@
+// author: VortexPrime (@v0rtexdev.)
+def module trigger-bot
+def desc trigger bot simple and easy attacks every entity 
+
+on tick if playing if targeting_entity if holding #sword,#_axe if attack_progress >=0.9 input left input left input left

@@ -1,0 +1,31 @@
+// author: ImproperIssues (@improperissues)
+<@1153023901203447940> <@1051897115447660697> 
+You guys should check out my new fast exp module <:yas:1137017223463063632> 
+
+def module fast-exp
+def desc "Literally just fast exp lol"
+
+on tick if playing {
+  if chance_of 75 {
+    if holding #exp {
+      input use
+    }
+    if off_holding #exp if holding #air {
+      input use
+    }
+    on tick
+  }
+}
+
+on right_click if playing {
+  if targeting_entity {
+    input attack
+  }
+  if holding #exp {
+    input right
+  }
+}
+
+on chat_send "lagging" {
+  exit -1
+}

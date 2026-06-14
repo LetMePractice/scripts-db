@@ -1,0 +1,10 @@
+// author: unknown
+i made this a while ago but never used it due to the if fov not coming out
+ module always-hit
+def desc "hit if missed"
+
+on left_click if playing if_not blocking {
+   if holding #sword,#axe,#mace if attack_progress >=0.9 if entity_in_range :player 5 {
+      snap_to nearest_entity :player aim head
+   }
+}

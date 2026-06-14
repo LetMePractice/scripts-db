@@ -1,0 +1,30 @@
+// author: ШE3P (@.we3p)
+def module Auto-Macebetter
+def desc "Swaps to Wind Burst mace after you manually hit while falling more than ~3 blocks"
+
+on left_click if playing {
+   if falling {
+       if vel_y <= -0.5 {
+           if_not blocking {
+               if_not input_active use {
+                   if holding #sword,#_axe {
+                       if_not gliding {
+                           if target_entity :player {
+                               as target_entity {
+                                   if_not blocking {
+                                       input key 8
+                                       wait_random 0.05 0.07 input key 1
+                                       module disable Auto-Macebetter
+                                       wait 0.2 {
+                                           module enable Auto-Macebetter
+                                       }
+                                   }
+                               }
+                           }
+                       }
+                   }
+               }
+           }
+       }
+   }
+}

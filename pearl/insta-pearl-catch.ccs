@@ -1,0 +1,24 @@
+// author: Clone (@zy84gkotv3n5ldr)
+def module insta-pearl-catch
+def desc Spaghetti code
+
+on right_click if playing {
+   if off_holding #wind {
+      if holding #pearl {
+         wait 0.001
+         input right
+      }
+   }
+}
+
+on key_press v if playing {
+   if_not off_holding #wind {
+      switch #wind
+      wait_random 0.09 0.16
+      swap
+   }
+   if_not holding #pearl {
+      if off_holding #wind
+      wait_random 0.15 0.25 switch #pearl
+   }
+}

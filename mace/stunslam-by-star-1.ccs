@@ -1,0 +1,12 @@
+// author: Souldroppz_ (@souldroppz_)
+def module stunslam-by-star
+def desc "Press Z to stunslam with a shovel or an axe"
+on key_press Z {
+    if holding #axe,#shovel {
+        input left
+        wait_random 0.05 0.08
+        switch #mace
+        wait_random 0.05 0.08
+        input left
+    }
+}

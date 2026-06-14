@@ -1,0 +1,11 @@
+// author: .0n6 (@.0n6)
+module Switch 
+on key_press U {
+if off_holding #totem if_not off_holding #shield {
+gui_swap #shield
+}
+if_not off_holding #totem if off_holding #shield {
+gui_swap #totem
+}
+}
+Try this press U to switch items in offhand it is blatant since it dosent open inventory

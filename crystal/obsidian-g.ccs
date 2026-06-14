@@ -1,0 +1,10 @@
+// author: 4q25 • mizo 🍀 (@4q25)
+// <@989239111485374534>
+def module obsidian-g
+def desc "obsidian"
+
+on key_press g if playing {
+    wait 0.1
+    switch #obsidian
+         input right
+}

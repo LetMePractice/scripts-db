@@ -1,0 +1,16 @@
+// author: Cat (@cat123go)
+module config-script
+def desc Wither123go's config into a simple script with all his scripts and CC modules (the ones that can be remade into CCS)
+
+on right_click if playing if holding #sword,#crystal if targeting_block !if target_block :obsidian,:bedrock,:uncharged_respawn_anchor,:charged_respawn_anchor switch #obsidian
+on tick if playing if input_active use if target_entity :end_crystal if holding #crystal input left
+on key_press v if playing if hotbar_has #firework wait 0.05 then wait 0.05 then switch :elytra then input use then wait 0.05 then switch #rocket then input jump then wait 0.2 input jump then wait 0.1 input right
+on left_click if playing if target_entity :player switch #sword
+on left_click if playing if target_entity #crystal if holding #crystal if hotbar_has #sword if effect_duration #weak >0 switch #sword wait 0.05 if_not targeting_entity if holding #sword switch back
+on right_click if playing if target_block :charged_respawn_anchor if holding :glowstone switch #anchor
+on right_click if playing if holding #anchor,#sword,#crystal if target_block :uncharged_respawn_anchor switch :glowstone
+on right_click if playing if holding #sword if target_block :obsidian,:bedrock then switch #crystal
+on totem_pop if playing switch #totem
+on tick if playing if targeting_entity as target_entity if blocking as client if hotbar_has #_axe switch #_axe
+on left_click if playing if holding #crystal if target_block :obsidian,:bedrock then input use
+on left_click if playing if holding #sword,:obsidian,:crystal if target_block :obsidian,:bedrock switch #crystal then input use

@@ -1,0 +1,16 @@
+// author: Practice (@letmepractice)
+// @itzispyder
+def module double-clicker
+def desc "Clicks a second time when you release your mouse (only with crystal)"
+
+on left_release if playing {
+   if holding :end_crystal {
+      input attack
+   }
+}
+
+on right_release if playing {
+   if holding :end_crystal {
+      input use
+   }
+}

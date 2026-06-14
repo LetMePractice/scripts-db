@@ -1,0 +1,14 @@
+// author: Practice (@letmepractice)
+module density-swapping
+def desc "yeah"
+
+on left_click if playing if falling if attack_progress >= 0.95 {
+    if holding #sword,#_axe {
+        if hotbar_has #mace[density] {
+            if entity_in_range :player 4.5 {
+                switch #mace[density] 
+                wait 0.04 switch #sword
+            }
+        }
+    }
+}

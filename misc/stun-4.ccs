@@ -1,0 +1,13 @@
+// author: Floop (@__flipfloop)
+def module stun
+def desc "Double clicks with a small delay when you hit with an axe"
+
+on left_click if playing {
+    !if blocking {
+        if holding #axe {
+          input attack
+          wait 0.05
+          input attack
+        }
+    }
+}

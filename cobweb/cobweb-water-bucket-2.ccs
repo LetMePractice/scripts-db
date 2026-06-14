@@ -1,0 +1,21 @@
+// author: Jat (@jat9119)
+<@528425959225950208>  this is what i have. it doesnt work but its a good start ```def module cobweb-water-bucket
+def desc "Automatically places water bucket when in cobweb and picks it back up"
+
+
+
+on tick {
+   if playing {
+      if block_in_range :cobweb 1 {
+         !if holding :water_bucket {
+            switch :water_bucket
+         }
+         !if target_block :cobweb {
+            turn_to nearest_block :cobweb
+         }
+         if target_block :cobweb {
+            switch :water_bucket then wait 0.05 input use
+         }
+      }
+   }
+}

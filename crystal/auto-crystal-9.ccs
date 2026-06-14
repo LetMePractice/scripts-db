@@ -1,0 +1,5 @@
+// author: Cat (@cat123go)
+def module Auto-Crystal
+def desc Auto Crystal, hold down right click
+
+on tick if input_active use if target_entity :end_crystal if holding #crystal input left

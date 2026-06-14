@@ -1,0 +1,6 @@
+// author: .0n6 (@.0n6)
+def module Punch-obs
+on punch_block if target_block #obs {
+switch #crystal
+}
+Try this

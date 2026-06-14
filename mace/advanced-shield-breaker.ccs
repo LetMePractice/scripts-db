@@ -1,0 +1,44 @@
+// author: 1vorie (@ivoryflame67)
+def module advanced-shield-breaker
+def desc "A shield breaker with a chance for missing"
+
+on tick {
+    if playing {
+        if holding #sword {
+            !if blocking {
+                if attack_progress >=0.9 {
+                    if hotbar_has #_axe {
+                        if target_entity :player {
+                            as target_entity
+                            if blocking {
+                                execute_random {
+                                    function miss
+                                    function break
+                                    function break
+                                    function break
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+def func miss {
+      input attack
+}
+
+def func break {
+    switch #_axe
+    wait 0.01 {
+        input attack
+    }
+    wait_random 0.01 0.013 {
+        input attack
+    }
+    wait 0.05 {
+        switch back
+    }
+}

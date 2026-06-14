@@ -1,0 +1,14 @@
+// author: LoopholeMC (@loopholemc)
+can somebody help me add some delay to this:
+
+def module anchor-charge
+def desc Anchor Charge
+
+on tick {
+  if target_block :uncharged_respawn_anchor switch #glowstone then input right 
+  if target_block :charged_respawn_anchor switch #totem
+}
+
+on place_block {
+    if hotbar_has #anchor if holding :anchor wait 0.1 switch #totem 
+}

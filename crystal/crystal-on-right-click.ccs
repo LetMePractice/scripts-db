@@ -1,0 +1,16 @@
+// author: Souldroppz_ (@souldroppz_)
+def module crystal-on-right-click
+// japanz
+
+on place_block if_holding obsidian
+if target_block obsidian
+switch #crystal
+wait 0.07
+input right_click
+wait 0.05
+input left_click
+on input right_click
+wait 0.05
+if holding :end_crystal
+input use
+loop until input right_click

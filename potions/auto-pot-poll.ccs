@@ -1,0 +1,23 @@
+// author: Jello (@jello2210)
+def module auto-pot-poll
+def desc "Polls health; double-splash heal, then swap back to sword"
+
+on module_enable {
+    while 0.15 playing {
+        function pollHeal
+    }
+}
+
+def func pollHeal {
+    if health <=9.0 {
+        turn_to any_block then {
+            switch #splash_potion
+            input use
+            wait 0.15
+            input use
+            wait 0.1
+            switch #sword
+        }
+        wait 2.0
+    }
+}

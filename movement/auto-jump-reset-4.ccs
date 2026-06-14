@@ -1,0 +1,6 @@
+// author: theangrydog123 (@theangrydog123)
+def module Auto-Jump-Reset
+def desc Auto Jump Reset
+on damage if input_active alt input jump
+
+im tryna make this script only work if im holding down alt, any tips

@@ -1,0 +1,12 @@
+// author: Hikigaya (@orewa_hikigaya_)
+def module solo
+def desc "notthing here"
+
+on right_click if playing if holding #sword,#axe {
+        if hotbar_has #web {
+            switch #web
+            input right
+            wait 0.05
+            switch #sword
+        }
+    }

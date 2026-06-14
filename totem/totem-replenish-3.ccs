@@ -1,0 +1,21 @@
+// author: ImproperIssues (@improperissues)
+def module Totem-Replenish
+def desc "Custom Scripted Module"
+
+on totem_pop if input_active inventory {
+    func replenish
+}
+
+on key_press e if playing {
+    func replenish
+}
+
+def func replenish {
+    switch 9
+    if off_holding #air {
+        gui_swap #totem
+    }
+    wait 0.1 {
+        gui_quickmove #totem 9
+    }
+}

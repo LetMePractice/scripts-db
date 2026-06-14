@@ -1,0 +1,6 @@
+// author: Wither (@wither_bloods)
+def module auto-Peral-flash
+def desc"It flash peral for u"
+
+
+on key_press n if hotbar_has #ender_peral switch than use

@@ -1,0 +1,32 @@
+// author: Bannaking10 (@chopstick42095)
+module Anchor-Macro-Combined
+//LoopholeMC
+def desc "Combined Anchor Macro for both charging and detonating anchors"
+
+on place_block {
+    if playing {
+        if holding :respawn_anchor {
+            wait_random 0 0.01 {
+                switch 6
+                input right
+            }
+        }
+    }
+}
+
+on pre_tick {
+    if input_active use {
+        if playing {
+            if target_block :uncharged_respawn_anchor {
+                if_not holding :glowstone,#shield {
+                    switch 6
+                }
+            }
+            if target_block :charged_respawn_anchor {
+                if_not holding #totem,#shield {
+                    switch 8
+                }
+            }
+        }
+    }
+}

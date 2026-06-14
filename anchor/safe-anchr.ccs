@@ -1,0 +1,28 @@
+// author: iAmN0vA (@i4mn0v4)
+def module safe-anchr
+def desc "Safe Anchor Assist"
+
+on module_enable {
+
+}
+
+on module_disable {
+
+}
+
+on right_click {
+
+    if key V
+    if holding respawn_anchor {
+
+        wait 1
+        switch slot 4
+        use item
+
+        wait 1
+        switch slot 9
+        use item
+
+    }
+
+}

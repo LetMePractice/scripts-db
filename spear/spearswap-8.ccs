@@ -1,0 +1,10 @@
+// author: zzz (@youremom9016)
+def module spearswap
+def desc "Swap to spear and back"
+
+on key_press y if playing if_not blocking if hotbar_has #spear {
+   switch #spear
+   input left
+   wait 0.07 switch back
+}
+this auto swaps to spear and back when you press y

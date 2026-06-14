@@ -1,0 +1,5 @@
+// author: Xero (@xerotheher0)
+module test
+def desc "This is a test module."
+
+The name of the module is `test`. You can find the names of the premade scripts by looking for the `def module` line in each script. The word that follows `def module` is the name you need to use.

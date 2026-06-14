@@ -1,0 +1,11 @@
+// author: U (@e5no)
+// @practice
+def module Aimbot
+def desc "Aims towards the nearest player."
+
+on tick if playing {
+   if entity_in_range :player 5 {
+      snap_to nearest_entity :player
+      snap_to polar ~50 ~ ~
+   }
+}

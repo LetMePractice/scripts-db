@@ -1,0 +1,13 @@
+// author: °•Lycagon•° (@ilyct1)
+literally so simple
+def module stun
+def desc "Double clicks when you hit with axe"
+
+on left_click if playing {
+    !if blocking {
+        if holding #axe {
+          input attack
+        input attack
+    }
+    }
+}

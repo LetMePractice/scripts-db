@@ -1,0 +1,16 @@
+// author: Enforcado (@_enforcado_)
+I wanted to make the totem switch for anchor too? I also wanted to make it so that when there was no totem it would explode with anchor
+
+
+
+def module anchor-charge
+def desc Anchor Charge (Bypass)
+
+on tick {
+  if target_block :uncharged_respawn_anchor switch #glowstone then input right 
+  if target_block :charged_respawn_anchor switch #totem
+}
+
+on place_block {
+    if hotbar_has #anchor switch #anchor 
+}

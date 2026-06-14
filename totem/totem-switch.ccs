@@ -1,0 +1,11 @@
+// author: Beev (@.beevv)
+def module totem-switch
+def desc "swap to totem after pop"
+
+on totem_pop {
+   wait_random 0.06 0.010
+   execute_period 0.06 {
+      if hotbar_has #totem
+      switch #totem
+   }
+}

@@ -1,0 +1,13 @@
+// author: suckyswags (@suckyswags)
+def module auto-mace-stun
+def desc "Falling axe stun into mace hit"
+
+on tick if falling playing if target_entity :player {
+    switch :axe
+    input left
+    wait 0.02
+    switch :mace
+    input left
+}
+
+can u fix this

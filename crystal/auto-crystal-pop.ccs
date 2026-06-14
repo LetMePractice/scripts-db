@@ -1,0 +1,10 @@
+// author: wxund (@wounddup)
+// @you
+def module auto-crystal-pop
+def desc "Blows up end crystals you're looking at while holding a totem"
+
+on tick 1
+  if holding :totem_of_undying
+  if line_of_sight
+  damage nearest_entity :end_crystal
+end

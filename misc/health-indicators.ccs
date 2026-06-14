@@ -1,0 +1,17 @@
+// author: . (@jaygosta)
+// @078K
+def module health indicators
+def desc "shows players health"
+
+on left_click if playing {
+   if holding #sword {
+         as target_entity if blocking {
+            switch #_axe
+            input attack
+            wait 0.05
+            left_click
+            wait 0.075 switch #sword
+         }
+      }
+   }
+}

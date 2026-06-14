@@ -1,0 +1,9 @@
+// author: ImproperIssues (@improperissues)
+def module sword-hit
+def desc "Will switch to sword once you hit someone without a sword."
+
+on left_click if targeting_entity !if in_screen {
+  if hotbar_has #sword !if holding #sword {
+    switch #sword
+  }
+}

@@ -1,0 +1,10 @@
+// author: ImproperIssues (@improperissues)
+def module right-click-sword-crystal
+
+on right_click if playing if holding sword {
+  cancel_packet c2s playerInteractItem
+
+  if target_entity :end_crystal {
+    wait 0.5 input attack
+  }
+}

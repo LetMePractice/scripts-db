@@ -1,0 +1,10 @@
+// author: ImproperIssues (@improperissues)
+I don't know why but this might just be the most useful module I've ever created with this scripting language 💀. This concept was brought over from file systems, cuz enter does indeed act like a left click in most  apps, so why not Minecraft?
+
+def module enter-left-click
+def desc "Press enter to left click, just like in the file systems!"
+
+on key_press enter {
+    input left
+}
+You're welcome guys.

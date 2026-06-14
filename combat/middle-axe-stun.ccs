@@ -1,0 +1,13 @@
+// author: Jello (@jello2210)
+def module middle-axe-stun
+def desc "Simple middle click axe attack"
+
+on middle_click if playing {
+    if hotbar_has #axe {
+        switch #axe
+        wait 0.05
+        input attack
+        Wait0.05
+        Input attack
+    }
+}

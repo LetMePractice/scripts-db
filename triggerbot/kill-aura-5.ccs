@@ -1,0 +1,11 @@
+// author: ImproperIssues (@improperissues)
+def module kill-aura
+def desc "When holding sword or axe automatically hitthem"
+
+on tick if playing if attack_progress >=0.9 {
+  if target_entity :player,:zombie,:creeper,:slime,#spider,:skeleton,:vindicator {
+    if holding #sword,#_axe {
+      input attack
+    }
+  }
+}

@@ -1,0 +1,25 @@
+// author: .0n6 (@.0n6)
+module Shield-breaker
+def desc "Auto Switches to axe when looking at a blocking player"
+
+on tick {
+    if playing {
+        if_not input_active use {
+            if_not blocking {
+                if hotbar_has #_axe {
+                    if target_entity :player {
+                        as target_entity {
+                            if blocking {
+                                if_not holding #_axe {
+                                    if_not entity_in_range :player 1 {
+                                        switch #_axe
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

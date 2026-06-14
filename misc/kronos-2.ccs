@@ -1,0 +1,6 @@
+// author: ImproperIssues (@improperissues)
+def module kronos
+
+on key_press = if playing switch #pearl
+
+on left_click if playing switch #sword

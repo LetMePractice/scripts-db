@@ -1,0 +1,11 @@
+// author: I-No-oNe (@i_no_am)
+def module double-clicker-by-i-no-one
+def desc "just ask what u want"
+
+on left_release if playing {
+    input attack
+}
+
+on key_press r if playing {
+    input use
+}

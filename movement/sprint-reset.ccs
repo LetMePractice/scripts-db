@@ -1,0 +1,7 @@
+// author: ImproperIssues (@improperissues)
+def module sprint-reset
+def desc "Respawn sprint reset fix"
+
+on respawn wait 1 {
+    input sprint
+}

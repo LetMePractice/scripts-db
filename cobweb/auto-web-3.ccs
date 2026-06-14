@@ -1,0 +1,16 @@
+// author: Jello (@jello2210)
+def module auto-web
+def desc "Custom Scripted Module"
+
+on right_click if playing {
+    if holding #sword {
+        if_not off_holding #bucket {
+            if targeting_block {
+                if_not target_block :air,:water {
+                    switch :cobweb
+                    wait 0.05 switch back
+                }
+            }
+        }
+    }
+}

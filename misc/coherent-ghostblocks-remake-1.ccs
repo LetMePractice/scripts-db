@@ -1,0 +1,7 @@
+// author: ImproperIssues (@improperissues)
+def module coherent-ghostblocks-remake
+def desc "name is self-explanatory"
+
+on place_block {
+  cancel_packet c2s playerInteractBlock
+}

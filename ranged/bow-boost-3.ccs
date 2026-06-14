@@ -1,0 +1,31 @@
+// author: Karson is the god of Canada (@superbun1235166_)
+def desc "Bow boost"
+def module bow-boost
+
+on key_press b {
+    if playing {
+      if hotbar_has #bow {
+        switch #bow
+turn_to random(-1,1) random(-6,-8)
+        wait 0.02
+turn_to random(-1,1) random(-12,-14)
+        wait 0.02
+turn_to random(-1,1) random(-18,-21)
+        wait 0.02
+turn_to random(-1,1) random(-24,-27)
+        wait 0.02
+turn_to random(-1,1) random(-30,-33)
+        wait 0.02
+turn_to random(-1,1) random(-36,-39)
+        wait 0.02
+turn_to random(-1,1) random(-40,-43)
+        wait 0.02
+turn_to random(-2,2) random(-44,-47)
+        input use
+          wait random(0.25,0.42)
+            input jump
+              wait 0.015
+                release use
+            }
+      }
+}

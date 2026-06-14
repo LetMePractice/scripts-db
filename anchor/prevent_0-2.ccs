@@ -1,0 +1,5 @@
+// author: Nobbed (@nobbed)
+def module Prevent_0
+def desc Prevent from Francium (removes ability to overchage anchors with glowstone)
+
+on right_click if playing if holding :glowstone if target_block :charged_respawn_anchor then cancel_packet c2s playerInteractBlock

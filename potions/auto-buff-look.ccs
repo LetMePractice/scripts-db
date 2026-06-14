@@ -1,0 +1,12 @@
+// author: Practice (@letmepractice)
+module auto-buff-look
+def desc "Auto buff + look ground"
+
+on key_press b if playing {
+    snap_to polar ~ -90 then {
+        if hotbar_has #splash_potion {
+            switch #splash_potion
+            wait 0.05 input use
+        }
+    } 
+}

@@ -1,0 +1,11 @@
+// author: Practice (@letmepractice)
+module Prevent_0
+def desc "removes the ability to overchage an anchor"
+
+on right_click if playing {
+    if holding :glowstone {
+        if target_block :charged_respawn_anchor {
+            cancel_packet c2s playerInteractBlock
+        }
+    }
+}

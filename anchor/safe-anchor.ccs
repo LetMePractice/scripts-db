@@ -1,0 +1,19 @@
+// author: Karson is the god of Canada (@superbun1235166_)
+def module safe-anchor
+def desc Safe Anchors With glowstone
+
+on right_click {
+   if targeting_block {
+      if holding #anchor {
+         wait 0.1 {
+            switch :glowstone
+         }
+      }
+   }
+}
+
+on right_click {
+   if target_block :charged_respawn_anchor {
+      switch #sword
+   }
+}

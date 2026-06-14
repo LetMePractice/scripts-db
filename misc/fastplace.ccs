@@ -1,0 +1,7 @@
+// author: E X O (@exo6uss)
+module fastplace
+def desc "Place blocks really fast"
+
+on tick if input_active use {
+    input use
+}

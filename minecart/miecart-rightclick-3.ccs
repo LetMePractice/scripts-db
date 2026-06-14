@@ -1,0 +1,29 @@
+// author: NoIwill (@nomore_bs)
+def module miecart-rightclick
+def desc "minecart stuff"
+
+on right_click {
+    if target_block :rail {
+        if holding #air {
+            wait 0.06
+            switch #flint_and_steel
+            wait 0.05
+            snap_to position ^ ^ ^9
+        }
+    }
+
+    if holding :flint_and_steel {
+        wait 0.05
+        switch #charged_crossbow
+        snap_to nearest_entity :tnt_minecart 
+        wait_random 0.1 0.3
+        if_not holding :charged_crossbow {
+          if holding :crossbow{
+            hold_input right 1.1
+          }
+          if_not holding :crossbow 
+          switch #crossbow
+          hold_input right 1.1
+        }
+    }
+} try this

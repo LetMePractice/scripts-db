@@ -1,0 +1,19 @@
+// author: Jello (@jello2210)
+def module auto-axe-break
+def desc "Auto swap to axe and attack only when target is blocking"
+
+on tick if playing if targeting_entity {
+    as target_entity if reference_entity :player {
+        if blocking {
+            if entity_in_range :player 4.0 {
+                if attack_progress >=0.92 {
+                    !if holding #axe { switch #axe }
+                    wait_random 0.03 0.06
+                    input attack
+                    wait_random 0.04 0.08
+                    switch back
+                }
+            }
+        }
+    }
+}

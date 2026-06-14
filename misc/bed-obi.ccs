@@ -1,0 +1,17 @@
+// author: Jello (@jello2210)
+def module bed-obi
+def desc "While holding a bed: right-click, sneak 1s, wait, switch to oak planks, right-click."
+
+on tick  if playing if holding #bed if targeting_block {
+ wait 0.1
+   input right
+   input sneak 0.2
+   wait 0.1
+   if hotbar_has :obsidian { switch :obsidian }
+   wait 0.1
+   input right
+}
+on tick if playing if targeting_block if target_block #bed {
+    wait 0.05
+   input right
+}

@@ -1,0 +1,9 @@
+// author: Jello (@jello2210)
+module pearl-chase
+def desc "Turns and pearls the way that your enemy did (hopefully it isnt an ffa)"
+
+on tick if playing {
+    if entity_in_range #pearl 10.0 {
+        wait 0.3 snap_to nearest_entity #pearl then switch #pearl then input right
+    }
+}

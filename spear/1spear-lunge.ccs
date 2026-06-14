@@ -1,0 +1,13 @@
+// author: Hikigaya (@orewa_hikigaya_)
+def module 1spear-lunge
+def desc "Custom Scripted Module"
+
+on left_click {
+    if playing if holding #wind_charge {
+       if attack_progress >=0.9 {
+          switch #spear[lunge]
+          input attack
+          wait 0.05 switch back 
+        }
+    }
+}

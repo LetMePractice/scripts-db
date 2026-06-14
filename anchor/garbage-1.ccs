@@ -1,0 +1,21 @@
+// author: Practice (@letmepractice)
+Yes, but here is some garbage to try. I don't know, maybe it'll help or it'll make it even worse.
+
+1) ```def module garbage-1
+def desc "Jumps when taking damage if not targeting an end crystal, obsidian, bedrock, or a charged respawn anchor"
+
+on damage {
+    if_not target_entity :end_crystal {
+        if_not target_block :obsidian,:bedrock,:charged_respawn_anchor {
+            input jump
+        }
+    }
+}
+
+
+2) ```def module garbage-2
+def desc "Jumps when taking damage if targeting a player"
+
+on damage if target_entity :player {
+    input jump
+}

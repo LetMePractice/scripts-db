@@ -1,0 +1,17 @@
+// author: Jello (@jello2210)
+def module tnt-bow-switch
+def desc "Rail → TNT Minecart → Bow (Flame) → Sword combo"
+
+on right_release if playing {
+    if holding #rail {
+        input use
+        wait 0.05
+        switch #minecart
+        input use
+        wait 0.05
+        switch :bow[flame]
+        hold_input use 0.2
+        wait 0.06
+        switch #sword
+    }
+}

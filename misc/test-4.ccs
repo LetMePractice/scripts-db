@@ -1,0 +1,26 @@
+// author: ImproperIssues (@improperissues)
+def module test
+def desc "A module for testing"
+
+on right_release if playing wait 0.05 {
+    if holding :bow {
+        switch #rail
+
+        if target_block #air {
+            while target_block #air turn_to polar ~15 ~ then func playerPlaceRails
+        }
+        if targeting_block {
+            func playerPlaceRails
+        }
+    }
+}
+
+def func playerPlaceRails {
+    if holding #rail if targeting_block {
+        input right
+        wait 0.05 if target_block #rail {
+            switch #minecart
+            input right
+        }
+    }
+}

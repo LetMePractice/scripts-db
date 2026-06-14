@@ -1,0 +1,47 @@
+// author: Nikii (@augustokok)
+def module auto-rocket-mace
+def desc "auto elytra mace"
+
+on key_press 2 {
+    if playing {
+        if gliding {
+            snap_to nearest_entity :player
+            switch #firework_rocket
+            input right
+        }
+    }
+}
+
+on tick {
+    if playing {
+        if falling {
+            if vel_y < -0.05 {
+                if entity_in_range :player 8 {
+                    snap_to nearest_entity :player
+                    if_not holding #mace[density] {
+                        switch #chestplate
+                        wait 0.15
+                        input right
+                        wait 0.15
+                        switch #mace[density]
+                    }
+                }
+                if holding #mace[density] {
+                    if entity_in_range :player 4.2 {
+                        snap_to nearest_entity :player
+                        input left
+                        wait 0.15
+                        switch #elytra
+                        wait 0.2
+                        input right
+                        wait 0.1
+                        input jump
+                        wait 0.1
+                        switch #firework_rocket
+                        input right
+                    }
+                }
+            }
+        }
+    }
+}

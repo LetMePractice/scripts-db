@@ -1,0 +1,22 @@
+// author: Practice (@letmepractice)
+module hold-f-totem
+def desc "Press F once when holding totem to move to offhand"
+
+on pre_tick {
+   if playing {
+      if holding :totem_of_undying {
+         if_not off_holding :totem_of_undying {
+            input key f
+            wait 0.2
+         }
+      }
+   }
+   if input_active inventory {
+      if inventory_has :totem_of_undying {
+         if hovering_over :totem_of_undying {
+            input key f
+            wait 0.2
+         }
+      }
+   }
+}

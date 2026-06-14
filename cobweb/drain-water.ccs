@@ -1,0 +1,37 @@
+// author: Kaira (@_timel3ss.)
+module drain-water
+def desc "drains water when someone is in a web you placed"
+
+on place_block {
+    if playing {
+        if target_block #cobweb {
+            if entity_in_range :player 6 {
+                wait 0.5
+                while 10 block_in_range #cobweb 5 {
+                    as nearest_entity :player if entity_in_range :player 6 {
+                        if reference_entity :player {
+                            if entity ~ ~ ~ :player {
+                                if block_in_range #water 4 {
+                                    if_not holding #bucket {
+                                        if hotbar_has #bucket {
+                                            switch #bucket
+                                            wait_random 0.04 0.07
+                                            turn_to nearest_block #water speed 18 then {
+                                                wait_random 0.02 0.05
+                                                input use
+                                                wait_random 0.03 0.06
+                                                switch #sword
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+how to use: place a web it swaps to bucket, waits for the player to place a water, drains their water then swaps to sword

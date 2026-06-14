@@ -1,0 +1,83 @@
+// author: Kaira (@_timel3ss.)
+**What the script does:**
+
+**1. Breach Swap**
+- When you left click while on the ground holding sword/axe
+- Swaps to breach mace then back all in 1 tick
+
+**2. Auto Swap To Mace When Falling**
+- When falling above 7 blocks high → auto swaps to density mace
+- When falling below 7 blocks → auto swaps to breach mace
+
+**3. Stun Slam**
+- **If holding density mace** + left click on blocking player: swaps to axe → hits → swaps back to density
+- **If holding axe** + left click on blocking player: hits with axe → swaps to density mace
+
+ module ultimate-mace-script
+def desc "im rapture guys"
+
+on left_click {
+    if playing {
+        if on_ground {
+            if holding #sword,#_axe {
+                if entity_in_range :player 4.0 {
+                    if target_entity :player {
+                        switch :mace[breach]
+                        switch back
+                    }
+                }
+            }
+        }
+        
+        if holding :mace[density] {
+            if entity_in_range :player 4.0 {
+                if target_entity :player {
+                    as target_entity if blocking {
+                        if hotbar_has #_axe {
+                            switch #_axe
+                            wait 0.05
+                            input left
+                            wait 0.15
+                            switch :mace[density]
+                        }
+                    }
+                }
+            }
+        }
+        
+        if holding #_axe {
+            if entity_in_range :player 4.0 {
+                if target_entity :player {
+                    as target_entity if blocking {
+                        if hotbar_has :mace[density] {
+                            input left
+                            wait 0.15
+                            switch :mace[density]
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+on pre_tick {
+    if playing {
+        if falling {
+            if_not gliding {
+                if entity_in_range :player 4.0 {
+                    if target_entity :player {
+                        if holding #sword,#_axe {
+                            if pos_y >=7 {
+                                switch :mace[density]
+                            }
+                            if pos_y <7 {
+                                switch :mace[breach]
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

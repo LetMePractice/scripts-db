@@ -1,0 +1,34 @@
+// author: Kaira (@_timel3ss.)
+def module fall-combo
+def desc "fall combo with stun"
+
+on tick {
+   if playing {
+      if falling {
+         if holding #sword,#axe {
+            if target_entity :player {
+               as target_entity {
+                  switch #mace
+                  input left
+                  if blocking {
+                     wait 0.05 {
+                        input left
+                        wait_random 0.01 0.015 {
+                           switch #mace
+                           wait_random 0.02 0.025 {
+                              input left
+                           }
+                        }
+                     }
+                  }
+                  wait_random 0.3 0.4 {
+                     switch #sword
+                  }
+               }
+            }
+         }
+      }
+   }
+}
+
+remove "1" in on tick remove "[density]" make "input attack" input left and theres a space in "sword,axe"

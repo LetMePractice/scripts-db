@@ -1,0 +1,21 @@
+// author: Jat (@jat9119)
+<@1175455408538800205> do u know how i could prevent this script from auto closing inv? ```def module Totem-Replenish 
+def desc "Custom Scripted Module"
+on totem_pop if input_active inventory {
+    wait 0.01 {
+        gui_swap #totem 
+    wait 0.01 {
+        gui_quickmove #totem 9
+        switch 9
+            }
+        }
+    }
+
+on key_press e {
+    switch 9
+    gui_swap #totem 
+    wait 0.1 {
+        gui_quickmove #totem 9
+        
+            }
+        }

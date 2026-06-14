@@ -1,0 +1,23 @@
+// author: ImproperIssues (@improperissues)
+def module y
+def desc "Custom Scripted Module"
+
+on key_press Y if playing {
+    switch #anchor
+    input right
+    
+    wait 0.05 { 
+        switch #glowstone
+        input right
+        
+        wait 0.05 { 
+            input sneak
+            wait 0.05 {
+                input right    
+                wait 0.05 { 
+                    switch #totem
+                }
+            }
+        }
+    }
+}

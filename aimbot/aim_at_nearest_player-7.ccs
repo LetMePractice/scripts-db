@@ -1,0 +1,11 @@
+// author: Joshua (@joshuaunemployed.2025)
+@practice
+def module aim_at_nearest_player
+def desc "Aims towards the nearest player."
+
+on tick if playing {
+   if holding #spear,#axe,#sword,#mace
+   if entity_in_range :player 3 {
+      turn_to nearest_entity :player
+   }
+}

@@ -1,0 +1,11 @@
+// author: Deleted User (@Deleted User)
+def module right-click-aim
+def desc "Real not hax"
+
+on right_click if playing {
+   if holding #sword {
+      turn_to any_entity then {
+         if attack_progress >= 0.9 input attack
+      }
+   }
+}

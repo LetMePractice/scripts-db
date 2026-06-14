@@ -1,0 +1,6 @@
+// author: Cat (@cat123go)
+module legit-retotem
+def desc Press E and double hand lol
+
+on key_press E {
+switch #totem }

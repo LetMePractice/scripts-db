@@ -1,0 +1,12 @@
+// author: 4q25 • mizo 🍀 (@4q25)
+def module Fast-Touch-Crystal
+def desc Ultra-fast place & break crystal for touch 
+
+on tick if playing {
+    if holding #end_crystal if target_block :obsidian {
+        input right 
+        wait 0.05 if target_entity :end_crystal {
+            input left
+        }
+    }
+}

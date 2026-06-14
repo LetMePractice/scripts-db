@@ -1,0 +1,8 @@
+// author: Cat (@cat123go)
+module cc-modeules
+def desc "Custom Scripted Module"
+
+on left_click if holding #sword if target_block :obsidian,:bedrock wait 0.03 switch #crystal
+on left_click if holding #sword if target_block :sand,#stone wait 0.03 switch #obsidian
+on right_click if holding #sword switch #obsidian
+on place_block if holding #obsidian switch #sword

@@ -1,0 +1,16 @@
+// author: Lymmt (@lymt_01)
+def module windburst-swapping
+def desc "Switches to windburst mace on left click, then back to sword"
+
+on left_click if playing {
+    if holding #sword {
+        if hotbar_has #mace[wind_burst] {
+            if targeting_entity {
+                if target_entity :player {
+                    switch #mace[wind_burst]
+                    wait 0.05 switch #sword
+                }
+            }
+        }
+    }
+}

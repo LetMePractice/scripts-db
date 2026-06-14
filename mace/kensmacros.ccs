@@ -1,0 +1,91 @@
+// author: Deleted User (@Deleted User)
+Tbot, shield breaker, stun slam, attribute swap, pearl-catch, and P-crit (When you lack maces)
+
+Slide me feedback, ill update it when i can
+
+def module KensMacros
+def desc "Having seprate macro's for stuff is dumb, just make it all n' one"
+
+on tick {
+    if playing {
+        if target_entity :player {
+            if holding #sword,#axe,#mace {
+                if attack_progress >= 0.96 {
+                    as target_entity {
+                        if blocking {
+                            switch #_axe
+                            input attack
+                            wait 0.03 {
+                                if falling {
+                                    if hotbar_has #mace[breach] {
+                                        switch #mace[breach]
+                                        wait 0.03 {
+                                            input attack
+                                            wait 0.02 switch #sword
+                                        }
+                                    }
+                                    if_not hotbar_has #mace[breach] {
+                                        if hotbar_has #mace[density] {
+                                            switch #mace[density]
+                                            wait 0.03 {
+                                                input attack
+                                                wait 0.02 switch #sword
+                                            }
+                                        }
+                                        if_not hotbar_has #mace[density] {
+                                            switch #sword
+                                        }
+                                    }
+                                }
+                                if_not falling {
+                                    switch #sword
+                                }
+                            }
+                        }
+                        if_not blocking {
+                            if falling {
+                                if hotbar_has #mace[breach] {
+                                    switch #mace[breach]
+                                    wait 0.03 {
+                                        input attack
+                                        wait 0.05 switch #sword
+                                    }
+                                }
+                                if_not hotbar_has #mace[breach] {
+                                    if hotbar_has #mace[density] {
+                                        switch #mace[density]
+                                        wait 0.03 {
+                                            input attack
+                                            wait 0.05 switch #sword
+                                        }
+                                    }
+                                    if_not hotbar_has #mace[density] {
+                                        input attack
+                                    }
+                                }
+                            }
+                            if_not falling {
+                                input attack
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+on key_press x {
+    if playing {
+        if hotbar_has :ender_pearl {
+            if hotbar_has :wind_charge {
+                switch :ender_pearl
+                input use
+                wait 0.7 {
+                    switch :wind_charge
+                    input use
+                }
+            }
+        }
+    }
+}

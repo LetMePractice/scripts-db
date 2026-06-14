@@ -1,0 +1,13 @@
+// author: Jat (@jat9119)
+def module ska
+def desc "When holding sword or axe, automatically hit target"
+
+on tick if playing !if blocking {
+    if target_entity :player,:zombie,:creeper,:slime,:spider,:skeleton,:vindicator {
+        if attack_progress >= 0.9 {
+            if holding #sword,#axe,#mace {
+                input attack
+            }
+        }
+    }
+}

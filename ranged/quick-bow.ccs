@@ -1,0 +1,11 @@
+// author: Jello (@jello2210)
+def module quick-bow
+def desc "Auto quick-shoots bow with randomized timing"
+
+on pre_tick if playing {
+    if holding :bow {
+        wait_random 0.16 0.25 {
+            hold_input right 0.0
+        }
+    }
+}

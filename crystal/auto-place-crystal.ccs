@@ -1,0 +1,9 @@
+// author: ImproperIssues (@improperissues)
+def module auto-place-crystal
+def desc Auto place crystals
+
+on tick {
+  if holding #crystal {
+    input right
+  }
+}

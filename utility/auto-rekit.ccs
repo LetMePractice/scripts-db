@@ -1,0 +1,10 @@
+// author: ballsforbigchungus (@ballsforbigchungus)
+module auto-rekit
+def desc "Loads a kit when low on totems."
+
+on tick {
+    !if inventory_has #totem {
+        //CHANGE THIS TO THE KIT COMMAND YOU WANT
+        say "/k1"
+    }
+}

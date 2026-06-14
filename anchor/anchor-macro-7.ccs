@@ -1,0 +1,29 @@
+// author: Jat (@jat9119)
+module anchor-macro
+def desc "Custom Scripted Module"
+on pre_tick {
+   if playing {
+      if targeting_block {
+         if input_active use {
+            if_not target_block :uncharged_respawn_anchor {
+               if_not holding #anchor {
+                  switch #anchor
+               }
+            }
+            if target_block :uncharged_respawn_anchor {
+               if_not holding :glowstone {
+                  switch :glowstone 
+               }
+            }
+         }
+         if target_block :charged_respawn_anchor {
+            if_not holding #totem {
+               switch #totem
+            }
+            if holding #totem {
+               input right
+            }
+         }
+      }
+   }
+}

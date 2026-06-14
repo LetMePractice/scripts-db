@@ -1,0 +1,11 @@
+// author: Jat (@jat9119)
+because you ned to delete this entire top part lmao ```def module hiit-crystal
+def desc "Custom Scripted Module"
+
+on module_enable {
+
+}
+
+on module_disable {
+
+}

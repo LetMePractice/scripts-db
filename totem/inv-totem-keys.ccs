@@ -1,0 +1,34 @@
+// author: ItzMyxa (@myxaaaa_72)
+Hello, I created a script using AI. Will this script work?
+
+def module inv-totem-keys
+def desc "Automatically equips totems using key simulations to bypass anti-cheats"
+
+on tick if playing {
+   // Check if offhand is empty and inventory has spare totems
+   if_not off_holding #totem if inventory_has #totem {
+      if_not input_active inventory {
+         // Simulate natural human reaction time before opening inventory
+         wait_random 0.05 0.12 
+         input inventory // Opens the inventory screen
+      }
+   }
+}
+
+on tick if input_active inventory if_not off_holding #totem {
+   if inventory_has #totem {
+      // Step 1: Brief delay to let the UI load (Human-like focus)
+      wait_random 0.08 0.15 {
+         
+         // Step 2: Press the physical 'F' key to move the totem to offhand
+         input key f 
+         
+         // Step 3: Verify the totem is equipped, then close the inventory
+         wait_random 0.10 0.18 {
+            if off_holding #totem if input_active inventory {
+               input inventory // Closes the inventory to return to combat
+            }
+         }
+      }
+   }
+}

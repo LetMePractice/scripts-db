@@ -1,0 +1,32 @@
+// author: ArchiveAetherOG (@a3ther.lol)
+// original script by wither1234o and modified by aether
+def module all-items-kb-with-shieldbreaker
+def desc "it shield breaks and kbs yeah"
+
+on left_click if playing {
+   if holding #crystal,#obsidian,#pearl,#golden_apple,#pickaxe,#totem,#anchor,#glowstone {
+   as target_entity !if blocking {
+         if target_entity :player {
+            switch #sword
+         }
+      }
+   }
+}
+
+on left_click if playing {
+   if holding #crystal,#obsidian,#pearl,#golden_apple,#pickaxe,#totem,#anchor,#glowstone,#_sword {
+      if hotbar_has #_axe {
+         as target_entity if blocking {
+            switch #axe {
+               wait 0.35 {
+                  input left {
+                     wait 1.25 {
+                        switch #sword
+                     }
+                  }
+               }
+            }
+         }
+      }
+   }
+}

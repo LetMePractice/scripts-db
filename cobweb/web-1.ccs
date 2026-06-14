@@ -1,0 +1,15 @@
+// author: NoIwill (@nomore_bs)
+def module web 
+def desc "web"
+
+if targeting_block {
+    wait 0.4
+    if targeting_block {
+    if hotbar_has #web {
+        switch #web 
+        wait_random 0.05 0.25
+        input right
+        switch #sword
+    }
+    }
+}

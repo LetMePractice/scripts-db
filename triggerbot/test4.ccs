@@ -1,0 +1,9 @@
+// author: .0n6 (@.0n6)
+def module test4
+def desc "test4"
+
+on tick if playing if attack_progress >=0.9 {                               
+if target_entity :zombie then input left then wait 0.1 then  hold_input backward 0.3 
+         }
+     } 
+ }

@@ -1,0 +1,13 @@
+// author: Saint (@halvmaane3)
+<@1250828225161068674> def module anchor-charge
+def desc Anchor Charge (Bypass)
+
+on tick {
+  if target_block :uncharged_respawn_anchor switch #glowstone then input right 
+  if target_block :charged_respawn_anchor switch #totem
+}
+
+on place_block {
+    if hotbar_has #anchor switch #anchor 
+}
+i dont want it to switch to anchor when am spamming obsidian to protect me can you fix it?

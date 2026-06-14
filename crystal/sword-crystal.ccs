@@ -1,0 +1,36 @@
+// author: Practice (@letmepractice)
+module sword-crystal
+def desc "Auto crystal and attack combo"
+
+on left_click if playing {
+    if holding #sword {
+        if targeting_block {
+            !if target_block #air {
+                switch #obsidian
+                wait 0.02 switch #crystal
+                wait 0.02 input left
+                wait 0.02 input left
+            }
+        }
+    }
+}
+
+on left_click if playing {
+    if holding #sword {
+        if entity_in_range :player 2.2 {
+            damage nearest_entity :player
+        }
+    }
+}
+
+on tick if playing {
+    if holding #sword {
+        if entity_in_range :player 2.2 {
+            if attack_progress >=0.7 {
+                if chance_of 95 {
+                    input left
+                }
+            }
+        }
+    }
+}

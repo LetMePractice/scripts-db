@@ -1,0 +1,14 @@
+// author: Jat (@jat9119)
+module auto-damage
+def desc "Automatically damages players when holding a sword or axe, no damage when holding food."
+
+on right_click {
+  if playing {
+       if holding #sword,#axe {
+        turn_to nearest_entity :player {
+
+            if attack_progress >= 0.9 {
+                input attack
+            }
+        }
+    }

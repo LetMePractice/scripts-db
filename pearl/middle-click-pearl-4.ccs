@@ -1,0 +1,16 @@
+// author: Yassouvox (@yassouvox)
+this is the pearl switch script:
+
+def module middle-click-pearl
+def desc "same"
+
+on middle_click if playing {
+  if hotbar_has #pearl {
+    !if holding #pearl {
+      switch #pearl
+    }
+    
+    wait 0.05 input use
+    wait 0.1 switch back
+  }
+}

@@ -1,0 +1,18 @@
+// author: Jello (@jello2210)
+def module double-w
+def desc "Press W twice in 3 seconds to attack"
+
+define counter 0
+
+on key_press w {
+    define counter counter+1
+    if counter == 1 {
+        wait 3 {
+            define counter 0
+        }
+    }
+    if counter == 2 {
+        input attack
+        define counter 0
+    }
+}

@@ -1,0 +1,7 @@
+// author: Cat (@cat123go)
+module cc-anchor-switch
+def desc ClickCrystals Anchor Switch but bypass for Astro Anti Cheat
+
+on place_block if holding #anchor wait_random 0.03 0.09 then switch #glowstone
+on interact_block if holding #glowstone wait_random 0.03 0.09 then switch #anchor
+on tick if input_active use if target_block :uncharged_respawn_anchor if holding #sword,#totem,#anchor,#pickaxe wait_random 0.03 0.09 then switch #glowstone

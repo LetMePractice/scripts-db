@@ -1,0 +1,11 @@
+// author: Floop (@__flipfloop)
+def module bypass-web
+def desc "Places a cobweb only when looking at common ground blocks"
+
+on right_click if playing if holding #sword if target_block :grass_block,:dirt,:stone,:podzol,:sand,:gravel,:netherack {
+   switch :cobweb
+   wait 0.05
+   input use
+   wait 0.05
+   switch #sword
+}

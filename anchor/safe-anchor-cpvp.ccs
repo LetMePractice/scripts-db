@@ -1,0 +1,65 @@
+// author: Practice (@letmepractice)
+module safe-anchor-cpvp
+def desc "Ultra-fast safe anchor with ground validation"
+
+on key_press h if playing {
+    if targeting_block {
+        if hotbar_has :glowstone {
+            if_not holding :glowstone {
+                switch :glowstone
+            }
+            input use
+            wait 0.05
+            
+            snap_to polar ~ ~1 then {
+                wait 0.05
+                
+                if targeting_block {
+                    if_not block ~ ~-1 ~ :air {
+                        func ultra_fast_anchor
+                    }
+                    if block ~ ~-1 ~ :air {
+                        if_not block ~ ~-2 ~ :air {
+                            notify 2 "Ground too low!"
+                        }
+                        if block ~ ~-2 ~ :air {
+                            notify 2 "Unsafe ground!"
+                        }
+                    }
+                }
+                if_not targeting_block {
+                    notify 2 "No ground target!"
+                }
+            }
+        }
+        if_not hotbar_has :glowstone {
+            notify 3 "Need glowstone in hotbar!"
+        }
+    }
+    if_not targeting_block {
+        notify 2 "Not targeting block!"
+    }
+}
+
+def func ultra_fast_anchor {
+    if hotbar_has :respawn_anchor {
+        switch :respawn_anchor
+        wait 0.01
+        input use
+        wait 0.01
+        switch :glowstone
+        wait 0.01
+        input use
+        wait 0.01
+        input use
+        wait 0.01
+        switch :respawn_anchor
+        wait 0.01
+        input use
+        
+        notify 1 "BOOM!"
+    }
+    if_not hotbar_has :respawn_anchor {
+        notify 3 "No anchor in hotbar!"
+    }
+}

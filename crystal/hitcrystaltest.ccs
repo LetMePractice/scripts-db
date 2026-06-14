@@ -1,0 +1,16 @@
+// author: $wag (@chrisopmate_0)
+module hitcrystaltest
+def desc "Auto-Hit-Crystal but wont miss"
+
+on key_press c {
+    if playing !if target_block #obsidian {
+        switch #obsidian
+        input right
+    }
+}
+on tick if input_active key c {
+    if target_block #obsidian {
+        switch #crystal
+        wait 0.01 input right
+    }
+}

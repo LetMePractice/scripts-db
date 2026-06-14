@@ -1,0 +1,23 @@
+// author: T For Tighnari (@silicon06520)
+def module mace
+def desc "idk what to say here"
+
+on key_press Z {
+if falling {
+if target_entity :player {
+as target_entity {
+if_not blocking {
+if holding #sword {
+switch #sword
+input left
+switch #mace[wind_burst]
+input left
+wait 0.05
+switch #sword
+}
+}
+}
+}
+}
+}
+Can somebody test this for me, I'm not home rn

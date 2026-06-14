@@ -1,0 +1,11 @@
+// author: Practice (@letmepractice)
+module aim-assist
+def desc "aim assist at 4 block range"
+
+on tick 2 if playing {
+    if holding #sword,#_axe {
+        if entity_in_range :player 4 {
+            turn_to nearest_entity :player aim body speed 55
+        }
+    }
+}

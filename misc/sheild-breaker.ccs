@@ -1,0 +1,7 @@
+// author: @everyone (@_pvpcat)
+def module sheild breaker
+def desc "breaks the sheild"
+
+on tick if target_entity #player {
+    as target_entity if blocking {
+        switch #axe then input left then switch back

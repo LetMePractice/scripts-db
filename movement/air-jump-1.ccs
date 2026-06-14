@@ -1,0 +1,9 @@
+// author: VortexPrime (@v0rtexdev.)
+def module air-jump
+def desc "Allows you to jump while being in the air. You can edit the 0.5 to a higher value for higher jumps."
+
+on key_press l if playing {
+   velocity ~ 2 ~
+}
+
+not mine, just modified

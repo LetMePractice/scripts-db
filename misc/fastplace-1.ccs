@@ -1,0 +1,9 @@
+// author: E X O (@exo6uss)
+def module fastplace
+def desc "Fast Right Click 
+
+on pre_tick if playing {
+    !if input_active right {
+        input right
+    }
+}

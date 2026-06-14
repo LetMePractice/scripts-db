@@ -1,0 +1,23 @@
+// author: Jello (@jello2210)
+def module mace-doubletap
+def desc "Double-hit with maces while falling"
+
+on pre_tick if playing if alive {
+    if falling {
+        if holding :mace if off_holding :mace {
+            if entity_in_range :player 3.2 {
+                turn_to nearest_entity :player then {
+                    if attack_progress >=0.9 {
+                        damage nearest_entity :player
+                        wait 0.02
+                        swap
+                        wait 0.02
+                        damage nearest_entity :player
+                        wait 0.02
+                        swap
+                    }
+                }
+            }
+        }
+    }
+}

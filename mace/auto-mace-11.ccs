@@ -1,0 +1,17 @@
+// author: Pink (@patr1otic.)
+module auto-mace
+def desc "snaps camera to nearest player when falling"
+
+on pre_tick {
+   if playing {
+      if falling {
+         if vel_y <= -0.6 {
+            if entity_in_range :player 4.0 {
+               if_not targeting_entity {
+                  snap_to nearest_entity :player
+               }
+            }
+         }
+      }
+   }
+}

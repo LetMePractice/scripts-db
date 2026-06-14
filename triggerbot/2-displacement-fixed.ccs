@@ -1,0 +1,23 @@
+// author: Nikii (@augustokok)
+def module 2-displacement-fixed
+def desc "Pure 180 degree snap-back and return on Key 2."
+
+def func perform_displacement {
+   snap_to ~180 0
+   input left
+   snap_to ~180 0
+}
+
+on key_press 2 {
+   if holding #sword {
+      if target_entity :player {
+         if entity_in_range :player 4.25 {
+            if attack_progress >= 0.88 {
+               as target_entity if hurt_time <= 0 {
+                  function perform_displacement
+               }
+            }
+         }
+      }
+   }
+}

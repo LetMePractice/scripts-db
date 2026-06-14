@@ -1,0 +1,18 @@
+// author: Jello (@jello2210)
+def module elytra-equip
+def desc "Equip elytra from hotbar; return to previous slot"
+
+on key_press r {
+    if playing {
+        if in_game {
+            if hotbar_has :elytra {
+                switch :elytra
+                wait 0.03 input use
+                wait 0.02 switch back
+            }
+            if hotbar_has #sword {
+                wait 0.02 switch #sword
+            }
+        }
+    }
+}

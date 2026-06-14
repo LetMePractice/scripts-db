@@ -1,0 +1,9 @@
+// author: add ivanchopl (this one is lmtd) (@ivan20109649)
+def module "auto crystal place"
+def desc "places crystal on obsidian when looking and holding it"
+
+on tick
+    if playing
+        if holding #end_crystal
+            if looking_at block("obsidian")
+                input right

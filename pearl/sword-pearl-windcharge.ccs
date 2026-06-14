@@ -1,0 +1,34 @@
+// author: °•Lycagon•° (@ilyct1)
+// @lycagon
+def module sword-pearl-windcharge
+def desc "Auto Pearl Catch"
+
+on tick {
+
+    if holding #netherite_sword {
+
+        if input_active use {
+
+            if hotbar_has #ender_pearl {
+
+                if hotbar_has #wind_charge {
+
+                    switch #ender_pearl
+                    wait 0.05
+
+                    input use
+                    wait 0.10
+
+                    switch #wind_charge
+                    wait 0.05
+
+                    input use
+                    wait 0.05
+
+                    switch #netherite_sword
+
+                }
+            }
+        }
+    }
+}

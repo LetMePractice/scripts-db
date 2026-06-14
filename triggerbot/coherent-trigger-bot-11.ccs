@@ -1,0 +1,20 @@
+// author: Practice (@letmepractice)
+Put your input active thing , after the if playing 
+
+
+Something like this should work 
+
+
+
+ module coherent-trigger-bot
+def desc "Coherent Client's Trigger Bot"
+
+on pre_tick if playing if target_entity :player,:armor_stand !if blocking if input_active left_control {
+    if attack_progress >= 0.9 {
+        if target_entity :player if blocking if hotbar_has #axe {
+            switch #axe
+            wait 0.05 switch back
+        }
+        input attack
+    }
+}

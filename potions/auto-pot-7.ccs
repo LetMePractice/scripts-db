@@ -1,0 +1,44 @@
+// author: .0n6 (@.0n6)
+For npot and smp 
+//@.0n6
+def module Auto-pot
+on key_press P if playing {
+    if health < 20 if_not input_active use {
+        if hotbar_has #potion[heal] {
+            switch #potion[heal]           
+            input right
+            wait_random 0.07 0.09 {
+            switch back
+            }
+        }
+    }
+if_not effect_duration #strength > 0 if_not input_active use {
+        if hotbar_has #potion[strength] {
+            switch #potion[strength]           
+            input right
+            wait_random 0.07 0.09 {
+            switch back
+            }
+        }
+    }
+
+    if_not effect_duration #speed > 0 if_not input_active use {
+        if hotbar_has #potion[swiftness] {
+            switch #potion[swiftness]           
+            input right
+            wait_random 0.07 0.09 {
+            switch back
+            }
+        }
+    }
+    
+    if_not effect_duration #fire > 0 if_not input_active use {
+        if hotbar_has #potion[fire] {
+            switch #potion[Fire]            
+            input right
+            wait_random 0.07 0.09 {
+            switch back
+            }
+        }
+    }    
+}

@@ -1,0 +1,31 @@
+// author: Kaira (@_timel3ss.)
+def module Auto-Mace
+def desc "Auto-attacks with sword/axe while falling, then swaps to Wind Burst mace on hit"
+
+on tick {
+    if playing {
+        if falling {
+            if_not gliding {
+                if attack_progress >= 0.2 {
+                    if targeting_entity {
+                        as target_entity {
+                            if_not blocking {
+                                input left
+                                execute func mace_swap
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+def func mace_swap {
+    if pos_y <7 {
+        switch :mace[breach]
+    }
+    if pos_y >=7 {
+        switch #mace[wind_burst]
+    }
+}

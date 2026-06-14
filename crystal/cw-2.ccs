@@ -1,0 +1,28 @@
+// author: Itacat (@king_baller9258)
+module cw
+def desc "Custom Scripted Module"
+on pre_tick {
+   if playing {
+      if holding #crystal {
+         if target_block #obs,:bedrock {
+            if_not input_active use {
+               input key k
+            }
+         }
+      }
+   }
+}
+
+on left_click {
+   if playing {
+      if target_entity #crystal {
+         if_not input_active use {
+         wait 0.05 {
+            if target_block #obs,:bedrock {
+            input key k
+            }
+          }
+         }
+      }
+   }
+}

@@ -1,0 +1,13 @@
+// author: ltj_ (@__ltj_)
+// made by xnerfikk
+def module MaceAura
+def desc "Hits a player like killaura but with mace"
+
+
+on tick while entity_in_range :player 3.0 { snap_to nearest_entity :player then
+switch #mace
+input attack
+switch #back
+wait 0.5 send 
+
+ }

@@ -1,0 +1,12 @@
+// author: L (@triggerbotters)
+def module aim_at_nearest_player
+def desc "Aims towards the nearest player."
+on right_click if playing {
+send "right_click"
+on tick if playing {
+    if entity_in_range :player 5 {
+        turn_to nearest_entity :player
+    }
+  }
+}
+<@1175455408538800205> sorry for ping, but why are my right click events not working

@@ -1,0 +1,12 @@
+// author: LoopholeMC (@loopholemc)
+Tired of trigger bot banning you?
+def module trigger-bot
+def desc "Trigger bot that works even on hypixel"
+
+on tick if playing {
+  if target_entity :player,:armor_stand {
+    if attack_progress >=0.9 if chance_of 75 {
+      input attack
+    }
+  }
+}

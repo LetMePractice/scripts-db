@@ -1,0 +1,20 @@
+// author: Deleted User (@Deleted User)
+def module hitbox-sword
+def desc "Best hitbox for sword pvp"
+
+on tick if playing {
+    if holding #sword {
+        if entity_in_range :player 2.6 {
+          if attack_progress >= 0.7
+           wait 0.7 input left
+        }
+    }
+}
+
+on left_click if playing {
+    if holding #sword {
+        if entity_in_range :player 2.6 {
+            damage nearest_entity :player
+        }
+    }
+}

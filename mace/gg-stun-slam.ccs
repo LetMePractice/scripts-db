@@ -1,0 +1,16 @@
+// author: wxund (@wounddup)
+def module gg-stun-slam
+def desc "Hit once with axe, then automatically switch to mace and perform stun slam"
+
+on left_click if playing {
+    if holding #axe {
+        if hotbar_has #mace {
+            wait 0.04
+            switch #mace
+            wait 0.04
+            input attack
+            wait 0.02
+            switch #sword
+        }
+    }
+}

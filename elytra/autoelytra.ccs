@@ -1,0 +1,29 @@
+// author: Jello (@jello2210)
+def module autoelytra
+
+def func _openinv { input inventory; wait 0.05 }
+def func _closeinv { wait 0.05; input inventory }
+
+def func equipelytra {
+   if playing if inventory_has :elytra {
+      _openinv
+      gui_quickmove :elytra
+      _closeinv
+   }
+}
+
+def func equiparmor {
+   if playing {
+      _openinv
+      if inventory_has :netherite_chestplate { gui_quickmove :netherite_chestplate; _closeinv; exit 0 }
+      if inventory_has :diamond_chestplate   { gui_quickmove :diamond_chestplate;   _closeinv; exit 0 }
+      if inventory_has :iron_chestplate      { gui_quickmove :iron_chestplate;      _closeinv; exit 0 }
+      if inventory_has :golden_chestplate    { gui_quickmove :golden_chestplate;    _closeinv; exit 0 }
+      if inventory_has :chainmail_chestplate { gui_quickmove :chainmail_chestplate; _closeinv; exit 0 }
+      if inventory_has :leather_chestplate   { gui_quickmove :leather_chestplate;   _closeinv; exit 0 }
+      _closeinv
+   }
+}
+
+on tick if playing if gliding !if has_equipment :elytra { function equipelytra }
+on tick if playing if on_ground if has_equipment :elytra { function equiparmor }

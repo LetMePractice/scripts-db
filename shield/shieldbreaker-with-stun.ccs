@@ -1,0 +1,21 @@
+// author: Kaira (@_timel3ss.)
+This stuns when used on the ground, however when used in a jump, it just breaks the shield. This only happens if you use a sword to hit, however if you use an axe, it always stuns
+
+
+// @078K
+def module ShieldBreaker-with-Stun
+def desc "Shield Breaker with Auto stun"
+
+on left_click if playing {
+   if holding #sword {
+      if on_ground {
+         as target_entity if blocking {
+            switch #_axe
+            input attack
+            wait 0.06
+            input attack
+            switch #sword
+         }
+      }
+   }
+}

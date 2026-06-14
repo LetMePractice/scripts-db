@@ -1,0 +1,17 @@
+// author: Deleted User (@Deleted User)
+def module MoneyDupe
+def desc "MoneyDupe, you blind?"
+
+on key_press I{
+    say /shop Blocks
+    gui_switch #blue_stained_glass_pane
+    gui_swap
+    gui_switch #waxed_copper_block
+    // do something to click the item in gui
+    gui_switch #blue_stained_glass
+    loop 11{
+        gui_swap
+    }
+    gui_switch #paper
+    gui_swap
+}

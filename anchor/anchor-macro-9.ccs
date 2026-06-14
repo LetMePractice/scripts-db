@@ -1,0 +1,7 @@
+// author: Cat (@cat123go)
+module Anchor-Macro
+def desc Anchor Macro
+
+on right_click if holding #anchor if targeting_block !if target_block #air wait 0.05 switch #glowstone then input right then wait 0.05 then switch #totem then input right
+
+Simple Anchor macro for anyone that wants to play with rly obv cheat lol

@@ -1,0 +1,10 @@
+// author: .0n6 (@.0n6)
+def module "TTTT"
+on key_press X if playing {
+switch #mace 
+repeat 25 {
+input left
+}
+}
+
+Try this maybe

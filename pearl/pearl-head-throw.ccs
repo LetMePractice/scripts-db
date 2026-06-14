@@ -1,0 +1,26 @@
+// author: ccsoured_ (@ccsoured_)
+def module pearl-head-throw
+def desc "yeah"
+
+on key p {
+   if playing {
+      if target_entity :player {
+         if item_cooldown :ender_pearl <= 0 {
+            turn_to nearest_entity :player aim head speed 12
+            wait 0.05
+            if_not holding :ender_pearl {
+               if hotbar_has :ender_pearl {
+                  switch :ender_pearl
+                  wait 0.05
+               } else {
+                  switch :ender_pearl
+                  wait 0.06
+               }
+            }
+            input use
+            wait 0.06
+            switch back
+         }
+      }
+   }
+}

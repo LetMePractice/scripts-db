@@ -1,0 +1,45 @@
+// author: Cat (@cat123go)
+module obsidian-switcher
+def desc Right click with sword or crystal to place obsidian
+
+on right_click if holding #sword,#crystal if targeting_block {
+    !if target_block :obsidian,:bedrock,:uncharged_respawn_anchor,:charged_respawn_anchor {
+        switch #obsidian
+    }
+}
+
+
+ module right-click-tweak
+def desc right click charged anchor with glowstone and it will explode
+
+on right_click if target_block :charged_respawn_anchor if holding :glowstone switch #anchor
+on right_click if holding #anchor,#sword,#crystal if target_block :uncharged_respawn_anchor switch :glowstone
+
+
+
+ module shield-disabler
+def desc switches to your axe if you have in your hotbar if you are targeting a player with shield
+
+on tick if playing if targeting_entity {
+  as target_entity if blocking as client if hotbar_has #_axe {
+    switch #_axe 
+  }
+}
+
+
+
+
+
+ module auto-totem
+def desc "Most blatant one ever"
+
+on totem_pop if playing {
+    if inventory_has #totem {
+        gui_swap #totem
+    }
+}
+
+ module Auto-Crystal
+def desc Auto Crystal, hold down right click
+
+on tick if input_active use if target_entity :end_crystal if holding #crystal input left

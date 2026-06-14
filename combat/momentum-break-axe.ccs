@@ -1,0 +1,43 @@
+// author: wxund (@wounddup)
+module momentum-break-axe
+def desc "Axe momentum breaks: aim, sprint-tap poke, backstep, quick sword chain."
+
+define function mb_poke {
+    if entity_in_range :player 5 {
+        turn_to nearest_entity :player aim head speed 10
+        hold_input sprint 0.08
+        hold_input forward 0.08
+        input attack
+        wait_random 0.010 0.018
+        input attack
+        hold_input backward 0.12
+        hold_input strafe_left 0.12
+    }
+}
+
+define function mb_chain {
+    if hotbar_has #sword {
+        switch #sword
+        hold_input sprint 0.05
+        if item_cooldown mainhand <= 0.05 { input attack }
+        wait 0.36
+        input attack
+        if hotbar_has #axe { switch #axe }
+    }
+}
+
+on left_click if playing {
+    if holding #axe if target_entity :player {
+        if ping > 120 { wait 0.02 }
+        function mb_poke
+        function mb_chain
+    }
+}
+
+on tick if playing {
+    if entity_in_range :player 6 {
+        turn_to nearest_entity :player aim head speed 10
+    } else {
+        hold_input cancel
+    }
+}

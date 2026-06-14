@@ -1,0 +1,14 @@
+// author: xh4dow_ (@xh4dow_)
+def module auto-damage
+def desc "Automatically damages players when holding a sword or axe, no damage when holding food."
+on tick if playing if target_entity :player,:armor_stand !if blocking {
+    if holding #sword, {
+        if attack_progress >= 0.9 if chance_of 75 {
+            as target_entity if blocking as client if hotbar_has #_axe {
+                switch #axe
+                wait 0.05 switch back
+            }
+            input left
+        }
+     }
+}

@@ -1,0 +1,40 @@
+// author: T For Tighnari (@silicon06520)
+def module cartpvp
+def desc "My semi-auto cartpvp utils you might get banned cus i didnt test on any big servers"
+
+on item_use if playing {
+  if holding #flint_and_steel {
+    wait_random 0.01 0.05 {
+      switch #crossbow
+    }
+  }
+}
+
+on place_block if playing {
+  if holding #rail,powered_rail {
+    switch :tnt_minecart
+    wait_random 0.01 0.05 {
+     input right
+    }
+  }
+}
+
+on tick if playing {
+  if holding #crossbow {
+    if target_entity :tnt_minecart {
+      wait_random 0.01 0.05 {
+        input right
+      }
+    }
+  }
+}
+
+on item_use if playing {
+  if holding #bow {
+    wait 0.01 {
+      switch #rail
+    }
+  }
+}
+
+Some of these are not tested because i just thought i might as well add them right before i was gonna post

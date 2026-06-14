@@ -1,0 +1,17 @@
+// author: Beev (@.beevv)
+I also use this script 
+
+def module elytra
+def desc "Auto Elytra"
+
+// CHANGE THE BIND TO YOUR LIKING
+on key_press c if playing {
+    if hotbar_has #firework {
+        wait 0.05 switch #elytra
+        wait 0.05 input right
+        wait 0.1 switch #rocket
+        wait 0.05 input jump
+        wait 0.2 input jump
+        wait 0.3 input right
+    }
+}

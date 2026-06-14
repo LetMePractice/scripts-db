@@ -1,0 +1,14 @@
+// author: ImproperIssues (@improperissues)
+def module auto-bow-aim
+def desc "Made by I-No-oN"
+
+on move_pos {
+  if holding #sword if entity_in_range :player 30 {
+    turn_to nearest_entity :player then {
+      if target_entity :player {
+         module disable auto-bow-aim
+      }
+    }
+  }
+}
+good for reading <:yas:1137017223463063632>

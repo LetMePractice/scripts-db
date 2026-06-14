@@ -1,0 +1,7 @@
+// author: Jello (@jello2210)
+def module easy-dhand
+def desc "Allowed on TL (literally switches to totem when you open your inventory)"
+
+on key_press e if playing {
+    switch #totem
+}

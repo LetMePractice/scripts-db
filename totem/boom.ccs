@@ -1,0 +1,35 @@
+// author: Not_Tahsin (@not_tahsin7)
+def module "boom"
+def desc "jumpscare your enemies"
+
+on middle_click {
+  if playing {
+
+    if holding #sword, #totem_of_undying {
+      if hotbar_has #creeper_spawn_egg {
+
+        wait_random 0.02 0.05
+        switch #creeper_spawn_egg
+        input right
+
+        if target_entity #creeper {
+
+          look_at #creeper speed 70 110
+          wait_random 0.02 0.04
+
+          switch #sword [knockback]
+
+          wait_random 0.03 0.06
+          input left
+          wait_random 0.03 0.06
+          input left
+          wait_random 0.03 0.06
+          input left
+
+          wait_random 0.03 0.07
+          switch #totem_of_undying
+        }
+      }
+    }
+  }
+}

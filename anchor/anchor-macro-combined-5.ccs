@@ -1,0 +1,22 @@
+// author: a881a11 (@a881a11)
+def module Anchor-Macro-Combined
+def desc "Auto-charge only — manual detonate, no click risk"
+
+on tick if playing !if blocking !if holding :golden_apple,:shield if target_block :uncharged_respawn_anchor {
+    switch 5
+    wait_random 0.08 0.12 input right
+}
+
+on tick if playing !if blocking !if holding :golden_apple,:shield,:anchor if target_block :charged_respawn_anchor {
+    switch 6
+}
+
+on tick if playing {
+    if target_block :charged_respawn_anchor {
+            switch #totem
+            input use then wait 0.3
+            switch :respawn_anchor
+       }
+   }
+
+This is the script, Im no seeing any 0.05 attack etc <@1250828225161068674>

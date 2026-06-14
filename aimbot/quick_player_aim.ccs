@@ -1,0 +1,15 @@
+// author: .0n6 (@.0n6)
+// <@973994782714105937>
+def module quick_player_aim
+def desc "Aims towards the nearest player on sword right-click."
+
+on tick if input_active right if playing {
+     if holding #sword {
+         if entity_in_range :player 10 {
+            turn_to nearest_entity :player aim head 
+         }
+      }
+   }
+
+
+its laggy

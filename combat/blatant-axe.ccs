@@ -1,0 +1,10 @@
+// author: Cat (@cat123go)
+module blatant-axe
+def desc "Axes a player when they come into hit range"
+
+on tick if entity_in_range :player 3.3 {
+    as nearest_entity :player if blocking {
+        switch #axe
+        snap_to nearest_entity :player then input left
+    }
+}

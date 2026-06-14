@@ -1,0 +1,76 @@
+// author: !                        KeVin.. (@kevinnnnnnnnnnnnnnnnnnnn)
+module Auto-Mace-Elytra-+-Auto-Stun-Slam
+def desc "Auto Mace while falling, gliding, and swap elytra to chestplate near players and strike with mace.+ Auto stun slam"
+
+on key_press c if playing {
+   if on_ground {
+      if hotbar_has #firework {
+         switch #elytra
+         input use
+         switch #rocket
+         wait 0.15 input jump
+         input jump
+         wait 0.2 input use
+      }
+   }
+}
+
+on key_press c if playing {
+   if_not on_ground {
+      if hotbar_has #elytra {
+         switch #elytra
+         input use
+         switch #rocket
+         input jump
+         wait 0.045 input use
+      }
+   }
+   if_not hotbar_has #elytra {
+      switch #rocket
+      input jump
+      input use
+   }
+}
+
+on pre_tick if playing if entity_in_range :player 3.2 {
+   if gliding {
+      if_not on_ground {
+         if hotbar_has #chestplate
+         switch #chestplate
+         input use
+         if hotbar_has #mace[density]{
+            switch #mace[density]
+         }
+         if_not hotbar_has #mace[density]{
+            switch #mace[breach]
+         }
+      }
+   }
+}
+
+on tick {
+   if_not on_ground {
+      if holding #mace {
+         if vel_y <= -0.25 {
+            if entity_in_range :player 3 {
+               damage nearest_entity :player
+            }
+         }
+      }
+   }
+}
+
+on pre_tick if playing {
+   if holding #axe,#sword,#mace if targeting_entity {
+      as target_entity if blocking {
+         if falling {
+            input attack
+            wait 0.02
+            switch :mace[density]
+            wait 0.02
+            input attack
+            switch #axe
+         }
+      }
+   }
+}

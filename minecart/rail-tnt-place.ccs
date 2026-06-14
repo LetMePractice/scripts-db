@@ -1,0 +1,28 @@
+// author: Practice (@letmepractice)
+module rail-tnt-place
+def desc "rail tnt split action"
+
+on right_click if playing {
+  if holding #rail {
+    if_not target_block :air {
+      if hotbar_has :tnt_minecart {
+        if target_block #rail {
+          switch :tnt_minecart
+          wait 0.05
+          input use
+        }
+      }
+    }
+  }
+}
+
+on right_release if playing {
+  if holding :tnt_minecart {
+    switch #slab
+    input sneak
+    wait 0.03
+    input use
+    wait 0.01
+    hold_input cancel
+  }
+}

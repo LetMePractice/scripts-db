@@ -1,0 +1,18 @@
+// author: Floop (@__flipfloop)
+def module smart-stun
+def desc "Makes an extra hit with an axe if the target is blocking"
+
+on left_click if playing {
+    if chance_of 77 {
+        if holding #_axe {
+            if target_entity :player {
+                as target_entity {
+                    if blocking {
+                        wait_random 0.06 0.12
+                        input attack
+                    }
+                }
+            }
+        }
+    }
+}

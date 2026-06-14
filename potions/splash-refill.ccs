@@ -1,0 +1,11 @@
+// author: 4q25 • mizo 🍀 (@4q25)
+def module splash-refill
+def desc "Auto refills splash potions to hotbar when hovered"
+
+on tick 20 {
+    if input_active inventory {
+        if hovering_over #splash_potion {
+            gui_quickmove #splash_potion
+        }
+    }
+}

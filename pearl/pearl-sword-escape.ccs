@@ -1,0 +1,17 @@
+// author: Jello (@jello2210)
+def module pearl-sword-escape
+def desc "Pearl only when damaged by a player holding a sword"
+
+on damage if playing {
+   as nearest_entity :player if holding #sword {
+      switch back
+      snap_to position ~ ~-3 ~
+      if hotbar_has :ender_pearl {
+         switch :ender_pearl
+         input use
+      }
+      wait 0.2
+      snap_to position ~ ~3 ~
+      switch back
+   }
+}

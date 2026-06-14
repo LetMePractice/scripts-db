@@ -1,0 +1,13 @@
+// author: Nikii (@augustokok)
+<@882445130496356374>  that is a nice script i think we can do more with that 
+def module 2-horizon-fix
+def desc "Displacement on Key 2: Straight horizontal view."
+
+on key_press 2 {
+   if playing {
+      snap_to position ^ ^1.8 ^1.3
+      wait 0.05 {
+       
+      }
+   }
+}

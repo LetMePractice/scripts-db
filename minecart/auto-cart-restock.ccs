@@ -1,0 +1,10 @@
+// author: suckyswags (@suckyswags)
+<@1250828225161068674> 
+
+``def module auto-cart-restock
+def desc "Restock TNT minecarts to slot 8 and 9 on hover"
+
+on inventory_hover :tnt_minecart {
+    move_to hotbar 8
+    move_to hotbar 9
+}``

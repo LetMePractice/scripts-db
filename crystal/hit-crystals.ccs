@@ -1,0 +1,15 @@
+// author: NoIwill (@nomore_bs)
+def module hit-crystals
+def desc "Custom Scripted Module"
+
+on right_click if playing {
+  if holding #sword,#obsidian,#crystal if target_block :sand,:grass_block,:dirt,:stone {
+    switch #obsidian
+    input right
+
+    wait 0.05 if target_block :obsidian {
+      switch #crystal 
+      input right
+    }
+  }
+}

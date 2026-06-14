@@ -1,0 +1,15 @@
+// author: Souldroppz_ (@souldroppz_)
+def module auto-mace
+def desc yes
+def desc "mace players with ez"
+
+on tick if playing {
+if falling {
+if holding #mace  {
+if target_entity :player {
+ as target_entity {
+ if_not blocking 
+input left_click
+]
+]
+]

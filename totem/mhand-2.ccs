@@ -1,0 +1,18 @@
+// author: suckyswags (@suckyswags)
+``def module mhand
+def desc "mhand"
+
+on key_press e if playing {
+   if inventory_has #totem {
+      if_not holding #totem {
+         if_not input_active inventory {
+            input inventory
+            wait 0.08
+         }
+         gui_quickmove #totem
+         if input_active inventory {
+            input inventory
+         }
+      }
+   }
+}``

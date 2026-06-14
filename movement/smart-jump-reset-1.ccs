@@ -1,0 +1,17 @@
+// author: .0n6 (@.0n6)
+module Smart-Jump-Reset
+def desc "Only activates if you are being comboed"
+
+on damage {
+    if chance_of 75 {
+        if on_ground {
+            !if entity_in_range :player 2.5 {
+                if entity_in_range :player 4 {
+                    if_not targeting_entity {
+                        input jump
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,11 @@
+// author: ImproperIssues (@improperissues)
+when ur done try this script <:yas:1137017223463063632> 
+
+def module hover-totem
+def desc "Auto hotkeys totems to offhand when you hover over them in your inventory"
+
+on tick if input_active inventory {
+  !if off_holding #totem if hovering_over #totem {
+    input key f
+  }
+}

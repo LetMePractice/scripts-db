@@ -1,0 +1,18 @@
+// author: Xylophone (@rek2621)
+Does this look like it would work 
+def module auto_totem
+def desc Automatically replaces popped offhand totem
+
+on totem_pop:
+  if hotbar[7] == #totem:                      # slot 8 is index 7 (0-based)
+    hotbar 7
+    wait 0.05
+    input key g                                # use 'g' to offhand it
+  else if inventory_has #totem:
+    open_inventory
+    wait 0.1
+    move #totem to offhand
+    wait 0.05
+    if hotbar[7] != #totem:
+      move #totem to hotbar[7]
+    close_inventory

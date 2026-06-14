@@ -1,0 +1,6 @@
+// author: ThanhHallow (@thanhohyeahhh)
+module memory-leak-prob
+def desc "Custom Scripted Module"
+
+on tick if playing if targeting_block !if target_block #air if input_active right if holding #anchor switch #glowstone then input right
+on interact_block if holding #glowstone switch #anchor

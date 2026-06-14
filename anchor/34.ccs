@@ -1,0 +1,12 @@
+// author: .darkxvi (@.darkxvi)
+// <@1104644482848276491> 
+def module 34
+def desc 34
+
+on right_click if holding #totemofundying if target_block if hotbar_has #anchor,#glowstone {
+    switch #anchor
+    wait 0.02 input right
+    switch #glowstone
+    wait 0.01 input right
+    switch #totemofundying
+}

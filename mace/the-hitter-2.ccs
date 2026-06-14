@@ -1,0 +1,45 @@
+// author: wxund (@wounddup)
+The **HITTER**
+"The greatest triggerbot made on clickcrystal (allegedly)"
+ module the-hitter
+def desc "the best tbot you have EVER seen"
+
+on tick {
+   if playing {
+      if target_entity :player {
+         if holding #sword,#_axe,#mace {
+            if attack_progress >=0.9 {
+               as target_entity
+               if blocking {
+                  if hotbar_has #_axe {
+                     execute_random {
+                        function tbot_miss
+                        function shield_break
+                        function shield_break
+                        function shield_break
+                     }
+                  }
+               }
+               as client {
+                  if on_ground {
+                     if chance_of 75 {
+                        input attack
+                     }
+                  }
+                  !if on_ground {
+                     if falling {
+                        if chance_of 75 {
+                           input attack
+                        }
+                     }
+                  }
+               }
+            }
+         }
+      }
+   }
+}
+
+def func tbot_miss {
+   input attack
+}

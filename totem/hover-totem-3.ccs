@@ -1,0 +1,18 @@
+// author: suckyswags (@suckyswags)
+<@1250828225161068674> 
+
+def module hover-totem
+def desc "yeah"
+
+on tick {
+   if inventory_has #totem if input_active inventory {
+       if hovering_over #totem if_not off_holding #totem {
+           wait_random 0.1 0.2 if_not off_holding #totem {
+               input key f
+           }
+       }
+   }
+}
+
+
+will it work for 1.2.3 cc version

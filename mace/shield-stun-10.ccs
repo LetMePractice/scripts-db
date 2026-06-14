@@ -1,0 +1,32 @@
+// author: sn$k II (@snok_fr)
+<@1190405726544347258> where would i put cha ce of: def module shield-stun
+def desc "yeah"
+
+on tick 3 if playing {
+    if holding #sword,#axe {
+        if_not blocking {
+        if target_entity :player {
+            as target_entity if blocking {
+                if hotbar_has #_axe {
+                   execute {
+                                    function miss
+                                    wait_random 0.045 0.05
+                                    function break
+                                }
+                }
+            }
+        }
+      }
+    }
+}
+
+def func break {
+    switch #_axe
+    wait 0.2
+    if_not blocking wait_random 0.023 0.03 input attack input left
+    wait 0.03 switch back
+}
+
+def func miss {
+        input left
+    }

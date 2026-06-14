@@ -1,0 +1,12 @@
+// author: TutlaMC (@tutlamc)
+U can simplify it more:
+def module kill-aura
+def desc "When holding sword or axe automatically hi tthem"
+
+on tick if playing if attack_progress >=0.9 {
+  if targeting_entity {
+    if holding #sword,#_axe,#trident {
+      input attack;
+    }
+  }
+}

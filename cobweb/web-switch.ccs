@@ -1,0 +1,7 @@
+// author: ballsforbigchungus (@ballsforbigchungus)
+module web-switch
+def desc "Custom Scripted Module"
+
+on right_click if playing if holding #web !if target_block #air if hotbar_has #lava {
+    wait 0.05 switch #lava then wait 0.1 input right wait 0.1 input right
+}

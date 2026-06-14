@@ -1,0 +1,14 @@
+// author: theangrydog123 (@theangrydog123)
+whats wrong with my script?
+
+def module stun-slam
+def desc "stun slammer!"
+
+on tick if target_entity :player if input_active sprint if attack_progress >=0.9 if blocking as client {
+      as target_entity {
+         switch #axe then input attack then wait 0.02 then switch #mace then input attack
+      }
+}
+
+
+it wont break the shield

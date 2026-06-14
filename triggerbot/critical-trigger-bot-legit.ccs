@@ -1,0 +1,54 @@
+// author: Jello (@jello2210)
+def module critical-trigger-bot-legit
+def desc "Crits while falling, with human-like misses and random delays"
+
+on pre_tick {
+   if playing {
+      if target_entity :player,:armor_stand {
+         !if blocking {
+            !if input_active use {
+               if attack_progress >=0.9 {
+                  !if blocking {
+                     if holding #sword {
+                        execute_random {
+                           function __miss;
+                           function __hit;
+                           function __hit;
+                           function __hit;
+                           function __hit;
+                        }
+                     }
+                  }
+               }
+            }
+         }
+      }
+   }
+}
+
+def func __hit {
+   wait_random 0.02 0.08
+   if on_ground {
+      execute_random {
+         input attack;
+         ;
+         ;
+      }
+   }
+   !if on_ground {
+      if falling {
+         input attack
+      }
+   }
+}
+
+def func __miss {
+   execute_random {
+      if on_ground { input attack; }
+      wait_random 0.06 0.14;
+      !if on_ground {
+         wait_random 0.00 0.03
+         input attack
+      }
+   }
+}

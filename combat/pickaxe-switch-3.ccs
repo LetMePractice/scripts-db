@@ -1,0 +1,9 @@
+// author: Cat (@cat123go)
+Made this ages ago and forgot to post 💀🔥
+
+ module pickaxe-switch
+def desc Auto pickaxe
+
+on tick if input_active attack if holding #totem if target_block :stone,:deepslate wait 0.03 then switch #pickaxe
+on tick if input_active attack if holding #sword if target_block :stone,:deepslate wait 0.03 then switch #pickaxe
+on break_block if holding #pickaxe then wait 0.03 then switch back

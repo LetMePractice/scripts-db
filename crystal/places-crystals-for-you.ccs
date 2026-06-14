@@ -1,0 +1,5 @@
+// author: Cat (@cat123go)
+module auto-placee
+def module places crystals for you
+
+on tick if target_block :obsidian,:bedrock if holding #crystal if playing then input right

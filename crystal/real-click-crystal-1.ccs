@@ -1,0 +1,9 @@
+// author: golden (@dubgolden)
+def module real-click-crystal
+def desc "yeah"
+
+on mouse_click right {
+  if playing
+    if cursor_entity minecraft:end_crystal
+      input attack
+}

@@ -1,0 +1,30 @@
+// author: Jello (@jello2210)
+def module auto-heal-combo
+def desc "Low HP -> look down, throw 2 splash IH2 (assumes only splash in hotbar), then gapple."
+
+on tick if playing if on_ground if health <= 8.9 {
+    snap_to any_block
+
+    // First splash
+    if hotbar_has #splash_potion {
+        switch #splash_potion
+        wait 0.05
+        input use
+        wait 0.40
+    }
+
+    // Second splash
+    if hotbar_has #splash_potion {
+        switch #splash_potion
+        wait 0.05
+        input use
+        wait 0.40
+    }
+
+    // Gap
+    if hotbar_has #golden_apple {
+        switch #golden_apple
+        wait 0.05
+        input use
+    }
+}

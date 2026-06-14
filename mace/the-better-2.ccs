@@ -1,0 +1,83 @@
+// author: wxund (@wounddup)
+Here’s a drop-in update that adds “hit, then wait for target to be on the ground again” when you’re holding a sword. It leaves axe/mace behavior unchanged.
+
+def module the-better
+def desc "the best tbot you have EVER seen"
+
+on tick {
+   if playing {
+      if target_entity :player {
+         if holding #sword,#_axe,#mace {
+            if attack_progress >=0.9 {
+               as target_entity
+               if blocking {
+                  if hotbar_has #_axe {
+                     execute_random {
+                        function tbot_miss
+                        function shield_break
+                        function shield_break
+                        function shield_break
+                     }
+                  }
+               }
+               as client {
+                  if on_ground {
+                     if chance_of 90 {
+                        if holding #sword {
+                           function sword_hit_wait_ground
+                        }
+                        if_not holding #sword {
+                           input attack
+                        }
+                     }
+                  }
+                  !if on_ground {
+                     if falling {
+                        if chance_of 90 {
+                           if holding #sword {
+                              function sword_hit_wait_ground
+                           }
+                           if_not holding #sword {
+                              input attack
+                           }
+                        }
+                     }
+                  }
+               }
+            }
+         }
+      }
+   }
+}
+
+def func tbot_miss {
+   input attack
+}
+
+def func shield_break {
+   switch #axe
+   wait 0.01
+   input attack
+   wait_random 0.01 0.013
+   input attack
+   wait 0.05
+   switch back
+}
+
+def func sword_hit_wait_ground {
+   input attack
+   wait 0.01
+   as target_entity {
+      while_not on_ground {
+         wait 0.01
+      }
+   }
+}
+
+How it works, step by step:
+
+1. Attack decision stays the same: target is a player, you’re in range, attack_progress ≥ 0.9, and optional chance gate.
+2. If the held item is a sword, the script calls `sword_hit_wait_ground` instead of raw `input attack`.
+3. `sword_hit_wait_ground` performs the attack, then switches context to the target and blocks in a tight loop until `on_ground` is true again.
+4. While that loop runs, no new swings are issued, so the bot won’t chain mid-air hits.
+5. For axe or mace the original instant-attack behavior is preserved, including shield-break logic.

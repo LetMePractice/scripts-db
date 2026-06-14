@@ -1,0 +1,36 @@
+// author: Kira (@rogue.kira)
+def module Auto-Breach-Swap
+ninjer
+def desc "Custom Scripted Module"
+
+on pre_tick {
+    if input_active attack
+        if target_entity :player,:armor_stand 
+          if moving
+           if_not falling 
+             if hotbar_has #mace[breach]
+              if holding #sword,#axe 
+                  switch #mace[breach]
+                   wait 0.01
+                       switch back
+                   input attack
+}
+    
+    if input_active attack {
+        if target_entity :player,:armor_stand 
+            if falling 
+               if hotbar_has #mace[breach]
+               if hotbar_has #mace[density]
+                if holding #sword,#axe 
+                 if vel_y <=-0.5
+                  switch #mace[density]
+                if vel_y >-0.5 
+                  switch #mace[breach]
+                    wait 0.01 
+                        switch back
+                    input attack
+}
+
+
+
+yall why this dont work

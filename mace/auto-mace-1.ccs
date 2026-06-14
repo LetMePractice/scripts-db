@@ -1,0 +1,67 @@
+// author: Pink (@patr1otic.)
+module Auto-Mace
+
+def func elytra_mace {
+   switch #mace[density]
+        wait_random 0.05 0.08 
+        input left        
+    }
+    
+def func vel_smash {
+    if vel_y >= -1 {
+        switch #mace[breach]
+        wait_random 0.05 0.08 
+        input left
+        wait_random 0.09 0.14
+       switch #sword
+    }
+    if vel_y < -1 {
+        switch #mace[density]
+        wait_random 0.05 0.08 
+        input left
+        wait_random 0.09 0.14
+        switch #sword
+   }
+}
+
+def func stunslam {
+    wait_random 0.002 0.02
+    switch #_axe
+    wait_random 0.002 0.02
+    input left        
+    wait_random 0.05 0.08 
+    switch #mace[density]
+    wait_random 0.002 0.02
+    input left   
+    wait_random 0.09 0.17 {
+    switch #sword
+     }
+  }
+  
+def func slam_decision {
+    as target_entity if blocking {
+        if hotbar_has #_axe {
+            function stunslam
+        }        
+    }
+    as target_entity if_not blocking {
+        function vel_smash
+    }
+}
+
+on pre_tick if playing {
+    if falling if vel_y <= -0.56 {
+        if target_entity :player {
+            if entity_in_range :player 3.3 {
+                if entity_in_fov :player 90 {
+                    if attack_progress >= 0.3 if_not holding #elytra {
+                        function slam_decision
+                    }
+                    if attack_progress >= 0.05 if holding #elytra {
+                        function elytra_mace
+                    }
+                }
+            }
+        }
+    }
+}

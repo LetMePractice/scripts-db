@@ -1,0 +1,10 @@
+// author: koalescence (@notanalt61)
+def module bow-boost
+def desc "Aim slightly upwards then jump right as the arrow starts to fall"
+
+on key_press v if playing {
+    if hotbar_has :bow { switch :bow }
+
+    turn_to polar -65 ~
+    hold_input use 0.18
+ }

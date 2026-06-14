@@ -1,0 +1,11 @@
+// author: ImproperIssues (@improperissues)
+def module my-macros
+def desc "Custom made macros"
+
+on key_press i if playing {
+  switch #totem
+}
+
+on key_press j if playing {
+  say "/home"
+}

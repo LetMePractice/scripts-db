@@ -1,0 +1,5 @@
+// author: Cat (@cat123go)
+module anchor
+def desc anchor
+
+on key_press R if playing switch #anchor then wait 0.001 then input right then wait 0.05 then switch #glowstone then wait 0.05 then input right then wait 0.05 then switch #anchor then input right

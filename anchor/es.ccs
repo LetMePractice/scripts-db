@@ -1,0 +1,9 @@
+// author: tmoa (@realtmoa)
+def module eS
+def desc s
+if playing {
+if holding #anchor {
+wait for input right
+switch #glowstone
+}
+}

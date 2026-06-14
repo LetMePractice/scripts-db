@@ -1,0 +1,14 @@
+// author: ayushzx_444 (@gamerayush0269)
+//@AyuGamer25
+def module hloguys
+def desc "Hit once with axe, then automatically switch to mace and perform stun slam"
+
+on left_click {
+    if holding #axe {
+       input attack
+        wait 0.05
+        switch #mace
+        wait 0.05
+       input attack
+    }
+}

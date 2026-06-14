@@ -1,0 +1,18 @@
+// author: Cat (@cat123go)
+alr i wrote this 
+ module place-anchor-with-totem
+def desc I hate those filthy NIGhtmares
+on right_click {
+if holding #sword { 
+switch #anchor {
+switch #glowstone {
+input right {
+wait 0.05 {
+switch #sword {
+        }
+       }
+      }
+     }
+    }
+   }
+  }

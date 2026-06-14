@@ -1,0 +1,20 @@
+// author: .0n6 (@.0n6)
+module hover-totem
+def desc "Auto equip totem to both hands when hovering"
+
+on tick {
+   if inventory_has #totem {
+      if input_active inventory {
+         if hovering_over #totem {
+            if_not off_holding #totem {
+               wait_random 0.1 0.2
+               input key f
+            }
+            if_not holding #totem {
+               wait_random 0.1 0.2
+               input key 9
+            }
+         }
+      }
+   }
+}

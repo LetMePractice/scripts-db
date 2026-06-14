@@ -1,0 +1,5 @@
+// author: VortexPrime (@v0rtexdev.)
+def module autosprint
+def desc "Custom Scripted Module"
+
+on tick if_not target_entity :player input sprint if_not on_ground input jump

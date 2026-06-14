@@ -1,0 +1,20 @@
+// author: ImproperIssues (@improperissues)
+def module isadami-autocystal
+def desc "Automaticly place and break crystals"
+
+def func place_crystal {
+  if target_block :obsidian,:bedrock if holding #crystal {
+    input use
+  }
+}
+
+def func break_crystal {
+  if target_entity #crystal {
+    input attack
+  }
+}
+
+on tick {
+  func place_crystal
+  func break_crystal
+}

@@ -1,0 +1,13 @@
+// author: pomojz (@pomojz)
+can u make so this script switches to ur totem if u go into ur inventory (My totem bind is 3)
+
+"def module legit-totem
+def desc "Custom Scripted Module"
+
+on tick if hovering_over #totem !if off_holding #totem if input_active inventory {
+    input key z
+}
+
+on tick if hovering_over #totem !if hotbar_has #totem if input_active inventory {
+    input key 3
+}"

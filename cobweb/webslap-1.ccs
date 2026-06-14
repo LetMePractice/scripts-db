@@ -1,0 +1,25 @@
+// author: Practice (@letmepractice)
+module webslap
+def desc "get webbed sucka"
+
+on left_click {
+   if playing {
+      if target_entity :player {
+         if hotbar_has :cobweb {
+            switch :cobweb
+            wait 0.05
+            input sneak
+            wait 0.06
+            snap_to nearest_entity :player aim feet then {
+               loop 30 {
+                  if targeting_block {
+                     input use
+                  }
+               }
+               wait 0.05
+               switch #sword
+            }
+         }
+      }
+   }
+}

@@ -1,0 +1,10 @@
+// author: a Nub (@_anub)
+module legit-totem
+def desc "Custom Scripted Module"
+
+on tick if hovering_over #totem {
+    input key f
+    if off_holding #totem {
+        input key r
+    }
+}

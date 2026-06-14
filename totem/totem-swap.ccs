@@ -1,0 +1,5 @@
+// author: Cat (@cat123go)
+module totem-swap
+def desc totem-swap
+
+on totem_pop wait 0.03 switch #totem

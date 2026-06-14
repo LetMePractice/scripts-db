@@ -1,0 +1,16 @@
+// author: 93kn (@93kn_)
+def module spear-swap
+
+on left_click if playing {
+if holding #wind_charge {
+switch #spear
+wait 0.2
+switch back
+}
+if holding #totem {
+switch #spear
+wait 0.2
+switch #sword 
+}
+}
+(with totem)

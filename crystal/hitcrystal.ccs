@@ -1,0 +1,19 @@
+// author: Cat (@cat123go)
+module hitcrystal
+def desc "Auto-Hit-Crystal"
+
+on key_press c if playing {
+    !if target_block #obsidian {
+        !if holding #obsidian {
+        switch #obsidian
+        wait 0.03 input right
+        wait 0.05 !if target_block #obsidian {
+            wait 0.05 switch #obsidian
+            wait 0.05 input right
+            wait 0.06 switch #crystal
+        }
+        }
+    }
+    wait 0.07 switch #crystal
+    wait 0.07 input right
+}

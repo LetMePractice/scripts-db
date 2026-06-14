@@ -1,0 +1,32 @@
+// author: .darkxvi (@.darkxvi)
+// @VI
+def module anchor-cycle
+def desc "Anchor -> Glowstone -> Totem -> Anchor cycle"
+
+on place_block if holding #anchor {
+    wait 0.03
+    switch #glowstone
+}
+
+on interact_block if holding #glowstone {
+    wait 0.02 
+    
+    if hotbar_has #totem {
+        switch #totem
+    }
+
+    if_not hotbar_has #totem {
+        switch #anchor
+    }
+}
+
+on tick if input_active use if holding #totem {
+    if targeting_block {
+        if_not target_block #air,#respawn_anchor {
+            if hotbar_has #anchor {
+                wait 0.03
+                switch #anchor
+            }
+        }
+    }
+}

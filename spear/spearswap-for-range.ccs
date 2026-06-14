@@ -1,0 +1,22 @@
+// author: NoIwill (@nomore_bs)
+def module spearswap for range 
+def desc "swaps spear if opponent is too far with attribut swap"
+
+on left {
+    if_not entity_in_range :player 3.8
+    if entity_in_range :player 4.5{
+        if target_entity :player {
+            if holding #air,#sword {
+            if hotbar_has #spear {
+            if_not ping < 200 {
+                wait 0.01}
+                wait 0.05
+            switch #spear       
+            switch #spear                        
+            wait_random 0.09 0.17
+            switch back 
+            }
+            }
+        }
+    }
+}

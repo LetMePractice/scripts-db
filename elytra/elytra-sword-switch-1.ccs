@@ -1,0 +1,25 @@
+// author: Jello (@jello2210)
+def module elytra-sword-switch
+def desc "Auto switch Elytra <-> Chestplate and Sword"
+
+// Check every tick
+on tick if playing {
+    // If on the ground, swap Elytra to chestplate
+    if on_ground {
+        if has_equipment :elytra {
+            gui_swap :diamond_chestplate
+        }
+    }
+
+    // If near a player, switch to sword
+    if entity_in_range :player 5.0 {
+        switch #sword
+    }
+
+    // If flying and no ground near, switch to Elytra
+    !if on_ground {
+        if has_equipment :diamond_chestplate {
+            gui_swap :elytra
+        }
+    }
+}

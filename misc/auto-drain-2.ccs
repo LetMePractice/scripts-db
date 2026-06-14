@@ -1,0 +1,23 @@
+// author: Sa3dola (@xxjokerxxali)
+module auto-drain
+def desc "Won't pick up water directly under you (your escape water)"
+
+on tick 5 if playing {
+    if block_in_range :water 5 {
+        if inventory_has :bucket {
+            if_not block ~ ~-1 ~ :water {
+                if_not block ~ ~ ~ :water {
+                    snap_to nearest_block :water then {
+                        if_not holding :bucket {
+                            switch :bucket
+                            wait 0.02
+                        }
+                        input use
+                        wait 0.05
+                        switch back
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,24 @@
+// author: i love uzi (@.pluto_)
+module mace/stunslam
+def desc "mace and stunslam when holding down k"
+
+on tick if playing {
+   if falling {
+    if input_active key k if attack_progress >= 0.3 {
+         if targeting_entity if target_entity :player {
+            if hotbar_has #mace[density] {
+               as target_entity if blocking as client if hotbar_has #axe { 
+                  switch #axe
+                  wait_random 0.02 0.05
+                  input left
+                  wait_random 0.03 0.05
+               }
+               switch #mace[density]
+               input left
+               wait 0.2
+               switch #sword
+            }
+         }
+      }
+}
+}

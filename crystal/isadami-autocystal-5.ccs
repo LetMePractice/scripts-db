@@ -1,0 +1,20 @@
+// author: ImproperIssues (@improperissues)
+def module isadami-autocystal
+def desc "Automaticly place and break crystals"
+
+on right_click if playing {
+  send "right clicked"
+
+  if target_block :obsidian,:bedrock {
+    send "targeting crystallable block"
+
+    if holding #crystal {
+      send "is holding crystal item"
+
+      wait 0.1 if target_entity #crystal {
+        send "attacking crystal rn"
+        input attack
+      }
+    }
+  }
+}

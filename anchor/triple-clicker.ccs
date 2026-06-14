@@ -1,0 +1,17 @@
+// author: Jello (@jello2210)
+// @itzispyder
+def module triple-clicker
+def desc "Clicks a second time when you release your mouse"
+
+on left_release if playing if holding :obsidian,:end_crystal,:respawn_anchor,:glowstone {
+    input attack
+ 
+   
+   
+   
+}
+
+on right_release if playing if holding :obsidian,:end_crystal,:respawn_anchor,:glowstone {
+   input use
+  
+}

@@ -1,0 +1,21 @@
+// author: Nguyen:3 (@nguyenphucnguyen247)
+def module cart
+def desc "Auto rail → bow, bow shoot → TNT minecart"
+on tick {
+    if holding :rail {
+        if targeting_block {
+            input use            
+            wait 0.05
+            switch :bow           
+        }
+    }
+}
+on right_release if playing if hotbar_has :tnt_minecart wait 0.05 {
+    if holding :bow[flame] {
+        if hotbar_has :tnt_minecart {
+                input use
+                switch :tnt_minecart
+                input right      
+        }
+    }
+}

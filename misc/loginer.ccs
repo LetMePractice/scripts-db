@@ -1,0 +1,6 @@
+// author: Aslam (@newtagger)
+def module loginer
+def desc "An advance loginer! made  to surpass showing your password while screen sharing"
+
+on key_press . if playing say /login {yourpassword here}
+on key_press = if playing say /register {yourpassword here}

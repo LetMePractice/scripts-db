@@ -1,0 +1,5 @@
+// author: Inkompetent (@henri_zockt)
+def module plate-web
+def desc "plate-web"
+
+on key_press V turn_to polar 50 ~ then wait 0.05 then switch #pressure then input right then wait 0.05 then switch #cobweb then wait 0.05 then input right

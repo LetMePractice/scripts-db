@@ -1,0 +1,7 @@
+// author: Stat1c (@stat1c_0k)
+def module Axe>shield
+def desc "100% Hit A shield with ur axe then switch back"
+
+on left_click if playing if target_entity :player as target_entity if blocking switch #axe wait 0.1 then input attack then switch back
+
+can someone fix this for me? im trying to make it so if the player is shielding and u hit him it will break his shield which i got that part down but i cant get it to switch back for some reason it wont

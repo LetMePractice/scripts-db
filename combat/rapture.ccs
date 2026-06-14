@@ -1,0 +1,69 @@
+// author: Kaira (@_timel3ss.)
+def module rapture
+def desc "im rapture"
+
+on left_click {
+    if playing {
+        if on_ground {
+            if holding #sword,#_axe {
+                if entity_in_range :player 4.0 {
+                    if target_entity :player {
+                        switch :mace[breach]
+                        switch back
+                    }
+                }
+            }
+        }
+        
+        if holding :mace[density],:mace[breach] {
+            if entity_in_range :player 4.0 {
+                if target_entity :player {
+                    as target_entity if blocking {
+                        if hotbar_has #_axe {
+                            switch #_axe
+                            wait 0.05
+                            input left
+                            wait 0.15
+                            switch back
+                        }
+                    }
+                }
+            }
+        }
+        
+        if holding #_axe {
+            if entity_in_range :player 4.0 {
+                if target_entity :player {
+                    as target_entity if blocking {
+                        if hotbar_has #mace {
+                            input left
+                            wait 0.15
+                            switch #mace
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+on pre_tick {
+    if playing {
+        if falling {
+            if_not gliding {
+                if entity_in_range :player 4.0 {
+                    if target_entity :player {
+                        if holding #sword,#_axe {
+                            if pos_y >=7 {
+                                switch :mace[density]
+                            }
+                            if pos_y <7 {
+                                switch :mace[breach]
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

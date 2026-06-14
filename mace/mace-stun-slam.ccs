@@ -1,0 +1,14 @@
+// author: Maple (@maple_frfr)
+def module Mace-Stun-Slam
+def desc "Stun slam upon right clicking an Axe."
+
+on right_click {
+    if holding #axe {
+        if hotbar_has #mace {
+            input left
+            wait_random 0.01 0.015 switch #mace
+            wait_random 0.02 0.025 input left
+            wait_random 0.3 0.4 switch #axe
+        }
+    }
+}

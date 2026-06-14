@@ -1,0 +1,52 @@
+// author: Yorxy_ (@vtnee)
+// @strxv
+def module bk
+def desc "BK or better keybinds enchanes ur keybinds by adding a shift option to ur controls! For ex: to go to slot 8 use shift 4!"
+
+on module_enable {
+ on key_press x {
+  on key_press 1 {
+    switch 6
+
+  }
+  on key_press 2 {
+    switch 7
+  }
+  on key_press 3 {
+    switch 8
+  }
+  on key_press 4 {
+    switch 8
+  }
+  on key_press 5 {
+    switch #cobweb
+  }
+  on key_press t {
+    switch #golden_apple
+  }
+  on key_press c {
+    switch #obsidian
+    input use
+    switch #end_crystal
+    input use
+    switch #sword
+    input use
+
+  }
+
+
+ }
+
+ on key_press ` {
+  say "//summon villager ~ ~1 ~ {VillagerData:{profession:librarian,level:5,type:plains},Invulnerable:1,ActiveEffects:[{Id:26,Amplifier:0,Duration:999999}],Offers:{Recipes:[{buy:{id:stick,Count:1},sell:{id:emerald_block,Count:64},maxUses:9999999},{buy:{id:stick,Count:1},sell:{id:netherite_block,Count:64},maxUses:9999999},{buy:{id:stick,Count:1},sell:{id:diamond_block,Count:64},maxUses:9999999},{buy:{id:stick,Count:1},sell:{id:iron_block,Count:64},maxUses:9999999},{buy:{id:stick,Count:1},sell:{id:gold_block,Count:64},maxUses:9999999}]}}
+
+"
+ }
+
+
+
+}
+
+on module_disable {
+
+}

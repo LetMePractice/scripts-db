@@ -1,0 +1,10 @@
+// author: 4q25 • mizo 🍀 (@4q25)
+def module True-Click-Crystal
+def desc yeah
+
+on tick if playing if input_active key l if target_entity :end_crystal {
+    input left
+}
+on tick if input_active key l if holding #crystal if_not target_entity :end_crystal {
+    input right
+}

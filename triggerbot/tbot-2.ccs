@@ -1,0 +1,70 @@
+// author: Kaira (@_timel3ss.)
+def module tbot
+def desc "tbot with shield breaker with crit thing"
+
+on pre_tick {
+   if playing {
+      if target_entity :player,:armor_stand {
+         if_not blocking {
+            if_not input_active use {
+               if attack_progress >= 0.96 {
+                  if_not blocking {
+                     if holding #sword {
+                        if on_ground {
+                           input left
+                        }
+                        if_not on_ground {
+                           if vel_y <0 {
+                              input left
+                           }
+                        }
+                     }
+                  }
+               }
+            }
+         }
+      }
+   }
+}
+
+on damage {
+   while_not 0.05 on_ground {
+      if vel_y <0 {
+         if holding #sword {
+            if attack_progress >= 0.96 {
+               if targeting_entity {
+                  if target_entity :player {
+                     input left
+                  }
+               }
+            }
+         }
+      }
+   }
+}
+
+on tick {
+    if playing {
+        if input_active key x {
+            if holding #sword,#_axe {
+                if target_entity :player {
+                    as target_entity {
+                        if blocking {
+                            if attack_progress >=0.9 {
+                                if hotbar_has #_axe {
+                                    switch #_axe
+                                    input left
+                                    wait_random 0.02 0.03 {
+                                        switch #sword
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+when i tried to make a crit detection thingy in my tbot + shield breaker, it stopped hitting at all when im falling down and i dont know how to fix it, can someone help?

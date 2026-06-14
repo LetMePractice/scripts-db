@@ -1,0 +1,17 @@
+// author: compotent (@combotime)
+<@528425959225950208> yo can you help
+im making an auto drain
+def module autodrain
+def desc "drains water when looked at while offhanding bucket"
+
+on tick {
+  if playing {
+    !if blocking {
+      if off_holding :bucket {
+        if target_block :water {
+          input right
+        }
+      }
+    }
+  }
+}

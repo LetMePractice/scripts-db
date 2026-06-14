@@ -1,0 +1,31 @@
+// author: Jat (@jat9119)
+module sa
+def desc "SA"
+
+
+on key_press b {
+    if playing {
+        if hotbar_has #anchor,:glowstone {
+            if targeting_block {
+                  switch #anchor 
+                execute_period 0.02{
+                    wait 0.05
+                    input right
+                    switch :glowstone
+
+                    input right 
+                    
+                    turn_to polar ~30 ~ speed 49
+                    input right
+
+                    while_not 0.001 target_block :charged_respawn_anchor {
+                        turn_to polar ~-5 ~ speed 49
+                    }
+
+                    switch #totem
+                }
+
+            }
+        }
+    }
+}

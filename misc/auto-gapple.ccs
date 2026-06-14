@@ -1,0 +1,12 @@
+// author: Jello (@jello2210)
+def module auto-gapple
+def desc "Automatically eats a gapple if health is low"
+
+on tick if playing {
+    if health <=10.0 if hotbar_has :golden_apple {
+        switch :golden_apple
+        hold_input right 1.7
+        wait 0.06
+        switch back
+    }
+}

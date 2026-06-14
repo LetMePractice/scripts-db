@@ -1,0 +1,10 @@
+// author: matheus cunha (@dominkroptru123)
+def module True-Click-Crystal
+def desc yeah
+
+on tick if playing if holding #crystal if target_entity :end_crystal if off_holding #totem {
+    input attack
+}
+on tick if input_active key Z if holding #crystal {
+    input right
+}

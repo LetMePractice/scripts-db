@@ -1,0 +1,21 @@
+// author: Deleted User (@Deleted User)
+// DC / chasingbands / MC / TheRealDaq
+// 
+//  DDD    AAAA   QQQQQ
+//  D   D   A   A   Q   Q
+//  D   D   AAAA   Q   Q
+//  D   D   A   A   Q  Q
+//  DDD    A   A    QQQQ
+
+def module auto-totem
+def desc "Automatically moves a totem from the hotbar to the offhand when a totem is popped or placed in the hotbar."
+
+on totem_pop {
+    wait 0.2
+    if hotbar_has #totem {
+        gui_swap #totem
+    }
+}
+how do i make it so
+i made it so it would like auto put off hand if they see a totem in a hotbar
+how do i make it so when i put more totems in the hotbar it would auto put some totem in off hand

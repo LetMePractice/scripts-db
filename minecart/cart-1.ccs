@@ -1,0 +1,41 @@
+// author: ✦『 STUPIDSS 』✦ (@shoott)
+def module cart
+def desc "places rail, TNT minecart, ignites, swaps to crossbow, then snaps to the TNT minecart"
+
+on tick {
+    if playing {
+
+        if holding #rail {
+            if targeting_block {
+                if hotbar_has :tnt_minecart {
+                    input use
+                    switch :tnt_minecart
+                    input right
+                    wait 0.2
+                    if hotbar_has :flint_and_steel {
+                        snap_to position ^ ^ ^9
+                        switch :flint_and_steel
+                    }
+                }
+            }
+        }
+
+        if holding #flint_and_steel {
+            if hotbar_has :flint_and_steel {
+                if targeting_block {
+                    input use
+                    wait 0.05
+                    switch #slab
+                    wait 0.05
+                    input right
+                    wait 0.05
+                    if hotbar_has :crossbow {
+                        switch :crossbow
+                        snap_to nearest_entity :tnt_minecart
+                    }
+                }
+            }
+        }
+
+    }
+}

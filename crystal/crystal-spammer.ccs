@@ -1,0 +1,20 @@
+// author: Lefted (@lefted.user)
+// @forxgod
+def module crystal-spammer
+def desc "Spams end crystals for PvP chaos"
+
+on module_enable {
+    chat("Crystal Spammer Enabled")
+    loop 1000 ticks {
+        if (player.on_ground) {
+            crystal.place(player.position + vec(0, 1, 0))
+            wait 1 tick
+            crystal.break_all()
+        }
+        wait 1 tick
+    }
+}
+
+on module_disable {
+    chat("Crystal Spammer Disabled")
+}

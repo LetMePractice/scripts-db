@@ -1,0 +1,7 @@
+// author: Inkompetent (@henri_zockt)
+def module test4
+def desc "test4"
+
+on tick if playing {
+if target_entity :zombie then input forward then wait 0.05 then input backward 
+{

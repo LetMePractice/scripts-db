@@ -1,0 +1,10 @@
+// author: ballsforbigchungus (@ballsforbigchungus)
+module bettermacro
+def desc "Way faster macro but may flag"
+
+on place_block if holding #anchor {
+    switch #glowstone
+    wait 0.01 input right
+}
+
+on tick if input_active use if target_block :uncharged_respawn_anchor if holding #sword,#totem,#anchor,#pickaxe,#air then switch #glowstone

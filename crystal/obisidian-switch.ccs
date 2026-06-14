@@ -1,0 +1,16 @@
+// author: Jat (@jat9119)
+Does anyone know if cancel_packet could be used to stop the player from breaking the block they are looking at that is stopping it from placing? ```def module obisidian-switch
+def desc Bypass
+
+on left_click {
+    if holding :obisidian {
+        wait 0.02 then switch :obsidian
+    }
+    if holding #sword,#crystal,#apple,#totem {
+        if targeting_block {
+            !if target_block :obsidian {
+                wait 0.02 then switch :obsidian
+            }
+        }
+    }
+}

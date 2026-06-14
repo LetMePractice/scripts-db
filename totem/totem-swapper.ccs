@@ -1,0 +1,26 @@
+// author: NoIwill (@nomore_bs)
+def module totem swapper
+def desc
+  "Automatically swap totems when they expire."
+end
+on totem_pop {
+    if hotbar_has #totem {
+        switch #totem
+        wait 0.05
+        swap
+    }
+}
+        if_not hotbar_has #totem {
+            if inventory_has #totem {
+                if_not input_active inventory {
+                    input inventory
+                }
+            }
+            if input_active inventory {
+                 if cursor_item #totem {
+                    input sneak
+                    input key f 
+
+                 }
+            }
+        } try this

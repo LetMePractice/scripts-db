@@ -1,0 +1,8 @@
+// author: Simplelol (@losty4331)
+def module Ghost block
+def desc "swap block to offhand to create Ghost 
+block " 
+
+On place_block {
+ Swap
+   Switch back

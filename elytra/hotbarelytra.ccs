@@ -1,0 +1,44 @@
+// author: .0n6 (@.0n6)
+def module HotbarElytra
+def desc "Swap chestplate to Elytra, jump, glide, rocket boost, switch sword"
+
+on key_press N if playing {
+
+    // --- Chestplate on ground or falling → equip Elytra ---
+    if_not flying if equipment_has :chestplate if hotbar_has #elytra {
+        switch #elytra    
+        wait 0.1
+        input use                // right-click to equip to chest
+        wait 0.05                // allow equip to register
+    }
+
+    // --- Equip Elytra from hotbar if not flying ---
+    if_not flying if equipment_has :elytra {
+        // Start gliding from ground
+        if on_ground {
+            repeat 5
+                input jump
+                wait 0.05
+        }
+
+        // Jump if falling to start gliding
+        if falling {
+            input jump
+            wait 0.05
+            input jump
+            wait 0.05
+        }
+    }
+
+    // --- Fire rockets if Elytra equipped ---
+    if equipment_has :elytra if hotbar_has #firework_rocket {
+        switch #firework_rocket
+        input use
+        wait 0.05
+        if hotbar_has #sword {
+            switch #sword
+        }
+    }
+}
+
+I made this for dive bombing works in singleplayer but in multiplayer cant equip elytra chat gpt says its inventory packet thing

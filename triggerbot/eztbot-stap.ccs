@@ -1,0 +1,66 @@
+// author: drew (@just.drew.)
+HT3 SWORD, LT3 SMP, LT3 POT, this is what i use.
+ def module eztbot-stap
+def desc "the best tbot you have EVER seen - now with S-tap"
+on tick {
+   if playing {
+      if target_entity :player {
+         if holding #sword,#_axe,#mace {
+            if attack_progress >=0.9 {
+               as target_entity
+               if blocking {
+                  if hotbar_has #_axe {
+                     execute_random {
+                        function tbot_miss
+                        function shield_break
+                        function shield_break
+                        function shield_break
+                     }
+                  }
+               }
+               as client {
+                  if on_ground {
+                     if_not blocking {
+                        if chance_of 90 {
+                           execute_random {
+                              function stap_attack
+                              function stap_attack
+                              function stap_attack
+                              function normal_attack
+                           }
+                        }
+                     }
+                  }
+                  if_not on_ground {
+                     if_not blocking {
+                        if chance_of 90 {
+                           input attack
+                        }
+                     }
+                  }
+               }
+            }
+         }
+      }
+   }
+}
+def func tbot_miss {
+   input attack
+}
+def func shield_break {
+   switch #axe
+   wait 0.01
+   input attack
+   wait_random 0.01 0.013
+   input attack
+   wait 0.05
+   switch #sword
+}
+def func stap_attack {
+   hold_input backward 0.35
+   input attack
+   wait 0.2 { hold_input cancel }
+}
+def func normal_attack {
+   input attack
+}

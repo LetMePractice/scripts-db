@@ -1,0 +1,20 @@
+// author: Niker (@itz271k)
+This sht is showing error
+def module web placer
+def desc "Right-click with sword to place cobweb"
+
+on right_release {
+   if playing {
+      if holding #sword {
+         if_not target_block #air {
+            switch #cobweb
+            wait 0.04 {
+               input use
+               wait_random 0.06 0.08 {
+                  switch #sword
+               }
+            }
+         }
+      }
+   }
+}

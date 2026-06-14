@@ -1,0 +1,17 @@
+// author: oPhI (Lazy arc) (@shehab7877)
+module anchor-exploder
+def desc "Explodes charged respawn anchors automatically"
+
+on tick if playing {
+    if target_block :charged_respawn_anchor {
+            switch #totem
+            input use then wait 0.005  
+            switch :respawn_anchor
+       }
+   }
+
+on right_click if holding #anchor {
+     wait 0.005 {
+            switch #glowstone
+            input use
+}}

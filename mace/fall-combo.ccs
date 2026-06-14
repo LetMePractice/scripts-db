@@ -1,0 +1,35 @@
+// author: c_tr1 (@c_tr1)
+def module fall-combo
+def desc "fall combo with stun"
+
+on tick {
+   if playing {
+      if falling {
+         if holding #sword,#_axe {
+            if target_entity :player {
+               as target_entity {
+                  if blocking {
+                     switch #_axe
+                     wait 0.05
+                     input left
+                     wait_random 0.01 0.015
+                     switch #mace
+                     wait_random 0.02 0.025
+                     input left
+                     wait_random 0.3 0.4
+                     switch #sword
+                     wait 2
+                  }
+                  if_not blocking {
+                     switch #mace
+                     input left
+                     wait_random 0.3 0.4
+                     switch #sword
+                     wait 2
+                  }
+               }
+            }
+         }
+      }
+   }
+}

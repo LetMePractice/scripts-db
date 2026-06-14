@@ -1,0 +1,10 @@
+// author: 4q25 • mizo 🍀 (@4q25)
+def module auto-hit
+def desc yeah
+
+on tick if playing if input_active key k if holding #crystal if target_entity :end_crystal if off_holding #totem {
+    input attack
+}
+on tick if input_active key k if holding #crystal {
+    input right
+}

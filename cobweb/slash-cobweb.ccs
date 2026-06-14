@@ -1,0 +1,11 @@
+// author: ImproperIssues (@improperissues)
+so smth like this
+def module slash-cobweb
+
+on key_press \ if playing {
+  switch #cob
+  wait 0.1
+  input use
+  wait 0.1
+  switch back
+}

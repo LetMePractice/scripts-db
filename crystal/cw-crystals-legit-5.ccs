@@ -1,0 +1,5 @@
+// author: Wolfish (@wolfishkinggb)
+module CW-CRYSTALS-LEGIT
+def desc CW CRYSTALS LEGIT LOOKING
+
+on tick if holding #crystal then if target_block :obsidian input right then wait 0.05 then if target_entity :end_crystal input left

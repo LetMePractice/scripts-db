@@ -1,0 +1,33 @@
+// author: Kaira (@_timel3ss.)
+def module bow-minecart
+def desc "bow minecart"
+
+on right_click {
+    if holding #rail {
+        if targeting_block {
+            input use
+            switch :tnt_minecart
+            input right
+            wait 0.2
+            switch #bow
+        }
+    }
+    
+    if holding :tnt_minecart {
+        if targeting_block {
+            input use
+            wait 0.15
+            switch #bow
+        }
+    }
+    
+    if holding #bow {
+        if targeting_entity {
+            if target_entity :tnt_minecart {
+                hold_input use 0.2
+                wait 0.05
+                input use
+            }
+        }
+    }
+}

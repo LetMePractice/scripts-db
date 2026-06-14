@@ -1,0 +1,7 @@
+// author: ImproperIssues (@improperissues)
+def module annoy
+def desc "real"
+
+on tick loop_period 5 0.01 {
+  playsound #trident
+}

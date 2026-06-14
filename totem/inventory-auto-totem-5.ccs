@@ -1,0 +1,30 @@
+// author: Practice (@letmepractice)
+module inventory-auto-totem
+//Jat9119
+def desc "Press G to auto totem both hands"
+
+def func tot {
+   if_not input_active inventory {
+      input inventory
+      wait 0.08
+   }
+   gui_switch :totem_of_undying
+   wait 0.06
+   if_not off_holding :totem_of_undying {
+      input key f
+      wait 0.06
+   }
+   if_not holding :totem_of_undying {
+      input key 9
+      wait 0.06
+   }
+   if input_active inventory {
+      input inventory
+   }
+}
+
+on key_press g if playing {
+   if inventory_has :totem_of_undying {
+      func tot
+   }
+}

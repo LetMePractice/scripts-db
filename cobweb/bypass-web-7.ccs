@@ -1,0 +1,18 @@
+// author: ! SNOW・ (@aliayman3191)
+def module bypass-web
+def desc "Places a cobweb only when looking at common ground blocks"
+
+on right_click if playing if hotbar_has :cobweb wait 0.05 { 
+   if holding #sword,#_axe {
+      if targeting_block {
+         switch :cobweb
+         wait 0.05
+         input right
+         wait 0.05
+         switch #sword
+      }
+   }
+}   
+
+
+I want it to not place a web when I'm healing and not use the shield when I'm looking on the ground <@882445130496356374>

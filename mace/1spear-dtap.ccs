@@ -1,0 +1,18 @@
+// author: CallMiiSHADOW (@shadowplaysvr)
+def module 1spear-dtap
+def desc "dtap using spear and mace"
+
+on tick if playing if input_active right {
+  if holding #spear {
+    if hotbar_has #mace {
+      if falling {
+        if entity_in_range :player 4 {
+          if target_entity :player {
+            switch #mace
+            input left
+           }
+         }
+       }
+     }
+   }
+ }

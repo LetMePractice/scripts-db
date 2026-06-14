@@ -1,0 +1,17 @@
+// author: Jello (@jello2210)
+def module elytra-swap-on-combat
+def desc "Swap elytra -> chestplate on hit or if a player is within 2 blocks."
+
+def func equip_chestplate {
+   if playing if has_equipment :elytra !if gliding {
+      input key g
+   }
+}
+
+on left_click if playing if targeting_entity as target_entity if reference_entity :player {
+   function equip_chestplate
+}
+
+on tick 0.05 if playing if entity_in_range :player 2.1 {
+   function equip_chestplate
+}

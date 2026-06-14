@@ -1,0 +1,15 @@
+// author: suckyswags (@suckyswags)
+// @custom
+def module shield-mace-swap
+def desc "Hit with axe then mace automatically"
+
+on left_click if targeting_entity :player {
+    switch 7
+    wait 0.05
+    input attack
+    wait 0.05
+    switch 8
+    wait 0.05
+    input attack
+    wait 0.05
+}

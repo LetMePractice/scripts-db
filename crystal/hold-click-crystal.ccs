@@ -1,0 +1,19 @@
+// author: AstroNixs (@astronixs.)
+UPD:
+
+***
+def module hold-click-crystal
+def desc "Hold left-click to spam end crystals."
+
+on mouse_click 0 if playing if holding #end_crystal {
+  while 0.071428 input_active attack if holding #end_crystal {
+    switch #end_crystal
+    wait 0.02
+    input use
+    wait 0.03
+    input attack
+    wait 0.02
+    switch back
+  }
+}
+***

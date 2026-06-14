@@ -1,0 +1,13 @@
+// author: .0n6 (@.0n6)
+module Shield-Hold
+def desc "Hold shield"
+
+on tick if input_active key B if playing {
+  as client if_not blocking {       
+           if_not holding #shield {
+               switch #shield
+           }
+           hold_input right 1
+       }
+   }
+I made this u need to hold b but its kinda pointless just hold right click instead , anyway i need to check my cooler its leaking 🫤

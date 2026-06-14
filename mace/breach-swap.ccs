@@ -1,0 +1,19 @@
+// author: Jello (@jello2210)
+def module breach-swap
+def desc "Switches from sword to mace when attacking entities, then swaps back."
+
+on left_click if playing if holding #sword if targeting_entity if hotbar_has :mace {
+   switch :mace
+   wait 0.05
+   input attack
+   wait 0.1
+   switch #sword
+}
+
+on damage if playing if holding #sword if targeting_entity if hotbar_has :mace {
+   switch :mace
+   wait 0.05
+   input attack
+   wait 0.1
+   switch #sword
+}

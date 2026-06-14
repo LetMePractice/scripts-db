@@ -1,0 +1,10 @@
+// author: Aria³⁵⁸ (@dsiper)
+def module autosoup
+def desc "Instant eat suspicious stew and drop bowl"
+
+on tick if health <= 16 if hotbar_has :mushroom_stew {
+    switch :mushroom_stew
+    input use
+    if holding :bowl drop all
+    switch back
+}

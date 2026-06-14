@@ -1,0 +1,7 @@
+// author: ben (@11weeks)
+The script: 
+def module anchor-glowstone
+def desc hope after test is always needed 
+
+on place_block if holding #anchor wait 0.001 then switch #glowstone
+on interact_block if holding #glowstone if targeting_block !if target_block :charged_respawn_anchor then wait 0.001 then switch #totem

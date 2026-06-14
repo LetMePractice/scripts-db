@@ -1,0 +1,53 @@
+// author: Al3ppo (@al3ppo_)
+def module raptureee
+def desc "im rapture"
+
+on left_click {
+    if playing {
+        if on_ground {
+            if holding #sword,#_axe {
+                if entity_in_range :player 4.0 {
+                    if target_entity :player {
+                        input left
+                        switch :mace[breach]
+                        switch back
+                    }
+                }
+            }
+        }
+
+        if holding :mace[density],:mace[breach] {
+            if entity_in_range :player 4.0 {
+                if target_entity :player {
+                    as target_entity {
+                        if blocking {
+                            if hotbar_has #_axe {
+                                switch #_axe
+                                input left
+                                switch #mace
+                                wait 0.05
+                                switch #_axe
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        if holding #_axe {
+            if entity_in_range :player 4.0 {
+                if target_entity :player {
+                    as target_entity {
+                        if blocking {
+                            if hotbar_has #mace {
+                                input left
+                                wait 0.05
+                                switch #mace
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

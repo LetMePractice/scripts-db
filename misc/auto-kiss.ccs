@@ -1,0 +1,16 @@
+// author: !    Lord Spidey (@lordspidey69)
+module auto-kiss
+def desc "Custom Scripted Module"
+
+on tick {
+   if playing {
+       if targeting girl {
+          if hotbar has :guts
+          input kiss 
+                  }
+               }
+            }
+         }
+      }
+   }
+}

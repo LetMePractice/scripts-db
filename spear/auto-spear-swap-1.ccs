@@ -1,0 +1,18 @@
+// author: Sx7 | El matador (@sx7sx)
+// @kleckserhd
+def module auto-spear-swap
+def desc "Spear Ability Swap by KleckserHD"
+
+on tick if playing {
+   if holding #wind_charge {
+      if input_active attack {
+         if hotbar_has #spear {
+            switch #spear
+            wait 0.05
+            input attack
+            wait 0.05
+            switch #wind_charge
+         }
+      }
+   }
+}

@@ -1,0 +1,24 @@
+// author: Pink (@patr1otic.)
+def module auto-mace
+def desc "an auto mace i based off of prestige client's auto mace (mine is exactly the same)"
+
+on tick if playing {
+   if falling if vel_y <= -0.6 {
+      if entity_in_range :player 4 {
+         if_not targeting_entity {
+            snap_to nearest_entity :player
+         }
+         if targeting_entity if target_entity :player {
+            if hotbar_has #mace[density] {
+               as target_entity if blocking as client if hotbar_has #axe {
+                  switch #axe
+                  input attack
+                  wait_random 0.01 0.03
+               }
+               switch #mace[density]
+               input attack
+            }
+         }
+      }
+   }
+}``` ^

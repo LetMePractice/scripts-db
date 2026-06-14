@@ -1,0 +1,17 @@
+// author: unknown
+(give me more ideas what should i add to this script (⓿_⓿))
+ module smart-swap
+def desc Smart Swapping
+
+on tick if target_block :obsidian wait 0.03 then switch #crystal
+on tick if target_block :uncharged_respawn_anchor wait 0.03 switch #glowstone
+on totem_pop wait 0.03 switch #totem
+on tick if input_active use if holding #sword wait 0.03 then switch #pearl then input right then wait 0.03 then switch #sword
+on tick if target_block :uncharged_respawn_anchor if holding #sword if input_active use then wait 0.03 then switch #anchor
+on tick if target_block :charged_respawn_anchor if holding #sword if input_active use then wait 0.03 then switch #anchor
+on tick if input_active use if holding #totem wait 0.03 then switch #pearl then input right then wait 0.03 then switch #totem
+on tick if target_block :charged_respawn_anchor if holding #anchor wait 0.03 then switch #totem
+on tick if target_block :charged_respawn_anchor if holding #glowstone wait 0.03 then switch #totem
+on tick if input_active attack if holding #totem if target_block :stone,:deepslate wait 0.03 then switch #pickaxe
+on tick if input_active attack if holding #sword if target_block :stone,:deepslate wait 0.03 then switch #pickaxe
+on break_block if holding #pickaxe then wait 0.03 then switch back

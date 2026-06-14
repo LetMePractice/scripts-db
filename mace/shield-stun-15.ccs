@@ -1,0 +1,10 @@
+// author: Practice (@letmepractice)
+module shield-stun
+def desc "Stuns shields by double-attacking with an axe."
+
+on left_click if playing if holding #axe if target_entity :player {
+    as target_entity if blocking { 
+        input attack
+        wait 0.05 input attack
+    }
+}

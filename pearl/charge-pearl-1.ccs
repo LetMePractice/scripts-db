@@ -1,0 +1,10 @@
+// author: Jello (@jello2210)
+def module charge-pearl
+def desc "press x to windcharge pearl"
+
+on key_press x if playing {
+    switch #ender_pearl
+    input use
+    switch #wind_charge
+    input use
+}

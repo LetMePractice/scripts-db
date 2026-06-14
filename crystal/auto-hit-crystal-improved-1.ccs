@@ -1,0 +1,5 @@
+// author: Cat (@cat123go)
+module auto-hit-crystal-improved
+def desc Ideas are coming in 🤓
+
+on right_click if holding #sword switch #obsidian then wait 0.05 then switch #crystal then input right then wait 0.05 then switch #sword

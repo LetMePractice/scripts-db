@@ -1,0 +1,19 @@
+// author: Floop (@__flipfloop)
+it works fine but i want it to automaticly do it
+
+def module auto-ice
+def desc "ghost ice blocks for better movment"
+
+on place_block {
+       if holding :ice {
+            if targeting_block {
+                if_not target_block :air,:water {
+                    wait_random 0.02 0.03
+                       swap
+                          wait_random 0.3 0.4
+                             swap back
+                }
+            }
+        }
+    }
+}

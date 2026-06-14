@@ -1,0 +1,5 @@
+// author: Cat (@cat123go)
+def module aim-assist
+def desc "Custom Scripted Module"
+
+on tick if holding #axe,#hoe if entity_in_range 8 snap_to nearest_entity :player then input right

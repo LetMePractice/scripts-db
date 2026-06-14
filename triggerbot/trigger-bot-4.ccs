@@ -1,0 +1,15 @@
+// author: ccsoured_ (@ccsoured_)
+def module trigger-bot
+def desc "Air-safe trigger bot for Stray & MCPvP (1.3.7)"
+
+on pre_tick {
+   if playing {
+      if target_entity :player {
+         if attack_progress >= 0.9 {
+            if_not blocking {
+               input attack
+            }
+         }
+      }
+   }
+}

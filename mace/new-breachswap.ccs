@@ -1,0 +1,13 @@
+// author: fre4k (@fre4k0137)
+def module new-BreachSwap  
+def desc "Hold a sword and press down right click to automatically breach swap"  
+
+on tick if playing if holding #sword,#axe,#mace[density] {  
+    if input_active use {  
+        if target_entity :player {  
+            switch #mace[breach]  
+            wait 0.02 switch back
+            input attack
+        }  
+    }  
+}

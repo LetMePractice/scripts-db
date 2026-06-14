@@ -1,0 +1,26 @@
+// author: Jello (@jello2210)
+def module tntminecart-refill
+def desc "open inventory to put minecart in hotbar"
+
+on pre_tick {
+   if input_active inventory {
+      func to_slot6
+   }
+}
+
+on key_press e {
+   wait 0.06 {
+      func to_slot6
+   }
+}
+
+def func to_slot6 {
+   if inventory_has :tnt_minecart {
+      if_not hotbar_has :tnt_minecart {
+         wait 0.055 {
+            gui_switch :tnt_minecart
+         }
+         input key v /change to hotbar slot for minecart
+      }
+   }
+}

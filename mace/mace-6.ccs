@@ -1,0 +1,8 @@
+// author: Mamiy (@1mamiy)
+def module mace
+def desc "Custom Scripted Module"
+on module_enable {
+}
+on module_disable {
+}
+on left_click wait 0.05 then switch #sword then input left then input key r then input key left then wait 0.05 then input key 1

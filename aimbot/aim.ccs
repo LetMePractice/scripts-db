@@ -1,0 +1,5 @@
+// author: Cat (@cat123go)
+def module aim
+def desc aim at nearest player
+
+on tick if playing if input_active use if holding #sword,#_axe if entity_in_range any_entity :player 5 then turn_to nearest_entity : player

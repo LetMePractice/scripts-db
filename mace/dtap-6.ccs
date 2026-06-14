@@ -1,0 +1,7 @@
+// author: Velidas (@dasukofreak)
+def module dtap
+def desc "testuh"
+
+on key_press c if playing if holding #netherite_sword switch #obsidian then wait 0.01 then input use then wait 0.05 then if playing switch #end_crystal then wait 0.05 if playing input use wait 0.13 if playing input attack then wait 0.13 if playing input use wait 0.13 if playing input attack
+
+Anyone know the issue?

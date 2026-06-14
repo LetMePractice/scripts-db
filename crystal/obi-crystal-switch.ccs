@@ -1,0 +1,26 @@
+// author: Jat (@jat9119)
+seems to bypass but its kinda slow
+
+def module obi/crystal-switch
+def desc "Custom Scripted Module"
+on left_click {
+   if playing {
+      if targeting_block {
+         if_not target_block :obsidian {
+            if_not holding :obsidian {
+               switch :obsidian
+            }
+            while_not 0.03 target_block :obsidian {
+               if holding :obsidian {
+                  input right
+               }
+            }
+         }
+         while 0.03 target_block :obsidian {
+            if_not holding #crystal {
+               switch #crystal
+            }
+         }
+      }
+   }
+}

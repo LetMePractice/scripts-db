@@ -1,0 +1,25 @@
+// author: theangrydog123 (@theangrydog123)
+i wanna make these two scripts like integrated together so its like a more complex triggerbot script:
+
+def module auto-mace-swap
+def desc "i suck"
+
+on tick if target_entity :player !if blocking if input_active sprint {
+   if attack_progress >=0.9 {
+      switch #mace
+      wait 0.05 switch back
+    input attack
+   }
+}
+
+
+def module stun-slam
+def desc "stun slammer!"
+
+on tick if target_entity :player if input_active sprint if attack_progress >=0.9 if blocking as client {
+      as target_entity {
+         switch #axe then input attack then wait 0.02 then switch #mace then input left
+      }
+}
+
+i have no idea where to start, any help?

@@ -1,0 +1,5 @@
+// author: Eni (@eniplaysgames)
+def module 2-anchor-key
+def desc Press N and double anchor with the speed of light
+
+on key_press c if playing wait 0.01 then switch #anchor then input right then wait 0.05 then switch #glowstone then wait 0.05 then switch #totem then input right

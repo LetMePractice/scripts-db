@@ -1,0 +1,12 @@
+// author: Jello (@jello2210)
+def module easy-dhand
+def desc "Switches to totem on inventory open and replaces popped totem automatically"
+
+on key_press e if playing {
+    switch #totem
+}
+
+on totem_pop if playing {
+    switch #totem
+    swap
+}

@@ -1,0 +1,25 @@
+// author: Jello (@jello2210)
+def module auto-lava
+def desc "Custom Scripted Module"
+
+on right_click if playing {
+    if holding #sword {
+        if_not off_holding #bucket {
+            if targeting_block {
+                if_not target_block :air,:water {
+                    if_not hotbar_has :cobweb {
+                        if hotbar_has :lava_bucket {
+                            switch :lava_bucket
+                            wait 0.06 {
+                                input right
+                                wait 0.05 {
+                                    switch back
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

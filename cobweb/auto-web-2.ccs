@@ -1,0 +1,9 @@
+// author: .0n6 (@.0n6)
+module auto-web
+def desc "Switch to lava when placing webs"
+
+on place_block {
+    if holding #web {
+        switch #lava
+    }
+}

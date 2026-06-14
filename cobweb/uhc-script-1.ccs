@@ -1,0 +1,37 @@
+// author: NoIwill (@nomore_bs)
+def module uhc script 1
+def desc "cobwebs i think"
+
+if holding #cobweb {
+    if entity_in_fov :player 80 {
+        turn_to nearest_entity :player aim feet {
+        if entity_in_range :player 4.2
+        snap_to position ^ ^ ^9
+        wait_random 0.01 0.5
+        input right
+        if targeting_block {
+            wait 0.2
+            input right
+        }
+        }
+        
+    }
+
+}
+
+if_not holding #cobweb {
+    on damage {
+        if on_ground {
+            if entity_in_range :player 5
+            wait_random 0.1 0.4
+            turn_to nearest_entity :player
+            snap_to position ^ ^ ^ 9
+            switch #cobweb
+            wait_random 0.1 0.2 
+            input right
+            wait 0.1
+            input right
+
+        }
+    }
+}

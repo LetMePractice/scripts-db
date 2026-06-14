@@ -1,0 +1,37 @@
+// author: TutlaMC (@tutlamc)
+Loading dataset...
+  650 scripts loaded.
+  System prompt built from 80 examples.
+
+Using model : llama3.1:8b
+Ollama URL  : http://localhost:11434/api/generate
+
+Type 'quit' to exit.
+
+Script name  : door-opener              
+Description  : opens a door if present
+
+Generating...
+
+============================================================
+def module door-opener
+def desc "opens a door if present"
+
+on right_click {
+    !if target_block != #air {
+        if holding #sword {
+            switch minecraft:door;
+            input use;
+            switch minecraft:stick;
+        }
+
+        if holding #pickaxe {
+            switch minecraft:door;
+            input use;
+            switch minecraft:stick;
+        }
+    }
+}
+============================================================
+
+nvm its stupid

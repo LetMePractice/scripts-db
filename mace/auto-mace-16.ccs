@@ -1,0 +1,38 @@
+// author: Practice (@letmepractice)
+module auto-mace
+def desc "tonight we mace them all!!"
+
+on key_press t if playing {
+   if hotbar_has #elytra {
+      switch #elytra
+      input use
+      wait 0.13 input jump
+      
+      if hotbar_has #firework {
+         switch #firework
+         loop 2 {
+            wait 0.08 input use
+         }
+      }
+      
+      wait 0.12 {
+         if hotbar_has :mace[density] {
+            switch :mace[density]
+            
+            if entity_in_range :player 8.0 {
+               turn_to nearest_entity :player aim head speed 20 then {
+                  input attack
+                  wait 0.22 input attack
+               }
+            }
+            
+            wait 0.3 {
+               if hotbar_has #chestplate {
+                  switch #chestplate
+                  wait 0.05 input use
+               }
+            }
+         }
+      }
+   }
+}

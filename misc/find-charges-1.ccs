@@ -1,0 +1,10 @@
+// author: ImproperIssues (@improperissues)
+to find a fire charge upon opening inventory:
+def module find-charges
+def desc "to find fire charge upon opening inventory"
+
+on key_press e if playing {
+  wait 0.05 if input_active inventory if inventory_has :fire_charge {
+    gui_switch :fire_charge
+  }
+}

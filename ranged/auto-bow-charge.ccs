@@ -1,0 +1,26 @@
+// author: cyde (@cyde)
+module auto-bow-charge
+def desc "Auto charges and releases bow when looking at nearby players"
+
+def func charge_and_release {
+    execute {
+        hold_input use 0.3
+    }
+}
+
+on tick if playing {
+    if holding #bow {
+        if input_active use {
+            if targeting_entity {
+                if target_entity :player {
+                    if entity_in_range :player 4.0 {
+                        function charge_and_release
+                    }
+                }
+            }
+        }
+    }
+}`
+
+Can anyone help me figure this out.
+Trying to make a script work where if you hold down right click and there is an enemy nearby and youre looking at it, it will hold use for 0.3 seconds and do it repeatedely until you the user releases rmb.

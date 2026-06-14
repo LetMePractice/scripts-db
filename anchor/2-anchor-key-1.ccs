@@ -1,0 +1,4 @@
+// author: Not_Tahsin (@not_tahsin7)
+def module 2-anchor-key
+def desc Press N and double anchor with the speed of light
+on key_press N if playing wait_random 0.03 0.07 then switch #anchor then input right then wait_random 0.04 0.06 then switch #glowstone then input right then wait_random 0.02 0.07 then switch #anchor then `loop 2`input right then wait_random 0.04 0.07 then switch #glowstone then input right then wait_random 0.04 0.07 then switch #anchor then input right

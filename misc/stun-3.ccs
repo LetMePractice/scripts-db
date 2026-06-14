@@ -1,0 +1,27 @@
+// author: Floop (@__flipfloop)
+so i got an idea but it doesnt work
+
+def module stun 
+
+def desc "Double clicks with a small delay when you hit with an axe"
+
+on attack if playing {
+    if !blocking {
+        if holding #axe {
+            input attack
+            wait 0.05
+            input attack
+            wait 0.1
+
+            if has_weapon #crossbow {
+                switch #crossbow
+                wait 0.1
+                if holding :charged_crossbow {
+                    input use
+                    wait 0.07
+                }
+                switch #sword
+            }
+        }
+    }
+}

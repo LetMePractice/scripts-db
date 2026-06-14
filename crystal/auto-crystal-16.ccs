@@ -1,0 +1,15 @@
+// author: lt2sword (@lt2sword)
+// @itzispyder
+def module auto-crystal
+def desc "Auto detonates end crystals"
+
+on tick {
+ if input_active use {
+  if_not in_screen {
+   if target_entity :end_crystal { 
+    if chance_of 75 {
+     input left
+   }
+  }
+ }
+}

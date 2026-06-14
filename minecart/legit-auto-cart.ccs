@@ -1,0 +1,10 @@
+// author: capo (@pxmb4)
+// @shivvered
+def module legit-auto-cart
+def desc "Automatically replenishes your carts in your hotbar"
+
+on tick{
+if not hotbar_has :tnt_minecart { 
+ if inventory_has :tnt_minecart
+  gui_quickmove :tnt_minecart 7
+ }}

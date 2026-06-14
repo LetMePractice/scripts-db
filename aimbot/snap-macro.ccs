@@ -1,0 +1,28 @@
+// author: 𝙰𝚛𝚓𝚞𝚗𝙵r𝚊𝚐𝚜 (@flybeast0574)
+def module snap-macro
+def desc "Snap behind, snap to nearest player, snap behind again"
+
+on key_press y {
+    if holding #sword {
+
+        # Step 1: snap behind yourself (relative)
+        if block ^ ^ ^-1 #air {
+            snap_to ^ ^ ^-1
+        }
+
+        wait 0.05
+
+        # Step 2: snap to the nearest player
+        as nearest_entity :player
+        if reference_entity {
+            snap_to reference_entity
+        }
+
+        wait 0.05
+
+        # Step 3: snap behind again
+        if block ^ ^ ^-1 #air {
+            snap_to ^ ^ ^-1
+        }
+    }
+}

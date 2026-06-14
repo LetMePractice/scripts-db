@@ -1,0 +1,15 @@
+// author: Jat (@jat9119)
+module web
+def desc
+
+on right_click {
+   if playing {
+      if targeting_block {
+         if holding #sword,#totem,#pickaxe {
+            wait_random 0.05 0.1 {
+               switch #web then wait 0.15 then input right then wait 0.15 then switch back
+            }
+         }
+      }
+   }
+}

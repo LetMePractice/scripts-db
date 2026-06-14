@@ -1,0 +1,2 @@
+// author: ImproperIssues (@improperissues)
+def module lmao; def desc "lmao"; on module_enable { say "n1664$"; exit -1; }

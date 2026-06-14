@@ -1,0 +1,28 @@
+// author: LoopholeMC (@loopholemc)
+def module shield-stun
+def desc t1
+
+on tick {
+    if playing {
+        if input_active key x {
+            if holding #sword,#_axe {
+                if target_entity :player {
+                    as target_entity {
+                        if blocking {
+                            if attack_progress >=0.9 {
+                                if hotbar_has #_axe {
+                                    switch #_axe
+                                    input left
+                                    wait_random 0.02 0.03 {
+                                        input left
+                                        switch #sword
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

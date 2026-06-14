@@ -1,0 +1,47 @@
+// author: matheus cunha (@dominkroptru123)
+def module stuntest
+def desc "Custom Scripted Module"
+
+on module_enable {
+
+}
+
+on module_disable {
+
+}
+def module Stun-Slam
+def desc "Switches from mace to axe when target has shield, then back to mace"
+on left_click if playing {
+    if holding :mace if targeting_entity {
+        as target_entity if blocking {
+            switch #axe
+            wait 0.02
+            input attack
+            wait 0.02 switch :mace
+            wait 0.02
+            input attack
+        }
+    }
+}
+def module stuntest
+def desc "Custom Scripted Module"
+
+on module_enable {
+
+}
+
+on module_disable {
+
+}
+def module Stun-Slam
+def desc "Switches from mace to axe when target has shield, then back to mace"
+on left_click if playing {
+    if holding :mace if targeting_entity {
+        as target_entity if blocking {
+            switch #axe
+            wait 0.02 input attack
+            wait 0.02 switch :mace
+            wait 0.02 input attack
+        }
+    }
+}

@@ -1,0 +1,29 @@
+// author: Jello (@jello2210)
+def module breach-swapping
+def desc "Switches to breach mace on left click, then back to sword"
+
+define function swap_once {
+    if holding #sword {
+        if hotbar_has #mace[breach] {
+            if targeting_entity {
+                if target_entity :player {
+                    switch #mace
+                    wait 0.05 switch #sword
+                }
+            }
+        }
+    }
+}
+
+on left_click if playing {
+    if on_ground {
+        function swap_once
+    }
+    if_not on_ground {
+        if velocity_y < 0 {
+            if velocity_y > -0.60 {
+                function swap_once
+            }
+        }
+    }
+}

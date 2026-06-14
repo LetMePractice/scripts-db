@@ -1,0 +1,11 @@
+// author: Jat (@jat9119)
+<@1175455408538800205> is there any way for this script to only switch to totem one time when I open my inventory and not spam it? ```def module double-hand-auto-totem
+def desc "Custom Scripted Module"
+
+on tick if input_active inventory {
+    switch #totem
+    gui_quickmove #totem 9
+    if off_holding #air,#shield {
+        gui_swap #totem
+    }
+}

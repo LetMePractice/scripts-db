@@ -1,0 +1,16 @@
+// author: Beev (@.beevv)
+def module auto-elytra-switch
+def desc "Switch to elytra if falling and switch to sword"
+
+on pre_tick if playing {
+   if_not on_ground {
+      if falling {
+         if hotbar_has #elytra {
+            switch #elytra
+            input use
+            input jump
+            switch #sword
+         }
+      }
+   }
+}

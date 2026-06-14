@@ -1,0 +1,36 @@
+// author: Practice (@letmepractice)
+module ultimate-combat-bot
+def desc "Auto-crit with sword/axe/mace + 100% shield break. By Jat9119 & Enhanced"
+
+on pre_tick if playing {
+    !if input_active use {
+        if attack_progress >=0.9 {
+            if target_entity :player,:armor_stand {
+                as target_entity if blocking {
+                    if hotbar_has #axe {
+                        !if holding #axe {
+                            switch #axe
+                            wait 0.05 input attack
+                            wait 0.05 switch back
+                        }
+                        if holding #axe {
+                            input attack
+                        }
+                    }
+                }
+                as target_entity !if blocking {
+                    if holding #air,#sword,#axe,#mace {
+                        if on_ground {
+                            input attack
+                        }
+                        !if on_ground {
+                            if falling {
+                                input attack
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

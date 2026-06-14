@@ -1,0 +1,24 @@
+// author: Kaira (@_timel3ss.)
+def module rappture-part
+def desc "fall height under 7 breach fall height above 7 density"
+
+on pre_tick {
+    if playing {
+        if holding #sword {
+            if falling {
+                if vel_y < -0.78 {
+                    if_not holding #mace[density] {
+                        switch #mace[density]
+                    }
+                }
+                if vel_y > -0.78 {
+                    if vel_y < -0.15 {
+                        if_not holding #mace[breach] {
+                            switch #mace[breach]
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

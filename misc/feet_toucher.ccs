@@ -1,0 +1,17 @@
+// author: CatPup (@caniorno)
+def module feet_toucher
+def desc "son am crine"
+
+on left_click {
+    if holding #sword {
+        if hotbar_has #axe {
+            switch #axe
+            wait 0.05
+            input attack
+            wait 0.05
+            switch #sword
+        }
+    }
+}
+
+the literal most simple shield breaker of all time named feet toucher

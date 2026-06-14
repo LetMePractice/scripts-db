@@ -1,0 +1,12 @@
+// author: Kairse (@kairse.)
+wait time 0.03, add bedrock block
+
+ module CW-CRYSTALS-LEGIT
+def desc CW CRYSTALS LEGIT LOOKING
+
+on tick if holding #crystal if target_block :obsidian,:bedrock {
+  input right
+  wait 0.03 if target_entity :end_crystal {
+    input left 
+  }
+}

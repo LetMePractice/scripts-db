@@ -1,0 +1,7 @@
+// author: Saint (@halvmaane3)
+module crystalware
+def desc crystalware
+
+on tick if target_block :obsidian if holding #crystal input right
+
+on tick if target_entity :end_crystal then input left

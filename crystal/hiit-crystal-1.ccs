@@ -1,0 +1,30 @@
+// author: $wag (@chrisopmate_0)
+def module hiit-crystal
+def desc "Custom Scripted Module"
+
+on module_enable {
+
+}
+
+on module_disable {
+
+}
+def module hitcrystaltest
+def desc "Auto-Hit-Crystal but wont miss"
+
+on key_press 0 {
+    if playing !if target_block #obsidian {
+        switch #obsidian
+        input right
+    }
+}
+on tick if input_active key 0 {
+    if target_block #obsidian {
+        switch #crystal
+        input right
+    }
+}
+on tick if input_active key 0 {
+        input left
+    }
+}

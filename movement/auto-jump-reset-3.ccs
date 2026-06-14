@@ -1,0 +1,7 @@
+// author: Practice (@letmepractice)
+module Auto-Jump-Reset
+def desc "Auto Jump Reset when taking damage while holding ALT"
+
+on damage if playing if input_active left_alt {
+    input jump
+}

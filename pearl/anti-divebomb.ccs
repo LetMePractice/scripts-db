@@ -1,0 +1,24 @@
+// author: wxund (@wounddup)
+def module anti-divebomb
+def desc "no divebomb for you"
+
+on tick if playing if on_ground if_not gliding {
+   if entity_in_range :player 6 {
+      if_not targeting_entity {
+         snap_to nearest_entity :player aim head
+      }
+      if targeting_entity if target_entity :player {
+         as target_entity if inventory_has :elytra as client {
+            if hotbar_has #wind_charge {
+               if item_cooldown <= 0 {
+                  switch #wind_charge
+                  input use
+                  wait 0.05 {
+                     switch back
+                  }
+               }
+            }
+         }
+      }
+   }
+}

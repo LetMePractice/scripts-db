@@ -1,0 +1,31 @@
+// author: Jello (@jello2210)
+def module web-lava-combo
+def desc "Places web on non-cobweb blocks, lava on cobweb blocks"
+
+on right_click if playing {
+   if_not input_active use {
+      if targeting_block {
+         if target_block #cobweb {
+            if hotbar_has #lava_bucket {
+               switch #lava_bucket
+               wait 0.5
+               input use
+               wait 0.5
+               if_not holding #lava_bucket {
+                  input use
+                  wait 0.02
+                  switch back
+               }
+               switch back
+            }
+         }
+         if_not target_block #cobweb {
+            if holding #sword,#totem,#pickaxe {
+               wait_random 0.01 0.05 {
+                  switch #cobweb then wait 0.05 then input use then wait 0.05 then switch back
+               }
+            }
+         }
+      }
+   }
+}

@@ -1,0 +1,10 @@
+// author: 𝄃𝄃𝄂𝄂𝄀𝄃𝄃𝄂𝄂𝄀𝄃𝄃𝄂𝄂𝄀𝄃 (@bigmanorange)
+def module spear-mace
+
+on right_click if playing {
+if holding #spear {
+wait 0.5
+switch #mace
+input left
+}
+}

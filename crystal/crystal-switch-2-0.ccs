@@ -1,0 +1,11 @@
+// author: Jello (@jello2210)
+module Crystal-Switch-2.0
+def desc CS Fixed
+
+on left_click {
+    if holding #sword,:obsidian,#totem,#glowstone,#anchor {
+        if target_block :obsidian,:bedrock {
+            wait 0.03 switch #crystal
+        }
+    }
+}

@@ -1,0 +1,9 @@
+// author: Cat (@cat123go)
+def module mace-swap
+def desc hit with a sword and it will automatically switch to mace 
+
+on left_click if playing {
+  if holding #swordif target_entity :player {
+    switch #mace
+}
+}

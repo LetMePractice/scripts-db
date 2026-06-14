@@ -1,0 +1,25 @@
+// author: Filip (@filip077619)
+def module Bewegen
+def desc "Bewegt sich sehr genau"
+
+on pre_tick {
+   if playing {
+      if holding #sword {
+         if entity_in_range :player 4.0 {
+            input jump
+         }
+      }
+   }
+}
+
+on pre_tick {
+   if playing {
+      if holding #sword {
+         if_not entity_in_range :player 3.5 {
+            if on_ground {
+               input forward
+            }
+         }
+      }
+   }
+}

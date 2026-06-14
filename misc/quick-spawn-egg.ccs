@@ -1,0 +1,15 @@
+// author: Practice (@letmepractice)
+module quick-spawn-egg
+def desc "Press key to use any spawn egg and switch back"
+
+on key_press g if playing {
+    if_not holding #spawn_egg {
+        if hotbar_has #spawn_egg {
+            switch #spawn_egg
+            wait 0.05
+            input use
+            wait 0.05
+            switch back
+        }
+    }
+}

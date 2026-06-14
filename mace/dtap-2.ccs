@@ -1,0 +1,21 @@
+// author: Jat (@jat9119)
+def module Dtap
+def desc "Dtap with mace"
+
+on left_click {
+   if holding #mace {
+      if target_entity :player {
+         switch 5
+         wait 0.05 {
+            input use
+            switch 9
+            wait 0.05 {
+               input attack
+               wait 0.05 {
+                  switch back
+               }
+            }
+         }
+      }
+   }
+}

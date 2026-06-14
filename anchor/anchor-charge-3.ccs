@@ -1,0 +1,43 @@
+// author: tieronepvprr (@tieronepvprr)
+def module anchor-charge;
+def description Auto charges an anchor on place;
+
+on right_click {
+    if target_block != #air {
+        if holding #sword {
+            switch minecraft:respawn_anchor;
+            input use;
+            switch minecraft:glowstone;
+        }
+
+        if holding #pickaxe {
+            switch minecraft:respawn_anchor;
+            input use;
+            switch minecraft:glowstone;
+        }
+
+        if holding minecraft:totem_of_undying {
+            switch minecraft:respawn_anchor;
+            input use;
+            switch minecraft:glowstone;
+        }
+
+        if holding minecraft:respawn_anchor {
+            input use;
+            switch minecraft:glowstone;
+        }
+
+        if target_block :charged_respawn_anchor {
+            if hotbar_has minecraft:totem_of_undying {
+                switch minecraft:totem_of_undying;
+            }
+            if_not hotbar_has minecraft:totem_of_undying {
+                switch #sword;
+            }
+        }
+
+        if target_block :uncharged_respawn_anchor {
+            switch minecraft:glowstone;
+        }
+    }
+}

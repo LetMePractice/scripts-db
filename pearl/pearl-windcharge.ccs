@@ -1,0 +1,35 @@
+// author: AstroNixs (@astronixs.)
+I've made lots of scripts, but I don't understand how this works.
+I made a pearl catch script, but even though delay is mostly same everywhere, the speed of CC throwing pearl and windcharge is always different.
+Here is my script
+def module pearl-windcharge
+
+def desc "pearl catch on key"
+
+on key_press g if playing if holding :wind_charge {
+
+    switch :ender_pearl
+    wait 0.12
+    input use
+
+    wait 0.18
+
+    switch :wind_charge
+    wait 0.12
+    input use
+
+}
+
+on key_press g if playing if holding :ender_pearl {
+
+    switch :ender_pearl
+    wait 0.12
+    input use
+
+    wait 0.18
+
+    switch :wind_charge
+    wait 0.12
+    input use
+
+}

@@ -1,0 +1,5 @@
+// author: ImproperIssues (@improperissues)
+def module this-will-be-auto-enabled
+on tick loop 69420 on tick
+
+module enable this-will-be-auto-enabled

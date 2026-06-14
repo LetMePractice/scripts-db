@@ -1,0 +1,12 @@
+// author: ImproperIssues (@improperissues)
+anticheat bypass
+def module Auto-EXP
+def desc Auto EXP
+
+on tick {
+    if playing {
+        if holding #experience if chance_of 0.75 {
+            input right
+        }
+    }
+}

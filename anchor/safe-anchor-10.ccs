@@ -1,0 +1,29 @@
+// author: .0n6 (@.0n6)
+//@.0n6
+def module Safe-anchor
+def desc "Safe-anchor"
+
+on right_click if playing if holding #sword {
+if hotbar_has #anchor if hotbar_has :glowstone {
+
+if_not target_block :respawn_anchor if_not target_block #air {
+switch :respawn_anchor
+wait_random 0.05 0.09
+switch :glowstone
+wait_random 0.05 0.09
+input use
+}
+
+if target_block :respawn_anchor {
+switch :glowstone
+wait_random 0.05 0.09
+input use
+}
+}
+}
+on right_click if target_block :charged_respawn_anchor {
+wait_random 0.02 0.04
+switch #totem
+wait_random 0.05 0.09
+input use
+}

@@ -1,0 +1,17 @@
+// author: c_tr1 (@c_tr1)
+can someone make this better ? it soetimes doesnt work
+
+def module player
+def desc "fgfffsfsdffsdfs"
+
+on middle_click {
+    if playing {
+        if hotbar_has :ender_pearl {
+            switch :ender_pearl
+            snap_to nearest_entity :player aim legs
+            input use
+            snap_to nearest_entity :player aim head
+            wait 0.05 switch #mace[wind_burst]
+          }
+     }
+}

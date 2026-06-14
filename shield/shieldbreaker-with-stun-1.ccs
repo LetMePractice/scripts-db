@@ -1,0 +1,17 @@
+// author: Kaira (@_timel3ss.)
+module ShieldBreaker-with-Stun
+def desc "Shield Breaker with Auto"
+
+on key_press z if playing if holding #sword if_not blocking {
+    as target_entity if blocking {
+        if hotbar_has #_axe {
+            switch #_axe
+            wait 0.05
+            input left
+            wait 0.2
+            input left
+            wait 0.3
+            switch #sword
+        }
+    }
+}

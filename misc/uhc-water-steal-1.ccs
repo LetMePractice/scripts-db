@@ -1,0 +1,23 @@
+// author: Practice (@letmepractice)
+module uhc-water-steal
+def desc "Auto steal enemy water & keep normal water use"
+
+on place_block if playing {
+    if target_block :water {
+        if entity_in_range :player 5 {
+            if hotbar_has :water_bucket {
+                switch :water_bucket
+                wait 0.05
+                input use
+                wait 0.05
+                switch :diamond_sword 
+            }
+        }
+    }
+}
+
+on right_click if playing {
+    if holding :water_bucket {
+        input use
+    }
+}

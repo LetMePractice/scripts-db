@@ -1,0 +1,14 @@
+// author: anitech (@anitech7742)
+def module tbot
+def desc "actually good tbot"
+
+on tick if playing if target_entity :player if holding #sword,#axe {
+ if attack_progress >= .95 {
+  if_not on_ground if chance_of 95 {
+   input left
+  }
+  if on_ground if chance_of 85 {
+   input left
+  }
+ }
+}

@@ -1,0 +1,43 @@
+// author: LoopholeMC (@loopholemc)
+// @obvWolf
+def module trigger-bot
+def desc "Does not bypass, just a proof of concept for what I added to Coherent Client"
+
+on tick if playing {
+    if targeting_entity {
+        function attack
+        as target_entity if blocking {
+            function break
+        }
+    }
+}
+
+define function break {
+    if chance_of 75 {
+        if_not holding #_axe {
+            switch #_axe
+        }
+        wait_random 0.05 0.12 {
+            function attack
+            wait_random 0.05 0.12 {
+                switch back
+            }
+        }
+    }
+}
+
+define function attack {
+    if chance_of 75 {
+        as target_entity if_not blocking {
+            if attack_progress >=0.9 {
+                input attack
+            }
+        }
+        as target_entity if blocking {
+            if holding #_axe {
+                input attack
+            }
+        }
+    }
+}
+By obvWolf

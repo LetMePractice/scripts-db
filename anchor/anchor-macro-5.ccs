@@ -1,0 +1,37 @@
+// author: White-Nigga (@get9654)
+def module anchor-macro
+def desc "Matrix mera beta"
+
+on pre_tick {
+   if playing {
+      if targeting_block {
+
+         if input_active use {
+
+            if holding #sword {
+
+               if_not target_block :uncharged_respawn_anchor {
+                  if hotbar_has :respawn_anchor {
+                     switch :respawn_anchor
+                     input use
+                  }
+               }
+
+               if target_block :uncharged_respawn_anchor {
+                  if hotbar_has :glowstone {
+                     switch :glowstone
+                     input use
+                  }
+               }
+            }
+         }
+
+         if target_block :charged_respawn_anchor {
+            if hotbar_has #totem {
+               switch #totem
+               wait 0.20 input right
+            }
+         }
+      }
+   }
+}

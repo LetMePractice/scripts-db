@@ -1,0 +1,5 @@
+// author: Kaira (@_timel3ss.)
+module Anchor-Macro
+def desc Anchor Macro
+
+on place_block if holding #anchor then wait 0.03 then if hotbar_has #glowstone switch #glowstone then input right then wait 0.03 then if hotbar_has #totem switch #totem then input right

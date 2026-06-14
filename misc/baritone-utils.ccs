@@ -1,0 +1,34 @@
+// author: Jat (@jat9119)
+module baritone-utils
+def desc "Makes repetitive baritone commands faster"
+
+on key_press [ {
+    if playing {
+        say "#pause"
+    }
+}
+on key_press p {
+    if playing {
+        say "#stop"
+    }
+}
+on key_press ] {
+    if playing {
+        say "#resume"
+    }
+}
+on key_press - {
+    if playing {
+        say "#sel 1"
+    }
+}
+on key_press = {
+    if playing {
+        say "#sel 2"
+    }
+}
+on key_press 0 {
+    if playing {
+        say "#sel clear"
+    }
+}

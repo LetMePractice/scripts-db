@@ -1,0 +1,22 @@
+// author: ben_834 (@ben_834)
+`def module auto-totem
+def desc "Automatically replaces totem after pop - opens inventory and equips new totem"
+
+on totem_pop if playing {
+    print "Totem popped! Automatically replacing..."
+    
+    wait 0.1 {
+        input inventory  # Open inventory
+        
+        wait 0.2 {
+            gui_switch :totem_of_undying  # Find and hover over totem
+        wait 0.1 {
+                input key f  # Press F to swap with offhand
+                wait 0.1 {
+                    input inventory  # Close inventory
+                    notify 3 "Totem automatically replaced!"
+                }
+            }
+        }
+    }
+}`

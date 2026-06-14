@@ -1,0 +1,14 @@
+// author: iAmBot (@.iiambot)
+does this work?
+ module Breach-Swap
+def desc Hold sword and press left click and it will automatically breach swap
+
+on tick if playing {
+  on left_click if holding :sword {
+      if target_entity :player {
+        input left 
+          switch #mace 
+            switch #sword
+    }
+   }
+}

@@ -1,0 +1,10 @@
+// author: janga (@jangabanga)
+def module hitcrystaltest
+def desc "Auto-Hit-Crystal but wont miss"
+
+on key_press 2 {
+    if target_block #obsidian if holding #crystal { 
+     wait 0.07 switch #crystal
+     wait 0.07 input use
+    }
+}

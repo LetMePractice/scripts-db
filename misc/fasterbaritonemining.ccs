@@ -1,0 +1,7 @@
+// author: Deleted User (@Deleted User)
+you can do smth like ```def module FasterBaritoneMining
+def desc "Baritone"
+
+on tick if targeting_block if input_active left {
+     hold_input attack 2.0
+}

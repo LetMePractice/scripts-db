@@ -1,0 +1,23 @@
+// author: Deleted User (@Deleted User)
+// fatchudsellerswag
+def module chud-slam
+def desc "Guarantees you chud slam your enemy chud"
+def func click {
+    if holding #mace  { input left }
+}
+on left_click if playing {
+   if hotbar_has #mace {
+      if target_entity :player {
+         switch #mace
+      }
+   }
+}
+
+on pre tick if playing {
+  if entity_in_range :player 3.5 {
+    turn_to nearest_entity :player aim head speed 10
+    }
+  if entity_in_range :player 3.5 {
+  func click
+  }
+}

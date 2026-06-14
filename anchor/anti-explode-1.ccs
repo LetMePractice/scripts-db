@@ -1,0 +1,11 @@
+// author: Jat (@jat9119)
+doesnt work all the time but its better than nothing ```def module anti-explode
+def desc "Custom Scripted Module"
+
+on tick {
+    if holding #crystal,#anchor {
+            as nearest_entity :player if dead {
+            switch #sword
+        }
+    }
+}

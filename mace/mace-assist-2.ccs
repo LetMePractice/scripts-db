@@ -1,0 +1,17 @@
+// author: Practice (@letmepractice)
+module mace-assist
+def desc "Auto aim and hit with mace when left clicking at activation height"
+
+on left_click if playing {
+    if holding #mace {
+        if falling {
+            if vel_y < -0.6 {
+                if entity_in_range :player 3 {
+                    turn_to nearest_entity :player aim body speed 80 then {
+                        input attack
+                    }
+                }
+            }
+        }
+    }
+}

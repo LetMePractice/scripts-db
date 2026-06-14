@@ -1,0 +1,11 @@
+// author: unknown
+IDK who tf will want to use that but second post in this will be that auto charges and stuff
+
+ module left-anchor
+def desc "Custom Scripted Module"
+
+on left_click if holding #anchor if targeting_block !if target_block #air wait 0.2 then input right
+on place_block if holding #anchor wait 0.03 then switch #glowstone
+on left_click if holding #glowstone if targeting_block !if target_block #air wait 0.2 then input right
+on interact_block if holding #glowwstone wait 0.03 then switch #anchor
+on tick if input_active attack if holding #totem switch #glowstone

@@ -1,0 +1,25 @@
+// author: ImproperIssues (@improperissues)
+def module marlow-anchor
+def desc "Auto Marlow Anchor"
+
+on right_click if playing if holding #anchor {
+    wait 0.05 if target_block #anchor {
+        switch :glowstone
+
+        wait 0.05 {
+            input right
+            func detonate
+        }
+    }
+}
+
+def func detonate {
+    wait 0.05 {
+        switch #anchor
+        if target_block #anchor {
+            loop_period 2 0.05 {
+                input use
+            }
+        }
+    }
+}

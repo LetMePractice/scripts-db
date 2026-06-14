@@ -1,0 +1,11 @@
+// author: tieronepvprr (@tieronepvprr)
+def module aim-assist
+def desc "aim assist at 6 block range"
+
+on tick 2 if playing {
+    if holding #sword,#_axe {
+        if entity_in_range :player 6 {
+            turn_to nearest_entity :player aim body speed 55
+        }
+    }
+}

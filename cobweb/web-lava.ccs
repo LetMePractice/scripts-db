@@ -1,0 +1,22 @@
+// author: Jello (@jello2210)
+def module web-lava-
+def desc "Places lava above web when player is in web"
+
+on tick if playing {
+   if entity_in_range :player 5.0 {
+      if block_in_range #cobweb 4.0 {
+         if hotbar_has #lava_bucket {
+            switch #lava_bucket
+            wait 0.1
+            turn_to nearest_entity :player then {
+               wait 0.01
+               input use
+               wait 0.5
+               input use
+               wait 0.3
+               switch back
+            }
+         }
+      }
+   }
+}

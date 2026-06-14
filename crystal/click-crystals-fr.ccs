@@ -1,0 +1,5 @@
+// author: Cat (@cat123go)
+module click-crystals-fr
+def desc ClickCrystals module just with a bit of addon that auto break the crystal (DON'T DOUBLE CLICK)
+
+on left_click if holding #crystal if target_block :obsidian wait 0.05 then input right then wait 0.05 then input left

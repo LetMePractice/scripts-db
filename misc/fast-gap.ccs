@@ -1,0 +1,5 @@
+// author: Champ_RL (@champ_rl_71023)
+def module fast-gap
+def desc "Auto Gap"
+
+on tick if holding #golden_apple then input right

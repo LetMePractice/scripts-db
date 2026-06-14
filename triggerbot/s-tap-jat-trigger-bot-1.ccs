@@ -1,0 +1,45 @@
+// author: !                        KeVin.. (@kevinnnnnnnnnnnnnnnnnnnn)
+`def module S-TAP-Jat-Trigger-Bot
+def desc jat one but with s-tap
+
+on pre_tick {
+   if playing {
+      if target_entity :player,:armor_stand {
+         if_not blocking {
+            if_not input_active use {
+               if attack_progress >= 0.96 {
+                  if_not blocking {
+                     if holding #sword {
+                        if on_ground {
+                        hold_input key s 0.3
+                           input left
+                        }
+                        if_not on_ground {
+                           if falling {
+                              input left
+                           }
+                        }
+                     }
+                  }
+               }
+            }
+         }
+      }
+   }
+}
+on damage {
+   while_not 0.05 on_ground {
+      if falling {
+         if holding #sword {
+            if attack_progress >= 0.96 {
+               if targeting_entity {
+                  if target_entity :player {
+                     input left
+                  }
+               }
+            }
+         }
+      }
+   }
+}
+Can You Add if_not invisible typ thing so it doesnt input left while targeting invisible

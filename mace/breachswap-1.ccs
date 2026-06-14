@@ -1,0 +1,15 @@
+// author: dirlord (@cellyplayzz)
+module BreachSwap  
+def desc "Hold a sword and press down left click to automatically breach swap"  
+
+on left_click if playing if holding #sword {  
+        if target_entity :player {  
+           if not blocking {
+            switch #mace[breach]
+            wait 0.02 
+            input attack
+             wait 0.03
+             switch back
+        }  
+    }  
+}

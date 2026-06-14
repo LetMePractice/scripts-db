@@ -1,0 +1,74 @@
+// author: DeCo (@deco987)
+def module legit-cgpt-tbot
+def desc "Ground w-tap, falling crit, legit timings + shield break"
+
+on tick if playing {
+    if target_entity :player {
+        if holding #sword,#_axe {
+            if_not blocking {
+                if_not input_active use {
+                    if attack_progress >= 0.85 {
+
+                        // ===== (SHIELD BREAK) =====
+                        as target_entity if blocking {
+                            if hotbar_has #_axe {
+                                func shield_break
+                            }
+                        }
+
+                        // ===== GROUND =====
+                        if on_ground {
+                            func wtap_hit
+                        }
+
+                        // ===== FALLING (CRIT) =====
+                        if_not on_ground {
+                            if falling {
+
+                                // micro sprint cancel (safe)
+                                if input_active forward {
+                                    hold_input backward 0.02
+                                    wait 0.02
+                                    hold_input cancel
+                                }
+
+                                func legit_hit
+                            }
+                        }
+
+                    }
+                }
+            }
+        }
+    }
+}
+
+def func legit_hit {
+    execute_random {
+        if attack_progress >= 0.8611 then input left
+        if attack_progress >= 0.8722 then input left
+        if attack_progress >= 0.8833 then input left
+        if attack_progress >= 0.8944 then input left
+        if attack_progress >= 0.9111 then input left
+    }
+}
+
+def func wtap_hit {
+    func legit_hit
+
+    if input_active forward {
+        hold_input backward 0.05
+        wait 0.05
+        hold_input cancel
+    }
+}
+
+def func shield_break {
+    switch #_axe
+    wait_random 0.02 0.04
+    input left
+    wait_random 0.04 0.07
+    input left
+    wait_random 0.02 0.04
+    switch #sword
+}

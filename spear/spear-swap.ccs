@@ -1,0 +1,16 @@
+// author: T For Tighnari (@silicon06520)
+def module spear swap
+def desc "spear reach attribute swap"
+
+on left_click if playing {
+  if target_entity :player {
+    if hotbar_has #spear {
+      if holding #sword {
+        switch #spear
+          wait 0.05 {
+           switch #sword
+        }
+      }
+    }
+  }
+}

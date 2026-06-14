@@ -1,0 +1,41 @@
+// author: Kaira (@_timel3ss.)
+// Auto Shield Breaker - Automatically swaps to axe and breaks shields when looking at blocking players
+def module auto-shield-breaker
+def desc "Automatically swaps to axe and attacks when looking at a player blocking with a shield"
+
+on tick 2 {
+    if playing {
+        if_not blocking {
+            if attack_progress >=0.85 {
+                if hotbar_has #_axe {
+                    if target_entity :player {
+                        as target_entity {
+                            if blocking {
+                                execute {
+                                    function shield_break
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+def func shield_break {
+    // Swap to axe
+    switch #_axe
+    
+    // Wait for weapon to be ready
+    wait_random 0.040 0.060
+    
+    // Attack to break shield
+    input left
+    
+    // Wait a bit before swapping back
+    wait_random 0.080 0.120
+    
+    // Swap back to previous item
+    switch back
+}

@@ -1,0 +1,95 @@
+// author: wxund (@wounddup)
+Here’s a clean, configurable ClickScript for the Hit Select module. It intercepts your attack packets, filters unnecessary clicks, supports burst-style timing, optional “wait for first hit,” optional “hit later in trades,” optional critical-only swings, fake-swing visuals, and separate cancel rates for combat vs air swings.
+
+### Configuration
+
+Edit the numbers near the top of the script block:
+
+* `PAUSE = 0.50` seconds max throttle after an allowed hit.
+* `FIRST_HIT_DELAY = 0.50` seconds. Set to `0` to disable “wait for first hit.”
+* `TRADE_DELAY = 0.08` seconds extra delay after you get hit. Set to `0` to disable.
+* `AP_THRESHOLD = 0.90` attack cooldown gate. Raise to be stricter.
+* `CANCEL_RATE_COMBAT = 1.00` fraction of blocked non-damaging combat clicks. `1.00` = perfect timing.
+* `CANCEL_RATE_MISS = 0.50` fraction of blocked air swings. Higher lowers visible CPS on misses.
+* To require falling for crits, keep the `if falling {}` check. To disable “criticals-only,” delete that `if falling {}` guard.
+* “Fake swing” is implicit: we cancel the hit packet but let the swing animation play.
+
+### Script
+
+def module Hit-Select
+def desc "Hit Select with burst timing, optional first-hit wait, trade-delay, crits gate, cancel rates, and fake-swing."
+
+define function do_attack {
+    uncancel_packet c2s playerInteractEntity
+    input attack
+    wait 0.02
+    cancel_packet c2s playerInteractEntity
+}
+
+on game_join {
+    cancel_packet c2s playerInteractEntity
+    uncancel_packet c2s handSwing
+}
+
+on pre_tick if playing {
+    cancel_packet c2s playerInteractEntity
+    uncancel_packet c2s handSwing
+}
+
+define function burst_gate {
+    if attack_progress >= 0.90 {
+        as target_entity {
+            if hurt_time <= 0 {}
+            else { exit 0 }
+        }
+    } else { exit 0 }
+}
+
+define function wait_for_first_hit {
+    if_not hurt_time > 0 { wait 0.50 }
+}
+
+define function trade_delay {
+    if hurt_time > 0 { wait 0.08 }
+}
+
+on left_click if playing {
+    if targeting_entity {
+        if target_entity :player {
+            as client {
+                function burst_gate
+                function wait_for_first_hit
+                function trade_delay
+                if falling {} else { /* delete this line to disable crits gate */ exit 0 }
+                function do_attack
+                wait 0.50
+            }
+        } else {
+            if chance_of 1.00 {} else { exit 0 }
+        }
+    } else {
+        if chance_of 0.50 {
+            cancel_packet c2s handSwing
+            wait 0.02
+            uncancel_packet c2s handSwing
+        }
+    }
+}
+
+### How it works
+
+* Cancels `playerInteractEntity` globally, then re-injects one clean `input attack` only when gates pass. This yields burst timing and lower average CPS. 
+* `burst_gate` allows hits only when your cooldown is ready and the target is damageable now. That removes slow, useless trades. 
+* `wait_for_first_hit` implements “wait for first hit” using a max delay. Set to `0` to disable. 
+* `trade_delay` waits slightly after you get hit to reduce your knockback and CPS in trades. Set to `0` to disable. 
+* The `if falling {}` guard enforces “criticals” mode. Delete it to stop requiring a fall window. 
+* Fake swing is automatic: we never cancel `handSwing`, so the animation plays even when we block the real hit packet. 
+* `chance_of` gates implement separate cancel rates in combat vs missed swings to keep CPS realistic without sacrificing real hits. 
+
+### Quick tweaks
+
+* Lower `AP_THRESHOLD` if you want more hits to slip through.
+* Increase `PAUSE` if you want stronger slowing between allowed hits.
+* Set `CANCEL_RATE_MISS` to `1.00` if you never want to swing at air.
+
+If you want me to wire specific keybind toggles or preset profiles, say which knobs to expose and I’ll embed them.

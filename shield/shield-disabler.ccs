@@ -1,0 +1,9 @@
+// author: Cat (@cat123go)
+module shield-disabler
+def desc switches to your axe if you have in your hotbar if you are targeting a player with shield
+
+on tick if playing if targeting_entity {
+  as target_entity if blocking as client if hotbar_has #_axe {
+    switch #_axe 
+  }
+}

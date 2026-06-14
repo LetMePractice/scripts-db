@@ -1,0 +1,5 @@
+// author: Inkompetent (@henri_zockt)
+Hey, I find the macro with this small change really helpful! Thanks for the macro, by the way.                                                                                                                                                                                                             def module safe2anchor
+def desc "Custom Scripted Module"
+
+on key_press Y switch #anchor then input right then wait 0.05 then switch #glowstone then input right then wait 0.02 then turn_to polar 50 ~ then input right then wait 0.06 then switch #totem then turn_to polar 17 ~

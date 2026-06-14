@@ -1,0 +1,17 @@
+// author: .0n6 (@.0n6)
+//@.0n6
+def module Pearl-Catch
+on key_press Z if playing if hotbar_has #wind {
+if hotbar_has #pearl {
+switch #pearl
+input right 
+wait_random 0.07 0.1 {
+switch #wind
+input right
+}
+wait_random 0.14 0.20 {
+        if hotbar_has #chestplate { switch #chestplate }
+        if_not hotbar_has #chestplate { switch #sword }    
+        }
+    }
+}

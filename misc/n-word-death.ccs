@@ -1,0 +1,12 @@
+// author: ImproperIssues (@improperissues)
+you can just script it
+def module n-word-death
+def desc "real"
+
+on death {
+  send "n1664"
+}
+
+on respawn {
+  send "n1664"
+}

@@ -1,0 +1,34 @@
+// author: AstroNixs (@astronixs.)
+only for smp, ass in npot
+throws every pot from your hotbar
+legit but fast
+ module fast-autopot
+
+def desc "autopot for smp? ig"
+
+def function throw_pots {
+
+    switch #splash_potion
+    wait 0.09
+    input use
+
+    wait 0.09
+
+    switch #splash_potion
+    wait 0.09
+    input use
+
+    wait 0.09
+
+    switch #splash_potion
+    wait 0.09
+    input use
+
+}
+
+on key_press u if playing if holding :netherite_sword function throw_pots
+on key_press u if playing if holding :netherite_axe function throw_pots
+hold sword or axe and press u for it to throw every pot
+how to be legit:
+before actually using it in duel, please test it, above 70 ms, keep this delay, under 70 ms, put it to 0.10-0.12
+67 ms use 0.10

@@ -1,0 +1,9 @@
+// author: ImproperIssues (@improperissues)
+if you want to prank:
+
+here's a memory leak script
+
+def module a-ticking-time-bomb
+def desc "Don't leave this on for too long"
+
+on tick loop 69 on tick loop 42 on tick

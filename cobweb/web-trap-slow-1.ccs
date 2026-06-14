@@ -1,0 +1,12 @@
+// author: Jello (@jello2210)
+i want to make it so when u right click with sword it cobwebs but its sending to many packets when using with a shield because it spams anytime u right click not just when a cobweb is placeable - def module web-trap-slow
+def desc "Places a web with a fixed 0.05s delay and 1s cooldown after use"
+
+on right_click if playing if holding #sword {
+   switch :cobweb
+   wait 0.05
+   input use
+   wait 0.05
+   switch #sword
+   wait 1.0
+}

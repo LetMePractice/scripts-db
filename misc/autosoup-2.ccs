@@ -1,0 +1,10 @@
+// author: Jello (@jello2210)
+def module autosoup
+def desc "Auto eat suspicious stew and drop bowl"
+
+on tick if hunger <= 16 if hotbar_has :suspicious_stew {
+    switch :suspicious_stew
+    input use
+    wait 0.8
+    if holding :bowl drop all
+}

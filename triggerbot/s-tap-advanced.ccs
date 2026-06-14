@@ -1,0 +1,20 @@
+// author: Practice (@letmepractice)
+module s-tap-advanced
+def desc "Advanced S-tap with configurable timing and safety checks"
+
+on left_click if playing !if input_active backward {
+    if holding #sword,#axe {
+        if target_entity :player {
+            if attack_progress >=0.9 {
+                if on_ground {
+                    hold_input backward 0.08
+                    wait 0.05 {
+                        if input_active backward {
+                            hold_input cancel
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

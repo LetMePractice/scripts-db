@@ -1,0 +1,7 @@
+// author: Cunix (@notcunix)
+// @wither123go
+def module sanchor-y
+def desc Press "Y" for safe anchor
+on right_click if holding #sword then  switch #anchor then input right then wait 0.08 then switch :glowstone then input right then wait 0.05 then switch #anchor then input right then wait 0.1 then switch #sword   
+
+can u help me when i open inventory it dont work so it wont disturb me while toteming

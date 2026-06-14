@@ -1,0 +1,50 @@
+// author: Niker (@itz271k)
+def module stun-slam-mace
+def desc "Guaranteed-hit stun slam + auto mace"
+
+def func stunslam {
+    if attack_progress >= 0.85 {
+        switch #axe
+        input attack
+        wait 0.05
+        switch #mace[density]
+        repeat 5 {input attack}
+        wait 0.10
+        switch #sword
+    }
+}
+
+def func automace {
+    if attack_progress >= 0.85 {
+        switch #mace[density]
+        input attack
+        wait 0.05
+        switch #sword
+    }
+}
+
+on pre_tick if playing {
+    if targeting_entity if target_entity :player{
+     if vel_y <= -0.01 {
+        as target_entity if blocking {
+            function stunslam
+        }
+        as target_entity if_not blocking {
+            function automace
+        }
+    }
+}
+}
+
+
+on left_click if playing {
+   if hotbar_has #mace[breach] {
+      switch #mace[breach]
+      wait 0.03
+      input attack
+      wait 0.05
+      switch back
+   }
+}
+
+This script dosent work when i fell from under 5-7 blocks i set -0.01 as the lowest value but still dosent works when i fell from 8+ blocks it works just need to fix vel_y idk how just need to make it work after we fell from 1.5 blocks+ can anyone do that

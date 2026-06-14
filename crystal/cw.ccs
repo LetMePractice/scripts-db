@@ -1,0 +1,17 @@
+// author: Itacat (@king_baller9258)
+module cw
+def desc "Custom Scripted Module"
+
+on pre_tick {
+   if playing {
+      if holding #crystal {
+         if target_block #obs {
+           if chance_of 95 {
+            if_not input_active use {
+               input key k
+               }
+            }
+         }
+      }
+   }
+}

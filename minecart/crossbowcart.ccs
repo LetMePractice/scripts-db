@@ -1,0 +1,37 @@
+// author: SwinkaGamer (@nenmom12344)
+def module CrossBowCart
+def desc "Auto Cross Bow Cart"
+
+on place_block if holding #rail {
+    switch #tnt
+    wait 0.001 input right
+        wait 0.1 if holding #tnt {
+            if inventory_has :stone_slab { switch :stone_slab }
+            if inventory_has :smooth_stone_slab { switch :smooth_stone_slab }
+            if inventory_has :sandstone_slab { switch :sandstone_slab }
+            if inventory_has :cut_sandstone_slab { switch :cut_sandstone_slab }
+            if inventory_has :cobblestone_slab { switch :cobblestone_slab }
+            if inventory_has :brick_slab { switch :brick_slab }
+            if inventory_has :stone_brick_slab { switch :stone_brick_slab }
+            if inventory_has :nether_brick_slab { switch :nether_brick_slab }
+            if inventory_has :quartz_slab { switch :quartz_slab }
+            if inventory_has :oak_slab { switch :oak_slab }
+            if inventory_has :spruce_slab { switch :spruce_slab }
+            if inventory_has :birch_slab { switch :birch_slab }
+            if inventory_has :jungle_slab { switch :jungle_slab }
+            if inventory_has :acacia_slab { switch :acacia_slab }
+            if inventory_has :dark_oak_slab { switch :dark_oak_slab }
+            if inventory_has :mangrove_slab { switch :mangrove_slab }
+            if inventory_has :crimson_slab { switch :crimson_slab }
+            if inventory_has :warped_slab { switch :warped_slab }
+    }
+}
+
+on place_block if holding :stone_slab,:smooth_stone_slab,:sandstone_slab,:cut_sandstone_slab,:cobblestone_slab,:brick_slab,:stone_brick_slab,:nether_brick_slab,:quartz_slab,:oak_slab,:spruce_slab,:birch_slab,:jungle_slab,:acacia_slab,:dark_oak_slab,:mangrove_slab,:crimson_slab,:warped_slab {
+    switch #steel
+}
+
+on right_click if holding #steel {
+    wait 0.1 switch #cross
+    wait 0.25 input right
+}

@@ -1,0 +1,16 @@
+// author: .0n6 (@.0n6)
+<@1341440230963548293> here 
+def module Breach-Swapping
+def desc "yeah"
+
+on tick if playing on left_click{
+    if holding #sword {
+        if hotbar_has #mace[breach] {
+            if target_entity :player {
+                switch #mace[breach]
+                wait 0.05
+                switch #sword
+            }
+        }
+    }
+}

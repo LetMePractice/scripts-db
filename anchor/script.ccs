@@ -1,0 +1,10 @@
+// author: Armofire (@armofire_4294)
+This is made by a friend 
+
+(He stole my script and removed crouching part)
+
+def module '
+def desc Press "'" for safe anchor
+
+on key_press ' if targeting_block !if target_block #air switch #anchor then input right then wait 0.05 then switch :glowstone then input right then wait 0.05 wait 0.05 then input right then wait 0.08 switch #totem
+on tick if holding #glowstone_dust wait 0.05 then switch #glowstone

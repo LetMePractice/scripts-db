@@ -1,0 +1,23 @@
+// author: √Your_RiVal (@gamer_playzzzzz)
+def module Fruit-Bridge
+def desc "Accurate fruitbridging - hold right click while moving backward"
+
+on tick {
+    if playing {
+        if holding #block {
+            if sneaking {
+                input backward
+                wait 0.05
+                input jump
+                wait 0.08
+                input use
+                wait 0.05
+                input use
+                wait 0.08
+                input sneak
+                wait 0.02
+                input sneak
+            }
+        }
+    }
+}

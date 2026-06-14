@@ -1,0 +1,15 @@
+// author: Jello (@jello2210)
+def module bow-boost
+def desc "Jump, auto-aim ~60°, short-charge bow at apex (press V)."
+
+on key_press v if playing {
+    if hotbar_has :bow { switch :bow }
+    input jump
+    snap_to position ~4 ~9 ~
+    while jumping {
+        if vel_y <=0 {
+            hold_input use 0.18
+            while_not jumping { wait 0.01 }
+        }
+    }
+}

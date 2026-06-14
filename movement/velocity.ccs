@@ -1,0 +1,8 @@
+// author: Cat (@cat123go)
+module Velocity
+def desc Testing :)
+
+on tick if input_active jump {
+  velocity ^ 5 ^
+}
+this is ImproperIssues script i just decided to make it go UP when jump and it doesn't bypass at all lol

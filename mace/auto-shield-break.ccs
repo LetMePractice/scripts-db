@@ -1,0 +1,23 @@
+// author: Kaira (@_timel3ss.)
+def module auto-shield-break
+def desc "auto shield break"
+
+on tick {
+   if playing {
+      if target_entity :player {
+         as target_entity {
+            if blocking {
+               switch #_axe
+               input attack
+               input attack
+               input attack
+               input attack
+               input attack
+               switch #sword
+            }
+         }
+      }
+   }
+}
+
+what claude made after pasting the entire wiki btw  😭

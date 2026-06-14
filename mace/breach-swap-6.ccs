@@ -1,0 +1,9 @@
+// author: Rayᶠᵘᵃ (@vin_vexity)
+def module Breach-Swap
+def desc Swaps to slot 8 then back to slot 1 when you left-click
+
+on left_click {
+  switch 8
+  switch 1
+}
+****

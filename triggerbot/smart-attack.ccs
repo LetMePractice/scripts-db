@@ -1,0 +1,46 @@
+// author: Jello (@jello2210)
+def module smart-attack
+def desc Shield breaker + triggerbot while lowering shield
+
+on tick {
+   if playing {
+      if target_entity :player {
+         as target_entity if blocking {
+            if_not holding #axe {
+               switch #axe
+               wait_random 0.05 0.09 {
+                  input use
+                  input attack
+                  wait_random 0.05 0.09 {
+                     switch #sword
+                     input use
+                  }
+               }
+            }
+
+            if holding #axe {
+               input use
+               input attack
+               wait_random 0.05 0.09 {
+                  switch #sword
+                  input use
+               }
+            }
+         }
+
+         as target_entity if_not blocking {
+            if holding #sword {
+               if attack_progress >= 0.9 {
+                  input use
+                  wait_random 0.05 0.09 {
+                     input attack
+                     wait_random 0.05 0.09 {
+                        input use
+                     }
+                  }
+               }
+            }
+         }
+      }
+   }
+}

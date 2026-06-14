@@ -1,0 +1,5 @@
+// author: LoopholeMC (@loopholemc)
+module trigger-bot
+def desc trigger bot simple and easy attacks players
+
+on tick if playing if target_entity :player if holding #sword,#_axe if attack_progress >=0.9 input left

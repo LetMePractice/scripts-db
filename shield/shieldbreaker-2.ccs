@@ -1,0 +1,13 @@
+// author: crawl (@crawlll_)
+def module ShieldBreaker
+def desc "Shield Breaker with stun"
+
+on left_click if playing {
+if_not blocking {
+as target_entity if blocking {
+switch #_axe
+input attack
+wait 0.11 switch #sword
+}
+}
+}

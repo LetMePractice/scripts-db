@@ -1,0 +1,7 @@
+// author: Megan (@mega_n1010)
+def module bed-pickblock
+def desc "automatically palces, pick blocks and explodes beds (made by megan)"
+
+on key_press x{
+wait 0.01 then if playing then switch #bed then wait 0.05 then input right then wait 0.05 then input middle then wait 0.05 then input key q then wait 0.05 then input right 
+}

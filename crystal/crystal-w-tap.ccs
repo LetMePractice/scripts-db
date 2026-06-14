@@ -1,0 +1,54 @@
+// author: Jat (@jat9119)
+these are all of the scripts that I use on the day to day. 
+
+ module Crystal-W-tap
+def desc "A quick forward and back motion that maximizes knockback"
+
+on pre_tick {
+   if playing {
+      if input_active attack {
+         if target_entity :player,:armor_stand {
+            if_not blocking {
+               if_not input_active use {
+                  if holding #swor,#totem {
+                     func attack
+                  }
+               }
+            }
+         }
+      }
+   }
+}
+
+def func attack {
+   if input_active forward {
+      hold_input backward 0.06
+      wait 0.06 {
+         hold_input cancel
+      }
+   }
+   if_not moving {
+      hold_input forward 0.06
+   }
+}
+
+ module anti-explode
+def desc Jat
+
+on pre_tick {
+    if playing {
+        as nearest_entity :player if dead {
+            if hotbar_has #totem {
+                switch #totem
+            }
+            if_not hotbar_has #totem {
+                switch #sword
+            }
+        }
+    }
+}
+
+ module sprint
+def desc "Custom Scripted Module"
+
+on tick if input_active forward input sprint

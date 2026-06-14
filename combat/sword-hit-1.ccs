@@ -1,0 +1,5 @@
+// author: 4q25 • mizo 🍀 (@4q25)
+module sword-hit
+def desc Hit a player with anything and it will switch to sword
+
+on left_click if playing if target_entity :player then switch #sword

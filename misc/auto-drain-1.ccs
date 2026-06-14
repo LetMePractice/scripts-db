@@ -1,0 +1,17 @@
+// author: Jello (@jello2210)
+def module auto-drain
+def desc "Automatically drains water with a bucket when you look at it"
+
+on tick {
+    if playing if chance_of 50 {
+        if target_fluid :water_source {
+            if entity_in_range :player 4 {
+               if_not block_in_range :water_source 1.75 {
+                   switch :bucket
+                   input use
+                   wait 0.05 switch back
+                }
+            }
+        }
+    }
+}

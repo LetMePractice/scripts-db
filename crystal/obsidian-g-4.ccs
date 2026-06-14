@@ -1,0 +1,9 @@
+// author: kuijggug (@kuijggug_61053)
+somthing like this def module obsidian-g
+def desc "obsidian"
+
+on key_press 5 if playing {
+    wait 0.1
+    switch #obsidian
+         input right
+}

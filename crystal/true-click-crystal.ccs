@@ -1,0 +1,11 @@
+// author: Karson is the god of Canada (@superbun1235166_)
+def module true-click-crystal
+def desc yeah
+
+on tick if playing if holding #crystal if target_entity :end_crystal if off_holding #totem {
+    input attack
+}
+
+on tick if playing if input_active left if holding #crystal {
+    input right
+}

@@ -1,0 +1,22 @@
+// author: Jat (@jat9119)
+module advanced-shield-breaker
+def desc "A shield breaker with a chance for missing"
+
+on left_click {
+    if playing if chance_of 70 {
+        if holding #sword,#_axe {
+            if_not blocking {
+                if hotbar_has #_axe {
+                    if target_entity :player {
+                        as target_entity
+                        if blocking {
+                            switch #_axe
+                            wait_random 0.01 0.02 input left
+                            wait 0.05 switch 4
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

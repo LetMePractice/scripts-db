@@ -1,0 +1,37 @@
+// author: Cat (@cat123go)
+**Message sent by <@749122232575590402> Deleted in <#1349927254578172006>**
+can someone try and make a script or edit the following into a hover totem mod?
+
+def module hover-totem
+def desc "if hovering over totem in inventory, auto replenish totems"
+
+on tick {
+   if input_active inventory {
+      if hovering_over #totem {
+         func offHand
+         func mainhand
+         }
+      }
+   }
+
+on key_press E {
+   switch 5
+}
+
+def func mainhand {
+   !if holding #totem {
+   wait_random 0.01 0.02 {
+      input key v
+      }
+   }  
+}
+
+def func offHand {
+   !if off_holding #totem {
+      wait_random 0.01 0.02 {
+      input key f
+      }
+   }
+}
+
+the main issue I run into is on servers such as donutsmp, the script will automatically try and swap the totem from within the shop to my offhand or mainhand, preventing the module from bypassing screenshares. if someone has any idea how to fix this please msg in this forum

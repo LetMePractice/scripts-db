@@ -1,0 +1,44 @@
+// author: Itacat (@king_baller9258)
+bypasses 
+
+def module Auto-Anchor
+def desc "Custom Scripted Module"
+on tick {
+   if playing {
+      if holding #anchor,:glowstone  {
+         if targeting_block {
+            input right
+            if input_active right {
+               
+               if_not target_block :uncharged_respawn_anchor {
+                  if_not holding #anchor {
+                     switch #anchor
+                  }
+               }
+
+               if target_block :uncharged_respawn_anchor {
+                  if_not holding :glowstone {
+                     switch :glowstone
+                  }
+               }
+
+               if target_block :charged_respawn_anchor {
+                  if_not holding :totem_of_undying {
+                     switch :totem_of_undying
+                  }
+               }
+            }
+         }
+      }
+   }
+}
+
+on right_click {
+   if playing {
+      if holding #sword,#totem {
+         if targeting_block {
+         switch #anchor
+         }
+      }
+   }
+}

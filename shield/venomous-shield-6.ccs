@@ -1,0 +1,41 @@
+// author: wxund (@wounddup)
+my sweet spot is this ```def module venomous-shield
+def desc "An extremely legit shield breaker"
+
+on tick 3 { // change this up based on whatever reaction time you want (on pre_tick = instant, on tick = 50ms, on tick 3 = 150ms, etc)
+    if playing {
+            if_not blocking {
+                if attack_progress >=0.4 {
+                    if hotbar_has #_axe {
+                        if target_entity :player {
+                            as target_entity
+                            if blocking {
+                                execute {
+                                    function miss
+                                    wait_random 0.035 0.04
+                                    function break
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+def func break {
+    switch #_axe
+    wait 0.2 {
+        input left
+    }
+    wait_random 0.023 0.3 {
+        input left // @wxund
+    }
+    wait 0.2 {
+        switch back
+    }
+}
+
+def func miss {
+        input left
+    }

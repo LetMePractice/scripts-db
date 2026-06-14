@@ -1,0 +1,25 @@
+// author: I-No-oNe (@i_no_am)
+def module coherent-trigger-bot
+def desc "Coherent Client's Trigger Bot"
+
+on tick if playing if target_entity :player,:armor_stand !if blocking {
+    if attack_progress >=0.9 if chance_of 100 {
+        as target_entity if blocking as client if hotbar_has #_axe {
+            switch #axe
+            wait 0.05 switch back
+        }
+        input attack
+    }
+}
+
+
+on left_click if_not in_screen {
+  if targeting_entity as target_entity if blocking {
+    as client if holding #_axe wait_random 0.05 0.06 {
+      if hotbar_has #sword {
+        switch #sword
+        input attack
+      }
+    }
+  }
+}

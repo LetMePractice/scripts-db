@@ -1,0 +1,21 @@
+// author: Inkompetent (@henri_zockt)
+// MIN_VERSION 1.3.3
+// @improperissues
+
+def module crit
+def desc "Testing only, idk what im doing"
+
+on tick if playing if targeting_entity if on_ground if attack_progress == 1 {
+    if input_active forward {
+        hold_input forward 0 // stops the player from moving
+    }
+
+
+    input jump
+
+    while_not falling {
+        wait 0.05 if falling if targeting_entity {
+            input attack
+        }
+    }
+}

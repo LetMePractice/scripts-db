@@ -1,0 +1,26 @@
+// author: .0n6 (@.0n6)
+def module safe-anchor
+def desc "press y"
+
+on key_press y {
+    if playing {
+        if hotbar_has #anchor,#totem,#glowstone {
+            wait random 0.11 0.21
+            switch #anchor
+            wait random 0.017 0.22
+            input right
+            wait random 0.18 0.35
+            switch #glowstone
+            wait random 0.11 0.22
+            input right
+            wait random 0.07 0.083
+            input sneak
+            wait 0.2
+            input right
+            wait 0.2
+            switch #totem
+            wait random 0.081 0.18
+            input right
+        }
+    }
+}

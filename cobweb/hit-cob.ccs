@@ -1,0 +1,13 @@
+// author: zyrnxz (@zyrnxz)
+def module hit-cob
+def desc "right click to cob"
+
+on right_click if playing if holding #sword,#axe {
+    if targeting_block {
+        if hotbar_has #web {
+            switch #web
+            input right
+            wait 0.05 switch #sword
+        }
+    }
+}

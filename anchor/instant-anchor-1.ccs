@@ -1,0 +1,17 @@
+// author: Jello (@jello2210)
+def module instant-anchor
+def desc "Right click 2 times really fast to anchor"
+
+on place_block if playing if holding #anchor {
+    wait 0.09
+    switch #totem
+    input right
+    wait 0.09
+    switch #totem
+    input right
+    loop 3 {
+        wait 0.09
+        switch #glowstone
+        input right
+    }
+}

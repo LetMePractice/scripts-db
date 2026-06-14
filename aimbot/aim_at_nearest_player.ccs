@@ -1,0 +1,21 @@
+// author: RafaIshere (@rafaishere77)
+//Arjunfrags
+def module aim_at_nearest_player  
+def desc "Aims towards the nearest player and places cobweb."  
+  
+on key_press z if playing {  
+   if entity_in_range :player 5 {  
+     if hotbar_has #cobweb {  
+       snap_to nearest_entity :player  
+                 wait 0.09  
+                 switch #cobweb  
+                 wait 0.06  
+                 input use  
+                 wait 0.05   
+                 switch back  
+                } 
+             }  
+          }  
+       }  
+    }  
+ }

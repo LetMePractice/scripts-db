@@ -1,0 +1,21 @@
+// author: Deleted User (@Deleted User)
+def module breach-swap-windjump
+def desc "Swap to mace mid-fall attacks; auto-jump on wind charge right-click."
+
+on left_click if playing if holding #sword {
+    switch #mace
+    wait 0.1 switch #sword
+}#mace {
+        switch #sword
+    }
+}
+          
+
+on right_click if playing {
+    if holding :wind_charge {
+        wait 0.0529 input jump
+    }
+    if off_holding :wind_charge {
+        wait 0.0529 input jump
+    }
+}

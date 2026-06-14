@@ -1,0 +1,11 @@
+// author: ImproperIssues (@improperissues)
+what about
+
+def module no-aim-hit
+def desc "Say goodbye to aiming"
+
+on left_click if playing {
+  if entity_in_range :player 5 {
+    damage nearest_entity :player
+  }
+}

@@ -1,0 +1,20 @@
+// author: wxund (@wounddup)
+// @wxund
+def module auto-drain
+def desc "Turn to source and drain with empty bucket only"
+
+on pre_tick if playing if block_in_range :water[level=0] 5 {
+    // ensure we switch ONLY to an empty bucket
+    if hotbar_has :bucket {
+        if_not holding :bucket { switch !:water_bucket,:bucket }
+        if holding :water_bucket { switch !:water_bucket,:bucket }
+
+        // only act if actually holding an empty bucket now
+        if holding :bucket {
+            turn_to nearest_block :water[level=0] then {
+                wait 0.02
+                loop 3 { input right }
+            }
+        }
+    }
+}

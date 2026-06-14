@@ -1,0 +1,29 @@
+// author: BL1ZZARD (@that_bl1zzard)
+can someone help me make my script always safe anchor instead of just crouching
+def module Anchor Macro Both
+def desc "Anchor Macro for both charging and detonating anchors use anchor then shift and youll get a safe anchor!"
+
+on tick if playing if_not blocking if_not holding :golden_apple,:shield if target_block :uncharged_respawn_anchor {
+    switch #glowstone
+    wait_random 0.01 0.02 input right
+}
+
+on tick if playing if_not blocking if_not holding :golden_apple,:shield,:anchor if target_block :charged_respawn_anchor {
+    wait_random 0.01 0.02 input right
+    if hotbar_has #totem {
+        switch #totem
+    }
+}
+
+on tick if playing if_not holding :shield,:golden_apple,:totem {
+    if target_block :glowstone {
+        switch #crystal
+    }
+}
+
+on tick if playing if_not blocking if_not holding :golden_apple,:shield,:anchor if target_block :charged_respawn_anchor {
+    wait_random 0.01 0.02 input right
+    if_not hotbar_has #anchor {
+        switch #anchor
+    }
+}

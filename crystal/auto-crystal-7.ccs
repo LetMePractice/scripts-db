@@ -1,0 +1,28 @@
+// author: Jat (@jat9119)
+// @itzispyder
+def module auto-crystal
+def desc "Auto detonates end crystals"
+
+on tick if playing {
+   if target_block #obsidian {
+      switch #crystal
+      input left
+   }
+}
+
+on pre_tick if playing {
+  if holding #crystal {
+    if target_block #obsidian {
+    input key r
+    wait 0.001 {
+    input key r
+   }
+}
+
+on tick if input_active use !if in_screen {
+   if target_entity #crystal if chance_of 75 {
+      as target_entity if block ~ ~-1 ~ :obsidian as client {
+         input attack
+      }
+   }
+}

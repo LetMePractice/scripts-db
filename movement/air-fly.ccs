@@ -1,0 +1,6 @@
+// author: VortexPrime (@v0rtexdev.)
+def module air-fly
+
+on tick if input_active jump if playing {
+  velocity ~ 0 ~
+}

@@ -1,0 +1,25 @@
+// author: NoIwill (@nomore_bs)
+def module hit-crystaling 
+def desc "helps you hit crystal safely. Hopefully"
+
+if entity_in_range :player 3 {
+    if target_entity :player {
+        if on_ground {
+            as target_entity if_not on_ground {
+                if block_in_range :obsidian 3 {
+                    if line_of_sight {
+                        turn_to nearest_block #obsidian speed 12
+                    }
+                }
+                snap_to polar -45 +46 aim legs
+                switch #obsidian
+                wait_random 
+                input right
+                wait 0.1
+                switch #crystal
+                wait 0.1
+                input right
+            }
+        }
+    }
+}

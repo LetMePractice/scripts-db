@@ -1,0 +1,17 @@
+// author: Not_Tahsin (@not_tahsin7)
+def module slam
+def desc “after breaking shield switches to mace and attacks”
+
+on `idk` {
+ if playing {
+  if falling {
+   if holding #axe {
+    if target_entity :player, :armor_stand {
+     if hotbar_has #mace {
+      wait random 0.01 0.05
+       switch #mace {
+        input left
+        }
+      }
+    }
+  }

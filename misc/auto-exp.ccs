@@ -1,0 +1,13 @@
+// author: Cat (@cat123go)
+Auto EXP for lazy people.
+
+ module Auto-EXP
+def desc Auto EXP
+
+on tick {
+    if playing {
+        if holding #experience {
+            input right
+        }
+    }
+}

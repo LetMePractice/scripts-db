@@ -1,0 +1,19 @@
+// author: NoIwill (@nomore_bs)
+def module minecart-rightclick
+def desc "minecart stuff"
+
+
+  on right_click {
+    if holding :tnt_minecart {
+    wait 0.06
+    switch #flint_and_steel
+    wait 0.05
+    snap_to position ^ ^ ^9
+  }
+}
+     on right_click {
+       if holding :flint_and_steel {
+        wait 0.05
+         switch #crossbow
+        }
+    }

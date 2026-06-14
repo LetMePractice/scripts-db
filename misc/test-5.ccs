@@ -1,0 +1,11 @@
+// author: sraiaan (@sraiaan)
+// @yaboycarter
+def module test
+def desc "Shield testing"
+
+on left_click if playing {
+   if target_entity :player {
+      if target_entity is blocking {
+      }
+   }
+}

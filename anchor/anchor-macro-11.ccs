@@ -1,0 +1,17 @@
+// author: ImproperIssues (@improperissues)
+def module Anchor-Macro
+def desc Anchor Macro
+
+on place_block {
+  if holding #anchor {
+    wait 0.03 if hotbar_has #glowstone {
+      switch #glowstone
+      input right
+
+      wait 0.03 if hotbar_has #totem {
+        switch #totem
+        input right
+      }
+    }
+  }
+}

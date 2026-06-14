@@ -1,0 +1,48 @@
+// author: ImproperIssues (@improperissues)
+def module safe-anchor
+def desc "ImproperIssues anchor macro"
+
+// this checks server-side if respawn anchor block is placed
+// i did this to prevent ghost blocks
+on packet receive blockUpdate if not in screen {
+    if target block :uncharged_respawn_anchor if hotbar has :glowstone {
+
+        // trigger the on tick event to charge the respawn anchor with glowstone
+        switch :glowstone
+    }
+}
+
+
+on tick if not in screen {
+    
+    // charges the glowstone
+    if holding :glowstone if target block :uncharged_respawn_anchor {
+        input use
+        wait 0.05
+        
+        // trigger the on tick event to place an obsidian 
+        // this obsidian block will prevent the player from taking as much damage
+        if target block :charged_respawn_anchor if hotbar_has :obsidian {
+            switch :obsidian
+            input sneak
+        }
+    }
+
+    // places the obsidian
+    if block in range :charged_respawn_anchor 4.5 if holding :obsidian if sneaking {
+        input use
+        switch :respawn_anchor
+
+        // detonate the anchor
+        func prepare_interact
+    }
+}
+
+// poll the moment the player stops sneaking then detonates the anchor
+def func prepare_interact {
+    while 0.01 sneaking {
+        wait 0.02 if not sneaking {
+            interact nearest block :charged_respawn_anchor
+        }
+    }
+}

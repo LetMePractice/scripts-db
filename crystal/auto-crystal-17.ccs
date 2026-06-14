@@ -1,0 +1,17 @@
+// author: ltj_ (@__ltj_)
+<@882445130496356374> 
+def module auto-crystal
+def desc "Auto places and detonates end crystals"
+
+
+on tick if playing if input_active right {
+ on interact_block while holding #crystal then {
+ send test
+ 
+ 
+ 
+ }
+
+
+}
+ help maybe? worked on 1.2.6

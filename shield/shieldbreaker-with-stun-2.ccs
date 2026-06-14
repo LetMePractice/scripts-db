@@ -1,0 +1,18 @@
+// author: rei (@1.rei)
+def module ShieldBreaker-with-Stun
+def desc "Shield Breaker with Auto stun"
+
+on left_click if playing {
+   if holding #sword {
+         as target_entity if blocking {
+            switch #_axe
+            input attack
+            wait 0.05
+            input attack
+            switch #sword
+         }
+      }
+   }
+}
+
+yo can someone make this so it only stuns if i click z, ty

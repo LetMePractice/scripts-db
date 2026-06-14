@@ -1,0 +1,43 @@
+// author: ForXGod (@forxgod)
+def module mace-Attack
+def desc "Auto-attacks with sword/axe while falling, then swaps to a Wind Burst mace on hit"
+
+on tick {
+    if playing {
+        if falling {
+            if holding #sword,#axe {
+                if attack_progress >= 0.5 {
+                    if target_entity :player {
+                        as target_entity {
+                            !if blocking {
+                                input left
+                                execute func mace_swap
+                                wait 0.05 switch back
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+def func mace_swap {
+    switch #mace[wind_burst]
+}
+
+on tick if playing {
+     if targeting_entity if target_entity :player,:zombie {
+            if hotbar_has #mace[density] {
+               as target_entity if blocking as client if hotbar_has #axe {
+                  switch #axe
+                  input attack
+                  wait_random 0.01 0.03
+               }
+               switch #mace[density]
+               input attack
+            }
+         }
+      }
+   }
+}

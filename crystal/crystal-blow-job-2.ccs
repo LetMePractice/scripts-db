@@ -1,0 +1,8 @@
+// author: ImproperIssues (@improperissues)
+def module crystal-blow-job
+
+on tick if playing if input_active use {
+  if holding #crystal if target_entity #crystal if chance_of 75 {
+    input attack
+  }
+}

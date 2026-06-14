@@ -1,0 +1,7 @@
+// author: oPhI (Lazy arc) (@shehab7877)
+def module bow-s-v1
+def desc "sh!t"
+
+on pre_tick {
+    if holding #bow {
+       if input_active right hold_input use 0.15 } }

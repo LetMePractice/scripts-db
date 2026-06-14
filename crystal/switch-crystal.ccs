@@ -1,0 +1,10 @@
+// author: Cat (@cat123go)
+module switch-crystal
+def desc "Switch to crystal when looking at obsidian"
+
+on key_press c if playing {
+    wait 0.1 if target_block :obsidian {
+        switch #crystal
+        input right
+    }
+}

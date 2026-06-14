@@ -1,0 +1,19 @@
+// author: ImproperIssues (@improperissues)
+def module auto-totem
+def desc "Real not fake"
+
+on totem_pop {
+    if inventory_has #totem {
+        if_not input_active inventory {
+            input inventory
+        }
+
+        wait 0.05 if input_active inventory {
+            gui_swap #totem 
+            
+            wait 0.05 if input_active inventory {
+                input inventory
+            }
+        }
+    }
+}

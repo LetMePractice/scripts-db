@@ -1,0 +1,16 @@
+// author: ! 8U4VeCgX6jqioziofDccM052nUJ (@gabryxl06)
+def module anchor-charge
+def desc Anchor Charge
+
+on key_press q !if blocking if off_holding #totem {
+  switch #anchor then input right switch #glowstone
+  wait 0.05{
+  input right
+  }
+  switch #anchor
+  wait 0.05{
+  input right
+  }
+}
+
+this works better imo

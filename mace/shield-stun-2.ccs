@@ -1,0 +1,33 @@
+// author: .0n6 (@.0n6)
+module shield-stun
+def desc "yeah"
+
+on left_click if playing {
+    if_not blocking {
+        if_not input_active use {
+            if holding #sword {
+                if attack_progress >=0.90 {
+                    if target_entity :player {
+                        as target_entity if blocking {
+                            if hotbar_has #_axe {
+                                switch #_axe
+                                wait_random 0.040 0.050
+                                
+                                while_not 0.01 attack_progress >=0.90 {}
+                                wait_random 0.005 0.015
+                                input left
+                                
+                                wait_random 0.035 0.045
+                                switch back
+                                
+                                while_not 0.01 attack_progress >=0.90 {}
+                                wait_random 0.005 0.015
+                                input left
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

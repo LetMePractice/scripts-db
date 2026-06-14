@@ -1,0 +1,58 @@
+// author: ElegantSuperiority (@elegantsuperiority)
+def module Auto-Mace
+def desc "cool mace swap"
+
+on pre_tick {
+    if playing {
+        if falling {
+            if vel_y <= -0.713 {
+                if attack_progress >= 0.2 {
+                    if target_entity :player {
+                        as target_entity {
+                            if_not blocking {
+                                input left
+                                execute func mace_swap
+                                wait 0.1 switch back
+                            }
+                            if blocking {
+                                execute func shield_stun
+                                execute func mace_swap wait 0.07 input left
+                            }
+                        }
+                    }
+                }
+            }    
+            if vel_y > -0.713 {
+                if attack_progress >= 0.2 {
+                    if target_entity :player {
+                        as target_entity {
+                            if_not blocking {
+                                input left
+                                execute func breach_swap
+                                wait 0.1 switch back
+                            }
+                            if blocking {
+                                execute func shield_stun
+                                execute func breach_swap wait 0.08 input keft
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}    
+
+def func mace_swap {
+    switch #mace[wind_burst]
+}
+
+def func breach_swap {
+    switch #mace[breach]
+}
+
+def func shield_stun {
+    if hotbar_has #axe {
+        switch #axe wait 0.1 input left
+    }
+}

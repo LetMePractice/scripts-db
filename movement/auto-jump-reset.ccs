@@ -1,0 +1,4 @@
+// author: Jat (@jat9119)
+module Auto-Jump-Reset
+def desc Auto Jump Reset
+on damage input jump

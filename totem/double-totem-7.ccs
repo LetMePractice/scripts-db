@@ -1,0 +1,11 @@
+// author: Deleted User (@Deleted User)
+do you have a idea why this aint working? 
+// @itzispdyer
+def module double-totem
+def desc "swap to double"
+
+on totem_pop execute_period 0.03 {
+   gui_swap #totem
+   gui_quickmove #totem 5
+   switch #totem
+}

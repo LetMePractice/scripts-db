@@ -1,0 +1,21 @@
+// author: Jat (@jat9119)
+def module Spear-Reach 
+def desc "Custom Scripted Module"
+on left_click {
+   if playing {
+      if_not gliding {
+         if holding #sword,:air {
+            if hotbar_has #spear {
+               if_not targeting_entity {
+                  if entity_in_fov :player 15 {
+                     if entity_in_range :player 6 {
+                        switch #spear
+                        wait_random 0.05 0.07 switch back
+                     }
+                  }
+               }
+            }
+         }
+      }
+   }
+}

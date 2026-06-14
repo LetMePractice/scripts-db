@@ -1,0 +1,7 @@
+// author: VortexPrime (@v0rtexdev.)
+def module air-fly
+
+on key_press l if playing {
+  velocity ~ 5 ~
+  velocity ~ -5 ~
+}

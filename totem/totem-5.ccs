@@ -1,0 +1,22 @@
+// author: bozo click crystal (@barbelobzs)
+def module totem-5
+def desc "Custom Scripted Module"
+
+on module_enable {
+
+}
+
+on module_disable {
+
+}
+ module legit-totem
+def desc "Custom Scripted Module"
+
+on tick if hovering_over #totem !if off_holding #totem if input_active inventory {
+    input key f
+}
+
+on tick if hovering_over #totem !if hotbar_has #totem if input_active inventory {
+    input key r
+}
+someone can do this by opening the inventory alone. and when you put the totem in the inv and hotbar close the inventory alone

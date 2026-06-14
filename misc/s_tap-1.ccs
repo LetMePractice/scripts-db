@@ -1,0 +1,14 @@
+// author: ⁷⁵³ 𝖒𝖚𝖋𝟒𝖑𝖉 † (@aevill)
+``
+def module s_tap
+def desc "S tap"
+
+on left_click if holding #sword  {
+    if target_entity :player {
+        input backward
+        wait 0.1 
+        input forward 
+    }
+}
+
+ ``

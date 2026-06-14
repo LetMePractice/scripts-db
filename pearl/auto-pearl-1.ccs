@@ -1,0 +1,16 @@
+// author: BreachEvent (@breachevent)
+def module auto-pearl
+def desc "When you middle click, aims at the nearest falling player and throws an ender pearl."
+
+on key_press middle_click {
+    if playing {
+        if hotbar_has :ender_pearl {
+            switch :ender_pearl
+            snap_to nearest_entity :player aim legs
+            input use
+            snap_to nearest_entity :player aim head
+            wait 0.05
+            switch #mace[wind_burst]
+        }
+    }
+}

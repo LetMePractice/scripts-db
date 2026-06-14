@@ -1,0 +1,13 @@
+// author: Practice (@letmepractice)
+module auto-mace
+def desc "Instantly attacks with your mace when any entity is in range while you are airborne"
+
+on tick if playing {
+   !if on_ground {
+      if holding #mace {
+         if entity_in_range any_entity 3.2 {
+            damage any_entity
+         }
+      }
+   }
+}

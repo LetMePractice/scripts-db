@@ -1,0 +1,20 @@
+// author: Plainguy135 (@plainguy135)
+//Plainguy123/plainguy135 On Top
+def module Auto-Tot
+def desc "Auto totem with random delay"
+
+on totem_pop if playing {
+    if inventory_has #totem {
+        wait_random 0.169 0.350 gui_swap #totem
+    }
+}
+
+
+
+Doesn't Open The Inv But It Has A Very Baisc Totem Gaurd Bypasses
+
+AutoTotemA
+
+AutoTotemB/C
+
+AutoTotemE

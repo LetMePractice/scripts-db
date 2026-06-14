@@ -1,0 +1,15 @@
+// author: wxund (@wounddup)
+try this
+ module elyswap
+def desc "Press V to swap between Elytra and Chestplate"
+
+on key_press v !if in_screen if playing {
+   if hotbar_has :elytra {
+      switch :elytra
+      wait 0.05 input use
+   }
+   !if hotbar_has #chestplate {
+      switch #chestplate
+      wait 0.05 input use
+   }
+}

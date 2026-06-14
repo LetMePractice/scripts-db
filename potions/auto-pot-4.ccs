@@ -1,0 +1,9 @@
+// author: Nyraz (@fervantbread62)
+def module auto pot
+def desc "auto puts pot in hb"
+
+on pre_tick {
+      !if hotbar_has :splash_potion {
+         if inventory_has :splash_potion {
+            gui_quickmove :splash_potion
+} } }

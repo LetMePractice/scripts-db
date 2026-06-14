@@ -1,0 +1,15 @@
+// author: dd1k (@dd1kosint)
+can someone make it so in this script it checks if hitting a shield with a mace and then does the stun slam
+
+def module uh
+def desc "wembu"
+
+on left_click {
+    if holding #axe {
+       input attack
+        wait 0.04
+        switch #mace
+        wait 0.04
+       input attack
+    }
+}

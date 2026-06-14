@@ -1,0 +1,16 @@
+// author: TutlaMC (@tutlamc)
+And I would nt call this killaura, I'd call this:
+
+def module kill-aura
+def desc "When holding sword or axe automatically hi tthem"
+
+on tick if playing {
+    turn_to any_entity;
+    if attack_progress >=0.9 {
+      if targeting_entity {
+        if holding #sword,#_axe,#trident {
+          input attack;
+        }
+      }
+  }
+}

@@ -1,0 +1,50 @@
+// author: AstroNixs (@astronixs.)
+def module shield-drain
+
+def desc "proof that rappture used ccs :3 (script made by astronixs)"
+
+def function drain_burst {
+   loop_period 50 0.001 {
+      input left
+   }
+}
+
+on pre_tick {
+   if playing {
+      if holding :mace[density] {
+         if falling {
+            if entity_in_range :player 4 {
+               if target_entity :player {
+                  as target_entity if blocking {
+                     function drain_burst
+                  }
+               }
+            }
+         }
+      }
+   }
+}
+
+on tick {
+   if playing {
+      if holding :mace[density] {
+         if falling {
+            if entity_in_range :player 4 {
+               if target_entity :player {
+                  as target_entity if blocking {
+                     function drain_burst
+                  }
+               }
+            }
+         }
+      }
+   }
+}
+just windcharge up while holding density mace, and js hold lmb while falling down, thanks to chatgpt for calculations + problem fixing
+exactly 1 tap, if u do smth wrong, may deal no dura, or half dura.
+best rn
+🟢Undetected
+🟡Possibly detected
+🔴Detected 
+if u get banned anywhere with this, please dm me or write that here
+catpvp admin reaction:

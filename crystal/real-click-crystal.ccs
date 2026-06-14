@@ -1,0 +1,9 @@
+// author: ImproperIssues (@improperissues)
+def module real-click-crystal
+def desc "yeah"
+
+on mouse_click 1 {
+  if playing if target_entity :end_crystal {
+      input attack
+  }
+}

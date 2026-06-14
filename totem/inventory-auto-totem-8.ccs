@@ -1,0 +1,61 @@
+// author: Jat (@jat9119)
+this is the script def module Inventory-Auto-Totem
+//Jat9119
+def desc "Jat"
+on pre_tick {
+   if input_active inventory {
+      if hovering_over :totem_of_undying {
+         
+
+        if inventory_has :totem_of_undying { 
+         if item_count :totem_of_undying > 2 {
+
+
+               if off_holding :totem_of_undying {
+                  if_not holding :totem_of_undying {
+                     input key 9 
+                     func tot 
+                  }
+               }
+               if holding :totem_of_undying {
+                  if_not off_holding :totem_of_undying {
+                     input key f 
+                     func tot 
+                  }
+               }
+               if_not holding :totem_of_undying {
+                  if_not off_holding :totem_of_undying {
+                     input key f 
+                     func tot 
+               }
+            }
+         }
+         if inventory_has :totem_of_undying {
+            if_not off_holding :totem_of_undying {
+               func tot 
+            }
+            if_not hotbar_has :totem_of_undying {
+               func tot 
+            }
+         }
+      }
+   }
+   }
+}
+on totem_pop {
+   if input_active inventory {
+      func tot 
+   }
+}
+def func tot {
+   if_not hovering_over :totem_of_undying {
+      wait 0.055 {
+         gui_switch :totem_of_undying 
+      }
+   }
+}
+on key_press E {
+   if_not in_screen {
+      switch 9 
+   }
+}

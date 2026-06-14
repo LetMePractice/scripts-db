@@ -1,0 +1,12 @@
+// author: Practice (@letmepractice)
+def module middle-click-pearl
+def desc "same"
+
+on middle_click if playing {
+  if hotbar_has #pearl {
+    !if holding #pearl {
+      switch #pearl
+    }
+    wait 0.05 input use
+  }
+}

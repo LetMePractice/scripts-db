@@ -1,0 +1,17 @@
+// author: ghost (@gh2s)
+def module enderplace
+//Ghost
+def desc "Places an ender chest on top of nearby obsidian when C is pressed"
+
+on pre_tick {
+   if playing {
+      if key_pressed c {
+         if nearest_block obsidian radius=3 {
+            if block_above nearest_block obsidian radius=3 is air {
+               switch ender_chest
+               interact block_above nearest_block obsidian radius=3
+            }
+         }
+      }
+   }
+}

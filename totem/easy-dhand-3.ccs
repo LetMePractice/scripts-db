@@ -1,0 +1,8 @@
+// author: golden (@dubgolden)
+or this?? 
+def module easy-dhand
+def desc "hover totem"
+
+if input_active inventory if playing {
+    gui_switch #totem
+}

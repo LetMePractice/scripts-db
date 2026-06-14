@@ -1,0 +1,30 @@
+// author: oPhI (Lazy arc) (@shehab7877)
+<@1409574497433948182> the new one lol
+
+def module anchor-holding-anchor
+def desc "Right click with totem switches to anchor, auto glowstone on place"
+
+on right_click {
+  if playing {
+    if holding #totem {
+      switch #anchor
+    }
+  }
+}
+
+on place_block {
+  if playing {
+    if holding #anchor {
+      wait_random 0.05 0.12
+      switch #glowstone
+      wait_random 0.03 0.08
+      input right
+      wait_random 0.05 0.12
+      switch #totem
+      wait_random 0.03 0.08
+      input right
+      wait_random 0.08 0.15
+      switch #anchor
+    }
+  }
+}

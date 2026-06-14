@@ -1,0 +1,24 @@
+// author: .0n6 (@.0n6)
+module Shield-Hold
+def desc "Hold shield on B key"
+
+on key_press B if playing {
+   if_not blocking {
+       if hotbar_has #shield {
+           if_not holding #shield {
+               switch #shield
+           }
+           hold_input right 999
+       }
+   }
+}
+
+on key_press B if playing {
+   if blocking {
+       hold_input cancel
+   }
+   if holding #shield {
+       switch back
+   }
+}
+Try this

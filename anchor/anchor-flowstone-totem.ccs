@@ -1,0 +1,20 @@
+// author: Eqnity (@eqnity)
+def module anchor-flowstone-totem
+def desc "Place anchor → Glowstone → Totem"
+
+on use_item {
+    if holding #anchor {
+        if looking_at block {
+            wait 2
+            select_slot 2
+            wait 2
+            input key use
+            wait 2
+            select_slot 6
+        }
+    }
+}
+
+
+<@882445130496356374> 
+It's not working does anybody knows why?

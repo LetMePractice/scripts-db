@@ -1,0 +1,13 @@
+// author: Deleted User (@Deleted User)
+def module autoplace
+def desc "Auto crystal"
+
+define function crystalpls {
+    input right
+    wait 0.08 input left
+}
+
+on tick if holding #crystal if target_block #obsidian if input_active key q {
+    function crystalpls
+}
+Can someone change this trigger to right click/middle click?

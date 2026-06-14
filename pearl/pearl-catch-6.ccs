@@ -1,0 +1,17 @@
+// author: a Nub (@_anub)
+def module pearl-catch
+def desc "Yoink"
+
+on right_click {
+  if playing {
+    if hotbar_has #ender_pearl,#wind_charge {
+      if holding #ender_pearl {
+        input key k
+        switch #wind
+        wait 0.25 input key k
+      }
+    }
+  }
+}
+
+can try this ig, key K its just m2

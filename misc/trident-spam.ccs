@@ -1,0 +1,11 @@
+// author: ImproperIssues (@improperissues)
+def module trident-spam
+def desc "hold down your right click to spam tridents"
+
+on module_enable {
+  wait 0.05 while 0.05 module_enabled trident-spam {
+    if holding :trident {
+      input use
+    }
+  }
+}

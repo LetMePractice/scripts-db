@@ -1,0 +1,20 @@
+// author: T For Tighnari (@silicon06520)
+def module spear dtap
+def desc "dtap using spear and mace"
+
+on tick if input_active right {
+  if holding #spear {
+    if entity_in_range 4 {
+      if falling {
+        if hotbar_has #mace {
+          snap_to nearest entity aim head {
+            wait 0.05 {
+              switch #mace
+              input left
+            }
+          }
+        }
+      }
+    }
+  }
+}

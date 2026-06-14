@@ -1,0 +1,14 @@
+// author: oPhI (Lazy arc) (@shehab7877)
+def module cobweb
+def desc "Places a cobweb"
+on right_click {
+   if playing {
+      if holding #sword {
+         if target_block !=#air {
+            switch #cobweb
+            wait 0.05
+            switch #sword
+         }
+      }
+   }
+}

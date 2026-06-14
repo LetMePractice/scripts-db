@@ -1,0 +1,17 @@
+// author: ' (@meowmeowcat9)
+// @itzispyder
+def module coherent-trigger-bot
+def desc "Coherent Client's Trigger Bot"
+
+on tick if playing if target_entity :player,:armor_stand !if blocking {
+   if attack_progress >=0.9 if chance_of 75 {
+      as target_entity if blocking as client if hotbar_has #_axe {
+         switch #axe
+         wait 0.05 switch back
+      }
+      input left
+   }
+}
+
+
+can you guys make it so it doesnt spam attack with fists

@@ -1,0 +1,13 @@
+// author: Jello (@jello2210)
+def module parkour-assist
+def desc "Auto jump at block edges"
+
+on tick if playing {
+    if moving {
+        if block ~ ~-0.5 ~ :air {
+            !if jumping {
+                input jump
+            }
+        }
+    }
+}

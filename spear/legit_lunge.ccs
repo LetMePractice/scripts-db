@@ -1,0 +1,20 @@
+// author: a Nub (@_anub)
+// @SillyKoyuki
+def module legit_lunge
+def desc "Breaks Shield Automatically"
+
+on left_click {
+    if playing {
+        if_not holding #sword,#_axe,#mace {
+            if_not targeting_entity {
+                if ping > 250 {
+                    switch #spear[lunge]
+                    wait 0.35
+                    switch back
+                }
+            }
+        }
+    }
+}
+
+ths what im tryin

@@ -1,0 +1,34 @@
+// author: Bannaking10 (@chopstick42095)
+def module auto-tool
+def desc "Auto tool switcher"
+
+on punch_block if target_block :oak_log {
+    switch :wooden_axe
+    switch :stone_axe
+    switch :iron_axe
+    switch :golden_axe
+    switch :diamond_axe
+    switch :netherite_axe
+}
+
+on punch_block if target_block :oak_planks {
+    switch :wooden_axe
+    switch :stone_axe
+    switch :iron_axe
+    switch :golden_axe
+    switch :diamond_axe
+    switch :netherite_axe
+}
+
+on punch_block if target_block :stone {
+    switch :wooden_pickaxe
+    switch :stone_pickaxe
+    switch :iron_pickaxe
+    switch :golden_pickaxe
+    switch :diamond_pickaxe
+    switch :netherite_pickaxe
+}
+
+on punch_block if target_block :white_bed {
+    switch :shears
+}

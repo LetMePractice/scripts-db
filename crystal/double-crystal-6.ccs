@@ -1,0 +1,11 @@
+// author: ForXGod (@forxgod)
+def module double-crystal
+def desc "Use crystal twice when looking at obsidian"
+
+on pre_tick if playing {
+    if holding :end_crystal if target_block :obsidian {
+        loop 2 {
+            input use
+        }
+    }
+}

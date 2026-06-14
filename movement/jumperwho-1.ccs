@@ -1,0 +1,15 @@
+// author: Yassouvox (@yassouvox)
+module jumperwho
+def desc "legit ahh ajr"
+
+on damage {
+    if chance_of 62 {
+        if on_ground {
+            !if swimming {
+                !if gliding {
+                    input jump
+                }
+            }
+        }
+    }
+}

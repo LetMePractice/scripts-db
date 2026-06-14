@@ -1,0 +1,50 @@
+// author: AstroNixs (@astronixs.)
+shield drain exactly like rappture (WERE both hacking)
+
+https://medal.tv/games/minecraft/clips/mhz83Zi6ZWqz65q-_?invite=cr-MSxjRTYsNTEzNzI2MTEw
+
+//Astralyx
+def module shield-drain
+def desc "drain"
+
+on pre_tick {
+   if playing {
+      if holding :mace[density] {
+         if falling {
+            if entity_in_range :player 4 {
+               if target_entity :player {
+                  as target_entity if blocking {
+                     input left
+                     input left
+                     input left
+                     input left
+                     input left
+                     input left
+                  }
+               }
+            }
+         }
+      }
+   }
+}
+
+on tick {
+   if playing {
+      if holding :mace[density] {
+         if falling {
+            if entity_in_range :player 4 {
+               if target_entity :player {
+                  as target_entity if blocking {
+                     input left
+                     input left
+                     input left
+                     input left
+                     input left
+                     input left
+                  }
+               }
+            }
+         }
+      }
+   }
+}

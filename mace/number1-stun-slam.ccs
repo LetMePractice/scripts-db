@@ -1,0 +1,23 @@
+// author: .0n6 (@.0n6)
+def module number1-stun-slam
+def desc "best stun slam ever"
+
+on left_click if playing if vel_y <= 0.56 {
+   if falling {
+      if holding #_axe {
+         if target_entity :player {
+            as target_entity if blocking {
+               if chance_of 90 {
+               switch #_axe
+               input attack
+               switch <#1482591494161436823>[density]
+               input attack
+               wait 0.3 {
+                  switch #sword
+                  }
+               }
+            }
+         }
+      }
+   }
+}

@@ -1,0 +1,15 @@
+// author: TaKasHI🐦‍⬛ (@t0kashi)
+python
+ module Web-Swap
+def desc Place 3 cobwebs with sword, then return to sword
+
+var int web_count = 0
+
+on tick if input_active use if holding #sword then wait 0.03 then switch #cobweb
+
+on place_block if holding #cobweb then
+    web_count = web_count + 1
+    if web_count >= 3 then
+        wait 0.05
+        switch #sword
+        web_count = 0

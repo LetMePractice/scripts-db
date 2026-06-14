@@ -1,0 +1,9 @@
+// author: ElegantSuperiority (@elegantsuperiority)
+def module tbot-aim-assist
+def desc "Pre-tick head aim if a player is within 3.5 blocks"
+
+on pre_tick if playing {
+  if entity_in_range :player 3.5 {
+    turn_to nearest_entity :player aim body speed 100
+  }
+}

@@ -1,0 +1,7 @@
+// author: yuri (@yuridev2024)
+def module 189
+def desc "Custom Scripted Module"
+
+on tick if holding #sword if target_entity :player :zombie wait_random 0.03 0.04 input attack input attack wait_random 0.03 0.6 input attack
+
+The :player :zombie is a issue

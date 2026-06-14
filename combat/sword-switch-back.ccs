@@ -1,0 +1,7 @@
+// author: Cat (@cat123go)
+just use second script that will be this
+
+ module sword-switch-back
+def desc after breaking shield it switches back to sword 
+
+on tick if input_active attack if holding #_axe if target_entity :player switch #sword

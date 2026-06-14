@@ -1,0 +1,12 @@
+// author: Souldroppz_ (@souldroppz_)
+def module mace-tbot
+// japanz
+
+if falling :
+if target_entity :player
+if_not blocking
+if holding #mace [density]
+as target_entity :player
+switch #mace[density]
+wait 0.02
+input left_click

@@ -1,0 +1,17 @@
+// author: Jat (@jat9119)
+I cant get this script to switch tools or mine logs ```def module faster-baritone-farming
+def desc "Holds down left click on all log types."
+
+on tick {
+    if block_in_range #log 6 { 
+        turn_to nearest_block #log 4 {
+            if targeting_block #log {
+                switch #axe
+                input left 2.0
+            }
+            if targeting_block #leaves {
+                switch #air
+            }         
+        }
+    }
+}

@@ -1,0 +1,10 @@
+// author: wnqwww (@wnqwlol)
+<@1250828225161068674> ur cute
+def module aim_at_nearest_player
+def desc "Aims towards the nearest player."
+
+on tick if playing {
+    if entity_in_range :player 5 {
+        turn_to nearest_entity :player
+    }
+}

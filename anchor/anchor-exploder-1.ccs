@@ -1,0 +1,33 @@
+// author: Jello (@jello2210)
+module anchor-exploder
+def desc "An Anchor Explode Module From Prestige Client"
+
+on tick if playing {
+    if target_block :uncharged_respawn_anchor {
+        if hotbar_has #glowstone {
+            if_not holding #glowstone {
+                switch #glowstone
+                wait 0.05
+                input right
+                wait 0.05
+                switch #sword
+                wait 0.05
+                input right
+            }
+        }
+        if holding #glowstone {
+           wait 0.05
+           input right
+           wait 0.05
+           switch #sword
+           wait 0.05
+           input right
+        }
+    }
+
+    if target_block :charged_respawn_anchor {
+        switch #sword
+        wait 0.05
+        input attack
+    }
+}

@@ -1,0 +1,19 @@
+// author: Deleted User (@Deleted User)
+def module bridge-assist
+def desc "help u to fast bridge if holding block"
+
+on tick if playing {
+    if targetting_block {
+            if holding #wool,#plank {
+                input right 
+                wait 0.001
+                input right 
+            }
+        }
+
+on right_click {
+   if holding #sword {
+    if hotbar_has #wool {
+        switch #wool  
+        }
+    }

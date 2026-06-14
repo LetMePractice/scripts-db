@@ -1,0 +1,13 @@
+// author: ForXGod (@forxgod)
+def module Fast-Touch-Crystal
+def desc Ultra-fast place & break crystal for touch 
+
+on tick:
+    if playing:
+        if holding #end_crystal:
+            # Instantly break target crystal
+            if target_entity == end_crystal:
+                input attack
+            # Instantly place when screen touched
+            if input_active left:
+                input right

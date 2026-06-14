@@ -1,0 +1,49 @@
+// author: Jat (@jat9119)
+module Anchor
+def desc Safe anchor, also right click with sword, pick, and totem to place anchors
+
+on place_block {
+   if targeting_block {
+      if holding #anchor {
+         wait 0.05 {
+            switch :glowstone
+         }
+      }
+   }
+}
+
+on right_click {
+   if playing {
+      if holding :glowstone {
+         if target_block :charged_respawn_anchor {
+            if hotbar_has #totem {
+               switch #totem
+            }
+            !if hotbar_has #totem {
+               switch #sword
+            }
+         }
+      }
+      if holding :glowstone {
+         wait 0.01 {
+            if targeting_block {
+               !if target_block #anchor {
+                  switch #anchor
+               }
+            }
+         }
+      }
+      !if holding :glowstone {
+         if target_block :uncharged_respawn_anchor {
+            switch :glowstone
+         }
+      }
+      if holding #anchor,:glowstone {
+         if target_entity #crystal {
+            wait 0.05 {
+               input attack
+            }
+         }
+      }
+   }
+}

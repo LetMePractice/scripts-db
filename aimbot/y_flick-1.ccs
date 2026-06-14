@@ -1,0 +1,7 @@
+// author: 𝙰𝚛𝚓𝚞𝚗𝙵r𝚊𝚐𝚜 (@flybeast0574)
+def module y_flick
+def desc Flick to nearest player when pressing Y with sword
+
+on key_press y if holding :sword {
+    snap_to nearest_entity :player aim body
+}

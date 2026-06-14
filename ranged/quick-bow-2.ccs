@@ -1,0 +1,8 @@
+// author: K𝔬𝔞𝔩𝔞 (@koala2b2t)
+module quick-bow
+def desc "Shoots arrows quickly"
+on pre_tick if playing {
+    if holding :bow {
+        hold_input right 0.4
+    }
+}

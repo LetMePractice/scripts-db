@@ -1,0 +1,16 @@
+// author: ForXGod (@forxgod)
+def module double_clicker {
+    def desc "Clicks again when mouse is released"
+
+    on left_release if playing {
+        if holding :end_crystal, :respawn_anchor {
+            input attack
+        }
+    }
+
+    on right_release if playing {
+        if holding :end_crystal, :respawn_anchor {
+            input use
+        }
+    }
+}

@@ -1,0 +1,29 @@
+// author: Maple (@maple_frfr)
+def module tbot
+
+def desc "actually good tbot"
+
+on tick {
+   if playing {
+      if target_entity :player {
+         if holding #sword,#axe {
+            if attack_progress >= 0.95 {
+                  if_not on_ground {
+                     if chance_of 95 {
+                        input attack
+                     }
+                  }
+
+                  if on_ground {
+                        if chance_of 85 {
+                           input attack
+                        }
+                     }
+                  }
+               }
+
+            }
+         }
+      }
+   }
+}

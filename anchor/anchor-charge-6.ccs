@@ -1,0 +1,38 @@
+// author: Kaira (@_timel3ss.)
+def module anchor-charge
+def desc "Auto charges an anchor on place"
+
+on right_click {
+   if target_block :respawn_anchor {
+      if holding #sword {
+         switch #respawn_anchor
+         input use
+         switch #glowstone
+      }
+      if holding #pickaxe {
+         switch #respawn_anchor
+         input use
+         switch #glowstone
+      }
+      if holding #totem_of_undying {
+         switch #respawn_anchor
+         input use
+         switch #glowstone
+      }
+      if holding #respawn_anchor {
+         input use
+         switch #glowstone
+      }
+      if target_block :charged_respawn_anchor {
+         if hotbar_has #totem_of_undying {
+            switch #totem_of_undying
+         }
+         if_not hotbar_has #totem_of_undying {
+            switch #sword
+         }
+      }
+      if target_block :uncharged_respawn_anchor {
+         switch #glowstone
+      }
+   }
+}

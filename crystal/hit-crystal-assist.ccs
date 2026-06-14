@@ -1,0 +1,19 @@
+// author: NoIwill (@nomore_bs)
+def module hit-crystal-assist
+def desc "helps hit crystal"
+
+on tick if playing if holding #crystal {
+if entity_in_range :crystal 3.5 {
+if target_entity :crystal {
+input left
+}
+if_not target_entity :crystal {
+    if target_block :obsidian{
+        snap_to nearest_entity :crystal
+        input left 
+        wait_random 0.2 0.25
+        snap_to nearest_block obsidian
+    }
+}
+}
+}

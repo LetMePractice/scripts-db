@@ -1,0 +1,9 @@
+// author: Jat (@jat9119)
+This script allows the player to block tpa requests from certain users.```def module TpaBlock
+def desc "Blocks certain users tpa requests."
+
+//Must add "has" behind the user's name to distinguish between chat and tp requests, may need to be changed depending on the first word after the user's name in the request.
+
+on chat_receive "(User) has" { 
+    wait 0.1 say "/tpdeny" //switch to whatever deny command works on your server
+}

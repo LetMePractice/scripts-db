@@ -1,0 +1,20 @@
+// author: 4q25 • mizo 🍀 (@4q25)
+// @wither123go
+def module obi-switcher
+def desc "obi switch"
+
+on tick {
+   if playing {
+      if input_active use {
+         if holding #sword {
+            if targeting_block {
+               if hotbar_has #obsidian {
+                  wait 0.02
+                  switch #obsidian
+                  input right
+               }
+            }
+         }
+      }
+   }
+}

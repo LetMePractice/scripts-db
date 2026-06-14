@@ -1,0 +1,29 @@
+// author: ' (@meowmeowcat9)
+def module shield-stun
+def desc t1
+
+on tick {
+    if playing {
+    if_not blocking {
+            if holding #sword,#_axe {
+                if target_entity :player {
+                    as target_entity {
+                        if blocking {
+                            if attack_progress >=0.9 {
+                                if hotbar_has #_axe {
+                                    switch #_axe
+                                    input left
+                                    wait_random 0.05 0.06 {
+                                    input left
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+<@1250828225161068674> is there a way to make it work when you click instead of it doing it automatically

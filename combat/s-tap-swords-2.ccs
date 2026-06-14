@@ -1,0 +1,35 @@
+// author: !                        KeVin.. (@kevinnnnnnnnnnnnnnnnnnnn)
+module S-TAP-SWORDS
+def desc "An extremely powerful triggerbot that will always crit the opponent when falling and S-tap when on ground"
+
+on pre_tick {
+   if playing {
+      if target_entity :player,:armor_stand {
+         if_not blocking {
+            if_not input_active use {
+               if attack_progress >=0.9 {
+                  if holding #sword {
+                     if on_ground {
+
+
+                             
+
+                  hold_input backward 0.3
+                                 input attack
+                                 wait 0.3 { hold_input cancel }
+
+                        }
+
+                     if_not on_ground {
+                        if falling {
+                           input attack
+                        }
+                     }
+                  }
+               }
+            }
+         }
+      }
+   }
+}
+ts doesnt work with <#1439851920410804265>

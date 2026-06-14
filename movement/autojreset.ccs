@@ -1,0 +1,7 @@
+// author: Jello (@jello2210)
+module autojreset
+def desc "Jump when hit"
+
+on damage if moving {
+    input jump
+}

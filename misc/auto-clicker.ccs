@@ -1,0 +1,19 @@
+// author: Jello (@jello2210)
+def module auto-clicker
+def desc "Clicks Very Fast"
+
+on left_click if playing {
+    while input_active attack {
+        if chance_of 50 {
+            input attack
+        }
+    }
+}
+
+on right_click if playing {
+    while input_active use {
+        if chance_of 50 {
+            input use
+        }
+    }
+}

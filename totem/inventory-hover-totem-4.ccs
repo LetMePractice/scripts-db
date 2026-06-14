@@ -1,0 +1,32 @@
+// author: .darkxvi (@.darkxvi)
+def module inventory-hover-totem
+//Jat9119
+def desc "Simple hover totem script with checks"
+
+on pre_tick {
+   if input_active inventory {
+      if hovering_over :totem_of_undying {
+         if inventory_has :totem_of_undying {
+            if inventory_count #totem > 2 {
+               if_not off_holding :totem_of_undying {
+                  input key f
+                  wait 0.15
+               }
+               if_not hotbar_has :totem_of_undying {
+                  input key q
+                  wait 0.15
+               }
+            }
+         }
+      }
+   }
+}
+on totem_pop {
+   if input_active inventory {
+   }
+}
+on key_press E {
+   if_not in_screen {
+      switch 7 //Change to your hotbar totem slot
+   }
+}

@@ -1,0 +1,12 @@
+// author: Kira (@rogue.kira)
+also i changed the wait from 0.09 to 0.2 and it stopped working completely can u help
+
+def module wc
+def desc "Custom Scripted Module"
+
+on key press O
+ if hotbar_has #axe,#wind_charge {
+  switch #wind_charge 
+   wait 0.09
+    input right
+}

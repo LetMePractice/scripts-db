@@ -1,0 +1,34 @@
+// author: wxund (@wounddup)
+def module auto-mace
+def desc "an auto mace i based off of prestige client's auto mace (mine is exactly the same)"
+
+on tick if playing {
+   if falling if vel_y <= -0.6 {
+      if entity_in_range :player,:zombie 4 {
+         if_not targeting_entity {
+          **  snap_to nearest_entity :player,:zombie**
+         }
+         if targeting_entity if target_entity :player,:zombie {
+            if hotbar_has #mace[density] {
+               as target_entity if blocking as client if hotbar_has #axe {
+                  switch #axe
+                  input attack
+                  wait_random 0.01 0.03
+               }
+               switch #mace[density]
+               input attack
+            }
+         }
+      }
+   }
+}
+
+
+on tick if playing {
+   if entity_in_range :player,:zombie 4.5 {
+      if hotbar_has #chestplate {
+         switch #chestplate
+         input use
+      }
+   }
+}

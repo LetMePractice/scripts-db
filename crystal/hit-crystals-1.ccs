@@ -1,0 +1,6 @@
+// author: unknown
+It might have some issues and bugs please report them so i can learn from my mistakes, thanks now enjoy the script.
+ module hit-crystals
+def desc "Custom Scripted Module"
+
+on right_click if holding #sword,#obsidian,#crystal if target_block :sand,grass_block,dirt,stone then switch #obsidian then input right then wait 0.05 if target_block :obsidian then switch #crystal then input right

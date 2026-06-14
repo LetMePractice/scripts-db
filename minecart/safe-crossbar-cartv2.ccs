@@ -1,0 +1,19 @@
+// author: jason (@jasonwuzz)
+this one maybe 
+
+//@moneybanks
+def module safe-crossbar-cartv2
+def desc "just better crossbow cart"
+
+on place_block if holding #rail if targeting_block {
+    wait 0.05 switch #tnt
+    wait 0.05 input right
+    wait 0.3 switch #steel
+    wait 0.3 input right
+    wait 0.1 gui_quickmove #tnt 4
+}
+
+on right_click if holding #steel {
+    wait 0.3 switch #crossbow
+    wait 0.3 input right
+}

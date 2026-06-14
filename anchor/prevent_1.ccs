@@ -1,0 +1,5 @@
+// author: Cat (@cat123go)
+module Prevent_1
+def desc Prevent from Francium (removes ability to place anchor on other anchor)
+
+on right_click if playing if holding #anchor if target_block :uncharged_respawn_anchor then cancel_packet c2s playerInteractBlock

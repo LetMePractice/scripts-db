@@ -1,0 +1,6 @@
+// author: K𝔬𝔞𝔩𝔞 (@koala2b2t)
+def module fast crystal place
+def desc "makes it faster to crystal"
+
+
+on tick if playing if holding #end_crystal if input_active right input use

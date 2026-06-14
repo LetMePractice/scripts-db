@@ -1,0 +1,34 @@
+// author: dirlord (@cellyplayzz)
+def module insta-cart-xbow
+def desc "after shooting an arrow look down and it will automatically place a tnt minecarft"
+
+on tick {
+    if playing {
+        if holding #rail {
+            if targeting_block {
+                if hotbar_has :tnt_minecart {
+
+                    input use
+                    switch :tnt_minecart
+                    input right
+
+                    if hotbar_has :flint_and_steel {
+                        wait 0.3
+                        switch :flint_and_steel
+                        input use
+
+                        if hotbar_has :charged_crossbow {
+                            wait 0.1
+                            switch :charged_crossbow
+                        }
+                    }
+
+                }
+            }
+        }
+    }
+}
+
+
+
+thank you to <@1190405726544347258> for the insta-cart script

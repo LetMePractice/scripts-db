@@ -1,0 +1,19 @@
+// author: Jello (@jello2210)
+def module mace-doubletap-hotbar
+def desc "Double-hit with maces using hotbar slots 1 & 2 (no auto aim)"
+
+on pre_tick if playing !if on_ground {
+    if holding :mace if entity_in_range :player 3.2 {
+        if attack_progress >=0.99 {
+            input attack
+            wait 0.05
+            input key 2
+            wait 0.65
+            if attack_progress >=0.99 {
+                input attack
+            }
+            wait 0.05
+            input key 1
+        }
+    }
+}

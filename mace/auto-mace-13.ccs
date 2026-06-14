@@ -1,0 +1,32 @@
+// author: ElegantSuperiority (@elegantsuperiority)
+def module Auto-Mace
+def desc "Auto-attacks with sword/axe while falling, then swaps to a Wind Burst mace on hit"
+
+on tick {
+    if playing {
+        if falling {
+            if_not gliding {
+                if attack_progress >= 0.2 {
+                    if target_entity :player {
+                          if_not blocking {
+                        as target_entity {
+                                input left wait 0.1
+                                execute func mace_swap
+                            }
+                        }
+                          if blocking {
+                        as target_entity {
+                           if holding #axe {
+                              input attack wait 0.09 func mace_swap wait 0.09 input left
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+def func mace_swap {
+    switch #mace[wind_burst]
+}

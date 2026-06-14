@@ -1,0 +1,9 @@
+// author: Jello (@jello2210)
+def module auto-sprint-reset
+def desc "Automatically resets sprint when moving"
+
+on tick if playing if moving {
+   input sprint
+   wait 0.05
+   input sprint
+}

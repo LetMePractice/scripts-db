@@ -1,0 +1,27 @@
+// author: v0rtexdev. (@v0rtexdev2.)
+def module critbot
+//Jat9119
+def desc "Custom Scripted Module"
+
+on pre_tick {
+   if playing {
+      if target_entity :player,:armor_stand, #blaze, #bogged, #breeze, #chicken_jockey, #creeper, #drowned, #elder_guardian, #endermite, #evoker, #ghast, #guardian, #hoglin, #husk, #magma_cube, #phantom, #piglin_brute, #pillager, #ravager, #shulker, #silverfish, #skeleton, #slime, #spider_jockey, #stray, #vex, #vindicator, #warden, #witch, #wither_skeleton, #zoglin, #zombie, #zombie_villager {
+         !if blocking {
+            if attack_progress >=0.9 {
+               !if blocking {
+                  if holding #sword {
+                    if on_ground {
+                        input attack
+                    }
+                    !if on_ground {
+                        if falling {
+                            input attack
+                        }
+                    }
+                  }
+               }
+            }
+         }
+      }
+   }
+}

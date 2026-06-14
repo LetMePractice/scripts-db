@@ -1,0 +1,7 @@
+// author: octo11th • mizo (@octo11th)
+def module plate-swap
+def desc "pls work "
+
+on tick if playing {
+    if target_block #oak_pressure_plate then switch #cobweb then wait 0.05 then input right
+}

@@ -1,0 +1,15 @@
+// author: Beev (@.beevv)
+// @078K
+def module Insta-Shield
+def desc "On Left click if holding shield in off hand it insta shield"
+
+on left_click if playing {
+   if on_ground {
+      if holding #sword {
+         if off_holding :shield {
+            input attack
+            hold_input use 0.5
+         }
+      }
+   }
+}

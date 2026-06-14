@@ -1,0 +1,11 @@
+// author: ImproperIssues (@improperissues)
+def module hover
+def desc "Custom Scripted Module"
+
+on tick {
+    if_not off_holding #totem {
+        if hovering_over #totem {
+            wait_random 0.03 0.06 if chance_of 90 if hovering_over #totem input key f
+        }
+    }
+}

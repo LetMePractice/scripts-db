@@ -1,0 +1,5 @@
+// author: Jello (@jello2210)
+def module autosprint
+def desc "Custom Scripted Module"
+
+on tick if moving input sprint

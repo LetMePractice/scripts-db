@@ -1,0 +1,54 @@
+// author: Jat (@jat9119)
+Automatically double hand auto totems when your inventory is open. Bugs out when there is only one totem. Bypasses Vulcan and GrimMC. Gui Cursor Recommended
+def module Inventory-Auto-Totem
+//Jat9119
+def desc "Jat"
+on pre_tick {
+   if input_active inventory {
+      if hovering_over :totem_of_undying {
+               if off_holding :totem_of_undying {
+                  !if holding :totem_of_undying {
+                     input key 9 
+                      func tot 
+                  }
+               }
+               if holding :totem_of_undying {
+                  !if off_holding :totem_of_undying {
+                     input key f 
+                      func tot 
+                  }
+               }
+               !if holding :totem_of_undying {
+                  !if off_holding :totem_of_undying {
+                     input key f 
+                      func tot 
+               }
+            }
+         }
+         if inventory_has :totem_of_undying {
+            !if off_holding :totem_of_undying {
+               func tot 
+            }
+            !if hotbar_has :totem_of_undying {
+               func tot 
+         }
+      }
+   }
+}
+on totem_pop {
+   if input_active inventory {
+      func tot 
+   }
+}
+def func tot {
+   !if hovering_over :totem_of_undying {
+      wait 0.055 {
+         gui_switch :totem_of_undying 
+      }
+   }
+}
+on key_press E {
+   !if in_screen {
+      switch 9 
+   }
+}

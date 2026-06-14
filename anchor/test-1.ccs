@@ -1,0 +1,7 @@
+// author: Practice (@letmepractice)
+1) ```def module test-1
+def desc "Prevents wasting glowstone on charged respawn anchors by switching to slot 9."
+
+on tick if playing if holding #glowstone if target_block :charged_respawn_anchor {
+    switch 9
+}

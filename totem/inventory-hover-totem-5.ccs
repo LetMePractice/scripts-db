@@ -1,0 +1,42 @@
+// author: lqz0 (@lqz0)
+def module Inventory-Hover-Totem
+//Jat9119
+def desc "Automatically totems both hands when inventory is active"
+on pre_tick {
+   if input_active inventory {
+      if hovering_over :totem_of_undying {
+         if inventory_has :totem_of_undying {
+            if inventory count #totem > 2
+            if off_holding :totem_of_undying {
+               if_not holding :totem_of_undying {
+                  input key Y
+               }
+            }
+            if holding :totem_of_undying {
+               if_not off_holding :totem_of_undying {
+                  input key f
+               }
+            }
+            if_not holding :totem_of_undying {
+               if_not off_holding :totem_of_undying {
+                  input key f
+               }
+            }
+         }
+      }
+   }
+}
+on totem_pop {
+   if input_active inventory {
+   }
+}
+on key_press E {
+   if_not in_screen {
+      switch Y
+   }
+}
+
+
+
+
+someone help me  i changed all the binds to mine and it works but an error is there idk how to fix it

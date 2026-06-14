@@ -1,0 +1,15 @@
+// author: 69zyx (@69zyx)
+you have to go ingame, then open the UI, then you will have to go to the tab called "Custom Made" then you create a new module and type a name you want the file to have then you delete all pre made code and put the one from above that is "```def module uppercut
+def desc You jump and it works as a trigger bot (I think that is really good i found some video on YT and someone said to make this for him if possible so i did xD, also it might be perfect crit timing)
+
+on tick {
+    if input_active jump {
+        if holding #sword {
+            if attack_progress >=0.9 {
+                if target_entity :player {
+                    input left
+                }
+            }
+        }
+    }
+}```"

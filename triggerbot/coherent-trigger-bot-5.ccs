@@ -1,0 +1,15 @@
+// author: theangrydog123 (@theangrydog123)
+how can i make this script not activate against windcharges?
+
+def module coherent-trigger-bot
+def desc "Coherent Client's Trigger Bot"
+
+on tick if targeting_entity !if blocking if input_active sprint {
+   if attack_progress >=0.9 {
+      as target_entity if blocking as client {
+         switch #axe then input left
+         wait 0.05 switch back
+      }
+      input left
+   }
+}

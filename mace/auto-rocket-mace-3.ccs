@@ -1,0 +1,48 @@
+// author: Nikii (@augustokok)
+on module_enable {
+
+}
+
+on module_disable {
+
+}
+def module Auto-rocket-mace
+def desc "On keypress Z, if flying, automatically switches to firework, use, switches chestplate/elytra, and MACE!"
+
+on key_press z {
+    if playing {
+        if gliding {
+            snap_to nearest_entity :player 
+            switch #firework_rocket
+            wait 0.05
+            input use
+                while gliding {
+                    snap_to nearest_entity :player 
+                     if target_entity :player
+                      if falling 
+                       switch #chestplate,#elytra
+                        wait 0.05
+                         input right_click
+                       switch #mace
+                     if target_entity :player
+                    if falling
+                   as target_entity :player
+                  switch #mace[density]
+                 wait 0.05
+                input left_click
+               wait 0.05
+              switch #elytra
+             wait 0.03
+            input right_click
+           loop 3
+          ]
+         ]
+        ]
+       ]
+      ]
+     ]
+    ]
+   ]
+  ]
+ ]
+]

@@ -1,0 +1,15 @@
+// author: Kaira (@_timel3ss.)
+def module auto-shield-breaker
+def desc "Automatically switches to an axe and attacks when a targeted player blocks with a shield."
+
+on tick if playing if target_entity :player if holding #sword {
+  as target_entity if blocking as client if hotbar_has #axe {
+    switch #axe
+    wait 0.05
+    input attack
+    wait 0.05
+    switch back
+  }
+}
+
+i dont even think this works, look at the indentations

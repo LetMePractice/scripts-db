@@ -1,0 +1,19 @@
+// author: yuri (@yuridev2024)
+module AutoAttack
+def desc "Automatically attacks any player and most mobs in way"
+
+on tick if holding #sword if target_entity :player,:zombie,:skeleton,:dragon,:enderman {
+    wait_random 0.03 0.04
+    input attack
+    if chance_of 60 {
+        input attack
+        if chance_of 50 {
+            wait_random 0.03 0.6
+            input attack
+            if chance_of 40 {
+                wait_random 0.03 0.6
+                input attack
+            }
+        }
+    }
+}

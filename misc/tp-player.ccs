@@ -1,0 +1,10 @@
+// author: mmmmmm (@rank1everyone)
+def module tp-player
+def desc "Custom made macros"
+
+on key_press y if playing {
+  wait 0.1 say "/tpa" :player 
+}
+
+
+"Is it possible? I'm trying to tp to a player, but I'm not sure if it's allowed."

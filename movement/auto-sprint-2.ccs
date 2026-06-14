@@ -1,0 +1,7 @@
+// author: Practice (@letmepractice)
+module auto-sprint
+def desc "Automatically enables sprinting when moving forward"
+
+on key_press W if playing {
+    input sprint
+}

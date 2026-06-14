@@ -1,0 +1,27 @@
+// author: LoopholeMC (@loopholemc)
+def module auto-hit-crystal
+def desc "Custom Scripted Module"
+
+on left_click { 
+   if playing if targeting_block {
+      if_not holding #pickaxe,#mace if_not blocking {
+         if_not target_block :obsidian,:bedrock {
+            if_not targeting_entity {
+                switch :obsidian
+                input use
+            }
+         }
+      }
+   }
+}
+
+on pre_tick {
+   if input_active left {
+      if playing {
+         if target_block :obsidian,:bedrock {
+            switch :end_crystal
+            input use
+         }
+      }
+   }
+}

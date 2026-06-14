@@ -1,0 +1,10 @@
+// author: kureify (@kureify.)
+def module auto-pot
+
+def desc "Press Z to throw a health potion when below 8 hearts"
+
+on key_press z if playing if health <16.0 {
+   switch #healing
+   wait 0.05 input use
+   wait 0.05 switch back
+}

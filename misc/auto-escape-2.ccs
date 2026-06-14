@@ -1,0 +1,19 @@
+// author: Practice (@letmepractice)
+module auto-escape
+def desc "Teleports to spawn at 3 HP or when pickaxe breaks"
+
+on tick 10 if playing {
+    if health <= 6 {
+        say "/spawn"
+        say "#stop"
+        module disable auto-escape
+    }
+    
+    if item_durability holding <= 2 {
+        if_not holding :air {
+            say "/spawn"
+            say "#stop"
+            module disable auto-escape
+        }
+    }
+}

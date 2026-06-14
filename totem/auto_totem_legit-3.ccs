@@ -1,0 +1,25 @@
+// author: ? (@_sp33d_94)
+Fix this plz 
+def module auto_totem_legit
+def desc "Auto Totem Legit Safe"
+
+on tick {
+
+    if_not offhand totem_of_undying {
+
+        if has totem_of_undying {
+
+            open_inventory
+            wait 2
+
+            move_item totem_of_undying to offhand
+            wait 2
+
+            close_inventory
+            wait 4
+
+        }
+
+    }
+
+}

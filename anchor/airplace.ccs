@@ -1,0 +1,7 @@
+// author: Cat (@cat123go)
+module airplace
+def desc "Helps you airplace"
+
+on tick if input_active right if target_block :charged_respawn_anchor if holding #anchor {
+    input right
+}

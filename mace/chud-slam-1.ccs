@@ -1,0 +1,17 @@
+// author: Deleted User (@Deleted User)
+//made by the chud king sellerswag
+def module chud-slam
+def desc "Guarantees shield break into chud slam"
+
+on left_click if playing {
+   if holding #mace {
+         as target_entity if blocking {
+            switch #_axe
+            input attack
+            wait 0.05
+            left_click
+            wait 0.075 switch #mace
+            left_click
+         }
+      }
+   }

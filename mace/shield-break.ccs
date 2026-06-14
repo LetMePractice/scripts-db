@@ -1,0 +1,23 @@
+// author: Simplelol (@losty4331)
+def module shield-break
+def desc "Custom Scripted Module"
+
+on module_enable {
+
+}
+
+on module_disable {
+
+}
+def module coherent-trigger-bot
+def desc "Coherent Client's Trigger Bot"
+
+on tick if playing if targeting_entity if holding #sword,#_axe !if blocking {
+    if attack_progress >=1.0 if chance_of 100 {
+        as target_entity if blocking as client if hotbar_has #_axe {
+            switch #axe
+            wait 0.05 switch back
+        }
+        input attack
+    }
+}

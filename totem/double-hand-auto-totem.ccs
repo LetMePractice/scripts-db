@@ -1,0 +1,11 @@
+// author: 3ndyY7 (@3ndyy7.)
+def module double-hand-auto-totem
+def desc "Custom Scripted Module"
+
+on tick if input_active inventory {
+    switch #totem
+    gui_quickmove #totem 5
+    if off_holding #air {
+        gui_swap #totem
+    }
+}

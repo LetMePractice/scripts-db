@@ -1,0 +1,11 @@
+// author: tmoa (@realtmoa)
+def module cc-anchor-switch
+def desc ClickCrystals Anchor Switch but bypass for Astro Anti Cheat
+on place_block if holding #anchor wait 0.03 switch #glowstone
+on interact_block if holding #glowstone wait 0.03 then switch #totem
+on tick if input_active use if target_block :uncharged_respawn_anchor if holding #sword,#totem,#anchor,#pickaxe wait 0.03 then switch #glowstone
+on tick if input_active use if target_block
+:charged_respawn_anchor if holding
+#totem wait 0.03 then switch #anchor
+
+I got this anchor switch but I want to make it so that when I've charged the anchor with the glowstone instead of switching to the anchor, it switches to the totem and once the anchor has been exploded it switches back to the anchor, anyone know how this can be done?

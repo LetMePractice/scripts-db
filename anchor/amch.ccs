@@ -1,0 +1,6 @@
+// author: Cat (@cat123go)
+module amch
+def desc "Custom Scripted Module"
+
+on tick if target_block :uncharged_respawn_anchor switch #glowstone then input right then wait 0.1 then switch #totem
+ this should be better since it will not always switch totem and allow you to 2 anchor more easy

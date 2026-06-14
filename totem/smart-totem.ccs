@@ -1,0 +1,15 @@
+// author: Jello (@jello2210)
+def module smart-totem
+def desc "Double totem on pop + auto offhand refill from hotbar"
+
+on totem_pop execute_period 0.05 {
+   gui_swap #totem
+   gui_quickmove #totem 7
+   switch #totem
+}
+
+on tick if playing {
+   if hotbar_has #totem !if off_holding #totem {
+      gui_swap #totem
+   }
+}

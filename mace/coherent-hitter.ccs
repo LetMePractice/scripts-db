@@ -1,0 +1,57 @@
+// author: Practice (@letmepractice)
+module coherent-hitter
+def desc "The best trigger"
+
+on tick {
+   if playing {
+      if target_entity :player,:armor_stand {
+         if holding #sword,#_axe,#mace,#air {
+            if attack_progress >=0.8 {
+               if chance_of 95 {
+                  as target_entity {
+                     if blocking {
+                        as client {
+                           if hotbar_has #axe {
+                              execute_random {
+                                 function shield_break
+                                 function shield_break
+                                 function tbot_miss
+                              }
+                           }
+                        }
+                     }
+                  }
+                  as client {
+                     if on_ground {
+                        if chance_of 95 {
+                           input attack
+                        }
+                     }
+                     !if on_ground {
+                        if falling {
+                           if chance_of 95 {
+                              input attack
+                           }
+                        }
+                     }
+                  }
+               }
+            }
+         }
+      }
+   }
+}
+
+def function tbot_miss {
+   input attack
+}
+
+def function shield_break {
+   switch #axe
+   wait_random 0.01 0.015
+   input attack
+   wait_random 0.01 0.02
+   input attack
+   wait 0.05
+   switch back
+}

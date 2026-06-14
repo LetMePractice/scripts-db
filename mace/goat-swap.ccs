@@ -1,0 +1,32 @@
+// author: Practice (@letmepractice)
+module goat-swap
+def desc "lmb for breach, rmb for density"
+
+on right_click if playing {
+    if holding #_axe {
+        if hotbar_has #mace[density] {
+            if falling {
+                if target_entity :player {
+                    as target_entity {
+                        if blocking {
+                            input attack
+                            wait 0.03
+                            switch #mace[density]
+                            wait 0.03
+                            input attack
+                            wait 0.02
+                            switch back
+                        }
+                        if_not blocking {
+                            switch #mace[density]
+                            wait 0.03
+                            input attack
+                            wait 0.05
+                            switch back
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

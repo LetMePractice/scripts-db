@@ -1,0 +1,5 @@
+// author: TaKasHI🐦‍⬛ (@t0kashi)
+def module aWeb-Swap
+def desc Swap to cobweb when right-clicking with sword
+
+on tick if input_active use if holding #sword wait 0.03 then switch #cobweb

@@ -1,0 +1,6 @@
+// author: Deleted User (@Deleted User)
+def module R
+def desc Press "R" for suicide anchor
+
+on key_press R if targeting_block !if target_block #air switch #anchor then input right then wait 0.05 then switch :glowstone then input right then wait 0.05 switch #totem then wait 0.02 then input right
+on tick if holding #glowstone_dust wait 0.05 then switch #glowstone

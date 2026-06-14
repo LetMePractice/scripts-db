@@ -1,0 +1,30 @@
+// author: Lemon (@lemon_the1)
+def module mace-dtap
+def desc "pops two totems but with maces"
+
+on tick {
+  if playing {
+     if falling if gliding {
+       if holding  #mace[breach] {             
+            if target_entity :player {  
+            if entity_in_range :player 4 {          
+               {
+                  input attack
+               }
+               
+               {
+                  switch #chestplate
+                  input use 
+               }
+               
+               {
+                  switch #mace[density]
+                  wait 0.07 input attack
+               }
+              
+            }
+         }
+      }
+   }
+}
+}

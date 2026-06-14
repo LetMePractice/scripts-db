@@ -1,0 +1,11 @@
+// author: Jello (@jello2210)
+def module web-trap-random-slow
+def desc "Places a web with slower, random switching delay"
+
+on right_click if playing if holding #sword {
+   switch :cobweb
+   wait_random 0.05 0.09
+   input use
+   wait_random 0.05 0.09
+   switch #sword
+}

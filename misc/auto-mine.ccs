@@ -1,0 +1,7 @@
+// author: @heyem (@prodordie)
+def module auto-mine
+def desc Automatically moves forward and mines blocks while holding a pickaxe
+
+on tick if playing if holding #pickaxe then
+    input W down
+    input left down

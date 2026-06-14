@@ -1,0 +1,9 @@
+// author: Alza (@alzaff)
+def module hovering-auto-totem
+def desc "a legit auto totem"
+
+on key_press e if playing if_not off_holding #totem {
+    if inventory_has #totem {
+       if hovering_over #totem press F
+    }
+}

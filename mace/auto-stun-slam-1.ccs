@@ -1,0 +1,27 @@
+// author: Lymmt (@lymt_01)
+def module auto-stun-slam
+def desc "stunslam"
+
+on tick if playing {
+   if falling {
+      if_not blocking {
+         if_not input_active use {
+            if holding #_axe,#sword {
+               if target_entity :player {
+                  as target_entity {
+                     if blocking {
+                        switch #axe
+                        input left
+                        switch #mace[density]
+                        input left
+                        wait_random 0.2 0.5 {
+                           switch #sword
+                        }
+                     }
+                  }
+               }
+            }
+         }
+      }
+   }
+}

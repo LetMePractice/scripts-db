@@ -1,0 +1,6 @@
+// author: .0n6 (@.0n6)
+def module nub
+def desc "nub"
+on left_click if holding #totem {
+switch #anchor then input right
+}

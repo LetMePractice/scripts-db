@@ -1,0 +1,14 @@
+// author: Jello (@jello2210)
+//@ZetaSW and jello
+def module auto-stun-slam
+def desc "Hit once with axe, then automatically switch to mace and perform stun slam when shield breaks and I’m falling"
+
+on sound minecraft:item.shield.break {
+    if falling {
+        input attack
+        wait 0.04
+        switch #mace
+        wait 0.04
+        input attack
+    }
+}

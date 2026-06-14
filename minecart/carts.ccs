@@ -1,0 +1,16 @@
+// author: 亗 Coldy╰‿╯ (@yronv1)
+<@971775639617163344>  try this 
+
+def module carts
+def desc "xbow carts"
+on tick
+on place_block if holding :rail,:powered_rail {
+  switch :tnt_minecart {
+    on input_active use if holding :flint_and_steel {
+      switch :flint_and_steel
+    }
+    on item_use if holding :charged_crossbow,:crossbow {
+      switch :charged_crossbow,:crossbow
+    }
+  }
+}

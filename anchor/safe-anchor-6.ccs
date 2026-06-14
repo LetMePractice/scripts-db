@@ -1,0 +1,33 @@
+// author: Jello (@jello2210)
+def module safe-anchor
+def desc "ImproperIssues anchor macro"
+
+on packet receive blockUpdate if not in screen {
+    if target block :uncharged_respawn_anchor if hotbar has :glowstone {
+        switch :glowstone
+    }
+}
+
+on tick if not in screen {
+    if holding :glowstone if target block :uncharged_respawn_anchor {
+        input use
+        if target block :charged_respawn_anchor if hotbar_has :obsidian {
+            switch :obsidian
+            input sneak
+        }
+    }
+
+    if block in range :charged_respawn_anchor 4.5 if holding :obsidian if sneaking {
+        input use
+        switch :respawn_anchor
+        func prepare_interact
+    }
+}
+
+def func prepare_interact {
+    while 0.01 sneaking {
+        if not sneaking {
+            interact nearest block :charged_respawn_anchor
+        }
+    }
+}

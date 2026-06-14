@@ -1,0 +1,19 @@
+// author: Jello (@jello2210)
+def module neth-pot
+def desc "Auto splash at half HP"
+
+on tick 4 if playing if health <= 5{
+    if hotbar_has #splash_potion {
+        if falling {
+           turn_to position ~ ~-1.4 ~ speed 300 then {
+            wait 0.06
+            switch #splash_potion
+            wait 0.06
+            input use
+            wait 0.3
+            switch #sword
+            turn_to nearest_entity :player speed 55
+        }
+    }
+}
+}

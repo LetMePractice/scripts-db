@@ -1,0 +1,20 @@
+// author: Practice (@letmepractice)
+// sucky
+def module anchor-safe-macro
+def desc "Charge anchor then instantly totem boom"
+
+on tick if playing {
+   if target_block :uncharged_respawn_anchor {
+      if hotbar_has #glowstone {
+         switch #glowstone
+         wait 0.03 input use
+      }
+   }
+
+   if target_block :charged_respawn_anchor {
+      if hotbar_has #totem {
+         switch 9
+         wait 0.03 input use
+      }
+   }
+}

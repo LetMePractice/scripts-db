@@ -1,0 +1,13 @@
+// author: .0n6 (@.0n6)
+module Fast-as-fuck-shield-breaker
+on tick if playing {
+if_not input_active use if_not blocking {
+    if target_entity :player {
+        as target_entity if blocking {
+        switch #_axe
+        input attack
+        switch back
+        }
+        }
+        }
+        }

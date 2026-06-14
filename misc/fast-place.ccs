@@ -1,0 +1,9 @@
+// author: Jello (@jello2210)
+// @josh
+def module fast-place
+def desc "Places really fast"
+on
+tick 1
+if input_ active use f if holding #wool, #clay &
+input use
+}}}

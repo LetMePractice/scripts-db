@@ -1,0 +1,24 @@
+// author: ? (@_sp33d_94)
+def module auto_totem_legit
+def desc "Auto Totem Legit Safe"
+
+on tick {
+
+    if_not offhand #totem {
+
+        if has #totem {
+
+            open_inventory
+            wait 3
+
+            move_item #totem offhand
+            wait 3
+
+            close_inventory
+            wait 6
+
+        }
+
+    }
+
+}

@@ -1,0 +1,9 @@
+// author: Cat (@cat123go)
+module autooffhand
+def desc "Use mainhand totem as offhand when you pop"
+
+on totem_pop if playing if hotbar_has #totem {
+    wait 0.03 switch #totem
+    wait 0.1 input key f
+    wait 0.2 switch back
+}

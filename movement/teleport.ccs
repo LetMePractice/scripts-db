@@ -1,0 +1,21 @@
+// author: ImproperIssues (@improperissues)
+i just made this teleporter script with two different types of teleport methods
+def module teleport
+def desc "I don't even know what this does fr"
+
+on right_click if_not in_screen {
+    func velocity_tp
+}
+
+def func position_tp {
+    loop_period 10 0.001 {
+        teleport ^ ^ ^1
+    }
+}
+
+def func velocity_tp {
+    execute_period 0.05 {
+        velocity ^ ^ ^5
+        velocity 0 0 0
+    }
+}

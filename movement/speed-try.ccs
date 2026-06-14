@@ -1,0 +1,5 @@
+// author: Inkompetent (@henri_zockt)
+def module speed-try
+def desc "Red deutsch"
+
+on key_press Y turn_to polar -90 10

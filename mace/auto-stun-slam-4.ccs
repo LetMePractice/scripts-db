@@ -1,0 +1,26 @@
+// author: Souldroppz_ (@souldroppz_)
+def module auto-stun-slam
+//Starfallofjapan
+def desc "When falling, if holding axe or sword, it automatically hits players with an axe if they are blocking then immediately switches to mace and hits them again."
+
+on tick if playing {
+   if falling {
+      if holding #_axe
+         if target_entity :player {
+            as target_entity {
+               if blocking {
+                  wait 0.02
+                  input attack
+                  wait 0.05
+                  switch #mace
+                  wait 0.05
+                  input left
+                  wait 0.05 {
+                     switch #axe
+                  }
+               }
+            }
+         }
+      }
+   }
+}

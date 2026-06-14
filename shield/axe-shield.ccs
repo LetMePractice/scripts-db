@@ -1,0 +1,17 @@
+// author: Stat1c (@stat1c_0k)
+def module Axe>shield
+def desc "100% Hit A shield with ur axe then switch back"
+
+on left_click {
+    wait 0.05
+    if target_entity :player {
+        if target_entity blocking {
+            switch #axe
+            input attack
+            wait 0.05
+            switch back
+        }
+    }
+}
+
+can someone fix this as its not switching back?

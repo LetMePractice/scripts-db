@@ -1,0 +1,15 @@
+// author: ItzMePrime♛ (@the_last_prime_44)
+// <@973994782714105937>
+def module quick_player_aim
+def desc "Aims towards the nearest player on sword right-click."
+
+on right_click if playing {
+     if holding #sword {
+         if entity_in_range :player 10 {
+            turn_to nearest_entity :player aim head
+         }
+      }
+   }
+
+
+can you make it work while i hold right click the aim lock at player <@882445130496356374>

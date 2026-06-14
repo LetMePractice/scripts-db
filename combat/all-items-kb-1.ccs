@@ -1,0 +1,12 @@
+// author: Kira (@rogue.kira)
+// @wither123go
+def module all-items-kb
+def desc KB for CPvP
+
+on left_click {
+   if holding #crystal,#obsidian,#pearl,#golden_apple,#pickaxe,#totem,#anchor,#glowstone {
+      if target_entity :player {
+         switch #sword
+      }
+   }
+}

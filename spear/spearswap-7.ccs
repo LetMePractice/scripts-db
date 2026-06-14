@@ -1,0 +1,15 @@
+// author: octo11th • mizo (@octo11th)
+<#1495448237639995523> 
+def module spearswap
+def desc "Swaps to spear, lunges, and swaps back in one key"
+
+on key_press C if playing if_not blocking if hotbar_has #spear {
+   wait 0.05
+   switch #spear
+   input left
+   wait 0.07 switch back
+}
+
+Is it possible to:
+1. switch to `#plank` if in hotbar (to have least cooldown)
+2. then, spear, click, wait, switch BACK TO the original hotbar slot (not plank)

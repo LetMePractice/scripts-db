@@ -1,0 +1,9 @@
+// author: azo (@azomiko1)
+def module web-macro
+def desc "switches to web and places it"
+
+on key_press v { //change to whatever bind you want it to be
+  switch 7 //change to ur web slot
+  wait 0.05
+  input right
+}

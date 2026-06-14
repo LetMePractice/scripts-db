@@ -1,0 +1,45 @@
+// author: ᲼᲼᲼᲼᲼᲼᲼᲼᲼ (@yt_guru)
+def module Anchor
+def desc Safe anchor
+
+// When placing anchor, switch to glowstone and right-click to charge
+on place_block {
+   if targeting_block {
+      if holding #anchor {
+         if hotbar_has :glowstone {
+            wait 0.001 {
+               switch :glowstone
+               input right  // charge immediately, ignore crosshair
+            }
+         }
+      }
+   }
+}
+
+// When placing glowstone manually, switch back to anchor
+on place_block {
+   if targeting_block {
+      if holding :glowstone {
+         wait 1 {
+            switch #anchor
+         }
+      }
+   }
+}
+
+// Right-click anchor behavior
+on right_click {
+   if holding :glowstone {
+      if target_block :charged_respawn_anchor {
+         if hotbar_has #anchor {
+            switch #anchor
+         }
+      }
+   }
+
+   !if holding :glowstone {
+      if target_block :uncharged_respawn_anchor {
+         switch :glowstone
+      }
+   }
+}

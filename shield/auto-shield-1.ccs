@@ -1,0 +1,5 @@
+// author: Cat (@cat123go)
+def module Auto-Shield
+def desc Auto uses shield when you are holding it
+
+on tick if playing if holding #sheild input right

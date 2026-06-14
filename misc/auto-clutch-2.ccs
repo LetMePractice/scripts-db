@@ -1,0 +1,21 @@
+// author: Jello (@jello2210)
+def module auto-clutch
+def desc "Automatically clutches with a water bucket while falling."
+
+on pre_tick if playing {
+    if falling {
+        if vel_y <= -0.25 {
+            !if targeting_block {
+                snap_to position ~ ~-5 ~
+                if hotbar_has #water {
+                    switch #water
+                }
+            }
+            if targeting_block if holding #water {
+                input use
+                wait 0.12
+                input use
+            }
+        }
+    }
+}

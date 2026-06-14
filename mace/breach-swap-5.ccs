@@ -1,0 +1,13 @@
+// author: Dark (@darkmagiciancia)
+i have question i am trying to do a breach swaping one aswell but i have know idea if it works i dont see any swaping but there are no errors 
+// @Jamal
+def module breach-swap
+def desc "Performs a breach swap when swinging your sword"
+
+on left_click {
+   if holding #sword {
+      switch #mace
+      wait 0.03
+      switch back
+   }
+}

@@ -1,0 +1,34 @@
+// author: Nikii (@augustokok)
+def module 2-final-logic
+def desc "Back-displacement with T-Bot combat logic."
+
+on key_press 2 {
+   if playing {
+      snap_to position ^0.0 ^1.6 ^-100.0
+      
+      wait 0.04 {
+         snap_to nearest_entity :player
+         
+         wait 0.02 {
+            snap_to position ^0.0 ^1.95 ^0.1
+            
+            wait 0.03 {
+               if holding #sword {
+                  if target_entity :player {
+                     if_not blocking {
+                        if_not input_active use {
+                           if attack_progress >= 0.88 {
+                              input left
+                              wait 0.05 {
+                                 input left
+                              }
+                           }
+                        }
+                     }
+                  }
+               }
+            }
+         }
+      }
+   }
+}

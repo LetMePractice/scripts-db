@@ -1,0 +1,5 @@
+// author: Aevion (@aevionvi)
+def module practice
+def desc help me
+
+on tick if playing if holding #crystal input use if target_entity :end_crystal then input_active left

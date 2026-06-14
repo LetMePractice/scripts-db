@@ -1,0 +1,23 @@
+// author: Yassouvox (@yassouvox)
+def module jumperwho
+def desc "legit ahh air"
+
+on key_press left_shift {
+   module enable jumperwho
+}
+
+on key_release left_shift {
+   module disable jumperwho
+}
+if input active key
+on damage if playing if module_enabled jumperwho {
+   if chance_of 62 {
+      if on_ground {
+         !if swimming {
+            !if gliding {
+               input jump
+            }
+         }
+      }
+   }
+}

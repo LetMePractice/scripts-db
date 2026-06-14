@@ -1,0 +1,17 @@
+// author: tmoa (@realtmoa)
+def module dia-pot
+def desc "Auto splash at half HP"
+
+on tick 5 if playing if health <= 9 {
+    if hotbar_has #splash_potion {
+        if falling {
+            snap_to position ~ ~-1.2 ~
+            wait 0.06
+            switch #splash_potion
+            wait 0.06
+            input use
+            wait 0.3
+            switch #sword
+            turn_to nearest_entity :player speed 55
+        }
+    }

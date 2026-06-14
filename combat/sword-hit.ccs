@@ -1,0 +1,23 @@
+// author: 4q25 • mizo 🍀 (@4q25)
+//@mizo
+def module sword-hit
+def desc "Guarantees you hit your opponents with a sword"
+
+on left_click if playing {
+   if target_entity :player {
+      as target_entity
+      if_not blocking {
+         switch #sword
+      }
+   }
+}
+
+
+on left_click if playing {
+   if target_entity :player {
+      as target_entity
+      if blocking {
+         switch #axe
+      }
+   }
+}

@@ -1,0 +1,16 @@
+// author: Nikii (@augustokok)
+def module Pop-Flash
+def desc "Oeffnet und schliesst das Inventar nach einem Pop fuer exakt 0.35s"
+
+on totem_pop {
+   if playing {
+      if_not input_active inventory {
+         input key e
+         wait 0.35 {
+            if input_active inventory {
+               input key e
+            }
+         }
+      }
+   }
+}

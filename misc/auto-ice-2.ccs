@@ -1,0 +1,16 @@
+// author: Floop (@__flipfloop)
+can it make it automatic bcs i still have to be precise when i use it 
+
+def module auto-ice
+def desc "Custom Scripted Module"
+
+on place_block {
+                    wait 0.05
+                       swap
+                          wait_random 0.09 0.1
+                             swap
+                }
+            }
+        }
+    }
+}

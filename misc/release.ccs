@@ -1,0 +1,5 @@
+// author: Cat (@cat123go)
+def module release
+def desc "Custom Scripted Module"
+
+on right_release if holding :obsidian switch #sword

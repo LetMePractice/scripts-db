@@ -1,0 +1,10 @@
+// author: ImproperIssues (@improperissues)
+def module obi-switch
+def desc "original clickcrystals module"
+
+on left_click if playing {
+  if targeting_block if holding #crystal,#sword,#totem if hotbar_has :obsidian {
+    switch :obsidian
+    input use
+  }
+}

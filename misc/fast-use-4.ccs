@@ -1,0 +1,9 @@
+// author: ImproperIssues (@improperissues)
+def module fast-use
+def desc "You can script smth like this"
+
+on right_click if playing wait 0.075 {
+  while 0.075 input_active use {
+    input use
+  }
+}

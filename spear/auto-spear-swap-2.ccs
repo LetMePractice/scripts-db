@@ -1,0 +1,17 @@
+// author: Kaira (@_timel3ss.)
+def module auto-spear-swap
+def desc "Spear Ability Swap by KleckserHD"
+
+on tick if playing {
+   if holding #golden_apple,#wind {
+      if input_active attack {
+         if hotbar_has #spear {
+            switch #spear
+            wait 0.05
+            input left
+            wait 0.05
+            switch #golden_apple
+         }
+      }
+   }
+}

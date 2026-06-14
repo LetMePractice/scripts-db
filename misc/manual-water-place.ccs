@@ -1,0 +1,15 @@
+// author: Jello (@jello2210)
+def module manual-water-place
+def desc Places water manually with key press and timing
+
+on key_press c if playing {
+   wait 0.5 {
+      snap_to any_block
+      wait 0.5 {
+         input use
+         wait 5.0 {
+            input use
+         }
+      }
+   }
+}

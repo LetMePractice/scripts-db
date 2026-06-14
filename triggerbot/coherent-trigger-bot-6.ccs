@@ -1,0 +1,15 @@
+// author: theangrydog123 (@theangrydog123)
+i wanna make this script not work if im holding an empty bucket or a gapple
+
+def module coherent-trigger-bot
+def desc "Coherent Client's Trigger Bot"
+
+on tick if playing if target_entity :player !if blocking if input_active sprint {
+   if attack_progress >=0.9 {
+      as target_entity if blocking as client {
+         switch #axe then input left
+         wait 0.05 switch back
+      }
+      input attack
+   }
+}

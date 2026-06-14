@@ -1,0 +1,14 @@
+// author: ItzMePrime♛ (@the_last_prime_44)
+// @practice
+def module quick_player_aim
+def desc "Aims towards the nearest player on sword right-click."
+
+on tick if playing {
+   if holding :sword {
+      if input :right_click {
+         if entity_in_range :player 10 {
+            turn_to nearest_entity :player
+         }
+      }
+   }
+}

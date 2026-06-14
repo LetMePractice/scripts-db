@@ -1,0 +1,14 @@
+// author: wxund (@wounddup)
+module extra-kb
+def desc "s-tapper"
+
+on packet_receive entityDamage if playing if targeting_entity if target_entity :player {
+   if sprinting {
+      !if blocking {
+         if holding #sword,#axe,#mace {
+            wait 0.02
+            hold_input backward 0.3
+         }
+      }
+   }
+}

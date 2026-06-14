@@ -1,0 +1,12 @@
+// author: L (@triggerbotters)
+def module drain
+def desc "Autodrain mod"
+
+on tick{
+
+if target_block :water {
+    if target_block ^1 :cobweb {
+        switch #bucket then input right
+    }
+}
+}

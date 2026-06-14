@@ -1,0 +1,7 @@
+// author: BL1ZZARD (@that_bl1zzard)
+module Anchor Macros
+def desc anchor stuff
+
+on tick if target_block :uncharged_respawn_anchor if holding #sword if input_active use then wait 0.03 then switch #anchor
+on tick if input_active use if holding #totem wait 0.03 then switch #pearl then input right then wait 0.03 then switch #totem
+on tick if target_block :charged_respawn_anchor if holding #glowstone wait 0.03 then switch #totem

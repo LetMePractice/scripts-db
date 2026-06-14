@@ -1,0 +1,13 @@
+// author: √Your_RiVal (@gamer_playzzzzz)
+def module diagonal-pearl-catching-windcharge
+def desc "Press X to throw a pearl, dip the aim down, then throw a wind charge."
+
+on key_press x if playing {
+    switch #ender_pearl
+    input use
+    wait 0.05
+    snap_to position ~ ~-0.18 ~
+    wait 0.01
+    switch #wind_charge
+    input use
+}

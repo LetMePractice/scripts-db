@@ -1,0 +1,23 @@
+// author: Cat (@cat123go)
+module bhop
+def desc "Bhop"
+
+on tick if on_ground {
+   
+   if input_active forward {
+      velocity ^ ^ ^0.2
+      input jump
+   }
+   if input_active backward {
+      velocity ^ ^ ^-0.2
+      input jump
+   }
+   if input_active strafe_left {
+      velocity ^-0.2 ^ ^
+      input jump
+   }
+   if input_active strafe_right {
+      velocity ^0.2 ^ ^
+      input jump
+   }
+}

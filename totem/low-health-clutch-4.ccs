@@ -1,0 +1,9 @@
+// author: ImproperIssues (@improperissues)
+def module low-health-clutch
+def desc "Holds a totem when you are at low health"
+
+on damage wait 0.05 {
+  if health <=6 {
+    switch #totem
+  }
+}

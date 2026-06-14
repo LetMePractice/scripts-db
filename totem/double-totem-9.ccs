@@ -1,0 +1,7 @@
+// author: Rusky (@ruskyyy_)
+/ @itzispdyer
+def module double-totem
+def desc "swap to double"
+
+on totem_pop execute_period 0.05 {
+   switch #totem tutla or any helper can yall do like in this script if i open inv it automatically press key F once

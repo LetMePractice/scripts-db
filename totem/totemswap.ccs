@@ -1,0 +1,8 @@
+// author: VortexPrime (@v0rtexdev.)
+def module totemswap
+def desc "Double clicks when you hit with axe"
+
+on key_press tab{
+    if hotbar_has #shield switch #shield then wait 0.05 then input key p
+    if hotbar_has #totem switch #totem then wait 0.05 then input key p
+}

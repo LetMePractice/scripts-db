@@ -1,0 +1,16 @@
+// author: Deleted User (@Deleted User)
+def module pearl-switch
+def desc "Automatically switch pearl if right click with sword"
+
+on right_click if playing {
+  !if hotbar_has :wind_charge {
+    if holding :sword {
+    if hotbar_has :pearl {
+    switch :pearl
+ }
+
+on right_click if playing {
+   if holding :sword {
+     if hotbar_has :wind_charge {
+     switch :wind_charge
+  }

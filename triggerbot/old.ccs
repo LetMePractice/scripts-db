@@ -1,0 +1,14 @@
+// author: .darkxvi (@.darkxvi)
+// darkxvi
+def module old
+def desc "uppercut faster + axe support"
+
+on tick if playing if input_active jump if hotbar_has #sword,#axe if target_entity :player !if blocking {
+if attack_progress >=0.75 if chance_of 100 {
+as target_entity if blocking as client if hotbar_has #_axe {
+switch #axe
+wait 0.03 switch back
+}
+input left
+}
+}

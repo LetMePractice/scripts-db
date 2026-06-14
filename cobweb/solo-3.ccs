@@ -1,0 +1,14 @@
+// author: Hikigaya (@orewa_hikigaya_)
+module solo
+def desc "notthing here"
+
+on tick if playing if holding #sword,#axe {
+    if input_active use {
+        if hotbar_has #web {
+            switch #web
+            input use
+            wait 0.04
+            switch #sword
+        }
+    }
+its placing too much web i need to place just one web at a time

@@ -1,0 +1,7 @@
+// author: xwvi (@31cinoelle)
+def module autosell
+def desc "auto /sellall EMERALD"
+
+on tick 250 {
+   say "/sellall EMERALD"
+}

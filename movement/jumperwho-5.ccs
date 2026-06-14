@@ -1,0 +1,17 @@
+// author: Practice (@letmepractice)
+module jumperwho
+def desc "legit ahh air"
+
+on damage if playing {
+   if input_active key left_shift {
+      if chance_of 62 {
+         if on_ground {
+            !if swimming {
+               !if gliding {
+                  input jump
+               }
+            }
+         }
+      }
+   }
+}

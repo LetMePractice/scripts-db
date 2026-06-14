@@ -1,0 +1,11 @@
+// author: Pink (@patr1otic.)
+module Auto-Mace
+def desc Hold mace and fall from 3+ blocks and aim at player and it will automatically attack for you
+
+on tick if playing {
+  if holding :mace {
+    if target_entity :player {
+      input left 
+    }
+   }
+}

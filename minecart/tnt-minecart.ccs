@@ -1,0 +1,9 @@
+// author: oPhI (Lazy arc) (@shehab7877)
+def module tnt-minecart
+def desc "trash"
+
+on pre_tick {
+     !if hotbar_has :tnt_minecart {
+          if inventory_has :tnt_minecart {
+    gui_quickmove :tnt_minecart 
+} } }

@@ -1,0 +1,17 @@
+// author: Kaira (@_timel3ss.)
+module yo bro how big is it?
+def desc "prolly like 6 or 7 inches"
+
+on tick {
+    if target_human :your hb {
+        if gay {
+            input touch dihh
+            send "good boy~"
+        }
+        if_not gay {
+           send "yo hop on minecraft"
+        }
+    }
+}
+
+dont ask

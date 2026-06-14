@@ -1,0 +1,11 @@
+// author: Karson is the god of Canada (@superbun1235166_)
+def module Bridge-Assist-RC
+
+def desc "Helps place blocks smoothly only while holding right click"
+
+on use_item if playing {
+   if holding #block {
+      input use
+      wait 0.10
+   }
+}

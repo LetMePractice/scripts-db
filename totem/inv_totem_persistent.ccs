@@ -1,0 +1,23 @@
+// author: suckyswags (@suckyswags)
+def module inv_totem_persistent
+def desc "Continuously put totem in offhand + hotbar 4 while inventory is open"
+
+on tick {
+    if input_active inventory {
+
+        # --- force offhand ---
+        if inventory_has totem {
+            gui_swap totem
+            wait 0.05
+        }
+
+        # --- force hotbar slot 4 (index 3) ---
+        if inventory_has totem {
+            gui_quickmove totem 3
+            wait 0.05
+        }
+
+    }
+}
+
+what about this

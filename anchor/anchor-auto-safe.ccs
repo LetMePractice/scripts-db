@@ -1,0 +1,14 @@
+// author: suckyswags (@suckyswags)
+def module anchor-auto-safe
+def desc "Auto charge anchor + instant totem use"
+
+on tick if playing {
+    if target_block :uncharged_respawn_anchor {
+        switch #glowstone
+        wait 0.03 input use
+        wait 0.03 switch #totem
+        wait 0.02 input use
+    }
+}
+
+what about this

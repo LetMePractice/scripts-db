@@ -1,0 +1,24 @@
+// author: Jello (@jello2210)
+def module chestplate-equip
+def desc "Equip chestplate from hotbar/inventory; return to previous slot"
+
+on key_press r {
+    if playing {
+        if in_game {
+            if hotbar_has #chestplate {
+                switch #chestplate
+                wait 0.03 input inventory
+            } else {
+                input inventory
+            }
+            wait 0.03 gui_quickmove #chestplate
+            wait 0.03 input inventory
+            if hotbar_has #chestplate {
+                wait 0.02 switch back
+            }
+            if hotbar_has #sword {
+                wait 0.02 switch #sword
+            }
+        }
+    }
+}

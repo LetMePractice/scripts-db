@@ -1,0 +1,7 @@
+// author: Frostify (@frosstify)
+// im doing 
+def module I
+def desc "Custom Scripted Module"
+
+on key_press I input right
+ make the vent to when i hold it down it just place blocks for me

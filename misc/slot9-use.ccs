@@ -1,0 +1,10 @@
+// author: BreachEvent (@breachevent)
+<@1342769084806201384> bro def module slot9-use
+def desc "Switch to slot 9 then right click"
+
+on key_press q {
+    switch 9
+    wait 0.05
+    input right
+}
+can u help me with it ??

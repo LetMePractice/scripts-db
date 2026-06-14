@@ -1,0 +1,45 @@
+// author: Shining... (@itsrealcat)
+def module Noob-pro-max
+
+on key_press U if playing if hotbar_has #wind {
+if hotbar_has #pearl {
+snap_to polar -33 ~
+switch #pearl
+input right 
+wait_random 0.07 0.1 {
+snap_to polar -22 ~
+switch #wind
+input right
+}
+wait_random 0.14 0.20 {
+switch #sword
+        }
+    }
+}
+
+def module pearlcatch
+def desc best pearl catch
+
+on key_press b {
+   if playing {
+      if holding #sword {
+         if_not blocking {
+            if_not targeting_block {
+               if hotbar_has #pearl {
+                  if hotbar_has #wind {
+                     switch #pearl
+                     wait 0.05
+                     input use
+                     wait 0.03
+                     switch #wind
+                     wait 0.05
+                     input use
+                     wait 0.05
+                     switch #sword
+                  }
+               }
+            }
+         }
+      }
+   }
+}

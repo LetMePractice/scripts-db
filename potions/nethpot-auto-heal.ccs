@@ -1,0 +1,43 @@
+// author: Jello (@jello2210)
+def module nethpot-auto-heal
+def desc "Uses 2 instant health II potions and eats 1 golden apple at 4.5 HP or less when on ground"
+
+on damage {
+   if playing {
+      if entity_in_range :player 3.5 {
+         as client if health <= 4.5 {
+            if on_ground {
+               // Look down
+               snap_to any_block
+
+               // Use 2 splash health potions
+               loop 2 {
+                  if holding #splash_potion {
+                     input use
+                  } else if hotbar_has #splash_potion {
+                     switch #splash_potion
+                     wait 0.1
+                     input use
+                  }
+                  wait 0.2
+               }
+
+               // Eat 1 golden apple
+               if holding :golden_apple {
+                  input use
+               } else if off_holding :golden_apple {
+                  swap
+                  wait 0.1
+                  input use
+                  wait 0.1
+                  swap
+               } else if hotbar_has :golden_apple {
+                  switch :golden_apple
+                  wait 0.1
+                  input use
+               }
+            }
+         }
+      }
+   }
+}

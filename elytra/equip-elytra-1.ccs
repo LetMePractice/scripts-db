@@ -1,0 +1,25 @@
+// author: Practice (@letmepractice)
+module equip-elytra
+def desc "Equip elytra from inventory"
+
+on key_press k if playing {
+    !if hotbar_has #elytra {
+        if inventory_has #elytra {
+            !if input_active inventory {
+                input inventory
+                wait 0.3
+            }
+
+            if input_active inventory {
+                gui_quickmove #elytra 7
+                wait 0.1
+                input inventory
+            }
+        }
+    }
+}
+
+
+It works, but I'm encountering some issues: it doesn't work when the chestplate is equipped, and I can't see the inventory opening.
+
+I need assistance from <@1175455408538800205>  or <@1051897115447660697>  or I hope someone can resolve it.

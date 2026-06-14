@@ -1,0 +1,4 @@
+// author: Deleted User (@Deleted User)
+def module Dtap
+def desc dtap using "R"
+on key_press R switch #obsidian wait 0.05 input use wait 0.5 switch #crystal input use wait 0.5 input attack

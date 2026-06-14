@@ -1,0 +1,12 @@
+// author: qblast (@qblasts.)
+def module wind-charge
+def desc "Custom Scripted Module"
+
+on module_enable {
+
+}
+
+on module_disable {
+
+}
+on key_press 5 switch #ender_pearl then input right then wait 0.05 then switch #wind_charge then wait 0.05 then input right

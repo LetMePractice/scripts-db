@@ -1,0 +1,36 @@
+// author: T For Tighnari (@silicon06520)
+def module Cart utils
+def desc "Cart pvp utilities i made"
+
+on place_block {
+  if holding #rail {
+    if target_block #rail {
+      switch :tnt_minecart
+      wait_random 0.01 0.03 {
+        input right
+      }
+    }
+  }
+}
+
+on item_use {
+  if holding #bow {
+    switch #rail
+  }
+}
+
+on item_use {
+  if holding :flint_and_steel {
+    if hotbar_has #crossbow {
+      switch #crossbow
+    }
+  }
+}
+
+on pre_tick if playing {
+  if holding #crossbow {
+    if target_entity :tnt_minecart {
+      input right
+    }
+  }
+}

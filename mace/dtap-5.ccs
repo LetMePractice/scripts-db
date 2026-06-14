@@ -1,0 +1,9 @@
+// author: Velidas (@dasukofreak)
+doesnt happen when i do
+def module dtap
+def desc "testuh"
+
+on right_click if playing if holding #netherite_sword switch #obsidian then wait 0.05 then switch #end_crystal then wait 0.05 input use wait 0.13 input attack then wait 0.13 input use wait 0.13 input attack
+
+
+so its in the obi place part

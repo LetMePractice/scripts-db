@@ -1,0 +1,50 @@
+// author: BL1ZZARD (@that_bl1zzard)
+def module Sword-Trigger-Bot
+//Jat9119
+def desc "An extremely powerful triggerbot that will always crit the opponent when falling"
+on pre_tick {
+   if playing {
+      if target_entity :player,:armor_stand {
+         if_not blocking {
+            if_not input_active use {
+                  if_not blocking {
+                     if holding #sword {
+                        if on_ground {
+                           func random_attack_progress
+                        }
+                     }
+                        if_not on_ground {
+                           if falling {
+                              if attack_progress >= 0.9 {
+                              input left                    
+                        }
+                     }
+                  }
+               }
+            }
+         }
+      }
+   }
+}
+
+def func random_attack_progress {
+   execute_random {
+      if attack_progress >= 0.815 { input left }
+      if attack_progress >= 0.82 { input left }
+      if attack_progress >= 0.825 { input left }
+      if attack_progress >= 0.83 { input left }
+      if attack_progress >= 0.835 { input left }
+      if attack_progress >= 0.84 { input left }
+      if attack_progress >= 0.845 { input left }
+      if attack_progress >= 0.85 { input left }
+      if attack_progress >= 0.855 { input left }
+      if attack_progress >= 0.86 { input left }
+      if attack_progress >= 0.865 { input left }
+      if attack_progress >= 0.87 { input left }
+      if attack_progress >= 0.875 { input left }
+      if attack_progress >= 0.88 { input left }
+      if attack_progress >= 0.885 { input left }
+      if attack_progress >= 0.89 { input left }
+      if attack_progress >= 0.895 { input left }
+   }
+}

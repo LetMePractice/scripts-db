@@ -1,0 +1,62 @@
+// author: LoopholeMC (@loopholemc)
+def module reach-trigger-bot
+def desc "Custom Scripted Module"
+
+on pre_tick {
+   if playing if_not input_active use {
+      if entity_in_range :player,#husk 4.5 {
+         if holding #sword,#_axe,#mace {
+            if attack_progress >=0.9 {
+               as target_entity {
+                  if blocking {
+                     if hotbar_has #_axe {
+                        switch #axe
+                        input attack
+                        wait_random 0.001 0.005 input attack
+                        wait 0.03 switch back
+                     }
+                  }
+               }
+
+               as client {
+                  if on_ground if sprinting if_not block_in_range #water,#web 1.5 {
+                     if chance_of 90 {
+                        switch #spear
+                        wait 0.01 switch back
+                        wait 0.01 input attack
+                     }
+                  }
+
+                  if_not on_ground {
+                     if falling {
+                        if chance_of 90 {
+                           switch #spear
+                           wait 0.01 switch back
+                           wait 0.01 input attack
+                        }
+                     }
+                  }
+
+                  if_not on_ground if sprinting {
+                     if_not falling if_not entity_in_range :player 2 if_not block_in_range #water,#web 1.5 {
+                        if chance_of 90 {
+                           switch #spear
+                           wait 0.01 switch back
+                           wait 0.01 input attack
+                        }
+                     }
+                  }
+
+                  if block_in_range #water,#web 1.5 {
+                     if chance_of 90 {
+                        switch #spear
+                        wait 0.01 switch back
+                        wait 0.01 input attack
+                     }
+                  }
+               }
+            }
+         }
+      }
+   }
+}

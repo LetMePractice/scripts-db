@@ -1,0 +1,21 @@
+// author: NoIwill (@nomore_bs)
+//@Frog Queen
+def module fast place obi
+def desc "places obsidian fast kinda, if opp in air"
+
+if holding #sword {
+    if target_entity :player {
+        as target_entity if_not on_ground {
+            wait_random 0.1 0.15 
+        execute_random {    
+            snap_to polar ~-80 ~45
+            snap_to polar ~-80 ~45
+        }
+        switch #obsidian
+        wait_random 0.05 0.2
+        input right
+        wait_random 0.1 0.15
+        switch #crystal
+        }
+    }
+}

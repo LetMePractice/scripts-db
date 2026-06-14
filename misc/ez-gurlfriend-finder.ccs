@@ -1,0 +1,14 @@
+// author: Kaira (@_timel3ss.)
+def module ez gurlfriend finder
+def desc "Custom Scripted Module"
+
+on tick {
+    on tick {
+        if broken_heart {
+            exit
+        }
+        if_not broken_heart if age: 18 {
+            send "yo where my hug at"
+        }
+    }
+}

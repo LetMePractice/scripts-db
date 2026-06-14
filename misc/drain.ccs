@@ -1,0 +1,10 @@
+// author: theangrydog123 (@theangrydog123)
+def module drain
+def desc "Custom Scripted Module"
+
+on tick if playing if target_block #water if hotbar_has #bucket {
+    wait 0.05 switch #bucket then input right
+}
+
+
+im tryna make an auto drain module but nothing happens when i look at water

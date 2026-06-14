@@ -1,0 +1,63 @@
+// author: Technoblade353 (@itzrealace__86834)
+this bypasses
+
+ module shield-drain
+def desc "drain"
+
+on pre_tick {
+   if playing {
+      if holding :mace[density] {
+         if falling {
+            if entity_in_range :player 4 {
+               if target_entity :player {
+                  as target_entity if blocking {
+                     if attack_progress >=0.15 {
+                        execute_random {
+                           input left
+                           input left
+                           input left
+                           wait 0.001 input left
+                        }
+                        execute_random {
+                           input left
+                           input left
+                           wait 0.002 input left
+                           input left
+                        }
+                     }
+                  }
+               }
+            }
+         }
+      }
+   }
+}
+
+on tick {
+   if playing {
+      if holding :mace[density] {
+         if falling {
+            if entity_in_range :player 4 {
+               if target_entity :player {
+                  as target_entity if blocking {
+                     if attack_progress >=0.15 {
+                        execute_random {
+                           input left
+                           input left
+                           wait 0.001 input left
+                           input left
+                        }
+                        execute_random {
+                           input left
+                           input left
+                           input left
+                           wait 0.002 input left
+                        }
+                     }
+                  }
+               }
+            }
+         }
+      }
+   }
+}

@@ -1,0 +1,5 @@
+// author: Inkompetent (@henri_zockt)
+def module plate-web-diddy
+def desc "Pls work"
+
+if target_block :pressure_plate then wait 0.05 then switch #cobweb then input right

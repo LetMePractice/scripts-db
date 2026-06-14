@@ -1,0 +1,11 @@
+// author: ImproperIssues (@improperissues)
+i can give you an example for now ("if playing" means not looking at a gui and actually playing the game)
+def module auto-place
+def desc "that when you left click on a obsidian/bedrock it automatically switches to a crystal and places it"
+
+on left_click if playing {
+  if target_block :bedrock,:obsidian {
+    switch :end_crystal
+    input use
+  }
+}

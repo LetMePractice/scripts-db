@@ -1,0 +1,8 @@
+// author: 1vorie (@ivoryflame67)
+def module Spear
+def desc "abcs"
+
+on left_click if playing {
+    if holding #wind {
+        switch #spear {
+         wait 0.05 then input left

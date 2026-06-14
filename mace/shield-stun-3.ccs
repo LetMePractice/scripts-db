@@ -1,0 +1,17 @@
+// author: BigYahu (@cr1nxz)
+def module shield-stun
+def desc "yeah"
+
+on left_click if playing {
+    if holding #sword {
+        if target_entity :player {
+            as target_entity if blocking {
+                if hotbar_has #_axe {
+                   wait 0.05
+                       switch #_axe
+                    wait 0.05 then input left wait 0.03 then input left        switch back
+                }
+            }
+        }
+    }
+}

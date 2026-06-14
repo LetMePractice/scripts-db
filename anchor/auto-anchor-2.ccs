@@ -1,0 +1,14 @@
+// author: Jat (@jat9119)
+<@880865091795423263> yo this is something basic that im stuck on and i cant figure out```def module Auto anchor
+def desc anchor
+
+on left_click {
+   if holding #anchor {
+      if target_block #respawn {
+         switch :glowstone
+         input use
+         switch back
+         input use
+      }
+   }
+}

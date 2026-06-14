@@ -1,0 +1,11 @@
+// author: suckyswags (@suckyswags)
+``def module pearl-wind-charge
+def desc "Use pearl then wind charge on left click"
+
+on left_click if holding :wind_charge {
+    switch hotbar :ender_pearl
+    input use
+    wait 0.10
+    switch hotbar :wind_charge
+    input use
+}``

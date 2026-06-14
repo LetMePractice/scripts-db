@@ -1,0 +1,9 @@
+// author: theangrydog123 (@theangrydog123)
+def module head-cob
+def desc "auto head cob"
+
+on tick if input_active key ` if target_block :stone {
+    input key f then input right wait 0.05 then switch #cobweb
+}
+
+how can i make this script like have the target block be any block? i dont think writing down every single block id to be a good idea

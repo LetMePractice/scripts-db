@@ -1,0 +1,6 @@
+// author: Inkompetent (@henri_zockt)
+def module 67
+def desc "op-web"
+
+on key_press B switch #sword then input left then wait 0.1 then switch #cobweb then turn_to polar -14 ~ then input right then wait 0.05 then turn_to polar 0 ~
+then switch #sword

@@ -1,0 +1,19 @@
+// author: Jello (@jello2210)
+def module auto-clutch
+def desc "Auto water clutch using near-ground block checks."
+
+on pre_tick if playing {
+    if falling {
+        snap_to position ~ ~-5 ~
+        if hotbar_has #water { switch #water }
+        if block ~ ~-1 ~ :air {
+            !if block ~ ~-2 ~ :air {
+                if holding #water {
+                    input use
+                    wait 0.12
+                    input use
+                }
+            }
+        }
+    }
+}

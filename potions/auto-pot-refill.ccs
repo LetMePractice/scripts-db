@@ -1,0 +1,24 @@
+// author: Kaira (@_timel3ss.)
+def module auto-pot-refill
+def desc "auto refill hotbar with health pots when shift clicking one"
+
+on left_click {
+if playing {
+if input_active inventory {
+if input_active sneak {
+if hovering_over :potion[healing] {
+if hotbar_has :air {
+loop 9 {
+if hotbar_has :air {
+gui_quickmove :potion[healing]
+wait 0.05
+}
+}
+}
+}
+}
+}
+}
+}
+
+<@1396767182871859313>

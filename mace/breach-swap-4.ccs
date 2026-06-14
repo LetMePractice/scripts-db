@@ -1,0 +1,12 @@
+// author: 𝐒𝐍 メ 𝐃𝐒🚬 (@dsgamer3743)
+// @wxund
+def module breach-swap
+def desc "Breach swap by left clicking with sword then switching to mace"
+
+on left_click if playing if holding #trident {
+    switch #mace
+    wait 0.1 switch #trident
+}#mace {
+        switch #trident
+    }
+}

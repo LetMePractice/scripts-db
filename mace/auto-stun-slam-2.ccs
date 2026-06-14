@@ -1,0 +1,24 @@
+// author: ! SNOW・ (@aliayman3191)
+def module auto-stun-slam
+//LoopholeMC
+def desc "When falling, if holding axe, it hits players then switches to mace and back to sword."
+
+on tick if playing {
+   if falling {
+      if holding #_axe {
+         if target_entity :player {
+            as target_entity {
+               switch #axe
+               input left
+               switch #mace[density]
+               input left
+               wait 0.05 {
+                  switch #sword
+               }
+            }
+         }
+      }
+   }
+}
+try this but make sure only use axe when enemy is shilding 
+it doesnt flag

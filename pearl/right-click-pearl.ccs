@@ -1,0 +1,13 @@
+// author: † (@quit.chatzhs)
+def module Right-click-pearl
+def desc "Throw pearl with right click"
+
+on right_click {
+   if playing if holding #sword{
+         if hotbar_has #pearl {
+            switch #pearl
+            input use
+            wait 0.1 switch back
+         }
+     }
+}

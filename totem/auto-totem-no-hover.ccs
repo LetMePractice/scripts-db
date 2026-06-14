@@ -1,0 +1,39 @@
+// author: Nikii (@augustokok)
+def module Auto-Totem-No-Hover
+def desc "Automatischer Refill ohne Hover-Zwang fuer Slot 6 und Offhand"
+
+on pre_tick {
+   if input_active inventory {
+      if inventory_has :totem_of_undying {
+         
+         if_not off_holding :totem_of_undying {
+            gui_switch :totem_of_undying
+            wait 0.02 {
+               input key f
+            }
+         }
+         
+         if off_holding :totem_of_undying {
+            if_not hotbar_has :totem_of_undying {
+               gui_switch :totem_of_undying
+               wait 0.02 {
+                  input key r
+               }
+            }
+         }
+         
+      }
+   }
+}
+
+on totem_pop {
+   if input_active inventory {
+      gui_switch :totem_of_undying
+      wait 0.02 {
+         input key f
+         wait 0.02 {
+            input key r
+         }
+      }
+   }
+}

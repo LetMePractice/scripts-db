@@ -1,0 +1,12 @@
+// author: tieronepvprr (@tieronepvprr)
+def module pot
+def desc "Throws Speed and Strength pots"
+
+on key_press r if playing {
+    if hotbar_has #splash_potion {
+           switch #splash_potion
+           input right
+           wait 0.05
+           switch #sword
+    }
+}

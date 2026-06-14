@@ -1,0 +1,34 @@
+// author: blue (@pureblue)
+def module wind-charge-jump
+def desc "Jump on wind charge + throw on middle click"
+
+on right_click if playing {
+
+   if gliding {
+      if holding :wind_charge {
+         wait 0.0529 input key space
+      }
+
+      if off_holding :wind_charge {
+         wait 0.0529 input key space
+      }
+   }
+
+   if targeting_block {
+      if holding :wind_charge {
+         wait 0.0529 input key space
+      }
+
+      if off_holding :wind_charge {
+         wait 0.0529 input key space
+      }
+   }
+
+}
+
+on middle click if playing {
+   if hotbar_has :wind_charge {
+      switch :wind_charge
+      input right
+   }
+}

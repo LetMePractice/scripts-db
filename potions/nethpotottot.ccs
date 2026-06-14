@@ -1,0 +1,19 @@
+// author: Jello (@jello2210)
+def module nethpotottot
+def desc "Custom Scripted Module"
+on tick if playing {
+    if health > 9.0 {
+        wait 0.01 if health <= 9.0 function lowHpHeal
+    }
+}
+
+def func lowHpHeal {
+    snap_to any_block then {
+        switch #splash_potion
+        input use
+        wait 0.15
+        input use
+        wait 0.1
+        switch #sword
+    }
+}

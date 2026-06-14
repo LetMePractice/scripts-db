@@ -1,0 +1,68 @@
+// author: LoopholeMC (@loopholemc)
+def module trigger-bot
+def desc "Triggerbot shield breaker"
+
+on pre_tick {
+   if playing as client if_not blocking if_not input_active right {
+      if target_entity :player {
+         if holding #sword,#_axe,#mace {
+            if attack_progress >=0.9 {
+               as target_entity {
+                  if blocking {
+                     if hotbar_has #_axe {
+                        switch #axe
+                        input left
+                        wait_random 0.02 0.03 input left
+                        wait 0.03 switch back
+                     }
+                  }
+               }
+            }
+         }
+      }
+   }
+}
+
+on tick {
+   if playing if_not blocking {
+      if target_entity :player {
+         if holding #sword,#_axe,#mace {
+            if attack_progress >=0.9 {
+               as target_entity if_not blocking {
+                  as client {
+                     if on_ground if sprinting if_not block_in_range #water,#web 1.5 {
+                        if chance_of 90 {
+                           input left
+                        }
+                     }
+
+                     if_not on_ground {
+                        if falling {
+                           if chance_of 90 {
+                              input left
+                           }
+                        }
+                     }
+
+                     if_not on_ground if sprinting {
+                        if_not falling if_not entity_in_range :player 1.5 if_not block_in_range #water,#web 1.5 {
+                           if chance_of 90 {
+                              input left
+                           }
+                        }
+                     }
+
+                     if block_in_range #water,#web 1.5 {
+                        if chance_of 90 {
+                           input left
+                        }
+                     }
+                  }
+               }
+            }
+         }
+      }
+   }
+}
+
+I lied I was using this which is basically the same thing

@@ -1,0 +1,8 @@
+// author: ImproperIssues (@improperissues)
+def module block-frames
+
+on right click if not in screen {
+  if target entity #frame {
+    cancel packet c2s playerInteractEntity
+  }
+}

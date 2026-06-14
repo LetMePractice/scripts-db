@@ -1,0 +1,15 @@
+// author: i love uzi (@.pluto_)
+def module auto-crit
+def desc "Custom Scripted Module"
+
+on tick {
+    if input_active jump {
+        if holding #sword {
+            if attack_progress >=0.9 {
+                if target_entity :player,:armor_stand {
+                   wait 0.3 input left
+                }
+            }
+        }
+    }
+} any idea on how to make this register 1 cps instead of register 2-3

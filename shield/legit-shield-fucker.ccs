@@ -1,0 +1,25 @@
+// author: a Nub (@_anub)
+// @SillyKoyuki
+def module Legit-Shield-Fucker
+def desc "shild"
+
+on left_click {
+   if target_entity :player {
+      as target_entity {
+         if blocking {
+            if holding #sword {
+               if hotbar_has #_axe {
+                  switch #_axe
+                  input left
+                  wait 0.1
+                  switch #sword
+                  input left
+               }
+            }
+         }
+      }
+   }
+}
+
+works if m1 with sword
+delete the "if holding #sword" if you want it to do it when holding anything or change it to any item you please ig

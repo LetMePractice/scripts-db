@@ -1,0 +1,48 @@
+// author: ImproperIssues (@improperissues)
+def module testing
+def desc "testing 123"
+
+on tick {
+    // send "tick period 0"
+
+    if off_holding :stone if block ~ ~ ~ :water_source {
+        send "standing in water source!"
+        interact position ~ ~-1 ~
+    }
+
+    if block ~ ~ ~ :lava_source {
+        send "standing in lava source!"
+    }
+
+    if effect_duration #poison > 0 {
+        send "YOU ARE POISONED!"
+    }
+
+    as nearest_entity :creeper if line_of_sight {
+        send "CREEPER NEARBY"
+    }
+}
+
+on right_click {
+    if holding :air {
+        say "hi"
+    }
+    if holding #sword[sharpness] {
+        send "you are holding a sword with sharpness"
+    }
+    if holding #sword[sharpness,fire_aspect] {
+        send "you are holding a sword with sharpness AND fire aspect"
+    }
+}
+
+on sound_play #creeper_hurt {
+    say "/kill @e[type=creeper]"
+}
+
+on tick 5 {
+    // send "tick period 5 ticks"
+}
+
+on tick 20 {
+    // send "tick period 20 ticks (or 1 second)"
+}

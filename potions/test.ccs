@@ -1,0 +1,8 @@
+// author: ImproperIssues (@improperissues)
+def module test
+
+on right click if not in screen {
+    if holding #splash_potion[healing] {
+        send "Threw a healing potion"
+    }
+}

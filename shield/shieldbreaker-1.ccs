@@ -1,0 +1,10 @@
+// author: LokysCZ (@lokyscz)
+def module ShieldBreaker
+def desc "When attacking a player with a shielding player swaps to an axe then back"
+
+on left_click if playing {
+  as target_entity if blocking {
+    switch #_axe
+    wait 0.1 switch back
+  }
+}

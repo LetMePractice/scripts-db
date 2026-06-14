@@ -1,0 +1,17 @@
+// author: Souldroppz_ (@souldroppz_)
+def module breachswaptbot
+def desc madebyjapanz
+
+if falling
+if target_entity :player
+if holding #sword
+if hotbar_has #mace[breach]
+as target_entity :player 
+input left_click
+wait 0.05
+switch #mace[breach]
+wait 0.02
+switch back
+]
+]
+]

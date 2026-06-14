@@ -1,0 +1,7 @@
+// author: Cat (@cat123go)
+def module health-apple
+def desc "Custom Scripted Module"
+
+on tick if health <=6 if holding #sword switch #apple then hold_input use 2.0 then wait 0.1 then switch back 
+
+this works kind off but don't look at your opponent when you are doing it lol

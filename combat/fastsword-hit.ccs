@@ -1,0 +1,24 @@
+// author: ForXGod (@forxgod)
+// @ForXGamer
+def module FastSword-Hit
+def desc "Fast manual sword hit"
+
+on tick if playing {
+    if holding #sword {
+        if entity_in_range :player 2.2 {
+            if attack_progress >= 0.7 {
+                if chance_of 95 {
+                    input attack
+                }
+            }
+        }
+    }
+}
+
+on left_click if playing {
+    if holding #sword {
+        if entity_in_range :player 2.2 {
+            attack nearest_entity :player
+        }
+    }
+}

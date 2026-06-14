@@ -1,0 +1,13 @@
+// author: 𝕍𝕒𝕞𝕡𝕚𝕣𝕖 (@vampirethegoat)
+def module place-anchor-with-totem
+def desc I hate those filthy NIGhtmares
+
+on right_click {
+        if holding #sword { 
+                switch #anchor
+                input right
+                switch #glowstone
+                input right
+                wait 0.05 switch #sword
+        }
+}

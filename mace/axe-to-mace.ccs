@@ -1,0 +1,9 @@
+// author: Cat (@cat123go)
+module axe-to-mace
+def desc "Automatically mace through shield"
+
+on tick if holding #mace if target_entity #player {
+    as target_entity if blocking {
+        switch #axe then input left then switch #mace then input left
+    }
+}

@@ -1,0 +1,42 @@
+// author: oPhI (Lazy arc) (@shehab7877)
+The ai be like 
+
+
+
+def module fast-anchor
+def desc "Totem offhand + right click switches to anchor + auto glowstone on place"
+
+// Keep totem in offhand at all times
+on tick if playing if_not in_screen {
+  if_not off_holding #totem {
+    if inventory_has #totem { gui_swap #totem }
+  }
+}
+
+// Right click while holding totem in mainhand or any non-anchor: switch to anchor
+on right_click if playing if_not holding #anchor if_not holding #glowstone {
+  if hotbar_has #anchor {
+    switch #anchor
+  }
+}
+
+// After placing anchor, instantly switch to glowstone
+on place_block if holding #anchor {
+  wait 0.03 switch #glowstone
+}
+
+// After charging with glowstone, switch back to anchor for detonation
+on interact_block if holding #glowstone {
+  wait 0.03 switch #anchor
+}
+
+**How it works:**
+
+1. **Totem stays in offhand** — constantly checks and swaps a totem to your offhand so you're always protected.
+2. **Right click → anchor** — whenever you right click and you're NOT already holding anchor/glowstone, it instantly switches to anchor. This is faster than manually scrolling or pressing a hotbar key.
+3. **Place anchor → glowstone** — the moment the anchor block is placed, it auto-switches to glowstone in 0.03s (less than 1 tick).
+4. **Charge anchor → back to anchor** — after you right-click glowstone onto the anchor, it switches back to anchor so you can right-click again to detonate (or charge more).
+
+**Hotbar setup:** Put **anchor**, **glowstone**, and **totem** somewhere in your hotbar/inventory. The script handles all the switching.
+
+> ⚠️ If you want the right-click trigger to ONLY fire when you're intentionally anchoring (not when eating, pearling, etc.), you can add a keybind instead. Let me know and I'll swap `on right_click` to something like `on key_press R` so it doesn't interfere with other items.

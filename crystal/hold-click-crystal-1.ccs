@@ -1,0 +1,18 @@
+// author: AstroNixs (@astronixs.)
+Basically switches to crystals and instead of just single clicking, you can hold and it will spam : D
+P.S I am a newbie so please tell me if there's any issues or how can we improve it, or make it more legit.
+
+def module hold-click-crystal
+def desc "Hold left-click to spam end crystals."
+
+on mouse_click 0 if playing {
+  while 0.083333 input_active attack {
+    switch #end_crystal
+    wait 0.02
+    input use
+    wait 0.03
+    input attack
+    wait 0.02
+    switch back
+  }
+}

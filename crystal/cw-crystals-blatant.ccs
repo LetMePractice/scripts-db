@@ -1,0 +1,7 @@
+// author: Cat (@cat123go)
+module CW-CRYSTALS-Blatant 
+def desc CW CRYSTALS Blatant  LOOKING
+
+on tick if holding #crystal {
+input right
+wait 0.05 input left }

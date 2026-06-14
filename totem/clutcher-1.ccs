@@ -1,0 +1,14 @@
+// author: VortexPrime (@v0rtexdev.)
+def module clutcher
+def desc "Custom Scripted Module"
+
+on tick if input_active use if holding #water_bucket if targeting_block if_not on_ground input use
+
+on tick if input_active use if holding #bed if targeting_block if_not on_ground input use
+on tick if input_active use if holding #slime_block if targeting_block if_not on_ground input use
+
+on tick if input_active use if holding #boat if_not target_entity #boat if targeting_block if_not on_ground input use wait 0.05 then if target_entity #boat input use
+
+appreciate who can help me fix the boat clutches
+slime block, bed & water bucket clutches work and 100% safe fr 
+but the boat clutches...boat gets placed, (I try it with totem) and I get into boat too, but too late that it just pops totem before getting into boat (or same time)

@@ -1,0 +1,27 @@
+// author: Linux warez (@linux_warez)
+def module pearl catch
+def desc best pearl catch
+
+on key_press x {
+   if playing {
+      if holding #sword {
+         if_not blocking {
+            if_not targeting_block {
+               if hotbar_has #pearl {
+                  if hotbar_has #wind {
+                     switch #pearl
+                     wait 0.05
+                     input use
+                     wait 0.08
+                     switch #wind
+                     wait 0.05
+                     input use
+                     wait 0.05
+                     switch #sword
+                  }
+               }
+            }
+         }
+      }
+   }
+}

@@ -1,0 +1,18 @@
+// author: NoIwill (@nomore_bs)
+try this idk if it wroks //benbaresi
+
+def module idk
+def desc "does the tingy i hope"
+
+on totem_pop {
+   if inventory_has #totem {
+    if input_active inventory {
+        gui_switch #totem
+        wait 0.5
+        gui_swap #totem
+        wait 0.3
+        input inventory 
+        gui_quickmove #totem 4
+    }
+   }
+}

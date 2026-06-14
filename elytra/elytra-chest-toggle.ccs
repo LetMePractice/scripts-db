@@ -1,0 +1,32 @@
+// author: Verdant Leaf (@clarityedits)
+Idk i wanted something like this on my survival world but wasn't bothered to download a whole new mod. btw i haven't tested it yet cuz my clik crystals mod is bugging tf out. plz someone test it for me ❤️
+
+// @clarity on tawp
+
+// Module: Elytra-Chest Toggle
+// Description: Press B to swap Elytra ↔ Chestplate from hotbar, then restore slot
+
+// To change the keybind, replace 'b' in 'on key_press b if playing' with your desired key (e.g., 'k', 'r', etc.)
+
+def module elytra-chest-toggle
+
+def desc "Press B to swap Elytra ↔ Chestplate from hotbar, then restore slot"
+
+// Main event: When the player presses B in-game
+on key_press b if playing {
+   // If wearing Elytra, try to swap to the best available chestplate in hotbar
+   if has_equipment :elytra {
+      if hotbar_has :netherite_chestplate { gui_swap :netherite_chestplate; exit 0 }
+      if hotbar_has :diamond_chestplate { gui_swap :diamond_chestplate; exit 0 }
+      if hotbar_has :iron_chestplate { gui_swap :iron_chestplate; exit 0 }
+      if hotbar_has :golden_chestplate { gui_swap :golden_chestplate; exit 0 }
+      if hotbar_has :chainmail_chestplate { gui_swap :chainmail_chestplate; exit 0 }
+      if hotbar_has :leather_chestplate { gui_swap :leather_chestplate; exit 0 }
+      // No chestplate found
+      notify 2 "No chestplate in hotbar."; exit 0
+   }
+   // If not wearing Elytra, try to swap to Elytra in hotbar
+   if hotbar_has :elytra { gui_swap :elytra; exit 0 }
+   // If no Elytra found:
+   notify 2 "No Elytra in hotbar."
+}

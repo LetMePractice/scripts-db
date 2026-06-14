@@ -1,0 +1,8 @@
+// author: NeverStopMe (@ithedarkking_i)
+def module puxar-peixe-hover
+def desc "Clica no peixe instantaneamente ao passar o mouse"
+
+on tick if playing {
+    if hovering_over :cod {
+        input key left
+    }

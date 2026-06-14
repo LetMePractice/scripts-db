@@ -1,0 +1,59 @@
+// author: luxon (@lucn__)
+def module shield-drain
+def desc "drain"
+
+on pre_tick {
+   if playing {
+      if holding :mace[density] {
+         if falling {
+            if entity_in_range :player 4 {
+               if target_entity :player {
+                  as target_entity if blocking {
+                     input left
+                     input left
+                     input left
+                     input left
+                     input left
+                     input left
+                     input left
+                     input left
+                     input left
+                     input left
+                     input left
+                     input left
+                     input left
+                  }
+               }
+            }
+         }
+      }
+   }
+}
+
+on tick {
+   if playing {
+      if holding :mace[density] {
+         if falling {
+            if entity_in_range :player 4 {
+               if target_entity :player {
+                  as target_entity if blocking {
+                     input left
+                     input left
+                     input left
+                     input left
+                     input left
+                     input left
+                     input left
+                     input left
+                     input left
+                     input left
+                     input left
+                     input left
+                     input left
+                  }
+               }
+            }
+         }
+      }
+   }
+}

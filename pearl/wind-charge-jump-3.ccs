@@ -1,0 +1,24 @@
+// author: Deleted User (@Deleted User)
+def module wind-charge-jump
+def desc "Automatically jumps when right-clicking with a wind charge"
+
+on right_click if playing {
+   if targeting_block {
+      if holding :wind_charge {
+         wait 0.0529 input jump
+      }
+      if off_holding :wind_charge {
+         wait 0.0529 input jump
+      }
+   }
+}
+
+on pre_tick if playing 
+   if falling {
+      if hotbar_has #elytra
+      switch #elytra
+      wait 0.06
+      input use
+      switch #sword
+   }
+}

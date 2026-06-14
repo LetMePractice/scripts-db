@@ -1,0 +1,24 @@
+// author: Deleted User (@Deleted User)
+// fatchudsellegerswag
+def module chud-slam
+def desc "Guarantees you chud slam your enemy chud"
+def func click {
+    if holding #mace  { input left }
+}
+
+def func shield_break {
+    if hotbar_has #_axe {
+        if holding #_axe {
+            switch #_axe
+            wait_random 0.040 0.060
+            while_not 0.01 attack_progress >=0.90 {}
+            input left
+            while_not 0.01 attack_progress >=0.90 {}
+            input left
+            wait_random 0.17 0.19
+            switch #mace
+        wait 0.1
+            input left
+        }
+    }
+}

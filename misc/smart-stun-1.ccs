@@ -1,0 +1,18 @@
+// author: Floop (@__flipfloop)
+Why doesnt this work?
+
+def module smart-stun
+def desc "Makes a extra hit with an axe if holding a shield"
+
+on left_click if playing {
+    if holding #_axe {
+        if target_entity :player {
+            as target_entity {
+                if blocking {
+                    wait_random 0.08 0.12
+                    input attack
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,5 @@
+// author: Cat (@cat123go)
+def module 3x aura
+def desc you get 3x aura  points from this
+
+on tick if input_active attack loop 3 then input left

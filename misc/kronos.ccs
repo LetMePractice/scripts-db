@@ -1,0 +1,6 @@
+// author: Sywortz (@isywortz)
+def module kronos
+
+on key_press 4 if playing switch #pearl
+
+on left_click if playing switch #sword

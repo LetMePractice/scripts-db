@@ -1,0 +1,5 @@
+// author: I-No-oNe (@i_no_am)
+def module home-sender
+def desc send you back home every 7 seconds
+
+on tick wait 140 then say "/home"

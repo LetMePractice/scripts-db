@@ -1,0 +1,12 @@
+// author: Esorlex (@esorlex)
+okay so why doen't this work either def module insta-cart
+def desc "manually place rail and TNT minecart after bow, switches only after placement"
+
+on right_click_block if playing {
+    if holding :rail {
+        switch :tnt_minecart
+    }
+    elif holding :tnt_minecart {
+        switch :sword
+    }
+}

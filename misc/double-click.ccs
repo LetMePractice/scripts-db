@@ -1,0 +1,11 @@
+// author: ImproperIssues (@improperissues)
+def module double-click
+def desc "Clicks again when you release your mouse."
+
+on left_release {
+  input attack
+}
+
+on right_release {
+  input use
+}

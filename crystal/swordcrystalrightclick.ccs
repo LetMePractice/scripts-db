@@ -1,0 +1,10 @@
+// author: 0W OKj (@zerowidthcharacter)
+yo hello practice, i was working on a script to ONLY switch to crystals if youre holding a sword and looking at obsidian but it doesnt really work can you help?
+
+def module swordcrystalrightclick
+def desc "Right Clicking Obsidian With A Sword Will Swap To Crystals"
+
+while target_block #obsidian if holding #sword on right_click switch #crystal
+
+
+i know its very simple but im not good at this

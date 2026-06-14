@@ -1,0 +1,28 @@
+// author: Jello (@jello2210)
+def module web-lava-combo
+def desc "Places web on non-cobweb blocks, lava on cobweb blocks"
+
+on right_click if playing {
+   if targeting_block {
+      if target_block #cobweb {
+         if hotbar_has #lava_bucket {
+            switch #lava_bucket
+            wait 0.05
+            input use
+            wait 0.5
+            input use
+            wait 0.3
+            switch back
+         }
+      }
+      if_not target_block #cobweb {
+         if hotbar_has #cobweb {
+            switch #cobweb
+            wait 0.05
+            input use
+            wait 0.15
+            switch back
+         }
+      }
+   }
+}

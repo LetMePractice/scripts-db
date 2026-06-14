@@ -1,0 +1,25 @@
+// author: Floop (@__flipfloop)
+def module insta-cart
+def desc "after shooting an arrow look down and it will automatically place a tnt minecarft"
+
+on right_release if playing if hotbar_has :tnt_minecart wait 0.05 {
+    if holding :bow[flame] {
+        switch #rail
+        wait 0.1 {
+            switch #bow[flame]
+        }
+    }
+}
+
+on tick {
+    if playing if holding #rail {
+        if targeting_block {
+            if hotbar_has :tnt_minecart {
+                input use
+                switch :tnt_minecart
+                wait 0.1
+                input right
+            }
+        }
+    }
+}

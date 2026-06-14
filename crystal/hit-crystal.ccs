@@ -1,0 +1,6 @@
+// author: Cat (@cat123go)
+module hit-crystal
+def desc hold right click while holding sword and it will place obsidian for you and a crystal
+
+on right_click if holding #sword if targeting_block !if target_block :air then switch :obsidian
+on place_block if holding :obsidian switch #crystal then input right

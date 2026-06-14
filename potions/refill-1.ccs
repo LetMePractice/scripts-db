@@ -1,0 +1,9 @@
+// author: Jat (@jat9119)
+`// @anitech7742
+
+def module refill
+def desc "Refills your hotbar with potions if you're holding shift, bypasses mcpvp & other ACs"
+
+on tick if hotbar_has :air if hovering_over #potion if input_active key left_shift {
+ wait_random 0.015 0.04 then input left
+}

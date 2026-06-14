@@ -1,0 +1,5 @@
+// author: Cat (@cat123go)
+def module left-anchor
+def desc "Custom Scripted Module"
+
+on left_click if holding #anchor input use then switch #glowstone then input right then wait 0.03 then switch #anchor

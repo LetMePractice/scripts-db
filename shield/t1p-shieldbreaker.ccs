@@ -1,0 +1,60 @@
+// author: Spis (@spis.s)
+def module t1p-shieldbreaker
+def desc "Tieronepvper shieldbreaker"
+
+on tick  if playing {
+if_not input_active use {
+  if_not blocking {
+    if targeting_entity {
+        as target_entity if blocking {
+            if hotbar_has #_axe {
+                if hotbar_has #sword {
+
+                    if holding #sword {
+                        switch #_axe
+                        wait_random 0.040 0.060
+
+                        while_not 0.01 attack_progress >=0.90 {}
+                        input left
+
+                        while_not 0.01 attack_progress >=0.90 {}
+                        input left
+
+                        wait_random 0.17 0.80
+                        switch #sword
+                    }
+
+                    if holding #mace {
+                        switch #_axe
+                        wait_random 0.040 0.060
+
+                        while_not 0.01 attack_progress >=0.90 {}
+                        input left
+
+                        while_not 0.01 attack_progress >=0.90 {}
+                        input left
+
+                        wait_random 0.17 0.19
+                        switch #mace
+                    }
+
+                    if holding #_axe {
+                        if attack_progress >=0.90 {
+                            input left
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+}
+}
+
+
+
+This is NOT my script i just changed code and added stuff and removed trigger bot
+
+Its blatant but works and needs fixing
+
+(FOR LESS BLATANT MAKE IT TICK 2 or 3)

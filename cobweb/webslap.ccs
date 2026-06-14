@@ -1,0 +1,23 @@
+// author: Practice (@letmepractice)
+module webslap
+def desc "Webs player when looking at their legs"
+
+on left_click {
+   if playing {
+      if target_entity :player {
+         if hotbar_has :cobweb {
+            switch :cobweb
+            wait 0.05
+            input sneak
+            wait 0.06
+            loop 30 {
+               if targeting_block {
+                  input use
+               }
+            }
+            wait 0.05
+            switch #sword
+         }
+      }
+   }
+}

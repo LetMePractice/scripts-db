@@ -1,0 +1,11 @@
+// author: ikzweer (@r8jd)
+def module Auto-EXP
+def desc Auto EXP
+
+on tick {
+    if playing {
+        if holding #experience {
+            input right
+        }
+    }
+}

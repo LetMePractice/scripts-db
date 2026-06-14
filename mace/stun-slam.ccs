@@ -1,0 +1,34 @@
+// author: Smardex (@smardex)
+Two of the most used mpvp techniques
+
+1 Stun slaming
+def module Stun-Slam
+def desc "Switches from mace to axe when target has shield, then back to mace"
+on left_click if playing {
+    if holding :mace if targeting_entity {
+        as target_entity if blocking {
+            switch #axe
+            wait 0.02
+            input attack
+            wait 0.02
+            switch :mace
+            wait 0.02
+            input attack
+        }
+    }
+}
+
+
+Num 2 breach swapping
+
+
+def module Breach-Swap def desc “Switches from sword to breach mace when
+attacking entities”
+
+on left_click if playing { if holding #sword { if targeting_entity { if
+hotbar_has :mace[breach] { switch :mace[breach] wait 0.05 input attack
+wait 0.1 switch #sword } } } }
+
+on damage if playing { if holding #sword { if targeting_entity { if
+hotbar_has :mace[breach] { switch :mace[breach] wait 0.05 input attack
+wait 0.1 switch #sword } } } }

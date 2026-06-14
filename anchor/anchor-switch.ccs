@@ -1,0 +1,12 @@
+// author: Kaira (@_timel3ss.)
+def module anchor-switch
+def desc "Custom Scripted Module"
+
+on right_click
+    if holding #totem {
+        if hotbar_has #anchor {
+            wait_random 0.07 0.14
+            switch #anchor
+        }
+    }
+}

@@ -1,0 +1,17 @@
+// author: Yassouvox (@yassouvox)
+def module jumpreset
+def desc "legit ahh air"
+
+on damage if playing {
+   if input_active key left_shift {
+      if chance_of 100 {
+         if on_ground {
+            !if swimming {
+               !if gliding {
+                  input jump
+               }
+            }
+         }
+      }
+   }
+}

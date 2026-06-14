@@ -1,0 +1,11 @@
+// author: Jello (@jello2210)
+module auto-axe
+def desc "Swing axe when hovering over shield"
+
+on tick !if in_screen{
+    if holding #axe {
+        as target_entity if blocking {
+            input attack
+        }
+    }
+}

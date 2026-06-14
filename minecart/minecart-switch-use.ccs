@@ -1,0 +1,14 @@
+// author: NoIwill (@nomore_bs)
+i've been trying to create a cart macro script and i want to know whats wrong
+
+
+def module minecart-switch-use
+def desc "Use-based minecart switching"
+
+on item_use if_not holding #tnt_minecart {
+if target_entity {
+wait 0.03 switch #flint_and_steel
+}
+}
+
+on item_use if holding #flint_and_steel wait 0.03 then switch #crossbow

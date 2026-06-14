@@ -1,0 +1,18 @@
+// author: LoopholeMC (@loopholemc)
+I've been trying to make a working anchor macro script, with delay, but nothing works. This is as close as i got to making something but it just spams glowstone and anchors, can somebody help me.
+
+def module Anchor-Macro
+def desc "same"
+
+on tick if playing !if blocking !if holding :golden_apple,:shield if target_block :uncharged_respawn_anchor {
+    wait_random 0.001 0.1 switch #glowstone
+    input right
+}
+
+on tick if playing !if blocking !if holding :golden_apple,:shield if target_block :charged_respawn_anchor {
+    wait_random 0.001 0.1 switch #totem
+    input right
+    !if hotbar_has #totem {
+        switch #anchor
+    }
+}

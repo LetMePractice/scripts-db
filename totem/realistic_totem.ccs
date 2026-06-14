@@ -1,0 +1,20 @@
+// author: Connor (@croxzy_so20)
+// --- Realistic Totem Switcher ---
+// Automatically switches to a Totem of Undying with human-like delay
+
+def module realistic_totem
+def desc "Switch to totem in offhand with random reaction delay"
+
+on pre_tick {
+    if playing {
+        // Only run if health is low or you're taking damage
+        if health <= 8 {
+            if_not holding #totem {
+                // Wait a realistic human reaction time (0.15–0.35s)
+                wait_random 0.15 0.35 {
+                    switch #totem
+                }
+            }
+        }
+    }
+}

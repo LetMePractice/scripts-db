@@ -1,0 +1,27 @@
+// author: R A D ! O L E (@radiole69)
+Improved Double Handed Auto Totem
+activates in inventory
+
+
+
+
+def module DoubleHandAutoTotem
+def desc Totem
+
+on key_press e {
+    gui_quickmove #totem 7 //switch with desired slot
+    switch #totem
+}
+on tick if input_active inventory {  
+    if off_holding #air {
+        wait 0.1 gui_quickmove #totem 7
+        gui_swap #totem
+    }
+    if holding !#totem {
+        switch #totem
+    }
+}
+on totem_pop if input_active inventory {
+    wait 0.1 gui_quickmove #totem 7
+    switch #totem
+}

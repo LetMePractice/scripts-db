@@ -1,0 +1,6 @@
+// author: I-No-oNe (@i_no_am)
+def module right click
+def desc Press "right click" for safe anchor
+
+on right_click if targeting_block !if target_block #air switch #anchor then input right then wait 0.05 then switch :glowstone then input right then wait 0.10 then wait 0.05 switch #totem
+on tick if holding #glowstone_dust wait 0.05 then switch #glowstone

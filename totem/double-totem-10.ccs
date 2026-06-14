@@ -1,0 +1,11 @@
+// author: ImproperIssues (@improperissues)
+noice script, but you should try to simplify the script a bit further
+
+def module double-totem
+def desc "swap to double"
+
+on totem_pop execute_period 0.05 {
+  gui_swap #totem 
+  gui_quickmove #totem 7
+  switch #totem
+}

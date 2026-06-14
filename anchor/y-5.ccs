@@ -1,0 +1,4 @@
+// author: Itacat (@king_baller9258)
+module y
+def desc "Custom Scripted Module"
+on key_press Y switch #anchor then input right then wait 0.05 then switch #glowstone then input right then wait 0.05 then input sneak then wait 0.05 then input right then wait 0.05 switch #totem``` BEST

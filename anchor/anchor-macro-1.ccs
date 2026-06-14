@@ -1,0 +1,20 @@
+// author: EmperorD3fault (@d3faulted_)
+def module anchor-macro
+def desc "Custom Scripted Module"
+
+on place_block {
+    if playing {
+        if holding #respawn_anchor {
+            wait_random 0.05 0.12
+            switch #glowstone
+            wait_random 0.03 0.08
+            input right
+            wait_random 0.05 0.12 
+            switch #totem
+            wait_random 0.03 0.08
+            input right
+            wait_random 0.08 0.15
+            switch #respawn_anchor
+        }
+    }
+}

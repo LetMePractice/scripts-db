@@ -1,0 +1,17 @@
+// author: Jello (@jello2210)
+def module slot7-use
+def desc "Press R to switch to slot 7, wait 0.1, right click, wait 0.1, then back to slot 1"
+
+on key_press r {
+    if playing {
+        if in_game {
+            switch 7
+            wait 0.1 {
+                input use
+                wait 0.1 {
+                    switch 1
+                }
+            }
+        }
+    }
+}

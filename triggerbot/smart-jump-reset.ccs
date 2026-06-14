@@ -1,0 +1,19 @@
+// author: Practice (@letmepractice)
+module Smart-Jump-Reset
+def desc "Only activates if you are being comboed"
+
+on damage if playing {
+   if on_ground {
+      if entity_in_range :player 4.0 {
+         if_not entity_in_range :player 2.5 {
+            if_not target_entity :player {
+               if attack_progress < 0.3 {
+                  if chance_of 90 {
+                     input jump
+                  }
+               }
+            }
+         }
+      }
+   }
+}

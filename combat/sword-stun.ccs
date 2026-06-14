@@ -1,0 +1,7 @@
+// author: Cat (@cat123go)
+module sword-stun
+def desc "DONT USE THIS ITS HORRIBLE (JUST FOR STEALING CODE AND WILL GET YOU BANNED)"
+
+on left_click if holding #axe if target_entity :player{
+    as target_entity if blocking then input left then switch #sword then input left then switch back
+}

@@ -1,0 +1,15 @@
+// author: Jello (@jello2210)
+def module anticheatpass-jumpreset
+def desc "legit ahh ajr"
+
+on damage {
+    if chance_of 80 {
+        if on_ground {
+            if_not swimming {
+                if_not gliding {
+                    wait_random 0.05 0.5 then input jump
+                }
+            }
+        }
+    }
+}

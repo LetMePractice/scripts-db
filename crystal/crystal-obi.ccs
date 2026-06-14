@@ -1,0 +1,26 @@
+// author: Deleted User (@Deleted User)
+The thing the script is supposed to do is to switch to obi when i right click while having a crystal in my hand and not looking at obi can some1 tell me why its not working?🙏 
+
+
+                                                                                                                                                                                                                                                                                                                                                         
+def module crystal obi
+def desc "crystal obi"
+
+on tick {
+   if playing {
+      on right_click {
+         if holding #crystal {
+            if targeting_block {
+               if !if target_block #air, :charged_respawn_anchor {
+                  wait 0.03
+                  switch #obsidian
+               }
+            }
+         }
+      }
+   }
+}
+
+
+
+(original script from wither123go or smth like that)

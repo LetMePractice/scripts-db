@@ -1,0 +1,8 @@
+// author: ItsNotooff (@b0na1)
+iv got bored clicking everytime strg so i made this
+
+
+`def module autosprint
+def desc "auto sprint"
+
+on tick if moving input sprint`

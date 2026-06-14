@@ -1,0 +1,19 @@
+// author: LoopholeMC (@loopholemc)
+module trigger-bot
+def desc "Simple trigger bot"
+
+on pre_tick {
+   if playing {
+      if target_entity :player,:armor_stand {
+         if_not blocking {
+            if_not input_active use {
+               if attack_progress >=0.9 {
+                  if holding #sword {
+                     input attack
+                  }
+               }
+            }
+         }
+      }
+   }
+}

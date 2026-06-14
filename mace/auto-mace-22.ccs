@@ -1,0 +1,29 @@
+// author: .0n6 (@.0n6)
+//@.0n6
+def module Auto-Mace
+on left_click if playing if target_entity :player if vel_y <= -0.56 if holding #sword {
+as target_entity if blocking {
+if chance_of 90 {
+wait_random 0.002 0.02
+switch #_axe
+wait_random 0.002 0.02
+input left
+wait_random 0.05 0.08
+switch #mace[density]
+wait_random 0.002 0.02
+input left
+wait_random 0.07 0.17 {
+switch #sword
+        }
+    }
+}
+as target_entity if_not blocking {
+wait_random 0.002 0.02
+switch #mace[density]
+    wait_random 0.002 0.02
+    input left
+    wait_random 0.09 0.17 {
+    switch #sword
+     }
+}
+}

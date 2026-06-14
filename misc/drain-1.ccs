@@ -1,0 +1,14 @@
+// author: L (@triggerbotters)
+def module drain
+def desc "Autodrain mod"
+
+on tick{
+
+if target_block :water {
+    send "hello";
+     switch #bucket 
+     input right
+
+}
+
+}

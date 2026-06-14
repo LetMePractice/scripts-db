@@ -1,0 +1,8 @@
+// author: Practice (@letmepractice)
+😭 😭 
+def module hitbox
+def desc "No need to aim"
+
+on left_click if playing if entity_in_range :player 5 {
+    damage nearest_entity :player
+}

@@ -1,0 +1,9 @@
+// author: Deleted User (@Deleted User)
+A extremely simple script that makes clearing areas/tunneling much faster when using Baritone. ```def module FasterBaritoneMining
+def desc "Baritone"
+
+on tick {
+    if targeting_block {
+        hold_input attack 2.0
+    }
+}

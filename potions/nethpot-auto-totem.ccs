@@ -1,0 +1,16 @@
+// author: Jello (@jello2210)
+def module Nethpot-Auto-totem
+//Jat9119
+def desc "When your health is at 4.5 or lower the macro will automatically switch to the totem in your hotbar"
+
+on damage {
+   if playing {
+      if entity_in_range :player 3.5 {
+         as client if health <= 4.5 {
+            if hotbar_has #totem {
+               switch #totem
+            }
+         }
+      }
+   }
+}

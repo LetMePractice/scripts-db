@@ -1,0 +1,19 @@
+// author: fre4k (@fre4k0137)
+module pearl-catch
+def desc "Press 'x' to throw an ender pearl, then a delayed wind charge for a long-distance catch."
+
+on key_press x {
+   if playing {
+      if hotbar_has :ender_pearl {
+         switch :ender_pearl
+         input right
+         wait 0.1 {
+            switch :wind_charge
+            input use
+            if hotbar_has #sword {
+               switch #sword
+            }
+         }
+      }
+   }
+}

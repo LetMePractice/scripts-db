@@ -1,0 +1,17 @@
+// author: √Your_RiVal (@gamer_playzzzzz)
+def module diagonal-pearl-catcher
+def desc "Throws a pearl, dips the aim downward, then fires a wind charge."
+
+on right_click if playing {
+    if holding :ender_pearl {
+        input use
+        wait 0.06
+        if hotbar_has :wind_charge {
+            switch :wind_charge
+            wait 0.02
+            turn_to position ~ ~-0.42 ~3.0 then input use
+            wait 0.05
+            switch :ender_pearl
+        }
+    }
+}

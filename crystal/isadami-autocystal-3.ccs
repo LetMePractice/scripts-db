@@ -1,0 +1,8 @@
+// author: isa (@the_isadami)
+def module isadami-autocystal
+def desc "Automaticly place and break crystals"
+
+if target_block #obsidian
+ if holding #end_crystal
+  input use
+  input attack

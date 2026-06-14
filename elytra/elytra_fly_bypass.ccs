@@ -1,0 +1,59 @@
+// author: TheMoMinecrafter (@themominecrafter)
+This works? "def module elytra_fly_bypass
+def desc "Unlimited elytra fly with full bypass - hold space while gliding"
+
+def enabled true
+
+on tick {
+    if player_is_fall_flying {
+        if key_jump_pressed {
+            // High speed boost with randomization
+            let yaw = player_yaw
+            let pitch = player_pitch * -1
+            
+            let speed = 3.2
+            let rand_x = random(-0.02, 0.02)
+            let rand_z = random(-0.02, 0.02)
+            
+            let vx = -sin(yaw) * cos(pitch) * speed + rand_x
+            let vz = cos(yaw) * cos(pitch) * speed + rand_z
+            let vy = -sin(pitch) * speed * 0.6
+            
+            if key_jump_pressed {
+                vy = vy + 0.45
+            }
+            
+            set_velocity vx vy vz
+            
+            // Ground spoof bypass
+            if player_y % 1 < 0.05 {
+                set_position player_x (player_y + 0.0005) player_z
+            }
+            
+            // No fall
+            if fall_distance > 1.5 {
+                set_fall_distance 0
+            }
+            
+            // Rotation jitter for detection bypass
+            if random(0, 100) < 18 {
+                set_yaw yaw + random(-1.1, 1.1)
+                set_pitch pitch + random(-0.7, 0.7)
+            }
+        }
+    }
+}
+
+on packet_send {
+    if packet_type == "PlayerMoveC2SPacket" {
+        modify_packet_y packet_y + random(0.0001, 0.0004)
+    }
+}
+
+on load {
+    print "&aElytra Fly Bypass loaded - undetected"
+}
+
+on unload {
+    print "&cElytra Fly Bypass unloaded"
+}"

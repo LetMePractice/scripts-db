@@ -1,0 +1,28 @@
+// author: Deleted User (@Deleted User)
+def module wind-charge-jump
+def desc "Automatically jumps when right-clicking with a wind charge"
+
+on right_click if playing {
+    if holding :wind_charge {
+        wait 0.0529 input jump
+    }
+    if off_holding :wind_charge {
+        wait 0.0529 input jump
+    }
+}
+
+on left_click {
+   if playing {
+     if hotbar_has #mace {
+      if holding :wind_charge {
+         if hotbar_has :ender_pearl {
+            switch :ender_pearl
+            input right 
+            wait 0.095 {
+               switch :wind_charge
+               input right 
+            }
+         }
+      }
+   }
+}

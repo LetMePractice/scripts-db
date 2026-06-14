@@ -1,0 +1,16 @@
+// author: lqz0 (@lqz0)
+def module fast anchor charge
+def desc Anchor Charge
+
+on tick if holding #anchor,#glowstone !if blocking !if holding :golden_apple,:shield if off_holding #totem {
+  if target_block :uncharged_respawn_anchor switch #glowstone then input right 
+  if target_block :charged_respawn_anchor switch #anchor then input right
+}
+
+on key_press R {
+    switch #anchor
+    wait 0.05 then input right
+}
+
+
+is it possible to make this script worfk for 1.21.11?

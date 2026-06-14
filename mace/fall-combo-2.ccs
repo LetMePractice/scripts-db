@@ -1,0 +1,28 @@
+// author: c_tr1 (@c_tr1)
+can someone fix this? it doesnt mace 
+
+def module fall-combo
+def desc "fall combo with stun"
+
+on tick 1 if playing {
+   if falling {
+      if holding #sword, #axe {
+         if target_entity :player {
+            as target_entity {
+               switch #mace[density]
+               input attack
+               if blocking {
+                  wait 0.05
+                  input attack
+                  wait_random 0.01 0.015
+                  switch #mace[density]
+                  wait_random 0.02 0.025
+                  input attack
+                  wait_random 0.3 0.4
+               }
+               switch #sword
+            }
+         }
+      }
+   }
+}

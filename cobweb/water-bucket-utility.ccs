@@ -1,0 +1,23 @@
+// author: Floop (@__flipfloop)
+def module water-bucket-utility
+def desc "Automatically places water bucket when in cobweb or on fire and picks it back up"
+
+on tick {
+   if playing {
+      if block_in_range :cobweb 1 {
+         if_not holding :water_bucket {
+            switch :water_bucket
+         }
+         if target_block :cobweb {
+            module disable water-bucket-utility
+            switch :water_bucket then wait 0.05 input use
+            wait 0.8
+            input use
+            wait 1.05
+            switch back
+            wait 1
+            module enable water-bucket-utility
+         }
+      }
+   }
+}

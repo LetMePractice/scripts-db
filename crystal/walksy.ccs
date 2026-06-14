@@ -1,0 +1,7 @@
+// author: Deleted User (@Deleted User)
+module walksy
+def desc "Place crystals really damn fast"
+
+on tick if input_active right if holding #crystal {
+    input use
+}

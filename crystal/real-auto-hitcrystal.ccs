@@ -1,0 +1,14 @@
+// author: LoopholeMC (@loopholemc)
+how can I make this so it snaps to 2 blocks behind to the player and 1 to the side instead of any block?
+
+def module real-auto-hitcrystal
+def desc "Snaps to the block behind to the player and punches it"
+
+on tick if playing {
+    if holding #sword {
+        if entity_in_range :player 6 {
+            wait 0.01 snap_to any_block
+            input attack
+        }
+    }
+}

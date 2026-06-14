@@ -1,0 +1,20 @@
+// author: Kaira (@_timel3ss.)
+def module bow-boost
+def desc "auto shoots bow at 45 degrees for epic swight boost god"
+
+on key_press b {
+    if playing {
+        if_not holding :bow {
+            switch :bow
+            wait_random 0.03 0.05
+        }
+        snap_to polar -45 ~0
+        input jump
+        wait 0.15
+        hold_input use 0.15
+        wait_random 0.03 0.05
+        switch back
+    }
+}
+
+try this

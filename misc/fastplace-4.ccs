@@ -1,0 +1,4 @@
+// author: VortexPrime (@v0rtexdev.)
+def module fastplace
+
+on tick if input_active use if holding #wool input use

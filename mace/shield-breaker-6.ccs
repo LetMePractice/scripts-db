@@ -1,0 +1,5 @@
+// author: .0n6 (@.0n6)
+module shield-breaker 
+def desc auto shield breaker
+
+on tick  if target_entity :player if :player offhand_item silent_switch #axe

@@ -1,0 +1,9 @@
+// author: R A D ! O L E (@radiole69)
+def module switch-on-death
+def desc "Switch to sword when a player dies"
+
+on packet_receive s2c deathMessage {
+    if hotbar_has #sword {
+        switch #sword
+    }
+}

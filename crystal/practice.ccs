@@ -1,0 +1,5 @@
+// author: Cat (@cat123go)
+def module practice
+def desc help me
+
+on tick if playing if holding #crystal then input right then wait 0.05 then if target_entity :end_crystal then input left

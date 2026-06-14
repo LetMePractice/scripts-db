@@ -1,0 +1,7 @@
+// author: pomojz (@pomojz)
+I did
+def module easy hit crystal i guess
+def desc "easier to hitr crystal ig"
+
+
+on tick if playing if holding #obsidian if input_active right input use wait 1

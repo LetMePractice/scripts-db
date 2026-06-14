@@ -1,0 +1,91 @@
+// author: a Nub (@_anub)
+// @SillyKoyuki
+def module lunge_stunslam
+def desc "Breaks Shield Automatically"
+
+on left_click {
+  if playing {
+    if hotbar_has #spear[lunge] {
+      if_not targeting_entity {
+        if holding #golden_apple,#ender_pearl,#shield,#elytra,#wind_charge {
+          switch #spear 
+          wait 0.1
+          switch back
+        }
+      }
+    }
+  }
+}
+
+on left_click {
+  if playing {
+    if falling {
+      if vel_y < -0.78 {
+        if target_entity :player {
+          as target_entity {
+            if blocking {
+              if hotbar_has #_axe {
+                if holding #sword {
+                  switch #_axe
+                  wait 0.05
+                  input attack
+                  switch #mace[density]
+                  wait 0.01
+                  input attack
+                  switch #sword
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+on left_click {
+  if playing {
+    if falling {
+      if vel_y < -0.78 {
+        if target_entity :player {
+          as target_entity {
+            if_not blocking {
+              if hotbar_has #sword {
+                if holding #sword {
+                  switch #mace[density]
+                  wait 0.01
+                  input attack
+                  switch back
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+on left_click {
+  if playing {
+    if falling {
+       if vel_y > -0.78 {
+          if vel_y < -0.15 {
+            if target_entity :player {
+              as targeting_entity { 
+                if blocking {
+                  if holding #sword {
+                    switch #_axe
+                    input attack
+                    wait 0.01
+                    switch #mace[breach]
+                    switch #sword
+                  }
+                }
+              }
+            }
+          }
+       }
+    }
+  }
+}

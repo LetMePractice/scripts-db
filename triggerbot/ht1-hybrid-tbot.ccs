@@ -1,0 +1,29 @@
+// author: Deleted User (@Deleted User)
+// <@989239111485374534>
+def module ht1-hybrid-tbot
+def desc "Sword Main with Mace-Hit swaps (Fully Fixed)"
+
+on tick if playing {
+    if targeting_entity {
+        if target_entity :player {
+            if attack_progress >= 0.3 {
+                
+                // Use 'inventory_has' instead of 'inventory'
+                // We check for mace generally to avoid the NBT error in the 'if' line
+                if inventory_has :mace {
+                    // The 'switch' command handles the specific item selection
+                    switch :mace{density}
+                }
+                
+                // Re-check to ensure we are holding a mace before attacking
+                if holding :mace {
+                    input attack
+                }
+                
+                wait 0.05 {
+                    switch #sword
+                }
+            }
+        }
+    }
+}

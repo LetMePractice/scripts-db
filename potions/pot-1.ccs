@@ -1,0 +1,11 @@
+// author: LoopholeMC (@loopholemc)
+and like this:
+def module pot
+def desc "Throws Speed and Strength pots"
+
+on key_press r if playing {
+    if hotbar_has #splash_potion {
+           switch #splash_potion
+           input right
+    }
+}

@@ -1,0 +1,20 @@
+// author: Not_Tahsin (@not_tahsin7)
+def module totem-anchor
+def desc "explodes an anchor with a totem"
+
+on place_block {
+  if playing {
+   if target_block #respawn_anchor {
+    if hotbar_has #glowstone {
+     wait_random 0.01 0.05 {
+      switch #glowstone {
+       input right 
+        if target_block #charged_respawn_anchor {
+         if hotbar_has #totem_of_undying {
+          wait_random 0.01 0.07 {
+           switch #totem_of_undying {
+            input right
+                     }
+               }
+         } 
+   }

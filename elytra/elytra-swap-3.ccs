@@ -1,0 +1,34 @@
+// author: Jello (@jello2210)
+def module elytra-swap
+def desc "Swap elytra/chestplate via hotbar and return to previous slot"
+
+on key_press r if playing if in_game {
+    if has_equipment :elytra {
+        if hotbar_has :elytra {
+            switch :elytra
+            wait 0.03
+        }
+        input inventory
+        wait 0.03
+        gui_quickmove #chestplate
+        wait 0.03
+        input inventory
+        wait 0.02
+        if hotbar_has :elytra switch back
+        !if hotbar_has :elytra if hotbar_has #sword switch #sword
+    }
+    !if has_equipment :elytra {
+        if hotbar_has :elytra {
+            switch :elytra
+            wait 0.03
+        }
+        input inventory
+        wait 0.03
+        gui_quickmove :elytra
+        wait 0.03
+        input inventory
+        wait 0.02
+        if hotbar_has :elytra switch back
+        !if hotbar_has :elytra if hotbar_has #sword switch #sword
+    }
+}

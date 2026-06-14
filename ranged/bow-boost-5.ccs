@@ -1,0 +1,8 @@
+// author: syn (@syntheticlord)
+def module bow-boost
+def desc "aproximatally 74degrees then press and hold space"
+
+on key_press space if playing {
+    switch bow
+    wait 0.11 hold_input use 0.19
+}

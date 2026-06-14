@@ -1,0 +1,14 @@
+// author: LoopholeMC (@loopholemc)
+def module cw-crystal-hold-right
+def desc "Breaks and places crystals only while holding right click"
+
+on tick if playing if holding :end_crystal {
+   if input_active right {
+      if target_entity :end_crystal {
+         input attack
+      }
+      if target_block :obsidian {
+         input use
+      }
+   }
+}

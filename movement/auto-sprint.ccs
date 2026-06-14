@@ -1,0 +1,11 @@
+// author: zenyro (@zenyro)
+def module auto-sprint
+def desc "js ur regular old keep sprint"
+
+on tick {
+    every 15 {
+        if in_game and moving_forward {
+            input sprint
+        }
+    }
+}

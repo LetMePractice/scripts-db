@@ -1,0 +1,5 @@
+// author: VortexPrime (@v0rtexdev.)
+<@1175455408538800205> def module trigger-bot
+def desc trigger bot simple and easy look at player hold sword or axe and it will automatically attack 
+
+on tick if playing if target_entity :player if holding #sword, #axe if attack_progress >= 0.1 input left

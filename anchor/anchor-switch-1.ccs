@@ -1,0 +1,10 @@
+// author: EmperorD3fault (@d3faulted_)
+Any1 make me a script for when i right click from a totem it switches to anchor
+And also edit this script to when i right click with totem it switches to anchor
+
+// @wither123go
+def module anchor-switch
+def desc ClickCrystals Anchor Switch but bypass for Astro Anti Cheat
+on place_block if holding #anchor wait 0.03 switch #glowstone
+on interact_block if holding #glowstone wait 0.03 then switch #anchor
+on tick if input_active use if target_block :uncharged_respawn_anchor if holding #sword,#totem,#anchor,#pickaxe wait 0.03 then switch #glowstone

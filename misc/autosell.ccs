@@ -1,0 +1,7 @@
+// author: xwvi (@31cinoelle)
+def module autosell
+def desc "auto /sellall EMERALD"
+
+on tick 150 {
+   wait_random 0 2 {say "/sellall EMERALD"}
+}

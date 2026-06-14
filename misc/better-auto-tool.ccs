@@ -1,0 +1,14 @@
+// author: VortexPrime (@v0rtexdev.)
+// @josh
+def module better-auto-tool
+
+on left_click if playing {
+  if target_block #wool {
+    switch #shears
+    on block_broken {
+      if target_block #wool {
+        switch back
+      }
+    }
+  }
+}

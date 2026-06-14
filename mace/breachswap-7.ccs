@@ -1,0 +1,10 @@
+// author: anitech (@anitech7742)
+heres mine it works both when you left click and when youre using a triggerbot that simulates clicks:
+// @anitech7742
+
+def module breachswap
+def desc ""
+
+on pre tick if playing if holding #sword if input active left if target entity :player {
+ switch #mace[breach] then wait .08 then switch back
+}

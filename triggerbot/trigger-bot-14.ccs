@@ -1,0 +1,5 @@
+// author: Cat (@cat123go)
+def module trigger-bot
+def desc attacks any entity that you are looking at if you hold sword or axe
+
+on tick if playing if targeting_entity if attack_progress >=0.9 then input left

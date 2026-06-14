@@ -1,0 +1,13 @@
+// author: suckyswags (@suckyswags)
+``def module auto-fire-clutch
+def desc "Automatically places and picks up water when on fire"
+
+on tick if playing if on_fire {
+    if hotbar_has :water_bucket {
+        switch :water_bucket
+        input use
+        wait 0.05
+        input use
+        switch back
+    }
+}``

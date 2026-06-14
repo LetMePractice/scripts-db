@@ -1,0 +1,49 @@
+// author: T For Tighnari (@silicon06520)
+def module tbot
+def desc "Idk what to say here"
+
+on tick if playing {
+  if holding #sword,#axe {
+    if target_entity :player {
+      as target_entity {
+        if_not blocking {
+          execute_random {
+            if attack_progress >= 0.8500 then input left
+            if attack_progress >= 0.8611 then input left
+            if attack_progress >= 0.8667 then input left
+            if attack_progress >= 0.8722 then input left
+            if attack_progress >= 0.8778 then input left
+            if attack_progress >= 0.8833 then input left
+            if attack_progress >= 0.8889 then input left
+            if attack_progress >= 0.8944 then input left
+            if attack_progress >= 0.9000 then input left
+            if attack_progress >= 0.9111 then input left
+          }
+        }
+      }
+      as target_entity {
+        if blocking {
+          if_not holding #axe {
+            switch #axe
+          }
+          if holding #axe {
+            execute_random {
+              if attack_progress >= 0.8500 then function shieldBreak
+              if attack_progress >= 0.8500 then function miss
+              if attack_progress >= 0.8611 then function shieldBreak
+              if attack_progress >= 0.8667 then function shieldBreak
+              if attack_progress >= 0.8722 then function shieldBreak
+              if attack_progress >= 0.8778 then function shieldBreak
+              if attack_progress >= 0.8833 then function miss
+              if attack_progress >= 0.8833 then function shieldBreak
+              if attack_progress >= 0.8889 then function shieldBreak
+              if attack_progress >= 0.8944 then function shieldBreak
+              if attack_progress >= 0.9000 then function shieldBreak
+              if attack_progress >= 0.9111 then function shieldBreak
+            }
+          }
+        }
+      }
+    }
+  }
+}

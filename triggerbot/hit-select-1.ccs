@@ -1,0 +1,12 @@
+// author: wxund (@wounddup)
+def module Hit-Select
+def desc "Times hits to ensure clean combos. Edit the wait value to change delay."
+
+on tick if playing if target_entity :player !if blocking {
+   if attack_progress >=0.9 {
+      as target_entity if hurt_time <= 0 as client {
+         wait 0.143
+         input attack
+      }
+   }
+}

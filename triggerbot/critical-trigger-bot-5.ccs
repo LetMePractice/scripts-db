@@ -1,0 +1,44 @@
+// author: storage (@myrunestorage)
+def module Critical-Trigger-Bot
+def desc "An extremely powerful triggerbot that will always crit the opponent when falling, with shield support"
+
+on pre_tick {
+   if playing {
+      if target_entity :player,:armor_stand {
+         if_not blocking {
+            if_not input_active use {
+               if attack_progress >=0.9 {
+                  if_not blocking {
+                     if holding #sword {
+                        if on_ground {
+                           if holding #shield {
+                              input right
+                              wait 0.05
+                              input attack
+                              wait 0.1
+                              input right
+                           } else {
+                              input attack
+                           }
+                        }
+                        if_not on_ground {
+                           if falling {
+                              if holding #shield {
+                                 input right
+                                 wait 0.05
+                                 input attack
+                                 wait 0.1
+                                 input right
+                              } else {
+                                 input attack
+                              }
+                           }
+                        }
+                     }
+                  }
+               }
+            }
+         }
+      }
+   }
+}

@@ -1,0 +1,28 @@
+// author: Deleted User (@Deleted User)
+def module cpvp-trigger-bot
+def desc "Fast hit speed with good cooldown"
+
+on tick if playing {
+   if hotbar_has :crystal {
+      if target_entity :player {
+         if_not blocking {
+            if_not input_active use {
+               if attack_progress >= 0.63 {
+                  if_not blocking {
+                     if holding #sword {
+                        if on_ground {
+                           input left
+                        }
+                        if_not on_ground {
+                             if falling {
+                             input left
+                           }
+                        }
+                     }
+                  }
+               }
+            }
+         }
+      }
+   }
+}

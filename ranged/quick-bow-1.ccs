@@ -1,0 +1,9 @@
+// author: Jello (@jello2210)
+def module quick-bow
+def desc "Auto quick-shoots bow with minimal delay"
+
+on pre_tick if playing {
+    if holding :bow {
+        hold_input right 0.2
+    }
+}

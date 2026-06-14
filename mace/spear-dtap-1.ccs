@@ -1,0 +1,12 @@
+// author: Souldroppz_ (@souldroppz_)
+def module spear Dtap
+def desc auto dtaps if holding spear and having mace in inventory
+
+if holding #spear 
+ if target_entity :player 
+   switch #spear 
+   input right
+   input right
+     switch #mace 
+            wait 0.04
+          input left

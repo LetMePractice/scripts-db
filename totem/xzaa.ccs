@@ -1,0 +1,8 @@
+// author: Hikigaya (@orewa_hikigaya_)
+def module xzaa
+def desc blaaa
+
+on totem_pop if hotbar_has :totem {
+    switch :totem
+    wait 0.05 input key f
+}

@@ -1,0 +1,18 @@
+// author: Jello (@jello2210)
+def module Smp-Auto-totem
+//<@1190405726544347258>
+def desc "When your health is at 4.5 or lower the macro will automatically switch to the totem in your hotbar"
+
+on damage {
+   if playing {
+      if entity_in_range :player 3.5 {
+         if health <=6 {
+            if hotbar_has #totem {
+               switch #totem
+               input key f
+               wait 0.05 switch back
+            }
+         }
+      }
+   }
+}

@@ -1,0 +1,13 @@
+// author: Shining... (@itsrealcat)
+def module Fast-as-light
+on tick if playing {
+if_not input_active use if_not blocking {
+    if target_entity is tuff {
+        as target_entity is dancing {
+        switch #speed mode
+        input attack_speed_mode
+        if not switch back
+        }
+        }
+        }
+        }

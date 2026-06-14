@@ -1,0 +1,13 @@
+// author: octo11th • mizo (@octo11th)
+def module Knockback-Displacement-Module
+def desc "Made by Mizo"
+
+on key_press g if playing if entity_in_range :player,:mannequin 4 if target_entity :player,:mannequin then {
+   snap_to polar ~0 -90 then wait 0.05 {
+      snap_to nearest_entity :player,:armor_stand,:zombie,:mannequin then input left then wait 0.05 {
+      snap_to polar ~0 -90 then wait 0.05 {
+         snap_to nearest_entity :player,:armor_stand,:mannequin aim head
+      }
+      }
+   }
+}

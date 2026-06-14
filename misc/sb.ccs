@@ -1,0 +1,14 @@
+// author: oPhI (Lazy arc) (@shehab7877)
+def module sb
+def desc "the arjun gonner"
+
+on tick if playing if holding #_sword {
+    as target_entity if blocking as client {
+        if hotbar_has #_axe {
+            switch #_axe
+            input attack
+            wait 0.1
+            switch back
+        }
+    }
+}

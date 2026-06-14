@@ -1,0 +1,9 @@
+// author: ⁷⁵³ 𝖒𝖚𝖋𝟒𝖑𝖉 † (@aevill)
+def module breachswap
+def desc "breach swap thingy uwu"
+
+on pre_tick on left_click if playing if entity_in_range :player 5
+switch #mace inpute attack then wait 0.083 then switch #sword
+)
+
+its really wrong and I have no idea how to fix it

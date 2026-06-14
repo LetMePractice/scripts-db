@@ -1,0 +1,17 @@
+// author: Jat (@jat9119)
+could someone tell me why when i add a delay it slows down every other cc script? ```def module AutoPlace
+def desc "Custom Scripted Module"
+
+on tick {
+   if playing {
+      !if target_entity #crystal {
+         wait 1.0 {
+            if holding #crystal {
+               if target_block :obsidian,:bedrock {
+                  input right
+               }
+            }
+         }
+      }
+   }
+}

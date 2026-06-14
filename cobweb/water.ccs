@@ -1,0 +1,22 @@
+// author: NoIwill (@nomore_bs)
+def module water
+def desc "water"
+
+if block_in_range :cobweb 0.5 {
+         if targeting_entity{
+        turn_to nearest_block :cobweb
+        }
+        if targeting_block {
+            if_not target_block :cobweb{
+                turn_to nearest_block :cobweb
+        }
+        if target_block :cobweb
+         switch #water_bucket
+            wait_random 0.07 0.2
+            input right 
+            wait_random 0.08 0.19
+            input right
+    }
+   
+
+    }

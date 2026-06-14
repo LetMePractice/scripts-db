@@ -1,0 +1,29 @@
+// author: c_tr1 (@c_tr1)
+can someone fix this?
+
+def module auto-stun-slam
+def desc "stunslam(best?)"
+
+on tick 1 if playing {
+   if falling {
+      if holding #_axe,#sword {
+         if target_entity :player {
+            as target_entity {
+               if blocking {
+                  switch #axe
+                  wait 0.05
+                  input attack
+                   wait_random 0.01 0.015 switch #mace[density]
+                   wait_random 0.02 0.025 input attack
+                   wait_random 0.3 0.4 switch #mace[density]
+                   wait 0.05        
+                   switch #sword
+                  }
+               }
+            }
+         }
+      }
+   }
+
+
+i want it whenever i hold sword/axe and the player is blocking to switch to stunslam then switch to sword again

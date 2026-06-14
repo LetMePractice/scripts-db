@@ -1,0 +1,12 @@
+// author: Jello (@jello2210)
+// @oPhI
+def module kb-sword-hit
+def desc "Guarantees your hit with kb and sword to opponents"
+
+on packet_send c2s handSwing if holding #sword {
+
+   if target_entity :player {
+      hold_input forward 0.1
+      switch #sword
+   }
+}

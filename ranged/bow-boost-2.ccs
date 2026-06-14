@@ -1,0 +1,20 @@
+// author: Karson is the god of Canada (@superbun1235166_)
+module bow-boost
+def desc "Aims up and shoots a bow for vertical boost"
+
+on key_press b if playing if hotbar_has :bow {
+    switch :bow
+    wait 0.05 {
+        execute_random {
+            teleport ~ ~ ~ ~-42 ~
+            teleport ~ ~ ~ ~-43 ~
+            teleport ~ ~ ~ ~-44 ~
+            teleport ~ ~ ~ ~-45 ~
+            teleport ~ ~ ~ ~-46 ~
+        }
+        wait 0.05 {
+            hold_input use 0.15
+            wait 0.2 switch back
+        }
+    }
+}

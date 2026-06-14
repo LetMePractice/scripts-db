@@ -1,0 +1,14 @@
+// author: Deleted User (@Deleted User)
+// @itzispyder
+def module double-clicker
+def desc "Clicks a second time when you release your mouse"
+
+on left_click if playing {
+  if holding :crystal,:respawn_anchor {
+   input left
+}
+
+on right_click if playing {
+  if holding :crystal,:respawn_anchor {
+   input right 
+}

@@ -1,0 +1,7 @@
+// author: ImproperIssues (@improperissues)
+def module troll
+def desc "oops"
+
+on key_press w {
+  velocity ^ ^ ^5
+}

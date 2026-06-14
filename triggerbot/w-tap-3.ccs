@@ -1,0 +1,13 @@
+// author: ImproperIssues (@improperissues)
+def module w-tap
+description When hit a player, tap W once
+
+on left_click {
+   if holding #sword {
+      if attack_progress >=0.9 {
+         if target_entity :player {
+            input forward
+         }
+      }
+   }
+}

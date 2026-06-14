@@ -1,0 +1,16 @@
+// author: Practice (@letmepractice)
+module Auto-Mace
+def desc "Activates when right-clicking with a sword, then attacks with a mace while airborne."
+
+on right_click if playing if holding #sword {
+    module enable auto-mace
+}
+
+on tick if playing if on_ground {
+    module disable auto-mace
+}
+
+on tick if playing if module_enabled auto-mace !if on_ground if target_entity :player {
+    switch #mace
+    wait 0.05 input left
+}

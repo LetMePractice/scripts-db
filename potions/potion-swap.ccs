@@ -1,0 +1,13 @@
+// author: ItzMyxa (@myxaaaa_72)
+// @itzispyder
+def module potion-swap
+def desc "Right click with sword to switch to hotbar potion"
+
+on right_click !if in_screen {
+   if holding #sword if hotbar_has #splash_potion {
+      switch #splash_potion
+      wait 0.05 switch back
+   }
+}
+
+Why isn't this working on 1.3.8

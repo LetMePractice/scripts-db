@@ -1,0 +1,17 @@
+// author: wxund (@wounddup)
+// @wxund
+def module smapper
+def desc "broombroom"
+
+def function spamRMB {
+   while input_active use {
+      input use {
+      }
+   }
+}
+
+on pre_tick {
+   if playing {
+      function spamRMB
+   }
+}

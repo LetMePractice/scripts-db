@@ -1,0 +1,18 @@
+// author: Niker (@itz271k)
+def module rocket-enemy
+def desc "When you press p."
+
+on key_press p {
+    if playing {
+        if gliding {          
+            snap_to nearest_entity :player aim feet
+            switch #firework_rocket
+            wait 0.1
+            input use
+                while gliding {
+                    snap_to nearest_entity :player aim body
+                }
+            }
+        }
+    }
+}

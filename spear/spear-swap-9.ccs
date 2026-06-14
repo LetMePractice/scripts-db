@@ -1,0 +1,9 @@
+// author: 93kn (@93kn_)
+def module spear-swap
+
+on left_click if playing {
+if slot #8 {
+switch #spear
+wait 0.2
+switch back
+}

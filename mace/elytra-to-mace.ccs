@@ -1,0 +1,19 @@
+// author: EnForCerOP (@enforcerop)
+def module elytra to mace
+def desc "Switches to elytra to mace on left click, then back to sword"
+
+on left_click if playing {
+    if holding #elytra {
+        if hotbar_has #mace[density] {
+            if targeting_entity {
+                if target_entity :armor_stand {
+                    switch #sword
+                    wait 0.05
+                    switch #mace[density]
+                    wait 0.05 switch #sword
+                }
+            }
+        }
+    }
+}
+Can anyone  help and make it work consistantly it doesnt work sometimes <@1250828225161068674> <@882445130496356374><@1190405726544347258>

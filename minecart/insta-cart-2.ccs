@@ -1,0 +1,16 @@
+// author: Esorlex (@esorlex)
+why is this not working?
+
+ module insta-cart
+def desc "manually place rail and TNT minecart after bow, switches only after placement"
+
+on right_release if playing {
+    if holding bow[flame] {
+        on place if holding rail {
+            switch tnt_minecart
+        }
+        on place if holding tnt_minecart {
+            switch sword
+        }
+    }
+}

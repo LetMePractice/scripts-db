@@ -1,0 +1,7 @@
+// author: .darkxvi (@.darkxvi)
+module cc-anchor-switch
+def desc "Switch to glowstone when anchor placed"
+
+on place_block if holding #anchor {
+    switch #glowstone
+}

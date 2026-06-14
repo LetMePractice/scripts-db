@@ -1,0 +1,44 @@
+// author: xwvi (@31cinoelle)
+def module TriggerBot
+def desc "triggerbot with auto shield break"
+
+on tick {
+   if target_entity :player {
+      if holding #sword {
+         if not blocking {
+            if attack_progress >= 0.92 {
+               as target_entity if not blocking {
+                  as client {
+                  function attack_n}
+               }
+               as target_entity if blocking {
+                  as client {
+                     if hotbar_has #_axe {
+                     function attack_b}
+                  }
+               }
+            }
+         }
+      }
+   }
+}
+
+def func attack_n{
+   if attack_progress >= 0.92 {
+      wait_random 0 0.07 {
+         if target_entity :player {
+         input left}
+      }
+   }
+}
+
+def func attack_b{
+   wait_random 0.1 0.25 {
+      switch #_axe
+      if holding #_axe {
+         if target_entity :player {input left}
+      }
+      wait_random 0.06 0.16 {
+      switch #sword}
+   }
+}

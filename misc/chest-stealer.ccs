@@ -1,0 +1,16 @@
+// author: Jello (@jello2210)
+def module chest-stealer
+def desc "Automatically takes any UHC/SMP items you hover over in chests while holding left shift"
+
+on tick if input_active key left_shift {
+   if hovering_over #wooden { input left }
+   if hovering_over #stone { input left }
+   if hovering_over #gold { input left }
+   if hovering_over #iron { input left }
+   if hovering_over #chainmail { input left }
+   if hovering_over #diamond { input left }
+   if hovering_over #netherite { input left }
+   if hovering_over #sword { input left }
+   if hovering_over #axe { input left }
+ 
+}

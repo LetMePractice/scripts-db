@@ -1,0 +1,42 @@
+// author: 𝙰𝚛𝚓𝚞𝚗𝙵r𝚊𝚐𝚜 (@flybeast0574)
+def module totem-anchor
+def desc "Right click with totem places and fully charges anchor"
+
+
+on right_click {
+
+    if playing {
+
+        if holding #totem {
+
+            if hotbar_has :respawn_anchor {
+            if hotbar_has :glowstone {
+
+                if_not input_active use {
+
+                    // Place anchor
+                    switch :respawn_anchor
+                    wait 0.05
+                    input use
+                    wait 0.05
+
+                    // Charge anchor (4 charges)
+                    switch :glowstone
+                    wait 0.05
+
+                    loop 1 {
+                        input use
+
+                    // Return to totem
+                    switch #totem
+
+                }
+
+            }
+            }
+
+        }
+
+    }
+
+}

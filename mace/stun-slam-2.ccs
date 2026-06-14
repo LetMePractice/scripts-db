@@ -1,0 +1,18 @@
+// author: Niker (@itz271k)
+def module Stun-Slam
+def desc "Switches from mace to axe when target has shield, then back to mace"
+on left_click if playing {
+    if falling {
+        if holding :mace if targeting_entity {
+            as target_entity if blocking {
+                switch #axe
+                wait 0.02
+                input left
+                wait 0.02
+                switch :mace[density]
+                wait 0.02
+                input left
+            }
+        }
+    }
+}

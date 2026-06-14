@@ -1,0 +1,11 @@
+// author: qwe (@peirooden_34261)
+def module LEFT CHARGE ANCHOR 
+def desc "Custom Scripted Module"
+
+
+
+on left_click if target_block #anchor {
+    !if target_block :charged_respawn_anchor {
+    switch #glowstone then  input use  
+}
+}

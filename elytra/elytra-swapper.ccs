@@ -1,0 +1,14 @@
+// author: ThatFallenKnight (@atharvsoni)
+def module elytra-swapper
+def desc "Toggle between elytra and chestplate by pressing R"
+
+on key_press r if playing {
+    if hotbar_has :elytra {
+        switch :elytra
+        wait_random 0.1 0.15 input use
+    }
+    if hotbar_has #chestplate {
+        switch #chestplate
+        wait_random 0.1 0.15 input use
+    }
+}

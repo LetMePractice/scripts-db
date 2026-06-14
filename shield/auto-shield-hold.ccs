@@ -1,0 +1,8 @@
+// author: Jello (@jello2210)
+def module auto-shield-hold
+def desc "Auto-hold right-click when holding a shield"
+
+on tick if playing {
+   if holding :shield hold_input right 0.12
+   if off_holding :shield hold_input right 0.12
+}

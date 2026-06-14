@@ -1,0 +1,17 @@
+// author: Kaira (@_timel3ss.)
+def module spear-lunge
+def desc "Spear lunge"
+
+on key_press x {
+   if playing {
+      if hotbar_has #spear {
+         if hotbar_has #wind_charge {
+            switch #wind_charge
+               switch #spear
+                  switch #wind_charge
+               }
+            }
+         }
+      }
+   }
+}

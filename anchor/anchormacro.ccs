@@ -1,0 +1,6 @@
+// author: Cat (@cat123go)
+module anchormacro
+def desc "Puts glowstone into an anchor"
+
+on place_block if holding #anchor wait 0.03 switch #glowstone then wait 0.03 input right
+on tick if input_active use if target_block :uncharged_respawn_anchor if holding #sword,#totem,#anchor,#pickaxe,#air then switch #glowstone

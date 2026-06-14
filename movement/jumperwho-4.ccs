@@ -1,0 +1,17 @@
+// author: drew (@just.drew.)
+def module jumperwho
+def desc "1.21 sword kb"
+
+on damage {
+    if chance_of 45 {
+
+        wait 1
+        if chance_of 30 {
+            wait 1
+        }
+
+        if on_ground {
+            input jump
+        }
+    }
+}

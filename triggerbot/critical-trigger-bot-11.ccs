@@ -1,0 +1,27 @@
+// author: Practice (@letmepractice)
+module Critical-Trigger-Bot
+// Jat9119
+def desc "An extremely powerful triggerbot that will always crit the opponent when falling"
+
+on pre_tick {
+   if playing {
+      if target_entity :player,:armor_stand {
+         !if blocking {
+            !if input_active use {
+               if attack_progress >=0.9 {
+                  !if blocking {
+                     if on_ground {
+                        input attack
+                     }
+                     !if on_ground {
+                        if falling {
+                           input attack
+                        }
+                     }
+                  }
+               }
+            }
+         }
+      }
+   }
+}

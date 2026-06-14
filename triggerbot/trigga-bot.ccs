@@ -1,0 +1,33 @@
+// author: Jat (@jat9119)
+this is what i use ```def module trigga-bot
+def desc "Custom Scripted Module"
+
+on pre_tick if playing if target_entity :player,:armor_stand,#zombie !if blocking if input_active sprint {
+   if attack_progress >=0.9 {
+      !if blocking {
+      if holding #sword {
+      execute_random {
+            func miss
+            func miss
+            func hit
+            func hit
+            func hit
+            func hit
+            }
+        }
+      }
+   }
+}
+
+
+def func miss {
+    wait_random 0.05 0.07 {
+      input left
+   }
+}
+
+def func hit {
+    if target_entity :player {
+      input attack
+   }
+}

@@ -1,0 +1,18 @@
+// author: ImproperIssues (@improperissues)
+Hate typing ,reload manually everytime? Dw i gotchu
+def module reload-bind
+def desc "Press control + r to reload"
+
+on chat_send "reload" {
+  func reload
+}
+
+on key_press r if playing {
+  if input_active key left_control {
+    func reload
+  }
+} 
+
+def func reload {
+  say ",reload"
+}

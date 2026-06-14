@@ -1,0 +1,10 @@
+// author: Jat (@jat9119)
+def module test
+def desc "Custom Scripted Module"
+on tick {
+   if playing {
+      if vel_y < -1.8816 {
+         send falling
+      }
+   }
+}

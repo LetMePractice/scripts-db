@@ -1,0 +1,13 @@
+// author: Brafleh (@not_barf)
+// @hi
+def module auto-det
+def desc "auto detonates crystal after placement"
+
+on right_click if playing if holding #crystal if target_block :obsidian {
+   input right
+   wait 0.3 if target_entity :end_crystal {
+      input attack
+   }
+}
+
+**i keep getting kicked for exceeding packet rate limit**

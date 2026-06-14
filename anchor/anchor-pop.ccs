@@ -1,0 +1,40 @@
+// author: Jello (@jello2210)
+def module anchor-pop
+def desc "Anchor place and pop on N"
+
+on key_press n if playing {
+    if dimension the_nether { exit 0 }
+    !if hotbar_has :respawn_anchor { exit 0 }
+    !if hotbar_has :glowstone { exit 0 }
+
+    wait_random 0.03 0.12
+    hold_input sneak 0.18
+    wait_random 0.05 0.14
+
+    switch :respawn_anchor
+    wait_random 0.04 0.10
+    execute_random {
+        interact position ~ ~-1 ~
+        interact any_block
+    }
+    wait_random 0.07 0.16
+
+    switch :glowstone
+    wait_random 0.05 0.12
+    interact nearest_block :respawn_anchor
+    wait_random 0.06 0.15
+
+    switch back
+    wait_random 0.06 0.15
+    turn_to nearest_block :respawn_anchor then {
+        wait_random 0.03 0.11
+        input use
+    }
+
+    wait_random 0.05 0.12
+    hold_input backward 0.08
+}
+
+on post_tick if playing if holding :glowstone {
+    if chance_of 20 { switch back }
+}

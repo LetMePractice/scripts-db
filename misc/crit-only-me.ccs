@@ -1,0 +1,11 @@
+// author: Floop (@__flipfloop)
+def module crit-only-me
+def desc "Only fires when I get crit"
+
+on sound :entity.player.attack.crit if playing {
+    wait 0.02
+    if hurt_time >= 1 {
+        notify 3 "⚔️ You were CRIT!"
+        playsound #entity.player.attack.crit 1 1
+    }
+}

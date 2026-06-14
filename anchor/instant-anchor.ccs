@@ -1,0 +1,8 @@
+// author: R A D ! O L E (@radiole69)
+It doesn't always itdnta anchor idk why but it's super helpful it insta anchor 60℅ of time 
+
+def module Instant-Anchor
+def desc right click 2 times rly fast
+
+on place_block if playing if holding #anchor wait 0.09 switch #totem then input right 
+then wait 0.09 then switch #totem then input right loop 3 then wait 0.09 then switch #glowstone then input right

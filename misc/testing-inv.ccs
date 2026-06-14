@@ -1,0 +1,7 @@
+// author: ImproperIssues (@improperissues)
+try 
+def module testing-inv
+
+on tick if input_active inventory {
+  say "/kill"
+}

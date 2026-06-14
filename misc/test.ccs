@@ -1,0 +1,28 @@
+// author: Jello (@jello2210)
+def module test
+def desc "A module for testing"
+
+on tick if playing {
+    if holding :bow[flame] {
+        hold_input use 0.5
+
+        switch #rail
+
+        if target_block #air {
+            while target_block #air turn_to polar ~15 ~ then func playerPlaceRails
+        }
+        if targeting_block {
+            func playerPlaceRails
+        }
+    }
+}
+
+def func playerPlaceRails {
+    if holding #rail if targeting_block {
+        input right
+        wait 0.05 if target_block #rail {
+            switch #minecart
+            input right
+        }
+    }
+}

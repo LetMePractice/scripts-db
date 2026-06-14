@@ -1,0 +1,12 @@
+// author: Lymmt (@lymt_01)
+//limmitlessmc
+def module pearl-catch
+def desc "middleclick to pearl-catch"
+
+on middle_click if playing {
+    switch #ender_pearl
+    input use
+    wait 0.5 then
+    switch #wind_charge
+    input use
+}

@@ -1,0 +1,21 @@
+// author: xh4dow_ (@xh4dow_)
+def module auto-damage
+
+def desc "Automatically damages players when holding a sword or axe, no damage when holding food."
+
+on right_click if playing {
+
+    if holding #sword or holding #axe or holding #netherite_sword or holding #netherite_axe {
+
+        turn_to nearest_entity :player then {
+
+            if attack_progress >= 0.9 {
+                input attack
+            }
+        }
+    }
+
+    else if holding #food {
+        # No action for food items
+    }
+}

@@ -1,0 +1,9 @@
+// author: golden (@dubgolden)
+def module easy-dhand
+def desc "hover totem"
+
+on key_release e if playing {
+  gui_switch #totem
+}
+
+what is wrong with this i dont get itt the built in gui cursor has a delay and its so annoying

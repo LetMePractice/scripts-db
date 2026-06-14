@@ -1,0 +1,17 @@
+// author: HeyNzi (@heynzi.)
+def module totem
+def desc "swaps to 8th slot on totem pop"
+
+on totem_pop wait 0.05 {
+    if hotbar_has #totem {
+        switch #totem
+        wait 0.05 swap
+    if inventory_has #totem
+        wait 0.05 input inventory
+        gui_swap #totem with_slot 7
+        wait 0.05 input inventory
+        
+    }
+}
+
+why does this not work

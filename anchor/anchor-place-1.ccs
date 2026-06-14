@@ -1,0 +1,35 @@
+// author: ! ★Croonaka (@.croonaka)
+def module anchor-place
+def desc Places a fully charged anchor when you right click your sword
+
+on place_block {
+   if holding #anchor if hotbar_has #glowstone {
+      switch #glowstone
+   }
+}
+
+on right_click if playing if_not target_block charged_respawn_anchor {
+   if holding #glowstone if_not target_block #anchor {
+      switch #anchor
+   }
+   if hotbar_has #glowstone if holding #anchor if target_block #anchor {
+      switch #glowstone
+   }
+   if_not holding #obsidian if_not holding #bottle if_not holding #pearl if_not holding #bucket if_not target_block #anchor if_not target_block #air {
+      switch #anchor
+      input use
+   }
+}
+
+on interact_block {
+if holding #glowstone if target_block charged_respawn_anchor {
+   input sneak
+   }
+}
+on tick if input_active sneak {
+if holding #glowstone if target_block charged_respawn_anchor {
+   input use 
+   wait 0.03
+   switch #sword
+  }
+}

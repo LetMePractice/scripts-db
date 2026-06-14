@@ -1,0 +1,24 @@
+// author: Kaira (@_timel3ss.)
+def module shield drain
+def desc "clicks from 20-30 cps to break shield"
+
+on pre_tick {
+   if playing {
+      if holding #mace {
+         if_not on_ground {
+            if falling {
+               if entity_in_range :player 3.75 {
+                  if target_entity :player {
+                     as target_entity if blocking {
+                        if chance_of 40 {
+                           input left
+                           wait_random 0.033 0.050 {}
+                        }
+                     }
+                  }
+               }
+            }
+         }
+      }
+   }
+}

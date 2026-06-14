@@ -1,0 +1,5 @@
+// author: Cat (@cat123go)
+module Glowstone-Swap
+def desc Glowstone swap
+
+on tick if target_block :uncharged_respawn_anchor wait 0.03 switch #glowstone

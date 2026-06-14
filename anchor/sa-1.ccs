@@ -1,0 +1,31 @@
+// author: Coolmanpog (@coolmanpog)
+def module sa
+def desc "SA"
+
+On key_press f if playing if hotbar_has #anchor if hotbar_has #glowstone if_not input_active inventory if targeting_block if_not target_block #air{
+    switch #anchor then input right then {
+
+         wait 0.05 then turn_to polar 25 ~ speed 49 then {
+            if_not target_block #anchor function 1
+            if target_block #anchor then turn_to polar 30 ~ speed 49 then {
+            if_not target_block #anchor function 1
+            if target_block #anchor then turn_to polar 40 ~ speed 49 then {
+            if_not target_block #anchor function 1
+            if target_block #anchor then turn_to polar 50 ~ speed 49 then {
+            if_not target_block #anchor function 1
+            if target_block #anchor then turn_to polar 60 ~ speed 49 then {
+            if_not target_block #anchor function 1
+            if target_block #anchor then turn_to polar 70 ~ speed 49 then {
+            if_not target_block #anchor function 1
+            if target_block #anchor then turn_to polar 80 ~ speed 49 then {
+            if_not target_block #anchor function 1
+            if target_block #anchor
+            }
+            }
+            }
+            }
+         }
+    }
+}
+    }
+}

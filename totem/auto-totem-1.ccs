@@ -1,0 +1,29 @@
+// author: ben_834 (@ben_834)
+def module auto-totem
+def desc "Automatically replaces totem when popped"
+
+on totem_pop {
+    if playing {
+        // Open inventory
+        input inventory
+        
+        // Wait for inventory to open
+        wait 0.3 {
+            // Hover over totem in inventory
+            gui_switch :totem_of_undying
+            
+            // Wait for cursor to move
+            wait 0.1 {
+                // Press F to swap to offhand
+                input key f
+                
+                // Wait for swap to complete
+                wait 0.2 {
+                    // Close inventory
+                    input inventory
+                }
+            }
+        }
+    }
+}
+ by deepseek

@@ -1,0 +1,25 @@
+// author: Jello (@jello2210)
+def module lava-web
+def desc "Right-click cobweb to lava it, then go back to sword"
+
+on right_click if playing {
+    if holding #sword {
+        if_not block_in_range :cobweb 1.2 {
+            if targeting_block {
+                if target_block :cobweb {
+                    if hotbar_has :lava_bucket {
+                        switch :lava_bucket
+                        wait 0.05 {
+                            input right
+                            wait 0.05 {
+                                if hotbar_has #sword {
+                                    switch #sword
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

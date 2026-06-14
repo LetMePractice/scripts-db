@@ -1,0 +1,15 @@
+// author: suckyswags (@suckyswags)
+this
+
+``def module elytra-firework
+def desc "Use elytra and firework combo on left click"
+
+on left_click if holding :firework_rocket {
+    switch hotbar :elytra
+    input use
+    input jump
+    wait 0.05
+    input jump
+    switch hotbar :firework_rocket
+    input use
+}``

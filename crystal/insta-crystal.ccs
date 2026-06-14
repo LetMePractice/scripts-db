@@ -1,0 +1,33 @@
+// author: Niker (@itz271k)
+def module insta crystal
+description InstaCrystal by 271klol
+
+on right_click {
+    if holding #sword if target_entity :end_crystal {
+        switch :end_crystal;
+    }
+    while 0.05 holding #crystal {
+        if input_active use {
+            if target_block :obsidian {
+                input use;  
+            }
+            if target_block :bedrock {
+                input use;          
+            }
+            if target_entity :end_crystal {
+                input attack;
+            }
+        }
+        if input_active attack {
+            if target_block :obsidian {
+                input use;  
+            }
+            if target_block :bedrock {
+                input use;  
+            }
+            if target_entity :end_crystal {
+                input attack;
+            }
+        }
+    }
+}

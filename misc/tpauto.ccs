@@ -1,0 +1,7 @@
+// author: Cat (@cat123go)
+module tpauto
+def desc "When you recieve a tprequest it will automatically accept"
+
+on chat_receive "/tpaccept" {
+    say "/tpaccept"
+}

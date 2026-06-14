@@ -1,0 +1,11 @@
+// author: Bannaking10 (@chopstick42095)
+def module lock-on
+def desc "Locks onto nearest player and attacks"
+
+on tick {
+    while 0.05 entity_in_range :player 3.0 {
+        turn_to nearest_entity :player then {
+            input attack
+        }
+    }
+}

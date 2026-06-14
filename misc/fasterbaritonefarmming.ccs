@@ -1,0 +1,10 @@
+// author: Jat (@jat9119)
+Im prob extremely slow but why doesnt this work? 
+ module FasterBaritoneFarmming
+def desc Holds down left click on all log types.
+
+on tick {
+    if target_block #oak_log, #birch_log, #dark_oak_log, #spruce_log, #mangrove_log, #acacia_log, #jungle_log, #cherry_log {
+        hold_input left
+    }
+}

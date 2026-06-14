@@ -1,0 +1,8 @@
+// author: TheMoMinecrafter (@themominecrafter)
+def module SpearSwap
+def desc "Legit, anticheat-safe hotbar swap to main spear weapon"
+
+on tick
+if playing
+if entity_in_fov player 3
+switch <#1503524076709220453>

@@ -1,0 +1,14 @@
+// author: devlua (@devlua_)
+can someone help me with this? def module carts
+def desc "xbow carts"
+ 
+on tick
+on place_block if holding :rail,:powered_rail {
+     switch :tnt_minecart {
+        on input_active use
+             if hotbar_has :flint_and_steel
+                 switch :flint_and_steel on item_use if hotbar_has :charged_crossbow,:crossbow,#crossbow
+                     switch :charged_crossbow,:crossbow,#crossbow
+                        }
+                 }
+it doesnt switch to the flint and steel and doesnt do flint and steel -> crossbow

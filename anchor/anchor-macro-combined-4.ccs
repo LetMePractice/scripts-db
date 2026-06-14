@@ -1,0 +1,32 @@
+// author: Practice (@letmepractice)
+module anchor-macro-combined
+def desc "Auto-charge only — manual detonate, no click risk"
+
+on tick if playing {
+    if_not blocking {
+        if_not holding :golden_apple,:shield {
+            if target_block :uncharged_respawn_anchor {
+                switch 5
+                wait_random 0.08 0.12 input use
+            }
+        }
+    }
+}
+
+on tick if playing {
+    if_not blocking {
+        if_not holding :golden_apple,:shield,:respawn_anchor {
+            if target_block :charged_respawn_anchor {
+                switch 6
+            }
+        }
+    }
+}
+
+on tick if playing {
+    if target_block :charged_respawn_anchor {
+        switch :totem_of_undying
+        wait 0.05 input use
+        wait 0.3 switch :respawn_anchor
+    }
+}

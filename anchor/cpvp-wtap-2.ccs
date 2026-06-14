@@ -1,0 +1,31 @@
+// author: Jat (@jat9119)
+btw I made a w tap version of your script without tbot and its really good ```def module CPVP-WTAP
+def desc "An extremely powerful triggerbot that will always crit the opponent when falling and S-tap when on ground"
+
+on pre_tick {
+   if playing {
+      if input_active attack {
+         if target_entity :player,:armor_stand {
+            if_not blocking {
+               if_not input_active use {
+                  if holding #sword {
+                     func attack
+                  }
+               }
+            }
+         }
+      }
+   }
+}
+
+def func attack {
+   if input_active forward {
+      hold_input backward 0.06
+      wait 0.06 {
+         hold_input cancel
+      }
+   }
+   !if moving {
+      hold_input forward 0.06
+   }
+}

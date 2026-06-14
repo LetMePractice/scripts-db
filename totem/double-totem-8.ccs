@@ -1,0 +1,12 @@
+// author: .0n6 (@.0n6)
+/ @itzispdyer
+def module double-totem
+def desc "swap to double"
+
+on totem_pop execute_period 0.05 {
+   switch #totem 
+}
+on key_press E {
+wait_random 0.08 0.1
+input key F 
+}

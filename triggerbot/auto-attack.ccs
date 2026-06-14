@@ -1,0 +1,5 @@
+// author: Cat (@cat123go)
+module auto-attack
+def desc attacks automaticly every entity while you aim at it and hold a sword or axe
+
+on tick if playing if holding #sword,#_axe if attack_progress =<0.9 if targeting_entity then input left

@@ -1,0 +1,14 @@
+// author: NoIwill (@nomore_bs)
+module tbot
+def desc "your a newgen cheater if you dont know what this is"
+
+// Hits when you hover over a player
+on tick if playing if target_entity :player,:armor_stand !if blocking {
+    if attack_progress >=0.9 if chance_of 75 {
+        as target-entity if blocking as client if hotbar_has #_axe {
+            switch #axe
+            wait 0.05 switch back
+        }
+        input left
+    }
+}

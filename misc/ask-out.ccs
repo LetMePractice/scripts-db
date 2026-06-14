@@ -1,0 +1,16 @@
+// author: NoIwill (@nomore_bs)
+<def module ask-out 
+on tick { 
+        if playing {
+                   if entity_in_range :girl 3 {
+                             while 20 entity_in_range  cop 20 {
+                                        if target_entity :girl {
+                                                        as target_entity if_not age>18{
+                  hold_input disengage}
+                         if hotbar_as :chance {
+                                  input ask
+                            as target_entity if input_acive YES! then
+switch #consesnt }
+                    }
+                }
+         }

@@ -1,0 +1,44 @@
+// author: Lemon (@lemon_the1)
+def module stunslammerv2
+def desc "Custom Scripted Module"
+
+on module_enable {
+
+}
+
+on module_disable {
+
+}
+def module stunslammerv2
+def desc "Custom Scripted Module"
+
+on module_enable {
+
+}
+
+on module_disable {
+
+}
+def module auto-stun-slam
+//LoopholeMC
+def desc "When falling, if holding axe or sword, it automatically hits players with an axe if they are blocking then immediately switches to mace and hits them again."
+
+on tick if playing {
+   !if on_ground {
+      if holding #_axe,#sword {
+         if target_entity :player {
+            as target_entity {
+               if blocking {
+                  switch #axe
+                  input attack
+                  switch #mace
+                  input left
+                  wait 0.05 {
+                     switch #sword
+                  }
+               }
+            }
+         }
+      }
+   }
+}

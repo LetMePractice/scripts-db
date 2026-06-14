@@ -1,0 +1,9 @@
+// author: Eqnity (@eqnity)
+def module cc-anchor-switch
+def desc "Switch to glowstone when anchor placed"
+
+on place_block if holding #anchor {
+    switch #glowstone
+
+
+Btw this is the script my friend told me to use

@@ -1,0 +1,18 @@
+// author: Practice (@letmepractice)
+module hold-f-totem
+def desc "Press F when hovering over totem or holding totem"
+
+on pre_tick {
+   if input_active inventory {
+      if inventory_has :totem_of_undying {
+         if hovering_over :totem_of_undying {
+            input key f
+         }
+      }
+   }
+   if playing {
+      if holding :totem_of_undying {
+         input key f
+      }
+   }
+}

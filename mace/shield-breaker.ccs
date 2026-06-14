@@ -1,0 +1,14 @@
+// author: .0n6 (@.0n6)
+module Shield-Breaker
+def desc "Ei"
+
+on tick if playing if falling if vel_y <= -0.5 if targeting_entity if target_entity :player {
+as target_entity if blocking {
+switch #mace[density] 
+repeat 25 {
+wait_random 0.01 0.03
+input left
+wait_random 0.01 0.03
+           }
+      }
+}

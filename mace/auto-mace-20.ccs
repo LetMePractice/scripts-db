@@ -1,0 +1,13 @@
+// author: iAmBot (@.iiambot)
+Does this work? I can't test rn not home
+ module Auto-Mace
+def desc Hold sword and hold right click while falling from 3+ blocks, aim at a player and it will automatically attack for you
+
+on tick if playing {
+  on right_click if holding :sword {
+      if target_entity :player {
+        switch #mace
+          input left 
+    }
+   }
+}

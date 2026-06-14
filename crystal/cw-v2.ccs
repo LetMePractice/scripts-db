@@ -1,0 +1,9 @@
+// author: 𝓖𝓞𝓓_𝓞𝓕_𝓓𝓔𝓥𝓵𝓛 (@god_of_devll)
+def module cw-v2
+def desc Double-crystal(d-tap)
+
+on pre_tick if playing as nearest_entity :player while hurt_time =1 { 
+     if holding #crystal if target_block #obsidian {
+                input use
+                wait 0.05 { input attack } } }                      
+on pre_tick if holding #sword if target_entity #crystal {  input attack }

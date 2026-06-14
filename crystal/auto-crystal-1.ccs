@@ -1,0 +1,6 @@
+// author: .0n6 (@.0n6)
+// @itzispyder
+def module auto-crystal
+def desc "Auto detonates end crystals"
+
+on key_press q switch #anchor then input right then wait 0.05 then switch #glowstone then input right then wait 0.04 then turn_to polar 50 ~ speed 45 then input right then wait 0.06 then switch 7 then turn_to polar 14 ~ speed 35 switch 7

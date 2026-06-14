@@ -1,0 +1,43 @@
+// author: Jello (@jello2210)
+def module auto-mace-elytra
+def desc "While falling/gliding, auto-boost with rockets, swap elytra->chestplate near targets, and strike with the mace."
+
+on pre_tick if playing {
+    if gliding if falling {
+        if vel_y < -0.10 {
+            if hotbar_has #firework_rocket {
+                switch #firework_rocket
+                input use
+                wait 0.10
+                if hotbar_has #mace {
+                    switch #mace
+                }
+            }
+        }
+    }
+}
+
+on pre_tick if playing {
+    if gliding if entity_in_range :player 5.0 {
+        if hotbar_has #chestplate {
+            switch #chestplate
+            wait 0.06
+            input use
+            if hotbar_has #mace {
+                switch #mace
+            }
+        }
+    }
+}
+
+on tick {
+    !if on_ground {
+        if holding #mace {
+            if falling {
+                if entity_in_range :player 3.2 {
+                    damage nearest_entity :player
+                }
+            }
+        }
+    }
+}

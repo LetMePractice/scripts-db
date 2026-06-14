@@ -1,0 +1,3 @@
+// author: Jello (@jello2210)
+def module AutoSprint
+on tick if moving input sprint

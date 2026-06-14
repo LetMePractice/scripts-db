@@ -1,0 +1,14 @@
+// author: ImproperIssues (@improperissues)
+def module burst-click
+def desc "Custom Scripted Module"
+
+on right_click if playing {
+    snap_to nearest_entity :player then loop 2 {
+        input sneak
+        input use
+    }
+}
+
+
+
+im using this on a gun server lmao

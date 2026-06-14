@@ -1,0 +1,25 @@
+// author: .0n6 (@.0n6)
+def module Shield-Breaker
+def desc breaks the sheilds that do the breaking
+
+on pre_tick {
+   if playing {
+      !if blocking {
+         if hotbar_has #_axe {
+         if target_entity :player,:armor_stand {
+            as target_entity if blocking {
+               !if holding #_axe {
+                  switch #_axe
+                  wait 0.2 {
+                     input left
+                     wait 0.05 {
+                        switch back
+                        }
+                     }
+                  }
+               }
+            }
+         }
+      }
+   }
+}

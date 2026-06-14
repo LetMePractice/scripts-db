@@ -1,0 +1,14 @@
+// author: ImproperIssues (@improperissues)
+def module elytra-swap
+def desc "elytra swap that swaps back! whoa!"
+
+on key_press i if playing {
+  if hotbar_has :elytra {
+    switch :elytra
+    input use
+    
+    wait 0.1 {
+      switch back
+    }
+  }
+}

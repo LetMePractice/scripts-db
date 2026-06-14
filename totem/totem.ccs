@@ -1,0 +1,8 @@
+// author: ballsforbigchungus (@ballsforbigchungus)
+module totem
+def desc "Legit Retotem"
+
+on tick if input_active inventory {
+    gui_swap #totem
+    gui_quickmove #totem 9
+}

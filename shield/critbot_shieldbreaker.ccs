@@ -1,0 +1,45 @@
+// author: Jello (@jello2210)
+def module critbot_shieldbreaker
+def desc "Crits even while holding shield + Shield Breaker"
+
+on pre_tick {
+   if playing {
+      if target_entity :player,:armor_stand {
+         // --- Shield Breaker Logic ---
+         as target_entity if blocking {
+            if_not holding #axe {
+               switch #axe
+               wait_random 0.05 0.09 {
+                  input use
+                  input attack
+                  wait_random 0.05 0.09 {
+                     switch #sword
+                     input use
+                  }
+               }
+            }
+            if holding #axe {
+               input use
+               input attack
+               wait_random 0.05 0.09 {
+                  switch #sword
+                  input use
+               }
+            }
+         }
+         // --- Critbot Logic ---
+         if attack_progress >= 0.9 {
+            if holding #sword {
+               if on_ground {
+                  input attack
+               }
+               !if on_ground {
+                  if falling {
+                     input attack
+                  }
+               }
+            }
+         }
+      }
+   }
+}

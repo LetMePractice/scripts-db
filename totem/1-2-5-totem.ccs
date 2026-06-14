@@ -1,0 +1,17 @@
+// author: I-No-oNe (@i_no_am)
+def module 1.2.5 totem
+def desc frfr
+
+on totem_pop input inventory wait 0.05 then gui_swap #totem then wait 0.05 then gui_quickmove #totem 4 then input inventory
+
+on key_press e if playing if_not off_holding #totem {
+    if inventory_has #totem {
+        wait 0.05 if input_active inventory {
+            gui_swap #totem 
+            
+            wait 0.05 if input_active inventory {
+                input inventory
+            }
+        }
+    }
+}

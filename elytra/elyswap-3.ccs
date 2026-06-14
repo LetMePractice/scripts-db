@@ -1,0 +1,13 @@
+// author: anitech (@anitech7742)
+here try this (i typed all of it in here so idk if itll work but it seems like it should)
+def module elyswap
+def desc ""
+
+on tick if playing if input active key v {
+ if hotbar has :elytra {
+  switch #chestplate then wait .5 then input right
+ }
+ if hotbar has #chestplate {
+  switch :elytra then wait .5 then input right
+ }
+}

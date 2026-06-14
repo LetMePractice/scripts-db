@@ -1,0 +1,14 @@
+// author: Deleted User (@Deleted User)
+def module anchor-exploder
+def desc "Explodes charged respawn anchors automatically"
+
+on tick if playing {
+    if target_block :charged_respawn_anchor {
+        if block_in_range :respawn_anchor 5.0 { 
+            !if holding #totem
+            switch #totem
+         input left
+            wait 0.05 switch respawn_anchor
+       }
+   }
+}

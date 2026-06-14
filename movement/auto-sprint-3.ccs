@@ -1,0 +1,11 @@
+// author: ImproperIssues (@improperissues)
+def module auto-sprint
+def desc "bruh"
+
+on key_press w {
+  wait 0.05 input sprint
+}
+
+on respawn {
+  wait 1 input sprint
+}

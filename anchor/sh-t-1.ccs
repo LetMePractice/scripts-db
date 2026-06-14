@@ -1,0 +1,26 @@
+// author: Deleted User (@Deleted User)
+I just want if my target becomdef module sh!t
+def description “idk”
+
+on right_click {
+
+        if target_block :charged_respawn_anchor {
+            if hotbar_has minecraft:totem_of_undying {
+                switch minecraft:totem_of_undying;
+            }
+            !if hotbar_has minecraft:totem_of_undying {
+                switch #sword;
+            }
+        }
+   
+        if target_block :uncharged_respawn_anchor {
+            switch minecraft:glowstone;
+        }
+    }
+
+on pre_tick {
+    if target_block :charged_respawn_anchor {
+      if holding minecraft:glowstone {
+        input right }
+      }
+     }

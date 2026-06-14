@@ -1,0 +1,23 @@
+// author: Practice (@letmepractice)
+module jumperwho
+def desc "legit ahh air"
+
+on input key k {
+    module enable jumperwho
+}
+
+on key_release k {
+    module disable jumperwho
+}
+
+on damage if playing {
+    if chance_of 62 {
+        if on_ground {
+            !if swimming {
+                !if gliding {
+                    input jump
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+// author: Practice (@letmepractice)
+module density-swapping
+def desc "Switches to density mace on left click when falling 4+ blocks, then back to sword"
+
+on left_click if playing {
+    if falling {
+        if vel_y < -0.5 {
+            if holding #sword,#_axe {
+                if hotbar_has #mace[density] {
+                    if targeting_entity {
+                        if target_entity :player {
+                            switch #mace[density] 
+                            wait 0.05
+                            switch #sword
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

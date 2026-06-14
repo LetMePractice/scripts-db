@@ -1,0 +1,13 @@
+// author: Practice (@letmepractice)
+module new-17
+def desc 
+
+on key_press E {
+ gui_switch #totem
+   wait 0.05 {
+      input key F
+   }
+}
+
+
+I guess this will resolve it

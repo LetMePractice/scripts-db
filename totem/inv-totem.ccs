@@ -1,0 +1,13 @@
+// author: suckyswags (@suckyswags)
+// @sucky
+def module inv-totem
+def desc "When you open inventory, puts a totem in offhand and hotbar slot 4"
+
+on input inventory {
+   if inventory_has #totem {
+      wait 0.25
+      gui_quickmove #totem offhand
+      wait 0.25
+      gui_quickmove #totem 4
+   }
+}

@@ -1,0 +1,56 @@
+// author: Pink (@patr1otic.)
+def module auto-mace
+def desc "will automatically switch to mace and attack"
+
+on tick {
+    if playing {
+        if falling {
+            if holding #mace,#elytra {
+                if attack_progress >=0.1 {
+                    if target_entity :player {
+                        as target_entity {
+                            if_not blocking {
+                                switch #mace[wind_burst]
+                                input attack
+                            }
+                            if blocking {
+                                switch #axe
+                                wait 0.03
+                                input attack
+                                wait 0.05
+                                switch #mace[wind_burst]
+                                input attack
+                            }
+                        }
+                    }
+                }
+            }
+            if holding #chestplate,#firework {
+                if attack_progress >=0.1 {
+                    if target_entity :player {
+                        as target_entity {
+                            if_not blocking {
+                                switch #chestplate
+                                input use
+                                wait 0.05
+                                switch #mace[wind_burst]
+                                input attack
+                            }
+                            if blocking {
+                                switch #chestplate
+                                input use
+                                wait 0.05
+                                switch #axe
+                                wait 0.03
+                                input attack
+                                wait 0.05
+                                switch #mace[wind_burst]
+                                input attack
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

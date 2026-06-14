@@ -1,0 +1,33 @@
+// author: Practice (@letmepractice)
+module auto-escape
+def desc "Teleports to spawn at 3 HP or when diamond/netherite pickaxe is almost broken"
+
+on tick 10 if playing {
+    if health <= 6 {
+        say "/spawn"
+        wait 0.1
+        say "#stop"
+        wait 0.1
+        module disable auto-escape
+    }
+
+    if holding :diamond_pickaxe {
+        if item_durability holding <= 234 {
+            say "/spawn"
+            wait 0.1
+            say "#stop"
+            wait 0.1
+            module disable auto-escape
+        }
+    }
+
+    if holding :netherite_pickaxe {
+        if item_durability holding <= 305 {
+            say "/spawn"
+            wait 0.1
+            say "#stop"
+            wait 0.1
+            module disable auto-escape
+        }
+    }
+}

@@ -1,0 +1,19 @@
+// author: Aria³⁵⁸ (@dsiper)
+def module spider-man
+def desc "Right-click with sword to place cobweb"
+
+on right_click {
+   if playing {
+      if holding #sword {
+         if_not target_block #air {
+            switch #cobweb
+            wait 0.05 {
+               input use
+               wait 0.05 {
+                  switch #sword
+               }
+            }
+         }
+      }
+   }
+}

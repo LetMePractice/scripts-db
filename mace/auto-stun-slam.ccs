@@ -1,0 +1,38 @@
+// author: .0n6 (@.0n6)
+def module auto-stun-slam
+def desc "stunslam"
+
+def func hit {
+wait_random 0.003 0.02
+                        input left
+                        wait_random 0.003 0.02
+                        input left
+                       wait_random 0.003 0.02
+                        input left
+                        wait_random 0.003 0.02
+                        input left
+                        wait_random 0.003 0.02
+}
+
+on tick if playing {
+   if falling {
+      if_not blocking {
+         if_not input_active use {
+            if holding #_axe,#sword {
+               if target_entity :player {
+                  as target_entity if blocking {
+                        switch #axe
+                        function hit
+                        wait_random 0.05 0.07
+                        switch #mace[density]
+                        function hit
+                        wait_random 0.2 0.5 {
+                           switch #sword
+                        }
+                     }
+                  }
+               }
+            }         
+        }
+     }
+  }

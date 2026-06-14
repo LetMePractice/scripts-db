@@ -1,0 +1,6 @@
+// author: Josh (@josh41674167)
+// @gamerzeee
+def module auto-crystal
+def desc "Auto detonates end crystals"
+
+on key_press q  if_not target_block #air switch #anchor then input right then wait 0.05 then switch #glowstone then input right then wait 0.04 then snap_to polar 50 ~ then input right then wait 0.06 then switch 7 then snap_to polar 14 ~ then wait 0.1 input right  //replace 7 with ur totem slot

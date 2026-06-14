@@ -1,0 +1,15 @@
+// author: Esorlex (@esorlex)
+module DoubleHandAutoTotemFix
+def desc "Fixes totem swapping in both hands without delay"
+
+on totem_pop if input_active inventory {
+    gui_swap #totem
+    gui_quickmove #totem 5
+}
+
+on key_press e {
+    gui_swap #totem
+    gui_quickmove #totem 5
+}
+
+can anyone make this totem when ur in the inventory, and totem both hands when u press e not just 1 at a time whenever pressing e

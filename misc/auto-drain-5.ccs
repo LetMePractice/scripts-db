@@ -1,0 +1,24 @@
+// author: Jello (@jello2210)
+// @wxund and @jelloisnotgay
+def module auto-drain
+def desc "Take enemy's water instantly (works even with a block behind)"
+
+on pre_tick {
+  if playing && targeting_block && !blocking {
+    // prefer offhand bucket; else switch to one in hotbar
+    if off_holding #bucket || hotbar_has #bucket {
+      if_not off_holding #bucket {
+        if_not holding #bucket { switch #bucket }
+      }
+
+      // drain only source water (level=0); probe forward so ray doesn't hit the back block
+      if target_block :water[level=0]
+      || target_block ^ ^ ^1 :water[level=0]
+      || target_block ^ ^ ^2 :water[level=0]
+      || target_block ^ ^ ^3 :water[level=0] {
+        // quick triple use to beat others' place timing
+        loop 3 { input right }
+      }
+    }
+  }
+}

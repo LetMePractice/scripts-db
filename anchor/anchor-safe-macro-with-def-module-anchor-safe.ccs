@@ -1,0 +1,5 @@
+// author: Practice (@letmepractice)
+Change the module name to , anchor-safe
+I guess you've two scirpts with same module name 
+
+Replace this `def module anchor-safe-macro` with `def module anchor-safe`

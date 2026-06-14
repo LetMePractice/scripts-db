@@ -1,0 +1,7 @@
+// author: theangrydog123 (@theangrydog123)
+def module head-cob
+def desc "auto head cob"
+
+on tick if input_active key 2 !if target_block :air {
+    input key f then input right wait 0.05 then switch #cobweb
+}

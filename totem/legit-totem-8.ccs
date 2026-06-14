@@ -1,0 +1,5 @@
+// author: VortexPrime (@v0rtexdev.)
+def module legit-totem
+def desc "Custom Scripted Module"
+
+on totem_pop input inventory then gui_switch #totem then if hovering_over #totem !if off_holding #totem input key r then !if hotbar_has #totem input key b then input inventory

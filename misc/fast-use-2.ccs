@@ -1,0 +1,5 @@
+// author: ADDA NYA KONTO INTECOND (@adda_nya_konto_intecond)
+And paste this? def module fast-use
+def desc "You can script smth like this"
+
+on tick if playing if input_active use input use

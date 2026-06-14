@@ -1,0 +1,5 @@
+// author: Cat (@cat123go)
+module 2-anchor-place
+def desc Place anchor and spam everywhere anchors with the speed of light
+
+on place_block if holding #anchor if playing then wait 0.05 then switch #glowstone then input right then wait 0.05 then switch #anchor then loop 2 input right then wait 0.05 then switch #glowstone then input right then wait 0.05 then switch #anchor then input right

@@ -1,0 +1,17 @@
+// author: matheus cunha (@dominkroptru123)
+def module elytra-mace
+def desc "hold Z"
+
+on tick if input_active key z if hotbar_has #mace if hotbar_has #sword {
+    if entity_in_range :armor_stand 15 {
+        snap_to nearest_entity :armor_stand
+        if hotbar_has #chestplate {
+            switch #chestplate
+            input use
+        }
+    }
+    if target_entity :armor_stand {
+        switch #mace
+        wait 0.05 input attack
+    }
+}

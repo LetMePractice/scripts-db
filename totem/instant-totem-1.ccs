@@ -1,0 +1,30 @@
+// author: matheus cunha (@dominkroptru123)
+def module Instant-Totem
+   def desc "Automatically totems both hands when inventory is active"
+   on pre_tick {
+      if input_active inventory {
+          if_not off_holding :totem_of_undying if hovering_over :totem_of_undying {
+              input key f
+          }
+      }
+   }
+   on totem_pop {
+      if_not input_active inventory {
+          wait 0.05 {
+              if_not input_active inventory {
+                  input inventory
+                  func totem
+              }
+          }
+      }
+   }
+   on key_press e {
+       func totem
+   }
+   def func totem {
+       wait 0.05 {
+           if input_active inventory if_not off_holding :totem_of_undying if_not hovering_over :totem_of_undying {
+               gui_switch :totem_of_undying
+           }
+       }
+   }

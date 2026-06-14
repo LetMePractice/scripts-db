@@ -1,0 +1,7 @@
+// author: Semmgaming (@samueldarkness._95256)
+def module 2-anchor
+def desc right click 2 times rly fast
+
+on place_block if playing if holding #anchor wait 0.03 switch #glowstone then input right then wait 0.03 then switch #anchor then input right loop 1 then wait 0.03 then switch #glowstone then input right
+
+Send a message in "double anchor fast"

@@ -1,0 +1,4 @@
+// author: Itacat (@king_baller9258)
+module y
+def desc "Custom Scripted Module"
+on key_press Y wait 0.05 then switch #anchor then input right then if holding #anchor wait 0.05 switch #glowstone then input right then wait 0.05 then input sneak then wait 0.05 then if holding #glowstone if target_block :charged_respawn_anchor input right

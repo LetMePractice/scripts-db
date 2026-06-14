@@ -1,0 +1,56 @@
+// author: wxund (@wounddup)
+### ClickScript (1.3.7)
+
+def module auto-buff-throw
+def desc "Throws strength/speed/fire res potions when a player is within 10 blocks and you don't have the effect"
+
+on tick 1 {
+  if playing {
+    as nearest_entity :player[distance=..10] {
+      if_not effect_duration :strength > 0 {
+        if hotbar_has #strength {
+          switch #strength
+          wait 0.05
+          input use
+          wait 0.05
+          switch back
+        }
+      }
+
+      if_not effect_duration :speed > 0 {
+        if hotbar_has #speed {
+          switch #speed
+          wait 0.05
+          input use
+          wait 0.05
+          switch back
+        }
+      }
+
+      if_not effect_duration :fire_resistance > 0 {
+        if hotbar_has #fire_resistance {
+          switch #fire_resistance
+          wait 0.05
+          input use
+          wait 0.05
+          switch back
+        }
+      }
+    }
+  }
+}
+
+### How it works (step by step)
+
+1. `on tick 1` runs the script constantly while you’re in-game.
+2. `if playing` makes sure it only runs while you’re actually playing.
+3. `as nearest_entity :player[distance=..10] { ... }` only runs the buff logic when the nearest player is within 10 blocks.
+4. For each effect (strength, speed, fire resistance):
+
+   * `if_not effect_duration :effect > 0` checks you **don’t** currently have that effect.
+   * `if hotbar_has #effect` makes sure the potion item exists in your hotbar.
+   * `switch #effect` selects it, `input use` throws/uses it, then `switch back` returns you to what you had.
+
+### Quick setup note
+
+This assumes you already have indirect identifiers set up for your potions: `#strength`, `#speed`, `#fire_resistance` (like the included potion examples do). If you tell me what your potions are named / how they look in your hotbar, I can rewrite it to use your exact identifiers.

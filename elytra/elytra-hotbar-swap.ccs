@@ -1,0 +1,27 @@
+// author: Practice (@letmepractice)
+module elytra-hotbar-swap
+def desc "Swap between elytra and chestplate in hotbar | Press V"
+
+on key_press v if playing {
+    if hotbar_has #elytra {
+           switch #elytra
+           input right
+           wait 0.05 switch back
+    }
+    !if hotbar_has #elytra {
+        if hotbar_has #netherite_chestplate {
+            switch #netherite_chestplate
+            input right
+            wait 0.05 switch back
+        }
+        !if hotbar_has #netherite_chestplate {
+            if hotbar_has #diamond_chestplate {
+                switch #diamond_chestplate
+                input right
+                wait 0.05 switch back
+            }
+        }
+    }
+}
+
+I'm busy so I'm unable to do additional improvements... atm

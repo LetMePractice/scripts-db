@@ -1,0 +1,5 @@
+// author: FraBel (@frebel.)
+def module pearl keybind
+def desc "keybind for script"
+
+on key_press (your key) wait 0.03 then switch #pearl then right_click

@@ -1,0 +1,53 @@
+// author: a Nub (@_anub)
+cuz wanna make it when im on rage to hit a player, it equips chestplate then hit with axe (if blocking) then with mace (density)
+
+cuz idk how to detect when im using elytra on, and if i use #if falling , im afarid of messing somethin up
+
+// @SillyKoyuki
+def module Stun Slam
+def desc "heh"
+
+on tick if playing {
+    if target_entity :player {
+        as target_entity {
+            if blocking {
+                if falling {
+                    if holding #chestplate {
+                        input use
+                        switch #_axe
+                        wait 0.03 
+                        input attack
+                        switch #mace[density]
+                        wait 0.05
+                        input attack
+                        wait 0.05 
+                        switch #elytra
+                        input use
+                    }
+                }
+            }
+        }
+    }
+}
+
+on tick if playing {
+    if target_entity :player {
+        as target_entity {
+            if_not blocking {
+                if falling {
+                    if holding #chestplate {
+                        input use
+                        wait 0.05
+                        switch #mace[density]
+                        wait 0.05
+                        input attack
+                        switch #elytra
+                        input use
+                    }
+                }
+            }
+        }
+    }
+}
+
+this what have rn

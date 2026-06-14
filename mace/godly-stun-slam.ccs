@@ -1,0 +1,24 @@
+// author: Lymmt (@lymt_01)
+can someone make this have a 10% chance of missing the stun slam
+
+
+def module godly-stun-slam
+def desc "best stun slam ever"
+
+on left_click if playing {
+   if falling {
+      if holding #_axe {
+         if target_entity :player {
+            as target_entity {
+               switch #_axe
+               input attack
+               switch #mace[density]
+               input attack
+               wait 0.3 {
+                  switch #sword
+               }
+            }
+         }
+      }
+   }
+}

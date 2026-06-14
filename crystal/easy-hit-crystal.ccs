@@ -1,0 +1,7 @@
+// author: Deleted User (@Deleted User)
+module easy-hit-crystal
+def desc "Custom Scripted Module"
+
+on tick if input_active right if holding #obsidian if target_block #obsidian {
+    switch #crystal then input use
+}

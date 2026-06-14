@@ -1,0 +1,50 @@
+// author: 𝙰𝚛𝚓𝚞𝚗𝙵r𝚊𝚐𝚜 (@flybeast0574)
+def module mace-shield-drain
+def desc "drain me Kon I love u get your goofy ahh in my ahh"
+
+
+on pre_tick {
+
+    if playing {
+        if holding :mace {
+
+            if_not blocking {
+            if_not input_active use {
+
+                // Target must be valid
+                if targeting_entity {
+
+                    // Range + FOV checks
+                    if entity_in_range :player 3.45 {
+                    if entity_in_fov :player 102 {
+
+                        // Switch context to enemy
+                        as target_entity if blocking {
+
+                            // Extra safety (avoid hitting wrong entities)
+                            if reference_entity :player {
+
+                                // 🔥 HIGH CPS LOOP (shield drain)
+                                loop 10 {
+                                    input attack
+                                }
+
+                                // Micro delay to stabilize packets
+                                wait 0.01
+
+                            }
+
+                        }
+
+                    }
+                    }
+
+                }
+
+            }
+            }
+
+        }
+    }
+
+}

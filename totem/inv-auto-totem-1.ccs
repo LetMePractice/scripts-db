@@ -1,0 +1,22 @@
+// author: suckyswags (@suckyswags)
+def module inv-auto-totem
+def desc "auto totem"
+
+on key_press e {
+   input inventory
+   wait 0.05
+
+   if inventory_has #totem {
+      gui_swap #totem
+      wait 0.05
+      gui_quickmove #totem 40
+      wait 0.05
+   }
+
+   if inventory_has #totem {
+      gui_swap #totem
+      wait 0.05
+      gui_quickmove #totem 4
+      wait 0.05
+   }
+}

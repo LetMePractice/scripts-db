@@ -1,0 +1,7 @@
+// author: Practice (@letmepractice)
+2) ```def module test-2
+def desc "Prevents wasting glowstone on charged respawn anchors unless sneaking."
+
+on tick if playing if holding #glowstone if target_block :charged_respawn_anchor if_not input_active sneak {
+    switch 9
+}

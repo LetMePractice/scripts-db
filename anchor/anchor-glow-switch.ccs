@@ -1,0 +1,9 @@
+// author: Practice (@letmepractice)
+module anchor-glow-switch
+def desc "After placing anchor switch to glowstone"
+
+on right_click if playing {
+    if holding :respawn_anchor {
+        wait 0.03 switch :glowstone
+    }
+}

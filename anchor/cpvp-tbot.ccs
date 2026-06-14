@@ -1,0 +1,15 @@
+// author: Deleted User (@Deleted User)
+def module cpvp-tbot
+def desc "faster hit as u look at players"
+
+on tick if playing {
+    if holding #sword,#axe {
+        if hotbar_has #crystal {
+            if attack_progress >= 0.67 {
+                if target_entity :player {
+                    input left
+                }
+            }
+        }
+    }
+}

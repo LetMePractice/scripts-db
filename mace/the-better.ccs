@@ -1,0 +1,72 @@
+// author: wxund (@wounddup)
+module the-better
+def desc "the best tbot you have EVER seen"
+on tick {
+   if playing {
+      if target_entity :player {
+         if holding #sword,#_axe,#mace {
+            if attack_progress >= 0.9 {
+               as target_entity {
+                  if blocking {
+                     if hotbar_has #_axe {
+                        execute_random {
+                           function tbot_miss
+                           function shield_break
+                           function shield_break
+                           function shield_break
+                        }
+                     }
+                  }
+               }
+               as client {
+                  if_not blocking {
+                     if on_ground {
+                        if chance_of 90 {
+                           if holding #sword {
+                              function sword_hit_wait_ground
+                           }
+                           if_not holding #sword {
+                              input left
+                           }
+                        }
+                     }
+                     if_not on_ground {
+                        if falling {
+                           if chance_of 90 {
+                              if holding #sword {
+                                 function sword_hit_wait_ground
+                              }
+                              if_not holding #sword {
+                                 input left
+                              }
+                           }
+                        }
+                     }
+                  }
+               }
+            }
+         }
+      }
+   }
+}
+def func tbot_miss {
+   input left
+}
+def func shield_break {
+   switch #axe
+   wait 0.01
+   input left
+   wait_random 0.01 0.013
+   input left
+   wait 0.05
+   switch back
+}
+def func sword_hit_wait_ground {
+   input left
+   wait 0.01
+   as target_entity {
+      while_not on_ground {
+         wait 0.01
+      }
+   }
+}

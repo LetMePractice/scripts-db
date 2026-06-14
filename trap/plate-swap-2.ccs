@@ -1,0 +1,8 @@
+// author: Inkompetent (@henri_zockt)
+def module plate-swap
+def desc "plate-swap"
+
+if target_block :oak_pressure_plate then
+    switch #cobweb
+    wait 0.15
+    input use

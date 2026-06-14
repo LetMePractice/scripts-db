@@ -1,0 +1,26 @@
+// author: Kaira (@_timel3ss.)
+def module totem-anchor
+def desc "explodes an anchor with a totem"
+
+on place_block {
+   if playing {
+      if holding #respawn_anchor {
+         if hotbar_has #totem_of_undying {
+            wait 0.05 {
+               snap_to nearest_block #respawn_anchor
+               input right
+               wait 0.1 {
+                  switch #totem_of_undying
+                  wait 0.05 {
+                     snap_to nearest_block #respawn_anchor
+                     input right
+                     wait 0.05 {
+                        switch #respawn_anchor
+                     }
+                  }
+               }
+            }
+         }
+      }
+   }
+}

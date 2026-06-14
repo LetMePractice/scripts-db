@@ -1,0 +1,6 @@
+// author: Josh (@josh74247)
+// @gamerzeee
+def module safe-anchor-q
+def desc Press "q" for safe anchor
+on key_press q if targeting_block if target_block #stone switch #anchor then input right
+   wait 0.05 then switch :glowstone then input right wait 0.05 then input sneak then wait 0.05 then input right then wait 0.05 switch #totem

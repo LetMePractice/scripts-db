@@ -1,0 +1,51 @@
+// author: ? (@_sp33d_94)
+Pls fix this if there's problem
+def module legit_pvp_assist
+def desc "Light Aim + WTap + STap + JumpReset (No Mace)"
+
+def func legit_aim {
+    if target_entity :player {
+        if entity_in_range :player 3.3 {
+            if_not blocking {
+                if_not input_active use {
+                    aim_at target_entity 0.10 0.10
+                }
+            }
+        }
+    }
+}
+
+def func wtap {
+    input forward false
+    wait_random 0.03 0.05
+    input forward true
+}
+
+def func stap {
+    input back true
+    wait_random 0.02 0.04
+    input back false
+}
+
+def func jump_reset {
+    if hurt_time >= 1 {
+        if on_ground {
+            input jump
+        }
+    }
+}
+
+on left_click {
+    if playing {
+        call legit_aim
+
+        if entity_in_range :player 3.4 {
+            execute_random {
+                call wtap
+                call stap
+            }
+
+            call jump_reset
+        }
+    }
+}

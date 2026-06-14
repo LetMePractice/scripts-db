@@ -1,0 +1,49 @@
+// author: 𝄃𝄃𝄂𝄂𝄀𝄃𝄃𝄂𝄂𝄀𝄃𝄃𝄂𝄂𝄀𝄃 (@bigmanorange)
+<@882445130496356374>  
+
+def module spear-mace
+def desc "mace go boom"
+
+on tick {
+   if playing {
+      if falling {
+         if holding #spear {
+            if input_active use {
+               if target_entity :player {
+                  as target_entity {
+                     if blocking {
+                        switch #_axe
+                        wait 0.05
+                        input left
+                        wait_random 0.01 0.015
+                        switch #mace
+                        wait_random 0.02 0.025
+                        input left
+                        wait_random 0.3 0.4
+                        switch #sword
+                        wait 2
+                     }
+                     if_not blocking {
+                        switch #mace
+                        input left
+                        wait_random 0.3 0.4
+                        switch #sword
+                        wait 2
+                     }
+                  }
+               }
+            }
+         }
+      }
+   }
+
+[21:31:37] [Render thread/SYSTEM-CHAT]: [ClickCrystals] 
+Error found in ClickScript command execution:
+    from: java.lang
+    type: IllegalArgumentException
+    message: 'unclosed enclosing chars {} to mark string section'
+
+    execution-details:
+    -name: 'DEFAULT-START-EXECUTION'
+    -command: 'DEFAULT-START-EXECUTION'
+    -location: [at '.clickcrystals/scripts/mmemem.ccs']

@@ -1,0 +1,22 @@
+// author: Jat (@jat9119)
+module Totem-Replenish 
+def desc "Custom Scripted Module"
+on totem_pop if input_active inventory {
+    wait 0.01 {
+        gui_swap #totem 
+    wait 0.01 {
+        gui_quickmove #totem 9
+        switch 9
+            }
+        }
+    }
+
+on key_press e {
+    switch 9
+        if off_holding #air { 
+            gui_swap #totem 
+            }
+            wait 0.1 {
+                gui_quickmove #totem 9
+                }
+            }

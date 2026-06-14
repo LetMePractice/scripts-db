@@ -1,0 +1,9 @@
+// author: Jello (@jello2210)
+module fastexp
+def desc "Spam use when holding right click"
+
+on tick if holding #experience{
+    if input_active use {
+        input use
+    }
+}

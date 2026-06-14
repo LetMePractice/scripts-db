@@ -1,0 +1,10 @@
+// author: . (@nolifekingcyan)
+// @Misc
+def module macestock
+def desc "9973"
+on left_click {
+    if target_entity :player {
+        switch #mace 
+           wait 0.15 {
+        switch #sword {
+} } } }

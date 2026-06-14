@@ -1,0 +1,9 @@
+// author: future (@newfutureguys)
+i want to make a combo script that when someone is in the player reach it left click but idk if my script it good can i get some help pls ??? (i'm new to ccs ) there is my script :def module combo
+def desc "combo goat"
+on tick {
+   if playing {
+      if holding :sword {
+         if running 
+            if entity_in_range
+             input left

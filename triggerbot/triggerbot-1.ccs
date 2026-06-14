@@ -1,0 +1,62 @@
+// author: xwvi (@31cinoelle)
+def func legit_hit {
+    execute_random {
+        if attack_progress >= 0.8611 then input left
+        if attack_progress >= 0.8722 then input left
+        if attack_progress >= 0.8833 then input left
+        if attack_progress >= 0.8944 then input left
+        if attack_progress >= 0.9111 then input left
+    }
+}
+
+def func wtap_hit {
+    func legit_hit
+    if input_active forward {
+        hold_input backward 0.05
+        wait 0.05
+        hold_input cancel
+    }
+}
+
+def func shield_break {
+    switch #_axe
+    wait_random 0.08 0.12
+    input left
+    wait_random 0.12 0.18
+    input left
+    wait_random 0.08 0.12
+    switch #sword
+}
+
+def module triggerbot
+def desc "like i guess bro i guess???"
+
+on tick if playing {
+    if targeting_entity {
+as target_entity if blocking {
+                            if hotbar_has #_axe {
+                                func shield_break
+                            }
+                        }
+        if holding #sword,#_axe {
+            if_not blocking {
+                if_not input_active use {
+                    if attack_progress >= 0.85 {
+                        if on_ground {
+                            func legit_hit
+                        }
+                        if_not on_ground {
+                            if falling {
+                           
+                                func legit_hit
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+    
+
+    }
+}

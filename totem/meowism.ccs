@@ -1,0 +1,16 @@
+// author: .darkxvi (@.darkxvi)
+def module Meowism
+def desc "Meowism"
+
+
+on totem_pop {
+   if playing {
+      if hotbar_has #totem{
+         wait_random 0.02 0.05 {
+            switch #totem then if holding #totem wait 0.05 swap {
+            switch back
+            }
+         }
+      }
+   }
+}

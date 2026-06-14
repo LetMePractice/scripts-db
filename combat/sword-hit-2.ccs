@@ -1,0 +1,28 @@
+// author: Deleted User (@Deleted User)
+// @itzispyder
+def module sword-hit
+def desc "Guarantees you hit your opponents with a sword"
+
+on left_click if playing if holding #sword if targeting_block !if target_block #air switch #obsidian then wait 0.02 then switch #crystal then input left then wait 0.02 then input left
+
+on left_click {
+    if holding #sword {
+      if entity_in_range :player 2.2 {
+      damage nearest_entity :player
+      }
+   }
+}
+
+on tick is playing {
+  if holding sword {
+   if entity_in_range :player 2.2 {
+   if attack_progress >=0.7 if chance_of 95 {
+    input left
+   }
+}
+
+on left_click if playing {
+   if target_entity :player {
+      switch #sword
+   }
+}

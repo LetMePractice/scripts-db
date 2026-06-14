@@ -1,0 +1,13 @@
+// author: Practice (@letmepractice)
+module 189
+def desc "Custom Scripted Module"
+
+on tick if holding #sword if target_entity :player,:zombie {
+    wait_random 0.03 0.04
+    input attack
+    if chance_of 60 {
+        input attack
+    }
+    wait_random 0.03 0.6
+    input attack
+}

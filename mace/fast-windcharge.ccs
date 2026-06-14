@@ -1,0 +1,5 @@
+// author: deveIop (@deveiop)
+def module fast-windcharge
+def desc "windcharge fast"
+
+on tick if holding #mace then input key_press **i**  then wait 0.2 then input right then wait 0.2 then input key_press **ii**

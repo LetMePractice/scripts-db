@@ -1,0 +1,41 @@
+// author: K𝔬𝔞𝔩𝔞 (@koala2b2t)
+im using Jat's hover totem script but it just spam switches to offhand and back and then offhand and back again
+
+ module legit-totem
+def desc "Custom Scripted Module"
+
+on tick {
+   if input_active inventory {
+      if hovering_over #totem {
+         wait 0.1 {
+            if off_holding #totem {
+               !if holding #totem {
+                  input key 3
+               }
+            }
+            if holding #totem {
+               !if off_holding #totem {
+                  input key z
+               }
+            }
+         !if off_holding #totem {
+            !if holding #totem {
+               input key z
+            }
+         }
+         }
+      }
+   }
+}
+
+on key_press E {
+   if playing {
+      switch 3
+      wait_random 0.07 0.12 {
+         input key p
+      }
+   }
+   !if playing {
+      input key P
+   }
+}

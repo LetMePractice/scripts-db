@@ -1,0 +1,10 @@
+// author: ICE_Arctic (@arctic34385)
+def module totem-e
+def desc "Custom Scripted Module"
+
+on module_enable {
+} on key_press e if playing if_not off_holding #totem { if inventory_has #totem } wait 00.5 gui_swap #totem wait 00.5 input inventory
+
+on module_disable {
+
+}

@@ -1,0 +1,2 @@
+// author: lawub (@homie456l)
+||def module auto-offhand def desc "Automatically keeps your offhand filled with a Totem of Undying."  on tick if playing {     if off_holding :air {         gui_switch :totem_of_undying     }     if item_count :totem_of_undying > 0 {         if not off_holding :totem_of_undying {             gui_switch :totem_of_undying         }     } }||

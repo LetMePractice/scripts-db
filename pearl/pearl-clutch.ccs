@@ -1,0 +1,30 @@
+// author: Ryuzaki_ (@ibbidevandgamer)
+def module pearl-clutch
+def desc "Press V to throw pearl + single wind charge combo"
+
+on key_press v if hotbar_has #pearl if playing {
+
+
+   switch #pearl
+   input use
+
+
+   wait 0.10 {
+
+   
+      if hotbar_has #wind_charge {
+         switch #wind_charge
+         input use
+
+
+         wait 0.08
+      }
+
+
+      wait 0.15 {
+         switch back
+      }
+   }
+}
+
+//here the code there are some bugs like throwing double windcharge so how to fix it

@@ -1,0 +1,39 @@
+// author: oPhI (Lazy arc) (@shehab7877)
+def module legit-totem
+def desc "Custom Scripted Module"
+
+on tick {
+   if input_active inventory {
+      if hovering_over #totem {
+         wait 0.1 {
+            if off_holding #totem {
+               !if holding #totem {
+                  input key 7
+               }
+            }
+            if holding #totem {
+               !if off_holding #totem {
+                  input key 5
+               }
+            }
+         !if off_holding #totem {
+            !if holding #totem {
+               input key 5
+            }
+         }
+         }
+      }
+   }
+}
+
+on key_press c {
+   if playing {
+      switch 7
+      wait_random 0.07 0.12 {
+         input key r
+      }
+   }
+   !if playing {
+      input key r
+   }
+}

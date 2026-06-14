@@ -1,0 +1,9 @@
+// author: Jello (@jello2210)
+def module legit-xp
+def desc "windoes exp"
+
+on tick if playing if holding #experience {
+   if input_active use if chance_of 33 {
+      input right
+   }
+}

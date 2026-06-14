@@ -1,0 +1,22 @@
+// author: .darkxvi (@.darkxvi)
+def module 21
+def desc "obsidian + crystal"
+
+on tick if playing if input_active left if targeting_block {
+
+    if_not target_block #obsidian {
+        if holding #sword,#obsidian,#crystal {
+            switch #obsidian
+            wait 0.02 then
+            input use
+            wait 0.02 then
+            switch #crystal
+        }
+    }
+
+    if target_block #obsidian {
+        switch #crystal
+        wait 0.02 then
+        input use
+    }
+}

@@ -1,0 +1,12 @@
+// author: Jello (@jello2210)
+module Crystal-Switch-2.0
+def desc This module is the same as click crystals crystal switch it just adds 0.03 delay to switching so Astro (Anti Cheat) doesn't get triggered
+
+on left_click {
+    if holding #sword,:obsidian {
+        if target_block :obsidian,:bedrock {
+            wait 0.03
+            switch #crystal
+        }
+    }
+}

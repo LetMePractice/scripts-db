@@ -1,0 +1,18 @@
+// author: TutlaMC (@tutlamc)
+script example with the idea:
+def module infiniteEmeralds
+def desc Collects string from string duper and trades it
+
+on module_enable {
+  turn_to nearest_entity #villager;
+  right;
+  
+  while module_enabled { 
+    trade 7 inf;
+    gui_drop #emerald all;
+  }
+}
+
+// your setuo should be a string duper with 2 rows of hoppers collecting it and infront of it a trapped fletcher who trades strings usually 7th or 6th trade, modify the script accordingly). Infront of the fletcher there should be a hopper minecraft so that when you dropp the emeralds after the trading it then gets collected. 
+
+// You should be on the string duper so that string keeps filling your inventory, Now once your on it , get right infornt fo the minecraft hopper and then turn on this script, itll begin trading and dropping emeralds into the minecraft hopper

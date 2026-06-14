@@ -1,0 +1,7 @@
+// author: Deleted User (@Deleted User)
+def module bow-spam
+def desc "spam"
+
+on tick if holding #bow {
+               hold_input use 0.2
+}

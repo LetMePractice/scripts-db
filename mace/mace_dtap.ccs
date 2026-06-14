@@ -1,0 +1,33 @@
+// author: Kaira (@_timel3ss.)
+def module mace_dtap
+def desc "manually left click then auto dtap"
+
+on left_click {
+    if playing {
+        if_not on_ground {
+            if falling {
+                if entity_in_range :player 3.75 {
+                    if target_entity :player {
+                        if_not blocking {
+                            if_not input_active use {
+                                if holding #sword {
+                                    switch #mace[breach]
+                                    wait_random 0.03 0.05
+                                    switch #mace[density]
+                                    while_not 0.01 attack_progress >=0.90 {}
+                                    input left
+                                }
+                                if holding #mace[breach] {
+                                    wait_random 0.03 0.05
+                                    switch #mace[density]
+                                    while_not 0.01 attack_progress >=0.90 {}
+                                    input left
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,32 @@
+// author: 亗 Coldy╰‿╯ (@yronv1)
+def module Auto-Mace
+def desc yeah
+
+on tick if playing {
+   if falling if vel_y <= -0.5 {
+      if entity_in_range :player,:armor_stand 4.5 {
+         if_not targeting_entity {
+            snap_to nearest_entity :player,:armor_stand
+         }
+      }
+   }
+}
+on tick if playing {
+   if falling if vel_y <= -0.5 {
+      if entity_in_range :player,:armor_stand 4.5 {
+         if targeting_entity if target_entity :player,:armor_stand {
+            switch #mace
+            input attack
+            send "hitted"
+         }
+      }
+   }
+}
+on tick if playing {
+   if entity_in_range :player,:armor_stand 4.5 {
+      if hotbar_has #chestplate {
+         switch #chestplate
+         input use
+      }
+   }
+}

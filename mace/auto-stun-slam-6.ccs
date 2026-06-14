@@ -1,0 +1,14 @@
+// author: ZetaSW (@zetasw_)
+//@ZetaSW
+def module auto-stun-slam
+def desc "Hit once with axe, then automatically switch to mace and perform stun slam"
+
+on left_click {
+    if holding #axe {
+       input attack
+        wait 0.04
+        switch #mace
+        wait 0.04
+       input attack
+    }
+}

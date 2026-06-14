@@ -1,0 +1,12 @@
+// author: Cat (@cat123go)
+module axebind
+def desc "Bind this module to a key and it will automatically axe a player holding a shield"
+
+on module_enable {
+    if entity_in_range :player 4 if hotbar_has #axe {
+        as nearest_entity :player if blocking {
+            snap_to nearest_entity :player then switch #axe then input left
+        }
+    }
+    module disable axebind
+}

@@ -1,0 +1,9 @@
+// author: ImproperIssues (@improperissues)
+def module trigger-bot
+def desc "e"
+
+on tick if playing {
+  if targeting_entity if attack_progress >=0.9 {
+    input attack
+  }
+}

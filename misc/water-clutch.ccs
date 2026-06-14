@@ -1,0 +1,12 @@
+// author: suckyswags (@suckyswags)
+``def module water-clutch
+def desc "Places water to save fall and grabs it immediately if falling 4+ blocks"
+
+on tick if playing if falling_distance >= 4 {
+    if hotbar_has :water_bucket {
+        switch :water_bucket
+        input use
+        wait 0.05
+        input use
+    }
+}``

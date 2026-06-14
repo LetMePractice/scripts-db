@@ -1,0 +1,18 @@
+// author: Jello (@jello2210)
+def module auto-clutch
+//LoopholeMC
+//input mouse_wheel_up is there to make the script look legit since I needed a way to switch slots and that's the first thing that came to mind, you're free to change this on your own
+def desc "Turn on (with keybind) while falling and it will automatically clutch for you"
+
+on pre_tick {
+    if playing {
+        if holding #water {
+             if targeting_block { 
+                input use 
+                wait 0.1 input right
+                wait 0.15 input mouse_wheel_up
+                module disable auto-clutch
+             }
+         }
+     }
+}

@@ -1,0 +1,11 @@
+// author: √Your_RiVal (@gamer_playzzzzz)
+def module auto-aim
+def desc "auto aim when u press left click"
+
+on left_click{
+  if playing {
+      if holding #sword {
+       snap_to nearest_entity :player
+    }
+  }
+}

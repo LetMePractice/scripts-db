@@ -1,0 +1,22 @@
+// author: Nikii (@augustokok)
+Is it possible to make a action on shied break?
+<@882445130496356374>
+ def module Axe-Shield-Break-Crit
+def desc "Perfect axe crit only after breaking a shield."
+
+on shield_break {
+   if playing {
+      if holding #axe {
+         if entity_in_range :player 4.27 {
+            as target_entity {
+               if falling {
+                  if attack_progress >= 0.88 {
+                     input left
+                     wait 0.05
+                  }
+               }
+            }
+         }
+      }
+   }
+}

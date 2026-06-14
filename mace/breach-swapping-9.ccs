@@ -1,0 +1,18 @@
+// author: Practice (@letmepractice)
+module breach-swapping
+def desc "Breach mace swap only"
+
+on left_click if playing {
+    if holding #sword {
+        if hotbar_has #mace[breach] {
+            if targeting_entity {
+                if target_entity :player {
+                    if attack_progress >=0.98 {
+                        switch #mace[breach]
+                        wait 0.05 switch #sword
+                    }
+                }
+            }
+        }
+    }
+}

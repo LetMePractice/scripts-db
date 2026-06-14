@@ -1,0 +1,38 @@
+// author: √Your_RiVal (@gamer_playzzzzz)
+def module RealsafeAnchor
+
+def desc "faaaaahh!!"
+
+on place_block {
+
+if holding #anchor if hotbar_has #glowstone {
+
+switch #glowstone
+
+wait 0.4
+
+input use
+
+{
+
+}
+
+on interact block {
+
+if holding #glowstone if target_block charged_respawn_anchor {
+
+snap_to polar 50 ~
+
+wait 0.2
+
+input right
+
+wait 0.2
+
+snap_to nearest_block: charged_respawn_anchor
+
+switch #anchor
+
+wait 0.1
+
+input use

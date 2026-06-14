@@ -1,0 +1,44 @@
+// author: 𝙰𝚛𝚓𝚞𝚗𝙵r𝚊𝚐𝚜 (@flybeast0574)
+// Auto Shield & Totem Protection
+// Protects against end crystals (view-based) and charged respawn anchors
+// Includes cooldown to prevent shield flickering
+
+def module crystal-anchor-protection
+def desc "Auto shield/totem against crystals and anchors"
+
+// Main protection logic
+on tick {
+    // PRIORITY 1: Check for end crystals in 3 block radius
+    if entity_in_range :end_crystal 3.0 {
+        
+        // If crystal IS in your view (you're looking at it)
+        if targeting_entity {
+            if target_entity :end_crystal {
+                if hotbar_has :shield {
+                    switch :shield
+                    hold_input use 0.6
+                    wait 1.0  // 1 second cooldown to prevent flickering
+                }
+            }
+        }
+        
+        // If crystal is in radius but NOT in view
+        if_not targeting_entity {
+            if hotbar_has #totem {
+                if_not off_holding #totem {
+                    switch #totem
+                    swap
+                }
+            }
+        }
+    }
+    
+    // PRIORITY 2: Check for charged respawn anchor in 3 block radius
+    if block_in_range :charged_respawn_anchor 3.0 {
+        if hotbar_has :shield {
+            switch :shield
+            hold_input use 0.6
+            wait 1.0  // 1 second cooldown to prevent flickering
+        }
+    }
+}

@@ -1,0 +1,37 @@
+// author: Jello (@jello2210)
+def module hover-totem-safe
+def desc "Hover a totem in YOUR inventory to auto-refill main/offhand"
+
+on tick {
+   if playing {
+      if input_active inventory {
+         if hovering_over :totem_of_undying {
+            !if cursor_item #totem {
+               function refill_offhand
+               function refill_mainhand
+            }
+         }
+      }
+   }
+}
+
+on key_press e { switch back }
+
+def func refill_offhand {
+   !if off_holding #totem {
+      wait_random 0.03 0.07 {
+         gui_swap :totem_of_undying
+      }
+   }
+}
+
+def func refill_mainhand {
+   !if holding #totem {
+      wait_random 0.03 0.07 {
+         gui_quickmove :totem_of_undying
+      }
+      wait_random 0.03 0.07 {
+         switch #totem
+      }
+   }
+}

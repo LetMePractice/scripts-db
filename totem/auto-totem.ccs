@@ -1,0 +1,6 @@
+// author: .0n6 (@.0n6)
+def module auto-totem
+on tick if playing if_not off_holding #totem {
+gui_swap #totem
+}
+try this

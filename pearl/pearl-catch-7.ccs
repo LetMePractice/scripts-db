@@ -1,0 +1,19 @@
+// author: fre4k (@fre4k0137)
+error with this code ```// @078K
+def module pearl-catch
+def desc "On left-clicking while having a wind charge in the main hand, it will throw a pearl, followed by a  wind charge for catch."
+
+on left_click {
+   if playing {
+      if holding :wind_charge {
+         if hotbar_has :ender_pearl {
+            switch :ender_pearl
+            input use
+            wait 0.045 {
+               switch :wind_charge
+               input use
+            }
+         }
+      }
+   }
+}

@@ -1,0 +1,15 @@
+// author: Floop (@__flipfloop)
+Wait i am confused but 
+
+def module bypass-web
+def desc "Places a cobweb only when looking at a block"
+
+on right_click if playing if holding #sword if target_block != :air {
+    switch #cobweb
+    wait 0.05
+    input use
+    wait 0.05
+    switch #sword
+}
+
+worked

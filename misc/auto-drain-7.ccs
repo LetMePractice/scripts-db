@@ -1,0 +1,11 @@
+// author: wxund (@wounddup)
+// @wxund
+def module auto-drain
+def desc "Take enemy's water instantly"
+
+on pre_tick if playing if targeting_block if target_block :water[level=0] {
+    if hotbar_has #bucket {
+        if_not holding #bucket { switch #bucket }
+        if holding #bucket { loop 3 { input right } }
+    }
+}

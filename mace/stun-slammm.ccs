@@ -1,0 +1,26 @@
+// author: ♡🂳𝐐𝐮𝐢𝐥𝐳𝐲🂷➹ (@2b2w)
+can someone make this into a tbot stun slam, so if im falling and holding a sword, it will hit when im hovered over the player.                                                                                                                                                                                                                                                                                   def module stun-slammm
+on left_click if playing if targeting_entity if vel_y <= -0.56 if holding #sword {
+as target_entity if blocking {
+wait_random 0.002 0.02
+    switch #_axe
+    wait_random 0.002 0.02
+    input left
+    wait_random 0.05 0.08 
+    switch #mace[density]
+    wait_random 0.002 0.02
+    input left
+    wait_random 0.09 0.17 {
+    switch #sword
+     }
+}
+as target_entity if_not blocking {
+wait_random 0.002 0.02
+switch #mace[density]
+    wait_random 0.002 0.02
+    input left
+    wait_random 0.09 0.17 {
+    switch #wind
+     }
+}
+}

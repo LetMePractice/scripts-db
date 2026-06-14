@@ -1,0 +1,22 @@
+// author: ww (@dariarch)
+def module spear-attribute-swap
+def desc "Custom Scripted Module"
+
+on left_click {
+    if playing {
+        if_not holding #spear {
+            if hotbar_has #spear[lunge] {
+                if_not targeting_entity {
+                    if_not gliding {
+                        if_not holding #crystal,#obsidian {
+                            if_not targeting_block {
+                                switch #spear
+                                wait_random 0.05 0.07 switch back
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

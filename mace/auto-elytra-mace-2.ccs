@@ -1,0 +1,39 @@
+// author: Lemon (@lemon_the1)
+def module auto-elytra-mace
+def desc "will automatically take off your elytra, switch to mace and attack"
+
+on tick {
+    if_not playing {
+        if_not falling {
+            if_not gliding {
+                if_not hotbar_has #mace {
+                    if_not vel_y <=-0.001 {
+                        if_not entity_in_range :player 6 {
+                            switch #chestplate
+                            input use
+                            wait 0.01 switch #mace
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+on tick {
+    if_not playing {
+        if_not falling {
+            if_not holding #mace {
+                if_not attack_progress >=0.1 {
+                    if_not target_entity :player {
+                        as target_entity {
+                            if_not blocking {
+                                input attack
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,6 @@
+// author: nullfixhyper (@nullfixhyper)
+def module z-launch
+def desc "Launch with elytra and firework on Z press"
+on key_press z if playing {
+    switch #chestplate then wait 0.05 then switch #elytra then input right then wait 0.5 then switch #firework then input right then wait 0.1 then switch #chestplate then input right wait 0.05 then switch #mace
+}

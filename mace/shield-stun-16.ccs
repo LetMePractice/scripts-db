@@ -1,0 +1,15 @@
+// author: Krynn (@krynnitall)
+Anyone have an idea of making this shield stunning script more consistant when on 80ms+
+def module shield-stun
+def desc "Activates after hitting a blocking enemy — switches to axe and double-hits to stun"
+
+on damage if playing {
+    as target_entity if blocking {
+        if hotbar_has #axe {
+            wait 0.05 switch #axe
+            wait 0.05 input attack
+            wait 0.05 input attack
+            wait 0.1 switch back
+        }
+    }
+}

@@ -1,0 +1,13 @@
+// author: L (@triggerbotters)
+def module aim_at_nearest_player
+def desc "Aims towards the nearest player."
+on tick {
+    if right_click held {
+        send "Right-click is held!";
+        if entity_in_range :player 5 {
+            turn_to nearest_entity :player
+        }
+    }
+}
+
+uh im getting a syntax error for right_click held

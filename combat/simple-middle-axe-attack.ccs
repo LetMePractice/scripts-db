@@ -1,0 +1,13 @@
+// author: Smardex (@smardex)
+Done 
+
+def module simple-middle-axe-attack
+def desc "Simple middle click axe attack"
+
+on middle_click if playing {
+    if hotbar_has #axe {
+        switch #axe
+        wait 0.02
+        input attack
+    }
+}

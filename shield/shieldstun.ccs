@@ -1,0 +1,27 @@
+// author: Lymmt (@lymt_01)
+def module shieldstun
+def desc "best shield stun break"
+
+on tick if playing {
+   if falling {
+      if_not blocking {
+         if_not input_active use {
+            if holding #_axe,#sword {
+               if target_entity :player {
+                  as target_entity {
+                     if blocking {
+                        switch #axe
+                        input attack
+                        switch #mace[density]
+                        input left
+                        wait 0.05 {
+                           switch #sword
+                        }
+                     }
+                  }
+               }
+            }
+         }
+      }
+   }
+}

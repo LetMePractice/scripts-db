@@ -1,0 +1,5 @@
+// author: Cat (@cat123go)
+module obi-spam
+def desc Obisidian Spam useful for boxxing yourself (You can change the item)
+
+on tick if input_active use if holding #obsidian input right

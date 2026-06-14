@@ -1,0 +1,22 @@
+// author: .footage (@.footage)
+def module stun_slam
+def desc t1
+
+on left_click if playing {
+if holding #sword,#_axe,#mace {
+if target_entity :player {
+as target_entity if blocking {
+if hotbar_has #_axe {
+if attack_progress >= 0.9 {
+switch #_axe
+wait_random 0.06 0.09
+input left
+wait 0.03
+input left
+switch #mace
+}
+}
+}
+}
+}
+}

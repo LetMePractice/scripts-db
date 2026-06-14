@@ -1,0 +1,13 @@
+// author: !                        KeVin.. (@kevinnnnnnnnnnnnnnnnnnnn)
+def module auto-pot
+def desc "Auto splash at half HP (falling check)"
+
+on tick 3 if playing if health <= 8 if falling if hotbar_has #splash_potion {
+    snap_to position ~ ~-1.2 ~
+    wait 0.06
+    switch #splash_potion
+    wait 0.06
+    input use
+    wait 0.1
+    switch #sword
+}

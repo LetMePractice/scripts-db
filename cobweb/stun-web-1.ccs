@@ -1,0 +1,34 @@
+// author: Kaira (@_timel3ss.)
+def module stun-web
+def desc "shield stun + web"
+
+on left_click if playing if holding #sword if_not blocking if_not input_active use {
+    if attack_progress >=0.7 {
+        if target_entity :player {
+            as target_entity if blocking {
+                if hotbar_has #_axe {
+                    if chance_of 75 {
+                        wait_random 0.040 0.060
+                        switch #_axe
+                        wait_random 0.100 0.140
+                        input left
+                        while_not 0.01 attack_progress >=0.7 {}
+                        wait_random 0.080 0.120
+                        input left
+                        while_not 0.01 attack_progress >=0.7 {}
+                        if hotbar_has :cobweb {
+                            switch :cobweb
+                            wait_random 0.040 0.060
+                            as nearest_entity :player snap_to ~ ~-1 ~ then {
+                                wait 0.05
+                                input use
+                                wait 0.1
+                                switch #sword
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

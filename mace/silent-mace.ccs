@@ -1,0 +1,10 @@
+// author: Cat (@cat123go)
+def module silent-mace
+def desc hit with a sword and it will auto use mace 
+
+on left_click if playing {
+  if holding #swordif target_entity :player {
+    switch #mace
+    If input_active attack if holding #mace  switch #sword
+  }
+}

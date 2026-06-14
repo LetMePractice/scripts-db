@@ -1,0 +1,60 @@
+// author: Defnotneon (@defnotneon_)
+def module xbow-flick-pro
+def desc "Xbow: Rail -> Cart -> Fire -> Flick & Swap to Crossbow"
+
+on place_block { 
+    if playing {
+        if holding #rail {
+            if_not targeting_entity {
+                // Step 1: Place the Cart
+                if hotbar_has :tnt_minecart {
+                    wait 0.05 {
+                        switch :tnt_minecart
+                        input right
+                        
+                        // Step 2: Swap to Flint and Steel
+                        wait 0.12 { 
+                            switch :flint_and_steel
+                            // Step 3: Force the fire placement
+                            wait 0.05 {
+                                input right
+                            }
+                        }
+                    }
+                }
+                // Off-hand logic fallback
+                if_not hotbar_has :tnt_minecart if off_holding :tnt_minecart {
+                    wait 0.05 {
+                        switch #air
+                        input right
+                        wait 0.12 {
+                            switch :flint_and_steel
+                            wait 0.05 {
+                                input right
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// PART 3: The Swap and Flick
+on interact_block {
+    if playing {
+        if holding :flint_and_steel {
+            wait 0.05 {
+                // Switches to your crossbow
+                switch :crossbow
+                
+                // FLICK UP: 
+                // 0 is horizontal (yaw), -15 is vertical (pitch)
+                // Increase -15 to -25 if you want a higher flick
+                rotate 0 -15 
+                
+                // Script stops here. You click to shoot.
+            }
+        }
+    }
+}

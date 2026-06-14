@@ -1,0 +1,20 @@
+// author: Practice (@letmepractice)
+module spear-dtap
+def desc "dtap using spear and mace"
+
+on tick 3 if playing {
+    if gliding {
+        if input_active use {
+            if holding #spear {
+                if entity_in_range :player 3 {
+                    if target_entity :player {
+                        if hotbar_has #mace {
+                            switch #mace
+                            wait 0.02 input attack
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

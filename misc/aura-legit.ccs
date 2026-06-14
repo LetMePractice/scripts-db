@@ -1,0 +1,7 @@
+// author: matheus cunha (@dominkroptru123)
+def module Aura-Legit
+def desc "<= 1.8"
+
+on tick if playing if target_entity :player {
+   input attack
+}

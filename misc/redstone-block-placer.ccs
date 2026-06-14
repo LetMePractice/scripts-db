@@ -1,0 +1,17 @@
+// author: CognitivePup - TT<->RS (@amusraubii)
+// 67
+def module redstone-block-placer
+def desc “for your styling purposes”
+
+on place_block {
+    if target_block #piston {
+if block_in_fov #piston 30 { // mainly to add leeway when snapping
+snap_to nearest_block #piston
+wait_random 0.05 0.08
+snap_to polar ~20 ~ ~
+switch #redstone_block
+wait_random 0.05 0.12
+input right
+}
+}
+}

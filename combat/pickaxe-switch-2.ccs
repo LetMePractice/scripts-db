@@ -1,0 +1,19 @@
+// author: ImproperIssues (@improperissues)
+module pickaxe-switch
+def desc Auto pickaxe
+
+on tick {
+    if input_active attack {
+        if holding #totem {
+            wait 0.03
+            switch #pickaxe
+        }
+    }
+}
+
+on break_block {
+    if holding #pickaxe {
+        wait 0.03
+        switch #totem
+    }
+}

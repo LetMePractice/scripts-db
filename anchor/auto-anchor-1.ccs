@@ -1,0 +1,5 @@
+// author: Cat (@cat123go)
+def module Auto-Anchor
+def desc anchor
+
+on left_click if holding #anchor if target_block :uncharged_respawn_anchor then wait 0.01 then switch :glowstone then wait 0.05 then input use then wait 0.05 then switch back then wait 0.05 then input use

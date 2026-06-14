@@ -1,0 +1,13 @@
+// author: Cat (@cat123go)
+module mace-instant-kill
+def desc "Glitch to 1 tap people with a mace"
+
+on module_enable if holding #axe {
+    velocity ~ 5 ~
+    wait 0.1 velocity ~ -2 ~
+    wait 0.3 input left
+}
+
+on module_enable {
+    module disable mace-instant-kill
+}

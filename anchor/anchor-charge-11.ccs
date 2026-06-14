@@ -1,0 +1,9 @@
+// author: Saint (@halvmaane3)
+module anchor-charge
+def desc Anchor Charge (Bypass)
+
+on tick if target_block :uncharged_respawn_anchor switch #glowstone then input right 
+on tick if target_block :charged_respawn_anchor switch #totem
+
+on place_block {
+    if hotbar_has #anchor switch #anchor }

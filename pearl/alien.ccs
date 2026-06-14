@@ -1,0 +1,7 @@
+// author: stk elf (@stkelf)
+Idk why it don't work 
+
+def module alien
+def desc "Custom Scripted Module"
+
+on key_press J then switch #wind_charge then wait 0.01 then input key F then wait 0.01 switch #ender_pearl then wait 0.05 then input right then input right

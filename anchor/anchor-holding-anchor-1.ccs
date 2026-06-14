@@ -1,0 +1,24 @@
+// author: EmperorD3fault (@d3faulted_)
+// @wither123go
+def module anchor-holding-anchor
+def desc Press N and double anchor with the speed of light
+
+on place_block {
+    if playing {
+        if holding #respawn_anchor {
+            wait_random 0.05 0.12
+            switch #glowstone
+            wait_random 0.03 0.08
+            input right
+            wait_random 0.05 0.12 
+            switch #totem
+            wait_random 0.03 0.08
+            input right
+            wait_random 0.08 0.15
+            switch #respawn_anchor
+        }
+    }
+}
+
+
+I NEED THESE DELAYS <@1085383747005849721>

@@ -1,0 +1,13 @@
+// author: zzz (@youremom9016)
+def module kb-displacement
+def desc "Custom Scripted Module"
+
+on key_press r {
+    if playing if target_entity :player,armor_stand {
+        snap_to polar ~ ~90
+        wait 0.05
+        turn_to polar ~ ~-90 speed 100 then input attack
+        
+    }   
+}
+despite this looking like it's blatant asf (it kinda is but only if you use it a lot), i haven't gotten banned on any server (including catpvp, stray, flowpvp, mcpvp) for it, so anticheats probably don't even catch it at all

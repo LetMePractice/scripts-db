@@ -1,0 +1,7 @@
+// author: unknown
+As always Crystal PVP modules are coming from me xD
+ module pearl-switch-2.0
+def desc pearl switch
+
+on tick if input_active right if holding #sword switch #pearl then input right then wait 0.05 switch back
+(Make sure to not have click crystals module on so it doesn't mess up)

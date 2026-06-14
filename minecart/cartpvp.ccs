@@ -1,0 +1,19 @@
+// author: T For Tighnari (@silicon06520)
+try this rq and send a clip ```def module CartPVP
+def desc 
+
+on tick {
+    if playing {
+        if targeting_block {
+            if target_block :rail {
+                if hotbar_has :tnt_minecart {
+                switch :tnt_minecart then wait 0.05 input use send "E'
+                }
+            }
+        }
+        if holding :tnt_minecart {
+            wait 0.05 switch :bow 
+            wait 0.05 hold_input use 0.3
+        }
+    }
+}

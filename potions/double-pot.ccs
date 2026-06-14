@@ -1,0 +1,13 @@
+// author: Jello (@jello2210)
+def module double-pot
+def desc "Throws Speed and Strength pots"
+//<@1190405726544347258>
+on key_press z if playing {
+    if hotbar_has #splash_potion {
+           switch #splash_potion
+           input use
+           wait 0.01 switch #splash_potion
+           wait_random 0.05 0.07 input right
+           wait 0.1 switch #sword[knockback]
+    }
+}

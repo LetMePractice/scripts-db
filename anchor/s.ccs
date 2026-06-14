@@ -1,0 +1,10 @@
+// author: .0n6 (@.0n6)
+def module S
+def desc s 
+on tick if playing {
+if holding #totem {
+if target_block :charged_respawn_anchor {
+input right 
+}
+}
+}

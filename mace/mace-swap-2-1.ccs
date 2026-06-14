@@ -1,0 +1,12 @@
+// author: qblast (@qblasts.)
+def module mace-swap-2
+def desc "Custom Scripted Module"
+
+on module_enable {
+
+}
+
+on module_disable {
+
+}
+on key_press q wait 0.05 then switch #sword then input left then input key 9 then input key left then wait 0.05 then input key 1
